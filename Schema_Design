@@ -1,0 +1,52 @@
+User : 
+
+id: String
+name: String
+summary: String
+email : String
+password: String
+type : enum { Business, User}
+rating: double
+history : Array[Job]
+assetcount: int
+score: double
+phone: string
+website: string
+reviewcount: int
+
+Assets
+id: String
+url: String
+owner: User
+
+
+Job Model
+id: String
+title: String
+summary: String
+due: Date
+price: double
+Attachment: Array[Images]
+Applicants: Array[User]
+owner: User
+status : double
+statusString: String(Unassigned, In progress, Delivered, Accepted)
+reviewed: bool
+rating: double
+conversationid: String
+categories: Array[String]
+
+ConversationThread
+id: String
+jobid: String ( Primary key references to the job model)
+businessUser:  User
+applicatiaUser: User
+
+
+
+Messages Table
+id : String
+conversationthreadid: String
+message: text
+sender: User
+
