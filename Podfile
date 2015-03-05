@@ -1,0 +1,3 @@
+pod "Parse"
+pod "AFNetworking"
+

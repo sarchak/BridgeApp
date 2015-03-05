@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		315B0B641AA85F0F004428BE /* ParseClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B631AA85F0F004428BE /* ParseClient.m */; };
+		315B0B671AA86047004428BE /* QueryFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B661AA86047004428BE /* QueryFilter.m */; };
+		315B0B6A1AA86055004428BE /* QuerySortOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B691AA86055004428BE /* QuerySortOption.m */; };
+		315B0B6C1AA863F6004428BE /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 315B0B6B1AA863F6004428BE /* Secrets.plist */; };
+		315B0B6F1AA86C73004428BE /* DBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B6E1AA86C73004428BE /* DBModel.m */; };
+		315B0B721AA86C94004428BE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B711AA86C94004428BE /* User.m */; };
+		315B0B751AA86CA6004428BE /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B741AA86CA6004428BE /* Job.m */; };
+		315B0B7A1AA86CD4004428BE /* ConversationThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B791AA86CD4004428BE /* ConversationThread.m */; };
+		315B0B7D1AA86CE3004428BE /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B7C1AA86CE3004428BE /* Message.m */; };
+		315B0B801AA86CF8004428BE /* Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B7F1AA86CF8004428BE /* Asset.m */; };
+		315B0B821AA87B51004428BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 315B0B811AA87B51004428BE /* .gitignore */; };
 		567E0ABE1AA832E700C5C10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0ABD1AA832E700C5C10B /* main.m */; };
 		567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC01AA832E700C5C10B /* AppDelegate.m */; };
 		567E0AC41AA832E700C5C10B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC31AA832E700C5C10B /* ViewController.m */; };
@@ -14,6 +25,7 @@
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
 		567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 567E0ACA1AA832E700C5C10B /* LaunchScreen.xib */; };
 		567E0AD81AA832E700C5C10B /* BridgeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AD71AA832E700C5C10B /* BridgeAppTests.m */; };
+		A8B5D6D690C660C75298EDAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3025BFD0A723ABB56918A9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +39,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		049C0555B31B986263BA42D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		0785315DDCC97639B4E7DB26 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2A3025BFD0A723ABB56918A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		315B0B621AA85F0F004428BE /* ParseClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseClient.h; sourceTree = "<group>"; };
+		315B0B631AA85F0F004428BE /* ParseClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseClient.m; sourceTree = "<group>"; };
+		315B0B651AA86047004428BE /* QueryFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryFilter.h; sourceTree = "<group>"; };
+		315B0B661AA86047004428BE /* QueryFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryFilter.m; sourceTree = "<group>"; };
+		315B0B681AA86055004428BE /* QuerySortOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuerySortOption.h; sourceTree = "<group>"; };
+		315B0B691AA86055004428BE /* QuerySortOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuerySortOption.m; sourceTree = "<group>"; };
+		315B0B6B1AA863F6004428BE /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		315B0B6D1AA86C73004428BE /* DBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBModel.h; sourceTree = "<group>"; };
+		315B0B6E1AA86C73004428BE /* DBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBModel.m; sourceTree = "<group>"; };
+		315B0B701AA86C94004428BE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		315B0B711AA86C94004428BE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		315B0B731AA86CA6004428BE /* Job.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Job.h; sourceTree = "<group>"; };
+		315B0B741AA86CA6004428BE /* Job.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Job.m; sourceTree = "<group>"; };
+		315B0B781AA86CD4004428BE /* ConversationThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationThread.h; sourceTree = "<group>"; };
+		315B0B791AA86CD4004428BE /* ConversationThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationThread.m; sourceTree = "<group>"; };
+		315B0B7B1AA86CE3004428BE /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		315B0B7C1AA86CE3004428BE /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		315B0B7E1AA86CF8004428BE /* Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asset.h; sourceTree = "<group>"; };
+		315B0B7F1AA86CF8004428BE /* Asset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Asset.m; sourceTree = "<group>"; };
+		315B0B811AA87B51004428BE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		567E0AB81AA832E700C5C10B /* BridgeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0ABC1AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0ABD1AA832E700C5C10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B5D6D690C660C75298EDAD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +96,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		315B0B601AA85EBF004428BE /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				315B0B621AA85F0F004428BE /* ParseClient.h */,
+				315B0B631AA85F0F004428BE /* ParseClient.m */,
+				315B0B651AA86047004428BE /* QueryFilter.h */,
+				315B0B661AA86047004428BE /* QueryFilter.m */,
+				315B0B681AA86055004428BE /* QuerySortOption.h */,
+				315B0B691AA86055004428BE /* QuerySortOption.m */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		315B0B611AA85ED5004428BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				315B0B6D1AA86C73004428BE /* DBModel.h */,
+				315B0B6E1AA86C73004428BE /* DBModel.m */,
+				315B0B701AA86C94004428BE /* User.h */,
+				315B0B711AA86C94004428BE /* User.m */,
+				315B0B731AA86CA6004428BE /* Job.h */,
+				315B0B741AA86CA6004428BE /* Job.m */,
+				315B0B781AA86CD4004428BE /* ConversationThread.h */,
+				315B0B791AA86CD4004428BE /* ConversationThread.m */,
+				315B0B7B1AA86CE3004428BE /* Message.h */,
+				315B0B7C1AA86CE3004428BE /* Message.m */,
+				315B0B7E1AA86CF8004428BE /* Asset.h */,
+				315B0B7F1AA86CF8004428BE /* Asset.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		315B0B841AA87D3D004428BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		315B0B851AA87D43004428BE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		315B0B861AA87D89004428BE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		567E0AAF1AA832E700C5C10B = {
 			isa = PBXGroup;
 			children = (
+				315B0B811AA87B51004428BE /* .gitignore */,
+				315B0B6B1AA863F6004428BE /* Secrets.plist */,
 				567E0ABA1AA832E700C5C10B /* BridgeApp */,
 				567E0AD41AA832E700C5C10B /* BridgeAppTests */,
 				567E0AB91AA832E700C5C10B /* Products */,
+				570BA0751BDB580F6CCE9040 /* Pods */,
+				97B2B6AEEDA7FDF7C7DBED30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +174,11 @@
 		567E0ABA1AA832E700C5C10B /* BridgeApp */ = {
 			isa = PBXGroup;
 			children = (
+				315B0B861AA87D89004428BE /* Assets */,
+				315B0B601AA85EBF004428BE /* DataAccess */,
+				315B0B611AA85ED5004428BE /* Models */,
+				315B0B841AA87D3D004428BE /* Views */,
+				315B0B851AA87D43004428BE /* ViewControllers */,
 				567E0ABF1AA832E700C5C10B /* AppDelegate.h */,
 				567E0AC01AA832E700C5C10B /* AppDelegate.m */,
 				567E0AC21AA832E700C5C10B /* ViewController.h */,
@@ -119,6 +217,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		570BA0751BDB580F6CCE9040 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				049C0555B31B986263BA42D6 /* Pods.debug.xcconfig */,
+				0785315DDCC97639B4E7DB26 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		97B2B6AEEDA7FDF7C7DBED30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A3025BFD0A723ABB56918A9 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 567E0ADB1AA832E700C5C10B /* Build configuration list for PBXNativeTarget "BridgeApp" */;
 			buildPhases = (
+				2B6AB6395B9444F39FD4C5FD /* Check Pods Manifest.lock */,
 				567E0AB41AA832E700C5C10B /* Sources */,
 				567E0AB51AA832E700C5C10B /* Frameworks */,
 				567E0AB61AA832E700C5C10B /* Resources */,
+				57994DC719061C8C20FD18E1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315B0B821AA87B51004428BE /* .gitignore in Resources */,
+				315B0B6C1AA863F6004428BE /* Secrets.plist in Resources */,
 				567E0AC71AA832E700C5C10B /* Main.storyboard in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
 				567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */,
@@ -214,13 +333,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B6AB6395B9444F39FD4C5FD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		57994DC719061C8C20FD18E1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		567E0AB41AA832E700C5C10B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315B0B721AA86C94004428BE /* User.m in Sources */,
+				315B0B671AA86047004428BE /* QueryFilter.m in Sources */,
+				315B0B6A1AA86055004428BE /* QuerySortOption.m in Sources */,
 				567E0AC41AA832E700C5C10B /* ViewController.m in Sources */,
+				315B0B6F1AA86C73004428BE /* DBModel.m in Sources */,
 				567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */,
+				315B0B801AA86CF8004428BE /* Asset.m in Sources */,
+				315B0B751AA86CA6004428BE /* Job.m in Sources */,
+				315B0B641AA85F0F004428BE /* ParseClient.m in Sources */,
+				315B0B7A1AA86CD4004428BE /* ConversationThread.m in Sources */,
+				315B0B7D1AA86CE3004428BE /* Message.m in Sources */,
 				567E0ABE1AA832E700C5C10B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +502,7 @@
 		};
 		567E0ADC1AA832E700C5C10B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 049C0555B31B986263BA42D6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BridgeApp/Info.plist;
@@ -351,6 +513,7 @@
 		};
 		567E0ADD1AA832E700C5C10B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0785315DDCC97639B4E7DB26 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BridgeApp/Info.plist;
@@ -412,6 +575,7 @@
 				567E0ADD1AA832E700C5C10B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		567E0ADE1AA832E700C5C10B /* Build configuration list for PBXNativeTarget "BridgeAppTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +584,7 @@
 				567E0AE01AA832E700C5C10B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
