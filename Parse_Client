@@ -1,0 +1,19 @@
+Parse Client
+
+1) insert(tableName: String, data: NSDictionary, completion:(NSDictionary, NSError) -> ()) 
+2) update(tableName: String, data: NSDictionary, objectId: String, completion:(NSDictionary, NSError) -> ());
+3) read(table: String, params: NSArray[Filter] completion: (NSDictionary, NSerror)->())
+4) delete(table: String, params: NSDictionary);
+
+
+SortOrder {
+	fieldName: String;
+	ascending: bool;
+}
+
+Filter {
+	fieldName: String;
+	operator (equals, lessthan, greaterThan)
+	value
+}
+ 	
