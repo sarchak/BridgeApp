@@ -20,11 +20,19 @@
 		315B0B821AA87B51004428BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 315B0B811AA87B51004428BE /* .gitignore */; };
 		567E0ABE1AA832E700C5C10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0ABD1AA832E700C5C10B /* main.m */; };
 		567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC01AA832E700C5C10B /* AppDelegate.m */; };
-		567E0AC41AA832E700C5C10B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC31AA832E700C5C10B /* ViewController.m */; };
-		567E0AC71AA832E700C5C10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC51AA832E700C5C10B /* Main.storyboard */; };
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
 		567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 567E0ACA1AA832E700C5C10B /* LaunchScreen.xib */; };
 		567E0AD81AA832E700C5C10B /* BridgeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AD71AA832E700C5C10B /* BridgeAppTests.m */; };
+		56C2219F1AA9925900E6B55A /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C221911AA9925900E6B55A /* CategoryCell.m */; };
+		56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C221921AA9925900E6B55A /* CategoryCell.xib */; };
+		56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C221941AA9925900E6B55A /* CreateJobScene1ViewController.m */; };
+		56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C221951AA9925900E6B55A /* CreateJobScene1ViewController.xib */; };
+		56C221A31AA9925900E6B55A /* CreateJobScene2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C221971AA9925900E6B55A /* CreateJobScene2ViewController.m */; };
+		56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C221981AA9925900E6B55A /* CreateJobScene2ViewController.xib */; };
+		56C221A51AA9925900E6B55A /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C2219A1AA9925900E6B55A /* TextViewController.m */; };
+		56C221A61AA9925900E6B55A /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C2219B1AA9925900E6B55A /* TextViewController.xib */; };
+		56C221A71AA9925900E6B55A /* TitleSubtitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */; };
+		56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */; };
 		A8B5D6D690C660C75298EDAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3025BFD0A723ABB56918A9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,14 +75,26 @@
 		567E0ABD1AA832E700C5C10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		567E0ABF1AA832E700C5C10B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		567E0AC01AA832E700C5C10B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		567E0AC21AA832E700C5C10B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		567E0AC31AA832E700C5C10B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		567E0AC61AA832E700C5C10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		567E0AC81AA832E700C5C10B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		567E0ACB1AA832E700C5C10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		567E0AD11AA832E700C5C10B /* BridgeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BridgeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0AD61AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0AD71AA832E700C5C10B /* BridgeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeAppTests.m; sourceTree = "<group>"; };
+		56C221901AA9925900E6B55A /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		56C221911AA9925900E6B55A /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		56C221921AA9925900E6B55A /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		56C221931AA9925900E6B55A /* CreateJobScene1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateJobScene1ViewController.h; sourceTree = "<group>"; };
+		56C221941AA9925900E6B55A /* CreateJobScene1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateJobScene1ViewController.m; sourceTree = "<group>"; };
+		56C221951AA9925900E6B55A /* CreateJobScene1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateJobScene1ViewController.xib; sourceTree = "<group>"; };
+		56C221961AA9925900E6B55A /* CreateJobScene2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateJobScene2ViewController.h; sourceTree = "<group>"; };
+		56C221971AA9925900E6B55A /* CreateJobScene2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateJobScene2ViewController.m; sourceTree = "<group>"; };
+		56C221981AA9925900E6B55A /* CreateJobScene2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateJobScene2ViewController.xib; sourceTree = "<group>"; };
+		56C221991AA9925900E6B55A /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		56C2219A1AA9925900E6B55A /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		56C2219B1AA9925900E6B55A /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
+		56C2219C1AA9925900E6B55A /* TitleSubtitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleSubtitleCell.h; sourceTree = "<group>"; };
+		56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleSubtitleCell.m; sourceTree = "<group>"; };
+		56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleSubtitleCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,13 +155,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		315B0B851AA87D43004428BE /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 		315B0B861AA87D89004428BE /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,16 +187,13 @@
 		567E0ABA1AA832E700C5C10B /* BridgeApp */ = {
 			isa = PBXGroup;
 			children = (
+				56C221A91AA9926300E6B55A /* ViewControllers */,
 				315B0B861AA87D89004428BE /* Assets */,
 				315B0B601AA85EBF004428BE /* DataAccess */,
 				315B0B611AA85ED5004428BE /* Models */,
 				315B0B841AA87D3D004428BE /* Views */,
-				315B0B851AA87D43004428BE /* ViewControllers */,
 				567E0ABF1AA832E700C5C10B /* AppDelegate.h */,
 				567E0AC01AA832E700C5C10B /* AppDelegate.m */,
-				567E0AC21AA832E700C5C10B /* ViewController.h */,
-				567E0AC31AA832E700C5C10B /* ViewController.m */,
-				567E0AC51AA832E700C5C10B /* Main.storyboard */,
 				567E0AC81AA832E700C5C10B /* Images.xcassets */,
 				567E0ACA1AA832E700C5C10B /* LaunchScreen.xib */,
 				567E0ABB1AA832E700C5C10B /* Supporting Files */,
@@ -215,6 +225,28 @@
 				567E0AD61AA832E700C5C10B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56C221A91AA9926300E6B55A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				56C221901AA9925900E6B55A /* CategoryCell.h */,
+				56C221911AA9925900E6B55A /* CategoryCell.m */,
+				56C221921AA9925900E6B55A /* CategoryCell.xib */,
+				56C221931AA9925900E6B55A /* CreateJobScene1ViewController.h */,
+				56C221941AA9925900E6B55A /* CreateJobScene1ViewController.m */,
+				56C221951AA9925900E6B55A /* CreateJobScene1ViewController.xib */,
+				56C221961AA9925900E6B55A /* CreateJobScene2ViewController.h */,
+				56C221971AA9925900E6B55A /* CreateJobScene2ViewController.m */,
+				56C221981AA9925900E6B55A /* CreateJobScene2ViewController.xib */,
+				56C221991AA9925900E6B55A /* TextViewController.h */,
+				56C2219A1AA9925900E6B55A /* TextViewController.m */,
+				56C2219B1AA9925900E6B55A /* TextViewController.xib */,
+				56C2219C1AA9925900E6B55A /* TitleSubtitleCell.h */,
+				56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */,
+				56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		570BA0751BDB580F6CCE9040 /* Pods */ = {
@@ -316,9 +348,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C221A61AA9925900E6B55A /* TextViewController.xib in Resources */,
+				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
+				56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */,
 				315B0B6C1AA863F6004428BE /* Secrets.plist in Resources */,
-				567E0AC71AA832E700C5C10B /* Main.storyboard in Resources */,
+				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
+				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
 				567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */,
 			);
@@ -374,15 +410,19 @@
 				315B0B721AA86C94004428BE /* User.m in Sources */,
 				315B0B671AA86047004428BE /* QueryFilter.m in Sources */,
 				315B0B6A1AA86055004428BE /* QuerySortOption.m in Sources */,
-				567E0AC41AA832E700C5C10B /* ViewController.m in Sources */,
+				56C221A51AA9925900E6B55A /* TextViewController.m in Sources */,
 				315B0B6F1AA86C73004428BE /* DBModel.m in Sources */,
+				56C221A31AA9925900E6B55A /* CreateJobScene2ViewController.m in Sources */,
+				56C2219F1AA9925900E6B55A /* CategoryCell.m in Sources */,
 				567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */,
 				315B0B801AA86CF8004428BE /* Asset.m in Sources */,
 				315B0B751AA86CA6004428BE /* Job.m in Sources */,
+				56C221A71AA9925900E6B55A /* TitleSubtitleCell.m in Sources */,
 				315B0B641AA85F0F004428BE /* ParseClient.m in Sources */,
 				315B0B7A1AA86CD4004428BE /* ConversationThread.m in Sources */,
 				315B0B7D1AA86CE3004428BE /* Message.m in Sources */,
 				567E0ABE1AA832E700C5C10B /* main.m in Sources */,
+				56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,14 +445,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		567E0AC51AA832E700C5C10B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				567E0AC61AA832E700C5C10B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		567E0ACA1AA832E700C5C10B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
