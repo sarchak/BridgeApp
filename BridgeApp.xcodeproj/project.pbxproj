@@ -44,6 +44,12 @@
 		BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */; };
 		BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */; };
 		BFA1DDDC1AAAF63E00CDD4FC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */; };
+		BFA1DDE01AABA0D200CDD4FC /* OpenJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDDE1AABA0D200CDD4FC /* OpenJobsViewController.m */; };
+		BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDDF1AABA0D200CDD4FC /* OpenJobsViewController.xib */; };
+		BFA1DDE51AABA19A00CDD4FC /* JobCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDE31AABA19A00CDD4FC /* JobCell.m */; };
+		BFA1DDE61AABA19A00CDD4FC /* JobCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDE41AABA19A00CDD4FC /* JobCell.xib */; };
+		BFA1DDEA1AABBC6800CDD4FC /* DetailedJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDE81AABBC6800CDD4FC /* DetailedJobViewController.m */; };
+		BFA1DDEB1AABBC6800CDD4FC /* DetailedJobViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDE91AABBC6800CDD4FC /* DetailedJobViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +87,7 @@
 		315B0B811AA87B51004428BE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		317DF99D1AAAF03800F71962 /* bridge-logo-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-logo-circle.png"; sourceTree = "<group>"; };
 		317DF99E1AAAF03800F71962 /* bridge-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-logo.png"; sourceTree = "<group>"; };
-		566D98061AAB5BCB007D1C55 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		566D98061AAB5BCB007D1C55 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Secrets.plist; path = BridgeApp/Secrets.plist; sourceTree = "<group>"; };
 		566D980C1AAB7050007D1C55 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
 		566D980D1AAB7050007D1C55 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
 		566D980E1AAB7050007D1C55 /* PriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceViewController.xib; sourceTree = "<group>"; };
@@ -120,6 +126,15 @@
 		BFA1DDD81AAAF63E00CDD4FC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		BFA1DDDD1AABA0D200CDD4FC /* OpenJobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenJobsViewController.h; sourceTree = "<group>"; };
+		BFA1DDDE1AABA0D200CDD4FC /* OpenJobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenJobsViewController.m; sourceTree = "<group>"; };
+		BFA1DDDF1AABA0D200CDD4FC /* OpenJobsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenJobsViewController.xib; sourceTree = "<group>"; };
+		BFA1DDE21AABA19A00CDD4FC /* JobCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobCell.h; sourceTree = "<group>"; };
+		BFA1DDE31AABA19A00CDD4FC /* JobCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobCell.m; sourceTree = "<group>"; };
+		BFA1DDE41AABA19A00CDD4FC /* JobCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobCell.xib; sourceTree = "<group>"; };
+		BFA1DDE71AABBC6800CDD4FC /* DetailedJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedJobViewController.h; sourceTree = "<group>"; };
+		BFA1DDE81AABBC6800CDD4FC /* DetailedJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedJobViewController.m; sourceTree = "<group>"; };
+		BFA1DDE91AABBC6800CDD4FC /* DetailedJobViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedJobViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +197,9 @@
 				56C221901AA9925900E6B55A /* CategoryCell.h */,
 				56C221911AA9925900E6B55A /* CategoryCell.m */,
 				56C221921AA9925900E6B55A /* CategoryCell.xib */,
+				BFA1DDE21AABA19A00CDD4FC /* JobCell.h */,
+				BFA1DDE31AABA19A00CDD4FC /* JobCell.m */,
+				BFA1DDE41AABA19A00CDD4FC /* JobCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +293,9 @@
 		56C221A91AA9926300E6B55A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFA1DDD81AAAF63E00CDD4FC /* LoginViewController.h */,
+				BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */,
+				BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */,
 				56C221931AA9925900E6B55A /* CreateJobScene1ViewController.h */,
 				56C221941AA9925900E6B55A /* CreateJobScene1ViewController.m */,
 				56C221951AA9925900E6B55A /* CreateJobScene1ViewController.xib */,
@@ -284,15 +305,18 @@
 				56C221991AA9925900E6B55A /* TextViewController.h */,
 				56C2219A1AA9925900E6B55A /* TextViewController.m */,
 				56C2219B1AA9925900E6B55A /* TextViewController.xib */,
-				BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */,
-				BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */,
-				BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */,
-				BFA1DDD81AAAF63E00CDD4FC /* LoginViewController.h */,
-				BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */,
-				BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */,
 				566D980C1AAB7050007D1C55 /* PriceViewController.h */,
 				566D980D1AAB7050007D1C55 /* PriceViewController.m */,
 				566D980E1AAB7050007D1C55 /* PriceViewController.xib */,
+				BFA1DDDD1AABA0D200CDD4FC /* OpenJobsViewController.h */,
+				BFA1DDDE1AABA0D200CDD4FC /* OpenJobsViewController.m */,
+				BFA1DDDF1AABA0D200CDD4FC /* OpenJobsViewController.xib */,
+				BFA1DDE71AABBC6800CDD4FC /* DetailedJobViewController.h */,
+				BFA1DDE81AABBC6800CDD4FC /* DetailedJobViewController.m */,
+				BFA1DDE91AABBC6800CDD4FC /* DetailedJobViewController.xib */,
+				BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */,
+				BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */,
+				BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -398,10 +422,13 @@
 			files = (
 				56C221A61AA9925900E6B55A /* TextViewController.xib in Resources */,
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
+				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
 				56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */,
 				566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */,
 				566D98071AAB5BCB007D1C55 /* Secrets.plist in Resources */,
+				BFA1DDE61AABA19A00CDD4FC /* JobCell.xib in Resources */,
+				BFA1DDEB1AABBC6800CDD4FC /* DetailedJobViewController.xib in Resources */,
 				317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */,
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
@@ -465,6 +492,7 @@
 				315B0B6A1AA86055004428BE /* QuerySortOption.m in Sources */,
 				56C221A51AA9925900E6B55A /* TextViewController.m in Sources */,
 				BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */,
+				BFA1DDE51AABA19A00CDD4FC /* JobCell.m in Sources */,
 				566D98161AAB8E36007D1C55 /* Constants.m in Sources */,
 				315B0B6F1AA86C73004428BE /* DBModel.m in Sources */,
 				566D980F1AAB7050007D1C55 /* PriceViewController.m in Sources */,
@@ -474,10 +502,12 @@
 				315B0B801AA86CF8004428BE /* Asset.m in Sources */,
 				315B0B751AA86CA6004428BE /* Job.m in Sources */,
 				56C221A71AA9925900E6B55A /* TitleSubtitleCell.m in Sources */,
+				BFA1DDE01AABA0D200CDD4FC /* OpenJobsViewController.m in Sources */,
 				315B0B641AA85F0F004428BE /* ParseClient.m in Sources */,
 				315B0B7A1AA86CD4004428BE /* ConversationThread.m in Sources */,
 				BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */,
 				315B0B7D1AA86CE3004428BE /* Message.m in Sources */,
+				BFA1DDEA1AABBC6800CDD4FC /* DetailedJobViewController.m in Sources */,
 				566D98131AAB8D64007D1C55 /* UserFactory.m in Sources */,
 				567E0ABE1AA832E700C5C10B /* main.m in Sources */,
 				56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */,

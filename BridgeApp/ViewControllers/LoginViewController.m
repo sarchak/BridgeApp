@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "CreateJobScene1ViewController.h"
 #import "FreelancerProfileViewController.h"
+#import "OpenJobsViewController.h"
 #import "UserFactory.h"
 #import "User.h"
 
@@ -67,9 +68,8 @@
 
 - (void)goToFreelancerView {
     [User setCurrentUser:[UserFactory getFreeLancer]];
-    FreelancerProfileViewController *fvc = [[FreelancerProfileViewController alloc] init];
-    [self.navigationController pushViewController:fvc animated:YES];
-    
+    OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
+    [self.navigationController pushViewController:jvc animated:YES];
 }
 
 @end

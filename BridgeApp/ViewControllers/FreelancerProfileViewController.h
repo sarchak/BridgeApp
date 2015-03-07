@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface FreelancerProfileViewController : UIViewController
+
+- (FreelancerProfileViewController *)initWithUser: (User*)user;
 
 @end

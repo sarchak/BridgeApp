@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *numOfReviewsLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) User *user;
+
 
 @end
 
@@ -23,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,5 +42,10 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+- (FreelancerProfileViewController *)initWithUser:(User *)user {
+    self.user = user;
+    return self;
+}
 
 @end
