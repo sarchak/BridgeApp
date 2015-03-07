@@ -34,6 +34,8 @@
 		56C221A71AA9925900E6B55A /* TitleSubtitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */; };
 		56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */; };
 		A8B5D6D690C660C75298EDAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3025BFD0A723ABB56918A9 /* libPods.a */; };
+		BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */; };
+		BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,9 @@
 		56C2219C1AA9925900E6B55A /* TitleSubtitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleSubtitleCell.h; sourceTree = "<group>"; };
 		56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleSubtitleCell.m; sourceTree = "<group>"; };
 		56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleSubtitleCell.xib; sourceTree = "<group>"; };
+		BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreelancerProfileViewController.h; sourceTree = "<group>"; };
+		BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreelancerProfileViewController.m; sourceTree = "<group>"; };
+		BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreelancerProfileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +250,9 @@
 				56C2219C1AA9925900E6B55A /* TitleSubtitleCell.h */,
 				56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */,
 				56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */,
+				BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */,
+				BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */,
+				BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -355,6 +363,7 @@
 				315B0B6C1AA863F6004428BE /* Secrets.plist in Resources */,
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
+				BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
 				567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */,
 			);
@@ -411,6 +420,7 @@
 				315B0B671AA86047004428BE /* QueryFilter.m in Sources */,
 				315B0B6A1AA86055004428BE /* QuerySortOption.m in Sources */,
 				56C221A51AA9925900E6B55A /* TextViewController.m in Sources */,
+				BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */,
 				315B0B6F1AA86C73004428BE /* DBModel.m in Sources */,
 				56C221A31AA9925900E6B55A /* CreateJobScene2ViewController.m in Sources */,
 				56C2219F1AA9925900E6B55A /* CategoryCell.m in Sources */,
