@@ -18,6 +18,8 @@
 		315B0B7D1AA86CE3004428BE /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B7C1AA86CE3004428BE /* Message.m */; };
 		315B0B801AA86CF8004428BE /* Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B7F1AA86CF8004428BE /* Asset.m */; };
 		315B0B821AA87B51004428BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 315B0B811AA87B51004428BE /* .gitignore */; };
+		317DF99F1AAAF03800F71962 /* bridge-logo-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99D1AAAF03800F71962 /* bridge-logo-circle.png */; };
+		317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99E1AAAF03800F71962 /* bridge-logo.png */; };
 		567E0ABE1AA832E700C5C10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0ABD1AA832E700C5C10B /* main.m */; };
 		567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC01AA832E700C5C10B /* AppDelegate.m */; };
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
@@ -72,6 +74,8 @@
 		315B0B7E1AA86CF8004428BE /* Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asset.h; sourceTree = "<group>"; };
 		315B0B7F1AA86CF8004428BE /* Asset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Asset.m; sourceTree = "<group>"; };
 		315B0B811AA87B51004428BE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		317DF99D1AAAF03800F71962 /* bridge-logo-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-logo-circle.png"; sourceTree = "<group>"; };
+		317DF99E1AAAF03800F71962 /* bridge-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-logo.png"; sourceTree = "<group>"; };
 		567E0AB81AA832E700C5C10B /* BridgeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0ABC1AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0ABD1AA832E700C5C10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 		315B0B861AA87D89004428BE /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				317DF99D1AAAF03800F71962 /* bridge-logo-circle.png */,
+				317DF99E1AAAF03800F71962 /* bridge-logo.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -361,9 +367,11 @@
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
 				56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */,
 				315B0B6C1AA863F6004428BE /* Secrets.plist in Resources */,
+				317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */,
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
 				BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */,
+				317DF99F1AAAF03800F71962 /* bridge-logo-circle.png in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
 				567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */,
 			);
