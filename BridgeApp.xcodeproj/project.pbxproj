@@ -77,9 +77,9 @@
 		567E0AD11AA832E700C5C10B /* BridgeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BridgeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0AD61AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0AD71AA832E700C5C10B /* BridgeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeAppTests.m; sourceTree = "<group>"; };
-		BF4F839B1AA9938400D6002E /* FreelancerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreelancerProfileViewController.h; sourceTree = SOURCE_ROOT; };
-		BF4F839C1AA9938400D6002E /* FreelancerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreelancerProfileViewController.m; sourceTree = SOURCE_ROOT; };
-		BF4F839D1AA9938400D6002E /* FreelancerProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreelancerProfileViewController.xib; sourceTree = SOURCE_ROOT; };
+		BF4F839B1AA9938400D6002E /* FreelancerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FreelancerProfileViewController.h; path = BridgeApp/FreelancerProfileViewController.h; sourceTree = SOURCE_ROOT; };
+		BF4F839C1AA9938400D6002E /* FreelancerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FreelancerProfileViewController.m; path = BridgeApp/FreelancerProfileViewController.m; sourceTree = SOURCE_ROOT; };
+		BF4F839D1AA9938400D6002E /* FreelancerProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FreelancerProfileViewController.xib; path = BridgeApp/FreelancerProfileViewController.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
