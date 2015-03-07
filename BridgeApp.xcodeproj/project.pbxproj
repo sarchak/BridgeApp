@@ -60,7 +60,7 @@
 		315B0B661AA86047004428BE /* QueryFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryFilter.m; sourceTree = "<group>"; };
 		315B0B681AA86055004428BE /* QuerySortOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuerySortOption.h; sourceTree = "<group>"; };
 		315B0B691AA86055004428BE /* QuerySortOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuerySortOption.m; sourceTree = "<group>"; };
-		315B0B6B1AA863F6004428BE /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		315B0B6B1AA863F6004428BE /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Secrets.plist; path = BridgeApp/Secrets.plist; sourceTree = "<group>"; };
 		315B0B6D1AA86C73004428BE /* DBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBModel.h; sourceTree = "<group>"; };
 		315B0B6E1AA86C73004428BE /* DBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBModel.m; sourceTree = "<group>"; };
 		315B0B701AA86C94004428BE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -160,9 +160,9 @@
 		315B0B841AA87D3D004428BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */,
 				56C2219C1AA9925900E6B55A /* TitleSubtitleCell.h */,
 				56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */,
+				56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */,
 				56C221901AA9925900E6B55A /* CategoryCell.h */,
 				56C221911AA9925900E6B55A /* CategoryCell.m */,
 				56C221921AA9925900E6B55A /* CategoryCell.xib */,
@@ -247,18 +247,18 @@
 		56C221A91AA9926300E6B55A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				56C221951AA9925900E6B55A /* CreateJobScene1ViewController.xib */,
-				56C221981AA9925900E6B55A /* CreateJobScene2ViewController.xib */,
-				56C2219B1AA9925900E6B55A /* TextViewController.xib */,
-				BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */,
 				56C221931AA9925900E6B55A /* CreateJobScene1ViewController.h */,
 				56C221941AA9925900E6B55A /* CreateJobScene1ViewController.m */,
+				56C221951AA9925900E6B55A /* CreateJobScene1ViewController.xib */,
 				56C221961AA9925900E6B55A /* CreateJobScene2ViewController.h */,
 				56C221971AA9925900E6B55A /* CreateJobScene2ViewController.m */,
+				56C221981AA9925900E6B55A /* CreateJobScene2ViewController.xib */,
 				56C221991AA9925900E6B55A /* TextViewController.h */,
 				56C2219A1AA9925900E6B55A /* TextViewController.m */,
+				56C2219B1AA9925900E6B55A /* TextViewController.xib */,
 				BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */,
 				BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */,
+				BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
