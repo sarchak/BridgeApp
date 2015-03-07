@@ -38,6 +38,8 @@
 		A8B5D6D690C660C75298EDAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3025BFD0A723ABB56918A9 /* libPods.a */; };
 		BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */; };
 		BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */; };
+		BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */; };
+		BFA1DDDC1AAAF63E00CDD4FC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,9 @@
 		BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreelancerProfileViewController.h; sourceTree = "<group>"; };
 		BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreelancerProfileViewController.m; sourceTree = "<group>"; };
 		BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreelancerProfileViewController.xib; sourceTree = "<group>"; };
+		BFA1DDD81AAAF63E00CDD4FC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +264,9 @@
 				BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */,
 				BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */,
 				BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */,
+				BFA1DDD81AAAF63E00CDD4FC /* LoginViewController.h */,
+				BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */,
+				BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -371,6 +379,7 @@
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
 				BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */,
+				BFA1DDDC1AAAF63E00CDD4FC /* LoginViewController.xib in Resources */,
 				317DF99F1AAAF03800F71962 /* bridge-logo-circle.png in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
 				567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */,
@@ -438,6 +447,7 @@
 				56C221A71AA9925900E6B55A /* TitleSubtitleCell.m in Sources */,
 				315B0B641AA85F0F004428BE /* ParseClient.m in Sources */,
 				315B0B7A1AA86CD4004428BE /* ConversationThread.m in Sources */,
+				BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */,
 				315B0B7D1AA86CE3004428BE /* Message.m in Sources */,
 				567E0ABE1AA832E700C5C10B /* main.m in Sources */,
 				56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */,
