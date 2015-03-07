@@ -18,12 +18,12 @@
     dispatch_once(&onceToken, ^{
         if (instance == nil) {
             //TODO(emrahs): API Keys are in .gitignore'd Secrets.plist for now. There should be a better way of hiding keys from GitHub.
-            NSString *path = [[NSBundle mainBundle]pathForResource:@"Secrets" ofType:@"plist"];
-            NSDictionary *secretsDict = [NSDictionary dictionaryWithContentsOfFile: path];
-            NSString *kParseApplicationId = [secretsDict objectForKey: @"ParseApplicationId"];
-            NSString *kParseClientKey = [secretsDict objectForKey: @"ParseClientKey"];
+//            NSString *path = [[NSBundle mainBundle]pathForResource:@"Secrets" ofType:@"plist"];
+//            NSDictionary *secretsDict = [NSDictionary dictionaryWithContentsOfFile: path];
+//            NSString *kParseApplicationId = [secretsDict objectForKey: @"ParseApplicationId"];
+//            NSString *kParseClientKey = [secretsDict objectForKey: @"ParseClientKey"];
             
-            [Parse setApplicationId:kParseApplicationId clientKey:kParseClientKey];
+//            [Parse setApplicationId:kParseApplicationId clientKey:kParseClientKey];
             
             instance = [[ParseClient alloc] init];
         }
