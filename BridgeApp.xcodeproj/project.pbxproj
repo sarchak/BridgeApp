@@ -156,6 +156,12 @@
 		315B0B841AA87D3D004428BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */,
+				56C2219C1AA9925900E6B55A /* TitleSubtitleCell.h */,
+				56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */,
+				56C221901AA9925900E6B55A /* CategoryCell.h */,
+				56C221911AA9925900E6B55A /* CategoryCell.m */,
+				56C221921AA9925900E6B55A /* CategoryCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,26 +241,20 @@
 		56C221A91AA9926300E6B55A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				56C221901AA9925900E6B55A /* CategoryCell.h */,
-				56C221911AA9925900E6B55A /* CategoryCell.m */,
-				56C221921AA9925900E6B55A /* CategoryCell.xib */,
+				56C221951AA9925900E6B55A /* CreateJobScene1ViewController.xib */,
+				56C221981AA9925900E6B55A /* CreateJobScene2ViewController.xib */,
+				56C2219B1AA9925900E6B55A /* TextViewController.xib */,
+				BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */,
 				56C221931AA9925900E6B55A /* CreateJobScene1ViewController.h */,
 				56C221941AA9925900E6B55A /* CreateJobScene1ViewController.m */,
-				56C221951AA9925900E6B55A /* CreateJobScene1ViewController.xib */,
 				56C221961AA9925900E6B55A /* CreateJobScene2ViewController.h */,
 				56C221971AA9925900E6B55A /* CreateJobScene2ViewController.m */,
-				56C221981AA9925900E6B55A /* CreateJobScene2ViewController.xib */,
 				56C221991AA9925900E6B55A /* TextViewController.h */,
 				56C2219A1AA9925900E6B55A /* TextViewController.m */,
-				56C2219B1AA9925900E6B55A /* TextViewController.xib */,
-				56C2219C1AA9925900E6B55A /* TitleSubtitleCell.h */,
-				56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */,
-				56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */,
 				BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */,
 				BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */,
-				BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */,
 			);
-			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		570BA0751BDB580F6CCE9040 /* Pods */ = {
