@@ -9,7 +9,9 @@
 #import "DBModel.h"
 #import "User.h"
 
+@class User;
 typedef enum JobStatus : NSUInteger {
+    JobStatusPendingAssignment,
     JobStatusActive,
     JobStatusAssigned,
     JobStatusCanceled,
@@ -23,9 +25,9 @@ typedef enum JobStatus : NSUInteger {
 @property (nonatomic, strong) NSString* jobDescription; //unfortunately "description" seems to collide with another function from NSObject
 @property (nonatomic, strong) NSNumber* price;
 @property (nonatomic, strong) NSDate* dueDate;
-@property (nonatomic, strong) User *owner;
-@property (nonatomic, assign) JobStatus status;
-@property (nonatomic, assign) NSUInteger numberOfAssets;
 @property (nonatomic, strong) NSMutableArray *applicants;
 @property (nonatomic, strong) NSString* category;
+@property (nonatomic, assign) JobStatus status;
+@property (nonatomic, assign) NSUInteger numberOfAssets;
+@property (nonatomic, strong) User *owner;
 @end

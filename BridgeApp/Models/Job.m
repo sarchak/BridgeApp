@@ -10,4 +10,7 @@
 
 @implementation Job
 
+-(void) someFunc {
+    User *user = [[User init] alloc];
+}
 @end

@@ -9,6 +9,7 @@
 #import "CreateJobScene1ViewController.h"
 #import "CreateJobScene2ViewController.h"
 #import "CategoryCell.h"
+#import "User.h"
 
 @interface CreateJobScene1ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -28,6 +29,8 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     /* Register the uitableview cell */
     [self.tableView registerNib:[UINib nibWithNibName:@"CategoryCell" bundle:nil] forCellReuseIdentifier:@"CategoryCell"];
+
+    NSLog(@"Current user : %@", [User currentUser].username);
 }
 
 - (void)didReceiveMemoryWarning {

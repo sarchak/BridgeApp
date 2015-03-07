@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "CreateJobScene1ViewController.h"
 #import "FreelancerProfileViewController.h"
+#import "UserFactory.h"
+#import "User.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -47,6 +49,7 @@
 
 // cheat code for development
 - (IBAction)businessPressed:(id)sender {
+
     [self goToBusinessView];
 }
 - (IBAction)freelancerPressed:(id)sender {
@@ -54,12 +57,16 @@
 }
 
 - (void)goToBusinessView {
+    /* Setup the business owner */
+    User *user = [UserFactory getBusiness];
+    [User setCurrentUser: user];
     CreateJobScene1ViewController *cvc = [[CreateJobScene1ViewController alloc] init];
     [self.navigationController pushViewController:cvc animated:YES];
     
 }
 
 - (void)goToFreelancerView {
+    [User setCurrentUser:[UserFactory getFreeLancer]];
     FreelancerProfileViewController *fvc = [[FreelancerProfileViewController alloc] init];
     [self.navigationController pushViewController:fvc animated:YES];
     

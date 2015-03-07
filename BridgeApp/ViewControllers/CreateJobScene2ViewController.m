@@ -32,26 +32,19 @@
     self.tableView.delegate = self;
     self.job = [[Job alloc] init];
     self.job.category = self.category;
+    self.job.owner = [User currentUser];
+    self.job.status = JobStatusPendingAssignment;
     NSLog(@"Dictionary : %@", self.job);
     
     /* Configure date picker */
     self.curDate = [NSDate date];
     self.formatter = [[NSDateFormatter alloc] init];
     [_formatter setDateFormat:@"dd/MM/yyyy --- HH:mm"];
-//    [self refreshTitle];
-}
 
-//-(void)refreshTitle {
-//    if(self.curDate) {
-//        [self.dateButton setTitle:[_formatter stringFromDate:_curDate] forState:UIControlStateNormal];
-//    } else {
-//        [self.dateButton setTitle:@"No date selected" forState:UIControlStateNormal];
-//    }
-//}
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -131,7 +124,6 @@
         int tmp = (arc4random() % 30)+1;
         return (tmp % 5 == 0);
     }];
-    //[self.datePicker slideUpInView:self.view withModalColor:[UIColor lightGrayColor]];
     [self presentSemiViewController:self.datePicker withOptions:@{
                                                                   KNSemiModalOptionKeys.pushParentBack    : @(NO),
                                                                   KNSemiModalOptionKeys.animationDuration : @(0.2),
