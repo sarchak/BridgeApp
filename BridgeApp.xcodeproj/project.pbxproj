@@ -26,8 +26,6 @@
 		567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 567E0ACA1AA832E700C5C10B /* LaunchScreen.xib */; };
 		567E0AD81AA832E700C5C10B /* BridgeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AD71AA832E700C5C10B /* BridgeAppTests.m */; };
 		A8B5D6D690C660C75298EDAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3025BFD0A723ABB56918A9 /* libPods.a */; };
-		BF4F839E1AA9938400D6002E /* FreelancerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4F839C1AA9938400D6002E /* FreelancerProfileViewController.m */; };
-		BF4F839F1AA9938400D6002E /* FreelancerProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4F839D1AA9938400D6002E /* FreelancerProfileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,9 +75,6 @@
 		567E0AD11AA832E700C5C10B /* BridgeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BridgeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0AD61AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0AD71AA832E700C5C10B /* BridgeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeAppTests.m; sourceTree = "<group>"; };
-		BF4F839B1AA9938400D6002E /* FreelancerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreelancerProfileViewController.h; sourceTree = SOURCE_ROOT; };
-		BF4F839C1AA9938400D6002E /* FreelancerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreelancerProfileViewController.m; sourceTree = SOURCE_ROOT; };
-		BF4F839D1AA9938400D6002E /* FreelancerProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreelancerProfileViewController.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +131,6 @@
 		315B0B841AA87D3D004428BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BF4F839D1AA9938400D6002E /* FreelancerProfileViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,8 +138,6 @@
 		315B0B851AA87D43004428BE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BF4F839B1AA9938400D6002E /* FreelancerProfileViewController.h */,
-				BF4F839C1AA9938400D6002E /* FreelancerProfileViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,7 +321,6 @@
 				567E0AC71AA832E700C5C10B /* Main.storyboard in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
 				567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */,
-				BF4F839F1AA9938400D6002E /* FreelancerProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +377,6 @@
 				567E0AC41AA832E700C5C10B /* ViewController.m in Sources */,
 				315B0B6F1AA86C73004428BE /* DBModel.m in Sources */,
 				567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */,
-				BF4F839E1AA9938400D6002E /* FreelancerProfileViewController.m in Sources */,
 				315B0B801AA86CF8004428BE /* Asset.m in Sources */,
 				315B0B751AA86CA6004428BE /* Job.m in Sources */,
 				315B0B641AA85F0F004428BE /* ParseClient.m in Sources */,

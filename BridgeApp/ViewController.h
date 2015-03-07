@@ -1,5 +1,5 @@
 //
-//  CategoryCell.h
+//  ViewController.h
 //  BridgeApp
 //
 //  Created by Shrikar Archak on 3/4/15.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@interface ViewController : UIViewController
+
 
 @end
+

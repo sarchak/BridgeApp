@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "CreateJobScene1ViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,10 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    CreateJobScene1ViewController *cvc = [[CreateJobScene1ViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:cvc];
-    self.window.rootViewController = nvc;
-    [self.window makeKeyAndVisible];
     return YES;
 }
 
