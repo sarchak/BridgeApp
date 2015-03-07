@@ -9,9 +9,15 @@
 #import "CreateJobScene2ViewController.h"
 #import "TitleSubtitleCell.h"
 #import "TextViewController.h"
+#import "Constants.h"
+#import "THDatePickerViewController.h"
+#import "PriceViewController.h"
 
 @interface CreateJobScene2ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) THDatePickerViewController * datePicker;
+@property (nonatomic, retain) NSDate * curDate;
+@property (nonatomic, retain) NSDateFormatter * formatter;
 @end
 
 @implementation CreateJobScene2ViewController
@@ -24,7 +30,24 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.job = [[Job alloc] init];
+    self.job.category = self.category;
+    NSLog(@"Dictionary : %@", self.job);
+    
+    /* Configure date picker */
+    self.curDate = [NSDate date];
+    self.formatter = [[NSDateFormatter alloc] init];
+    [_formatter setDateFormat:@"dd/MM/yyyy --- HH:mm"];
+//    [self refreshTitle];
 }
+
+//-(void)refreshTitle {
+//    if(self.curDate) {
+//        [self.dateButton setTitle:[_formatter stringFromDate:_curDate] forState:UIControlStateNormal];
+//    } else {
+//        [self.dateButton setTitle:@"No date selected" forState:UIControlStateNormal];
+//    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -37,7 +60,28 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     TextViewController *tvc = [[TextViewController alloc] init];
-    [self.navigationController pushViewController:tvc animated:YES];
+    tvc.job = self.job;
+    if(indexPath.row == 0){
+        tvc.isTitle = YES;
+        [self.navigationController pushViewController:tvc animated:YES];
+    } else if(indexPath.row == 1) {
+        tvc.isTitle = NO;
+        [self.navigationController pushViewController:tvc animated:YES];
+    } else if(indexPath.row == 3){
+        PriceViewController *pvc = [[PriceViewController alloc] init];
+        pvc.job = self.job;
+        [self.navigationController pushViewController:pvc animated:YES];
+    }
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self displayJob];
+}
+
+-(void) titleSubtitleCell:(TitleSubtitleCell *)cell iconTapped:(BOOL)tapped{
+    NSLog(@"Calendar icon tapped");
+    [self showCalendarView];
 }
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -61,7 +105,62 @@
             break;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.delegate = self;
     return cell;
 }
+
+#pragma DatePicker
+
+-(void) showCalendarView{
+    if(!self.datePicker)
+        self.datePicker = [THDatePickerViewController datePicker];
+    self.datePicker.date = self.curDate;
+    self.datePicker.delegate = self;
+    [self.datePicker setAllowClearDate:NO];
+    [self.datePicker setClearAsToday:YES];
+    [self.datePicker setAutoCloseOnSelectDate:NO];
+    [self.datePicker setAllowSelectionOfSelectedDate:YES];
+    [self.datePicker setDisableHistorySelection:YES];
+    [self.datePicker setDisableFutureSelection:NO];
+    //[self.datePicker setAutoCloseCancelDelay:5.0];
+    [self.datePicker setSelectedBackgroundColor:[UIColor colorWithRed:125/255.0 green:208/255.0 blue:0/255.0 alpha:1.0]];
+    [self.datePicker setCurrentDateColor:[UIColor colorWithRed:242/255.0 green:121/255.0 blue:53/255.0 alpha:1.0]];
+    [self.datePicker setCurrentDateColorSelected:[UIColor yellowColor]];
+    
+    [self.datePicker setDateHasItemsCallback:^BOOL(NSDate *date) {
+        int tmp = (arc4random() % 30)+1;
+        return (tmp % 5 == 0);
+    }];
+    //[self.datePicker slideUpInView:self.view withModalColor:[UIColor lightGrayColor]];
+    [self presentSemiViewController:self.datePicker withOptions:@{
+                                                                  KNSemiModalOptionKeys.pushParentBack    : @(NO),
+                                                                  KNSemiModalOptionKeys.animationDuration : @(0.2),
+                                                                  KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+                                                                  }];
+}
+
+- (void)datePickerDonePressed:(THDatePickerViewController *)datePicker {
+    self.curDate = datePicker.date;
+    //[self.datePicker slideDownAndOut];
+    [self dismissSemiModalView];
+}
+
+
+- (void)datePickerCancelPressed:(THDatePickerViewController *)datePicker {
+    //[self.datePicker slideDownAndOut];
+    [self dismissSemiModalView];
+}
+
+- (void)datePicker:(THDatePickerViewController *)datePicker selectedDate:(NSDate *)selectedDate {
+    NSLog(@"Date selected: %@",[_formatter stringFromDate:selectedDate]);
+    self.job.dueDate = selectedDate;
+}
+
+-(void) displayJob{
+    NSLog(@"Title : %@", self.job.title);
+    NSLog(@"Summary : %@", self.job.jobDescription);
+    NSLog(@"Due Date : %@", self.job.dueDate);
+    NSLog(@"Price : %@", self.job.price);
+}
+
 @end

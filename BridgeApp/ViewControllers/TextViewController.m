@@ -43,6 +43,14 @@
     self.heightConstraint.constant = self.view.frame.size.height;
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    if(self.isTitle){
+        self.job.title = self.jobTextView.text;
+    } else {
+        self.job.jobDescription = self.jobTextView.text;
+    }
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

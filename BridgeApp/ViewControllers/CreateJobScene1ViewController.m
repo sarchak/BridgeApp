@@ -36,7 +36,9 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     CreateJobScene2ViewController *cvc = [[CreateJobScene2ViewController alloc] init];
+    cvc.category = self.categories[indexPath.row];
     [self.navigationController pushViewController:cvc animated:YES];
     
 }

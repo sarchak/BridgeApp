@@ -47,6 +47,16 @@ install_resource()
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "THCalendarDatePicker/THCalendarDatePicker/THDateDay.xib"
+  install_resource "THCalendarDatePicker/THCalendarDatePicker/THDatePickerViewController.xib"
+  install_resource "${BUILT_PRODUCTS_DIR}/THCalendarDatePickerImages.bundle"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "THCalendarDatePicker/THCalendarDatePicker/THDateDay.xib"
+  install_resource "THCalendarDatePicker/THCalendarDatePicker/THDatePickerViewController.xib"
+  install_resource "${BUILT_PRODUCTS_DIR}/THCalendarDatePickerImages.bundle"
+fi
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then

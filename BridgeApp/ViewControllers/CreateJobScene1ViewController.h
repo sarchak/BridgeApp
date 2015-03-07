@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constants.h"
 
 @interface CreateJobScene1ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 

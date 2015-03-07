@@ -10,7 +10,6 @@
 		315B0B641AA85F0F004428BE /* ParseClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B631AA85F0F004428BE /* ParseClient.m */; };
 		315B0B671AA86047004428BE /* QueryFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B661AA86047004428BE /* QueryFilter.m */; };
 		315B0B6A1AA86055004428BE /* QuerySortOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B691AA86055004428BE /* QuerySortOption.m */; };
-		315B0B6C1AA863F6004428BE /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 315B0B6B1AA863F6004428BE /* Secrets.plist */; };
 		315B0B6F1AA86C73004428BE /* DBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B6E1AA86C73004428BE /* DBModel.m */; };
 		315B0B721AA86C94004428BE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B711AA86C94004428BE /* User.m */; };
 		315B0B751AA86CA6004428BE /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 315B0B741AA86CA6004428BE /* Job.m */; };
@@ -20,6 +19,10 @@
 		315B0B821AA87B51004428BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 315B0B811AA87B51004428BE /* .gitignore */; };
 		317DF99F1AAAF03800F71962 /* bridge-logo-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99D1AAAF03800F71962 /* bridge-logo-circle.png */; };
 		317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99E1AAAF03800F71962 /* bridge-logo.png */; };
+		566D98071AAB5BCB007D1C55 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 566D98061AAB5BCB007D1C55 /* Secrets.plist */; };
+		566D980B1AAB6317007D1C55 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D980A1AAB6317007D1C55 /* Constants.m */; };
+		566D980F1AAB7050007D1C55 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D980D1AAB7050007D1C55 /* PriceViewController.m */; };
+		566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D980E1AAB7050007D1C55 /* PriceViewController.xib */; };
 		567E0ABE1AA832E700C5C10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0ABD1AA832E700C5C10B /* main.m */; };
 		567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC01AA832E700C5C10B /* AppDelegate.m */; };
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
@@ -62,7 +65,6 @@
 		315B0B661AA86047004428BE /* QueryFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryFilter.m; sourceTree = "<group>"; };
 		315B0B681AA86055004428BE /* QuerySortOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuerySortOption.h; sourceTree = "<group>"; };
 		315B0B691AA86055004428BE /* QuerySortOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuerySortOption.m; sourceTree = "<group>"; };
-		315B0B6B1AA863F6004428BE /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Secrets.plist; path = BridgeApp/Secrets.plist; sourceTree = "<group>"; };
 		315B0B6D1AA86C73004428BE /* DBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBModel.h; sourceTree = "<group>"; };
 		315B0B6E1AA86C73004428BE /* DBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBModel.m; sourceTree = "<group>"; };
 		315B0B701AA86C94004428BE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -78,6 +80,12 @@
 		315B0B811AA87B51004428BE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		317DF99D1AAAF03800F71962 /* bridge-logo-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-logo-circle.png"; sourceTree = "<group>"; };
 		317DF99E1AAAF03800F71962 /* bridge-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-logo.png"; sourceTree = "<group>"; };
+		566D98061AAB5BCB007D1C55 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		566D98091AAB5DD9007D1C55 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		566D980A1AAB6317007D1C55 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		566D980C1AAB7050007D1C55 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
+		566D980D1AAB7050007D1C55 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
+		566D980E1AAB7050007D1C55 /* PriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceViewController.xib; sourceTree = "<group>"; };
 		567E0AB81AA832E700C5C10B /* BridgeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0ABC1AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0ABD1AA832E700C5C10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -184,11 +192,20 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		566D98081AAB5DBF007D1C55 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				566D98091AAB5DD9007D1C55 /* Constants.h */,
+				566D980A1AAB6317007D1C55 /* Constants.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		567E0AAF1AA832E700C5C10B = {
 			isa = PBXGroup;
 			children = (
+				566D98061AAB5BCB007D1C55 /* Secrets.plist */,
 				315B0B811AA87B51004428BE /* .gitignore */,
-				315B0B6B1AA863F6004428BE /* Secrets.plist */,
 				567E0ABA1AA832E700C5C10B /* BridgeApp */,
 				567E0AD41AA832E700C5C10B /* BridgeAppTests */,
 				567E0AB91AA832E700C5C10B /* Products */,
@@ -209,6 +226,7 @@
 		567E0ABA1AA832E700C5C10B /* BridgeApp */ = {
 			isa = PBXGroup;
 			children = (
+				566D98081AAB5DBF007D1C55 /* Helpers */,
 				315B0B611AA85ED5004428BE /* Models */,
 				315B0B841AA87D3D004428BE /* Views */,
 				56C221A91AA9926300E6B55A /* ViewControllers */,
@@ -267,6 +285,9 @@
 				BFA1DDD81AAAF63E00CDD4FC /* LoginViewController.h */,
 				BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */,
 				BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */,
+				566D980C1AAB7050007D1C55 /* PriceViewController.h */,
+				566D980D1AAB7050007D1C55 /* PriceViewController.m */,
+				566D980E1AAB7050007D1C55 /* PriceViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -374,7 +395,8 @@
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
 				56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */,
-				315B0B6C1AA863F6004428BE /* Secrets.plist in Resources */,
+				566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */,
+				566D98071AAB5BCB007D1C55 /* Secrets.plist in Resources */,
 				317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */,
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
@@ -439,6 +461,7 @@
 				56C221A51AA9925900E6B55A /* TextViewController.m in Sources */,
 				BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */,
 				315B0B6F1AA86C73004428BE /* DBModel.m in Sources */,
+				566D980F1AAB7050007D1C55 /* PriceViewController.m in Sources */,
 				56C221A31AA9925900E6B55A /* CreateJobScene2ViewController.m in Sources */,
 				56C2219F1AA9925900E6B55A /* CategoryCell.m in Sources */,
 				567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */,
@@ -451,6 +474,7 @@
 				315B0B7D1AA86CE3004428BE /* Message.m in Sources */,
 				567E0ABE1AA832E700C5C10B /* main.m in Sources */,
 				56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */,
+				566D980B1AAB6317007D1C55 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

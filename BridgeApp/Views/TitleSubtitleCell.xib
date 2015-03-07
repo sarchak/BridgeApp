@@ -25,7 +25,7 @@
                         <color key="textColor" red="0.48474702380000001" green="0.48474702380000001" blue="0.48474702380000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xoB-iW-pod">
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="xoB-iW-pod">
                         <rect key="frame" x="277" y="17" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="3RL-YT-PaU"/>
@@ -51,4 +51,7 @@
             <point key="canvasLocation" x="413" y="386"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="calendar" width="50" height="50"/>
+    </resources>
 </document>

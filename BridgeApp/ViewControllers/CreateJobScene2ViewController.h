@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TitleSubtitleCell.h"
+#import "THDatePickerViewController.h"
+#import "Job.h"
 
-@interface CreateJobScene2ViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
-
+@interface CreateJobScene2ViewController : UIViewController <UITableViewDelegate,UITableViewDataSource, TitleSubtitleCellDelegate,THDatePickerDelegate>
+@property (nonatomic, strong) Job *job;
+@property (nonatomic, strong) NSString *category;
 @end

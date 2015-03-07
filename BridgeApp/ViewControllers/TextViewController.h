@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constants.h"
+#import "Job.h"
 
 @interface TextViewController : UIViewController
-
+@property (weak, nonatomic) Job *job;
+@property (assign, nonatomic) BOOL isTitle;
 @end

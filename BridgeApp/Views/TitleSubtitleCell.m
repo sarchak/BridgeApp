@@ -12,6 +12,14 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(iconTapped)];
+    [self.iconImageView addGestureRecognizer:gesture];
+
+}
+
+
+-(void) iconTapped{
+    [self.delegate titleSubtitleCell:self iconTapped:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -21,16 +21,22 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts (1.1.4)
+  - KNSemiModalViewController (0.3)
   - Parse (1.6.4):
     - Bolts (~> 1.1)
+  - THCalendarDatePicker (1.0.0):
+    - KNSemiModalViewController (~> 0.3)
 
 DEPENDENCIES:
   - AFNetworking
   - Parse
+  - THCalendarDatePicker (~> 1.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   Bolts: dd9fb8433d67f5acc3b6b4d1379bbc5513d716c1
+  KNSemiModalViewController: 6fb1e2f6a4d84238b524cb705e91118b0fa6bbc9
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
+  THCalendarDatePicker: c482d4f630262bae6fe88113d0298f54bad1fd9d
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.0.rc.1
