@@ -267,11 +267,12 @@
     dict[@"objectId"] = pfObject.objectId;
     dict[@"createdAt"] = pfObject.createdAt;
     dict[@"updatedAt"] = pfObject.updatedAt;
+    dict[@"pfObject"] = pfObject;
     
     return dict;
 }
 
--(NSMutableArray*) convertPFObjectArrayToNSDictionary:(NSArray*)pfObjects {
+-(NSMutableArray*) convertPFObjectArrayToNSDictionaries:(NSArray*)pfObjects {
     NSMutableArray* array = [[NSMutableArray alloc] init];
     
     for (PFObject* pfObject in pfObjects) {

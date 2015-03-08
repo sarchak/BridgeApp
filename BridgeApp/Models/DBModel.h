@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "QuerySortOption.h"
+#import "Parse/Parse.h"
 
 @interface DBModel : NSObject
 
+@property (nonatomic, strong) PFObject* pfObject;
 @property (nonatomic, strong) NSString* objectId;
 @property (nonatomic, strong) NSDate* createdAt;
 @property (nonatomic, strong) NSDate* updatedAt;

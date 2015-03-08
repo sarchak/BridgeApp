@@ -35,10 +35,7 @@ typedef enum JobStatus : NSUInteger {
 
 // Relations
 @property (nonatomic, strong) User *owner;
-@property (nonatomic, strong) PFUser* ownerPFUser;
-
 @property (nonatomic, strong) User *assignedToUser;
-@property (nonatomic, strong) PFUser* assignedToUserPFUser;
 
 @property (nonatomic, strong) NSMutableArray* applicants; // Array of User objects
 @property (nonatomic, strong) NSMutableArray* applicantsPFUsers; // Array of PFUser objects

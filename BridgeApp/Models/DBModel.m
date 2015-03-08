@@ -28,6 +28,7 @@
 }
 
 -(void)updateWithDictionary:(NSDictionary*) dict {
+    self.pfObject = dict[@"pfObject"];
     self.objectId = dict[@"objectId"];
     self.createdAt = dict[@"createdAt"];
     self.updatedAt = dict[@"updatedAt"];

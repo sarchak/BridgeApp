@@ -38,18 +38,10 @@
     
     // Relations
     ParseClient *p = [ParseClient sharedInstance];
-    self.ownerPFUser = dict[@"ownerPFUser"];
-    self.owner = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:self.ownerPFUser]];
-    
-    self.assignedToUserPFUser = dict[@"assignedToUserPFUser"];
-    self.assignedToUser = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:self.assignedToUserPFUser]];
-    
-    self.applicantsPFUsers = dict[@"applicantsPFUsers"];
-    self.applicants = [User usersWithDictionaries:[p convertPFObjectArrayToNSDictionary:self.applicants]];
-    
-    self.attachmentsPFObjects = dict[@"attachmentsPFObjects"];
-    self.attachments = [Asset assetsWithDictionaries:[p convertPFObjectArrayToNSDictionary:self.attachmentsPFObjects]];
-    
+    self.owner = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:dict[@"owner"]]];
+    self.assignedToUser = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:dict[@"assignedToUser"]]];
+    self.applicants = [User usersWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"applicants"]]];
+    self.attachments = [Asset assetsWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"attachments"]]];
 }
 
 -(NSMutableDictionary*)toDictionary {
@@ -66,16 +58,42 @@
     [dict setObject:@(self.reviewed) forKey:@"reviewed"];
 
     // Relations
-    [dict setObject:(self.ownerPFUser ?: [NSNull null]) forKey:@"ownerPFUser"];
-    [dict setObject:(self.assignedToUserPFUser ?: [NSNull null]) forKey:@"assignedToUserPFUser"];
-    [dict setObject:(self.applicantsPFUsers ?: [NSNull null]) forKey:@"applicantsPFUsers"];
-    [dict setObject:(self.attachmentsPFObjects ?: [NSNull null]) forKey:@"attachmentsPFObjects"];
+    [dict setObject:(self.owner.pfObject ?: [NSNull null]) forKey:@"owner"];
+    [dict setObject:(self.assignedToUser.pfObject ?: [NSNull null]) forKey:@"assignedToUser"];
+    [dict setObject:(self.applicantsPFUsers ?: [NSNull null]) forKey:@"applicants"];
+    [dict setObject:(self.attachmentsPFObjects ?: [NSNull null]) forKey:@"attachments"];
 
     return dict;
 }
 
 -(NSString*)tableName {
     return @"Job";
+}
+
+-(void)addApplicant:(User*)user {
+    if (self.applicants == nil) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            if (self.applicants == nil) {
+                self.applicants = [[NSMutableArray alloc] init];
+            }
+        });
+    }
+    
+    [self.applicants addObject:user];
+}
+
+-(void)addAttachment:(Asset*)asset {
+    if (self.attachments == nil) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            if (self.attachments == nil) {
+                self.attachments = [[NSMutableArray alloc] init];
+            }
+        });
+    }
+    
+    [self.attachments addObject:asset];
 }
 
 @end

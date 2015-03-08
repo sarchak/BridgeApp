@@ -27,6 +27,6 @@
 -(void)remove:(NSString*)tableName withFilter:(NSArray*)queryFilters completion:(void (^)(NSError *error))completion ;
 
 -(NSMutableDictionary*)convertPFObjectToNSDictionary:(PFObject*)pfObject;
--(NSMutableArray*) convertPFObjectArrayToNSDictionary:(NSArray*)pfObjects 
+-(NSMutableArray*) convertPFObjectArrayToNSDictionaries:(NSArray*)pfObjects;
 
 @end
