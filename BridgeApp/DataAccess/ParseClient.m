@@ -23,6 +23,8 @@
             NSDictionary *secretsDict = [NSDictionary dictionaryWithContentsOfFile: path];
             NSString *kParseApplicationId = [secretsDict objectForKey: @"ParseApplicationId"];
             NSString *kParseClientKey = [secretsDict objectForKey: @"ParseClientKey"];
+            kParseApplicationId = @"skXmwEdM7oNPNJcuvhjSyDYauwS4tEaDHHdbvJsM" ;
+            kParseClientKey = @"gQgOjJZUKz8gHQ1VpCcDigH2qJTNuQ2OBIww263x";
             
             [Parse setApplicationId:kParseApplicationId clientKey:kParseClientKey];
             
