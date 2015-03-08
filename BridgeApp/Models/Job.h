@@ -23,15 +23,18 @@ typedef enum JobStatus : NSUInteger {
 @interface Job : DBModel
 
 @property (nonatomic, strong) NSString* title;
-@property (nonatomic, strong) NSString* jobDescription; //unfortunately "description" seems to collide with another function from NSObject
-@property (nonatomic, strong) NSNumber* price;
+@property (nonatomic, strong) NSString* jobDescription;
 @property (nonatomic, strong) NSDate* dueDate;
-@property (nonatomic, strong) NSMutableArray *applicants;
-@property (nonatomic, strong) NSString* category;
+@property (nonatomic, strong) NSNumber* price;
+@property (nonatomic, strong) NSString* ownerId;
 @property (nonatomic, assign) JobStatus status;
+@property (nonatomic, strong) NSString* statusText;
+@property (nonatomic, assign) BOOL reviewed;
+@property (nonatomic, strong) NSNumber* rating;
+@property (nonatomic, strong) NSString* category;
+@property (nonatomic, strong) NSArray* attachmentIds;
+@property (nonatomic, strong) NSMutableArray* applicantIds;
 @property (nonatomic, assign) NSUInteger numberOfAssets;
 @property (nonatomic, strong) User *owner;
 
-
--(PFObject*) getAsPFObject; 
 @end

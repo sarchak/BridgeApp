@@ -12,14 +12,18 @@
 @interface DBModel : NSObject
 
 @property (nonatomic, strong) NSString* objectId;
-@property (nonatomic, strong) NSDate* createdOn;
+@property (nonatomic, strong) NSDate* createdAt;
+@property (nonatomic, strong) NSDate* updatedAt;
+
+-(DBModel*)initWithDictionary:(NSDictionary*)dict;
+-(void)updateWithDictionary:(NSDictionary*) dict;
 
 -(NSDictionary*)serialize;
 -(NSString*)tableName;
--(void)saveWithCompletion:(void (^)(NSArray *result, NSError *error))completion;
--(void)deleteWithCompletion:(void (^)(NSArray *result, NSError *error))completion;
--(void)findObjectsBy:(NSArray*)queryFilters sortOption:(QuerySortOption*)sortOption completion:(void (^)(NSArray *result, NSError *error))completion;
--(void)findObject:(NSArray*)queryFilters completion:(void (^)(DBModel *result, NSError *error))completion;
+-(void)saveWithCompletion:(void (^)(NSError *error))completion;
+-(void)deleteWithCompletion:(void (^)(NSError *error))completion;
+-(void)findWithCompletion:(NSArray*)withFilters sortOptions:(NSArray*)sortOptions completion:(void (^)(NSArray *foundObjects, NSError *error))completion;
+-(void)findByIdWithCompletion:(NSString*)objectId completion:(void (^)(DBModel *foundObject, NSError *error))completion;
 
 
 @end

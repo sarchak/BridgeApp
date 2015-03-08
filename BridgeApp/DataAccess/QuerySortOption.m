@@ -10,4 +10,13 @@
 
 @implementation QuerySortOption
 
++(QuerySortOption*)sortByFields:(NSString*)fieldNames direction:(QuerySortDirection)direction {
+    
+    QuerySortOption* option = [[QuerySortOption alloc] init];
+    option.fieldNames = fieldNames;
+    option.sortDirection = direction;
+    
+    return option;
+}
+
 @end

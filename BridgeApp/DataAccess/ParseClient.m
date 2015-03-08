@@ -8,6 +8,7 @@
 
 #import "ParseClient.h"
 #import <Parse/Parse.h>
+#import "User.h"
 
 @implementation ParseClient
 
@@ -18,117 +19,254 @@
     dispatch_once(&onceToken, ^{
         if (instance == nil) {
             //TODO(emrahs): API Keys are in .gitignore'd Secrets.plist for now. There should be a better way of hiding keys from GitHub.
-//            NSString *path = [[NSBundle mainBundle]pathForResource:@"Secrets" ofType:@"plist"];
-//            NSDictionary *secretsDict = [NSDictionary dictionaryWithContentsOfFile: path];
-//            NSString *kParseApplicationId = [secretsDict objectForKey: @"ParseApplicationId"];
-//            NSString *kParseClientKey = [secretsDict objectForKey: @"ParseClientKey"];
+            NSString *path = [[NSBundle mainBundle]pathForResource:@"Secrets" ofType:@"plist"];
+            NSDictionary *secretsDict = [NSDictionary dictionaryWithContentsOfFile: path];
+            NSString *kParseApplicationId = [secretsDict objectForKey: @"ParseApplicationId"];
+            NSString *kParseClientKey = [secretsDict objectForKey: @"ParseClientKey"];
             
-//            [Parse setApplicationId:kParseApplicationId clientKey:kParseClientKey];
+            [Parse setApplicationId:kParseApplicationId clientKey:kParseClientKey];
             
-            instance = [[ParseClient alloc] init];
+            instance = [[ParseClient alloc] internalInit];
         }
     });
     
     return instance;
 }
 
+- (ParseClient*)internalInit {
+    return [super init];
+}
 
--(void)signUp:(NSString*)username password:(NSString*)password completion:(void (^)(NSDictionary *result, NSError *error))completion {
-    PFUser *user = [PFUser user];
-    user.username = username;
-    user.password = password;
+- (ParseClient*)init {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:@"ParseClient class is singleton. Please use [ParseClient sharedInstance] to get an instance."
+                                 userInfo:nil];
+    return nil;
+}
+
+
+-(void)signUp:(User *)user completion:(void (^)(NSError *error))completion {
+    PFUser *pfUser = [PFUser user];
+    pfUser.username = user.email;
+    pfUser.email = user.email;
+    pfUser.password = user.password;
+
+    NSDictionary* dict = [user serialize];
+    NSArray* keys = [dict allKeys];
+    for (id key in keys) {
+        if ([key isEqual:@"objectId"]
+            || [key isEqual:@"createdAt"]
+            || [key isEqual:@"updatedAt"]
+            || [key isEqual:@"password"]
+            || [key isEqual:@"email"]) {
+            // skip these fields
+            continue;
+        }
+        pfUser[key] = dict[key];
+    }
     
-    //TODO(emrahs): decide what to do with the e-mails
-    //user.email = @"email@example.com";
-    
-    //TODO(emrahs): we should probably use PFUser instead of creating our own User row type
-    // other fields can be set just like with PFObject
-    //user[@"phone"] = @"415-392-0202";
-    
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            // TODO(emrahs): Return the user object as NSDictionary and let the user start use the app
+    [pfUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [self login:user.email password:user.password completion:completion];
         } else {
-            NSString *errorString = [error userInfo][@"error"];
-            // TODO(emrahs): Return the signup error
+            completion(error);
         }
     }];
 }
 
--(void)login:(NSString*)username password:(NSString*)password completion:(void (^)(NSDictionary *result, NSError *error))completion {
-    [PFUser logInWithUsernameInBackground:username password:password
-        block:^(PFUser *user, NSError *error) {
-            if (user) {
-                // TODO(emrahs): Do stuff after successful login.
-            } else {
-                // TODO(emrahs): The login failed. Check error to see why.
+-(void)updateUser:(User *)user completion:(void (^)(NSError *error))completion {
+    PFUser *pfUser = [PFUser currentUser];
+    if (![pfUser.objectId isEqual:user.objectId]) {
+        NSString* errorMessage = [NSString stringWithFormat:@"Current user (%@) is not the user that is being updated! (%@)", pfUser, user];
+        NSError* error = [NSError errorWithDomain:errorMessage code:1 userInfo:nil];
+        completion(error);
+        return;
+    }
+    
+    NSDictionary* dict = [user serialize];
+    NSArray* keys = [dict allKeys];
+    for (id key in keys) {
+        if ([key isEqual:@"objectId"]
+            || [key isEqual:@"createdAt"]
+            || [key isEqual:@"createdAt"]
+            || [key isEqual:@"email"]) {
+            // these fields are not editable
+            continue;
+        }
+        else if ([key isEqual:@"password"] && [dict[key] isEqual:[NSNull null]]) {
+            // password was not reset
+            continue;
+        }
+        
+        pfUser[key] = dict[key];
+    }
+    
+    [pfUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        completion(error);
+    }];
+}
+
+-(void)login:(NSString*)email password:(NSString*)password completion:(void (^)(NSError *error))completion {
+    [PFUser logInWithUsernameInBackground:email password:password
+        block:^(PFUser *pfUser, NSError *error) {
+            if (pfUser) {
+                @try {
+                    NSDictionary* dict = [self convertPFObjectToNSDictionary:pfUser];
+                    User* user = [[User alloc] initWithDictionary:dict];
+                    [user setAsCurrentUser];
+                }
+                @catch (NSException *exception) {
+                    NSLog(@"Exception during parse login: %@", exception.description);
+                    completion([NSError errorWithDomain:exception.description code:1 userInfo:nil]);
+                }
+                completion(nil);
+            }
+            else {
+                completion(error);
             }
     }];
 }
 
--(void)read:(NSString*)fromTableName withFilter:(NSArray*)queryFilters sortOption:(QuerySortOption*)sortOption completion:(void (^)(NSArray *result, NSError *error))completion {
-    PFQuery *query = [PFQuery queryWithClassName:fromTableName];
+-(void)read:(NSString*)fromTableName withFilters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions completion:(void (^)(NSArray *result, NSError *error))completion {
     
-    //TODO(emrahs): iterate over query filters and populate where clause
-    //[query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
+    if ([fromTableName isEqual:@"User"]) {
+        NSError* error = [NSError errorWithDomain:@"Unfortunately User table cannot be queried in the generic way." code:1 userInfo:nil];
+        completion(nil, error);
+        return;
+    }
     
-    //TODO(emrahs): consume the sortOption
+    PFQuery *query = [self buildQuery:fromTableName withFilter:queryFilters sortOptions:sortOptions];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSMutableArray* objectDictionaries = [[NSMutableArray alloc] init];
+            for (PFObject *object in objects) {
+                [objectDictionaries addObject:[self convertPFObjectToNSDictionary:object]];
+            }
+            completion(objectDictionaries, error);
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
+
+-(void)readById:(NSString*)tableName objectId:(NSString*)objectId completion:(void (^)(NSDictionary *result, NSError *error))completion {
+    PFQuery *query = [PFQuery queryWithClassName:tableName];
+    [query whereKey:@"objectId" equalTo:objectId];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            
-            // TODO(emrahs): Return an array of dictionaries.
-            
-//            // The find succeeded.
-//            NSLog(@"Successfully retrieved %d scores.", objects.count);
-//            // Do something with the found objects
-//            for (PFObject *object in objects) {
-//                NSLog(@"%@", object.objectId);
-//            }
+            NSDictionary* foundObject = nil;
+            for (PFObject *object in objects) {
+                foundObject = [self convertPFObjectToNSDictionary:object];
+                break;
+            }
+            completion(foundObject, error);
         } else {
-            // Log details of the failure
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            completion(nil, error);
         }
     }];
 }
--(void)update:(NSString*)tableName withFilter:(NSArray*)queryFilters sortOption:(QuerySortOption*)sortOption completion:(void (^)(NSDictionary *result, NSError *error))completion {
+
+-(void)update:(NSString*)tableName row:(NSDictionary*)row completion:(void (^)(NSDictionary* dict, NSError *error))completion {
+    PFQuery *query = [PFQuery queryWithClassName:tableName];
+    [query whereKey:@"objectId" equalTo:row[@"objectId"]];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject * foundObject, NSError *error) {
+        if (!error) {
+            for (id columnName in row) {
+                if ([row isEqual:@"objectId"] || [row isEqual:@"createdAt"] || [row isEqual:@"updatedAt"]) {
+                    // these columns are not editable
+                    continue;
+                }
+                foundObject[columnName] = row[columnName];
+            }
+            
+            // Save
+            [foundObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                completion([self convertPFObjectToNSDictionary:foundObject], error);
+            }];
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
+
+-(void)insert:(NSString*)tableName row:(NSDictionary*)row completion:(void (^)(NSDictionary* dict, NSError *error))completion {
+    PFObject *object = [PFObject objectWithClassName:tableName];
+    
+    for (id columnName in row) {
+        if ([row isEqual:@"objectId"] || [row isEqual:@"createdAt"] || [row isEqual:@"createdAt"]) {
+            // these columns are not editable
+            continue;
+        }
+        object[columnName] = row[columnName];
+    }
+    
+    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        completion([self convertPFObjectToNSDictionary:object], error);
+    }];
+}
+
+-(void)remove:(NSString*)tableName withFilter:(NSArray*)queryFilters completion:(void (^)(NSError *error))completion {
+    PFQuery *query = [self buildQuery:tableName withFilter:queryFilters sortOptions:nil];
+    
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject * foundObject, NSError *error) {
+        if (!error) {
+            // Save
+            [foundObject deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                completion(error);
+            }];
+        } else {
+            completion(error);
+        }
+    }];
+}
+-(PFQuery*)buildQuery:(NSString*)tableName withFilter:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions {
     PFQuery *query = [PFQuery queryWithClassName:tableName];
     
-    // TODO(emrahs): use objectId to update
-    
-    // Retrieve the object by id
-    [query getObjectInBackgroundWithId:@"xWMyZ4YEGZ" block:^(PFObject *gameScore, NSError *error) {
-        
-        // Now let's update it with some new data. In this case, only cheatMode and score
-        // will get sent to the cloud. playerName hasn't changed.
-//        gameScore[@"cheatMode"] = @YES;
-//        gameScore[@"score"] = @1338;
-//        [gameScore saveInBackground];
-        
-        //TODO(emrahs): call the completion callback when done
-        
-    }];
-}
-
--(void)insert:(NSString*)tableName withFilter:(NSArray*)queryFilters sortOption:(QuerySortOption*)sortOption completion:(void (^)(NSDictionary *result, NSError *error))completion {
-    PFObject *object = [PFObject objectWithClassName:tableName];
-    //TODO(emrahs): Populate object from NSDictionary and handle results
-    
-//    gameScore[@"score"] = @1337;
-//    gameScore[@"playerName"] = @"Sean Plott";
-//    gameScore[@"cheatMode"] = @NO;
-    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            completion(object,nil);
-        } else {
-            // There was a problem, check error.description
+    for (QueryFilter* filter in queryFilters) {
+        switch (filter.operator) {
+            case QueryFilterOperatorEquals:
+                [query whereKey:filter.fieldName equalTo:filter.value];
+                break;
+            case QueryFilterOperatorGreaterThan:
+                [query whereKey:filter.fieldName greaterThan:filter.value];
+                break;
+            case QueryFilterOperatorGreaterThanOrEqualTo:
+                [query whereKey:filter.fieldName greaterThanOrEqualTo:filter.value];
+                break;
+            case QueryFilterOperatorLessThan:
+                [query whereKey:filter.fieldName lessThan:filter.value];
+                break;
+            case QueryFilterOperatorLessThanOrEqualTo:
+                [query whereKey:filter.fieldName lessThanOrEqualTo:filter.value];
         }
-    }];
+    }
+    
+    for (QuerySortOption* option in sortOptions) {
+        switch (option.sortDirection) {
+            case QuerySortDirectionAscending:
+                [query orderByAscending:option.fieldNames];
+                break;
+            case QuerySortDirectionDescending:
+                [query orderByDescending:option.fieldNames];
+                break;
+        }
+    }
+    
+    return query;
 }
 
--(void)remove:(NSString*)tableName withFilter:(NSArray*)queryFilters sortOption:(QuerySortOption*)sortOption completion:(void (^)(NSDictionary *result, NSError *error))completion {
-//    [gameScore deleteInBackground];
-    //TODO(emrahs): actually use deleteInBackgroundWithBlock or deleteInBackgroundWithTarget:selector: to call the completion callback after deleting
+-(NSMutableDictionary*)convertPFObjectToNSDictionary:(PFObject*)pfObject {
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    NSArray* keys = [pfObject allKeys];
+    for (id key in keys) {
+        dict[key] = pfObject[key];
+    }
+    dict[@"objectId"] = pfObject.objectId;
+    dict[@"createdAt"] = pfObject.createdAt;
+    dict[@"updatedAt"] = pfObject.updatedAt;
+    
+    return dict;
 }
 
 

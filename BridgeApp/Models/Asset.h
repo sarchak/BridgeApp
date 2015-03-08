@@ -10,7 +10,6 @@
 
 @interface Asset : DBModel
 
-@property (nonatomic, strong) NSString* assetId;
 @property (nonatomic, strong) NSString* ownerId;
 @property (nonatomic, strong) NSString* assetURL;
 

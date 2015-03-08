@@ -10,4 +10,14 @@
 
 @implementation QueryFilter
 
++(QueryFilter*)filterByField:(NSString*)fieldName operator:(QueryFilterOperator)op value:(NSObject*)value {
+    QueryFilter *filter = [[QueryFilter alloc] init];
+    filter.fieldName = fieldName;
+    filter.operator = op;
+    filter.value = value;
+    
+    return filter;
+}
+
+
 @end

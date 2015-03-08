@@ -15,7 +15,13 @@ typedef enum QuerySortDirection : NSUInteger {
 
 @interface QuerySortOption : NSObject
 
-@property (nonatomic, strong) NSString* fieldName;
+
 @property (nonatomic, assign) QuerySortDirection sortDirection;
+// Comma-delimited field name list
+@property (nonatomic, strong) NSString* fieldNames;
+
+
+
++(QuerySortOption*)sortByFields:(NSString*)fieldNames direction:(QuerySortDirection)direction;
 
 @end

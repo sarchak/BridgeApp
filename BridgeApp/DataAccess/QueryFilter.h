@@ -11,13 +11,18 @@
 typedef enum QueryFilterOperator : NSUInteger {
     QueryFilterOperatorEquals,
     QueryFilterOperatorLessThan,
-    QueryFilterOperatorGreaterThan
+    QueryFilterOperatorLessThanOrEqualTo,
+    QueryFilterOperatorGreaterThan,
+    QueryFilterOperatorGreaterThanOrEqualTo
 } QueryFilterOperator;
 
 @interface QueryFilter : NSObject
 
 @property (nonatomic, strong) NSString* fieldName;
 @property (nonatomic, assign) QueryFilterOperator operator;
-@property (nonatomic, strong) NSString* value;
+@property (nonatomic, strong) NSObject* value;
+
+
++(QueryFilter*)filterByField:(NSString*)fieldName operator:(QueryFilterOperator)op value:(NSObject*)value;
 
 @end

@@ -10,9 +10,8 @@
 
 @interface ConversationThread : DBModel
 
-@property (nonatomic, strong) NSString* threadId;
 @property (nonatomic, strong) NSString* jobId;
-@property (nonatomic, strong) NSString* customerId;
-@property (nonatomic, strong) NSString* providerId;
+@property (nonatomic, strong) NSString* businessId;
+@property (nonatomic, strong) NSString* freelancerId;
 
 @end
