@@ -22,6 +22,15 @@
     return user;
 }
 
++(PFUser*) getFreeLancerAsPFUser {
+    PFUser *user = [PFUser user];
+    user[USERNAME] = @"DevGuy";
+    user[PASSWORD] = @"Something";
+    user[USERTYPE] = [NSNumber numberWithInt:UserTypeFreelancer];
+    return user;
+}
+
+
 +(User*) getBusiness {
     User *user = [[User alloc] init];
     user.username = @"Philz Coffee";
@@ -31,7 +40,19 @@
     return user;
 }
 
-+(User*) getUser:(NSDictionary *)dictionary{
++(PFUser*) getBusinessAsPFUser{
+    PFUser *user = [PFUser user];
+    user.username = @"philz";
+    user.password = @"coffee";
+    user[BUSINESSNAME] = @"Philz Coffee";
+    user[USERTYPE] = [NSNumber numberWithInt:UserTypeBusiness];
+    
+    return user;
+}
+
+
+-(User*) getUser:(NSDictionary *)dictionary{
+
     User *user = [[User alloc] init];
     user.dictionary = dictionary;
     user.username = dictionary[USERNAME];

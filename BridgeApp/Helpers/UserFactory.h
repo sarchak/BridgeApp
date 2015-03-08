@@ -14,4 +14,8 @@
 +(User*) getFreelancer;
 +(User*) getBusiness;
 +(User*) getUser:(NSDictionary *)dictionary;
+
++(PFUser*) getFreeLancerAsPFUser;
++(PFUser*) getBusinessAsPFUser;
+
 @end

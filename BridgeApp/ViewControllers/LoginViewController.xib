@@ -20,7 +20,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who are you?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="VrK-MF-M3R">
-                            <rect key="frame" x="98" y="111" width="124" height="28"/>
+                            <rect key="frame" x="98" y="111" width="124" height="27.5"/>
                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                             <color key="textColor" red="0.48474702380000001" green="0.48474702380000001" blue="0.48474702380000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -52,13 +52,13 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-Ca-gWA">
-                            <rect key="frame" x="121" y="29" width="79" height="21"/>
+                            <rect key="frame" x="121" y="29" width="79" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.48474702380000001" green="0.48474702380000001" blue="0.48474702380000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j96-V0-mWI">
-                            <rect key="frame" x="122" y="130" width="76" height="21"/>
+                            <rect key="frame" x="122" y="130" width="76" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.48474702380000001" green="0.48474702380000001" blue="0.48474702380000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -94,6 +94,15 @@
                             </state>
                             <connections>
                                 <action selector="freelancerPressed:" destination="-1" eventType="touchUpInside" id="p2N-9t-4WN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRZ-rH-ChW">
+                            <rect key="frame" x="137" y="295" width="49" height="30"/>
+                            <state key="normal" title="Signup">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="signup:" destination="-1" eventType="touchUpInside" id="r1N-bM-7ax"/>
                             </connections>
                         </button>
                     </subviews>

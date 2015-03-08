@@ -8,6 +8,7 @@
 
 #import "DBModel.h"
 #import "User.h"
+#import "Parse/Parse.h"
 
 @class User;
 typedef enum JobStatus : NSUInteger {
@@ -30,4 +31,7 @@ typedef enum JobStatus : NSUInteger {
 @property (nonatomic, assign) JobStatus status;
 @property (nonatomic, assign) NSUInteger numberOfAssets;
 @property (nonatomic, strong) User *owner;
+
+
+-(PFObject*) getAsPFObject; 
 @end

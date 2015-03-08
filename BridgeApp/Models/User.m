@@ -9,6 +9,7 @@
 #import "User.h"
 #import "UserFactory.h"
 
+
 @implementation User
 
 //-(User*)currentUser {
@@ -17,6 +18,15 @@
 //    
 //    return nil;
 //}
+
+-(PFUser*) getAsPFUser {
+    PFUser *user = [PFUser user];
+    user[USERNAME] = self.username;
+    user[PASSWORD] = self.password;
+    user[USERTYPE] = [NSNumber numberWithInt:self.usertype];
+    return user;
+}
+
 
 -(void)signUpWithCompletion:(void (^)(NSDictionary *result, NSError *error))completion {
     //TODO(emrahs): Saving user first time happens here.
