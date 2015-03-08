@@ -10,13 +10,13 @@
 
 NSString *const JOB_TYPE          = @"job_type";
 NSString *const TITLE             = @"title";
-NSString *const SUMMARY           = @"summary";
-NSString *const DUE_DATE          = @"due_date";
+NSString *const SUMMARY           = @"jobDescription";
+NSString *const DUE_DATE          = @"dueDate";
 NSString *const PRICE             = @"price";
-NSString *const JOBSTATUS         = @"job_status";
+NSString *const JOBSTATUS         = @"status";
 NSString *const OWNER             = @"owner";
 NSString *const CATEGORY          = @"category";
-NSString *const BUSINESSNAME      = @"business_name";
+NSString *const BUSINESSNAME      = @"businessName";
 
 
 NSString *const USERNAME          = @"username";

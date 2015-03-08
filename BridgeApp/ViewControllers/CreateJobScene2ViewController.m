@@ -144,18 +144,18 @@
     jobObject[OWNER] = [PFUser currentUser];
     jobObject[JOBSTATUS] = [NSNumber numberWithInt:self.job.status];
     
-//    [jobObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if(error == nil){
-//            NSLog(@"Job created");
-//        } else {
-//            NSLog(@"Job creation failed :%@", error);
-//        }
-//
-//    }];
-    
-    [self.job saveWithCompletion:^(NSError *error) {
-        NSLog(@"Save with completion : %@", error);
+    [jobObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if(error == nil){
+            NSLog(@"Job created");
+        } else {
+            NSLog(@"Job creation failed :%@", error);
+        }
+
     }];
+    
+//    [self.job saveWithCompletion:^(NSError *error) {
+//        NSLog(@"Save with completion : %@", error);
+//    }];
 }
 
 

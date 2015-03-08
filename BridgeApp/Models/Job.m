@@ -67,7 +67,7 @@
 }
 
 -(NSString*)tableName {
-    return @"Job";
+    return @"Jobs";
 }
 
 -(void)addApplicant:(User*)user {
