@@ -11,6 +11,8 @@
 #import "JobCell.h"
 #import "DetailedJobViewController.h"
 
+#import "JobFactory.h"
+
 @interface OpenJobsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -29,6 +31,9 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:@"JobCell" bundle:nil] forCellReuseIdentifier:@"JobCell"];
+    
+    // @TODO fill with real data
+    self.jobs = [[NSArray alloc] initWithObjects:[JobFactory getJob1], [JobFactory getJob1], nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,15 +50,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;//self.jobs.count;
+    return self.jobs.count;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     Job *currentJob = self.jobs[indexPath.row];
-    
-    currentJob.title = [NSString stringWithFormat:@"Logo needed for %d", (int)indexPath.row];
-    
+        
     DetailedJobViewController *djvc = [[DetailedJobViewController alloc] initWithJob:currentJob];
     [self.navigationController pushViewController:djvc animated:YES];
 }

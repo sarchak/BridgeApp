@@ -57,6 +57,7 @@
 		BFA1DDEB1AABBC6800CDD4FC /* DetailedJobViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDE91AABBC6800CDD4FC /* DetailedJobViewController.xib */; };
 		BFA1DDEF1AABDA7900CDD4FC /* ThreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDED1AABDA7900CDD4FC /* ThreadCell.m */; };
 		BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDEE1AABDA7900CDD4FC /* ThreadCell.xib */; };
+		BFA1DDF31AABE03F00CDD4FC /* JobFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDF21AABE03F00CDD4FC /* JobFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,8 @@
 		BFA1DDEC1AABDA7900CDD4FC /* ThreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadCell.h; sourceTree = "<group>"; };
 		BFA1DDED1AABDA7900CDD4FC /* ThreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadCell.m; sourceTree = "<group>"; };
 		BFA1DDEE1AABDA7900CDD4FC /* ThreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadCell.xib; sourceTree = "<group>"; };
+		BFA1DDF11AABE03F00CDD4FC /* JobFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobFactory.h; path = Helpers/JobFactory.h; sourceTree = "<group>"; };
+		BFA1DDF21AABE03F00CDD4FC /* JobFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobFactory.m; path = Helpers/JobFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +247,8 @@
 				566D98141AAB8DE7007D1C55 /* Constants.h */,
 				566D98111AAB8D64007D1C55 /* UserFactory.h */,
 				566D98121AAB8D64007D1C55 /* UserFactory.m */,
+				BFA1DDF11AABE03F00CDD4FC /* JobFactory.h */,
+				BFA1DDF21AABE03F00CDD4FC /* JobFactory.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 				315B0B641AA85F0F004428BE /* ParseClient.m in Sources */,
 				315B0B7A1AA86CD4004428BE /* ConversationThread.m in Sources */,
 				BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */,
+				BFA1DDF31AABE03F00CDD4FC /* JobFactory.m in Sources */,
 				315B0B7D1AA86CE3004428BE /* Message.m in Sources */,
 				BFA1DDEA1AABBC6800CDD4FC /* DetailedJobViewController.m in Sources */,
 				566D98131AAB8D64007D1C55 /* UserFactory.m in Sources */,

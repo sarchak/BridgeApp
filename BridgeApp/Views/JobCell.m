@@ -20,4 +20,9 @@
     // Configure the view for the selected state
 }
 
+- (void)setJob:(Job *)job {
+    self.jobSummary.text = job.jobDescription;
+    
+}
+
 @end
