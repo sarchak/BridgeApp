@@ -12,7 +12,7 @@
 @implementation UserFactory
 
 
-+(User*) getFreeLancer {
++(User*) getFreelancer {
     User *user = [[User alloc] init];
     user.username = @"DevGuy";
     user.password = @"Something";
@@ -31,7 +31,7 @@
     return user;
 }
 
--(User*) getUser:(NSDictionary *)dictionary{
++(User*) getUser:(NSDictionary *)dictionary{
     User *user = [[User alloc] init];
     user.dictionary = dictionary;
     user.username = dictionary[USERNAME];

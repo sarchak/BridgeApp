@@ -11,7 +11,7 @@
 
 @interface UserFactory : NSObject
 
-+(User*) getFreeLancer;
++(User*) getFreelancer;
 +(User*) getBusiness;
-+(id) getUser:(NSDictionary *)dictionary;
++(User*) getUser:(NSDictionary *)dictionary;
 @end

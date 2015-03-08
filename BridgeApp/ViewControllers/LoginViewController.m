@@ -50,7 +50,6 @@
 
 // cheat code for development
 - (IBAction)businessPressed:(id)sender {
-
     [self goToBusinessView];
 }
 - (IBAction)freelancerPressed:(id)sender {
@@ -67,7 +66,7 @@
 }
 
 - (void)goToFreelancerView {
-    [User setCurrentUser:[UserFactory getFreeLancer]];
+    [User setCurrentUser:[UserFactory getFreelancer]];
     OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
     [self.navigationController pushViewController:jvc animated:YES];
 }
