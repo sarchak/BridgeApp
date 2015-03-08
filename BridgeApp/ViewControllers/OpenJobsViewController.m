@@ -33,7 +33,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"JobCell" bundle:nil] forCellReuseIdentifier:@"JobCell"];
     
     // @TODO fill with real data
-    self.jobs = [[NSArray alloc] initWithObjects:[JobFactory getJob1], [JobFactory getJob1], nil];
+    self.jobs = [[NSArray alloc] initWithObjects:[JobFactory getJob1], [JobFactory getJob2], nil];
 }
 
 - (void)didReceiveMemoryWarning {

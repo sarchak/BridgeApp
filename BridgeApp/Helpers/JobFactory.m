@@ -21,4 +21,14 @@
     return job;
 }
 
++(Job*) getJob2 {
+    Job *job = [[Job alloc] init];
+    job.title = @"Non-profit campaign banner";
+    job.jobDescription = @"We are a cancer research center. We need someone to design a banner to be used outside our office.";
+    job.price = @399;
+    job.owner = [UserFactory getUser:@{@"username": @"david at box", @"usertype": [NSNumber numberWithInt: UserTypeBusiness]}];
+    
+    return job;
+}
+
 @end

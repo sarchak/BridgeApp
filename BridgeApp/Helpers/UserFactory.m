@@ -51,7 +51,7 @@
 }
 
 
--(User*) getUser:(NSDictionary *)dictionary{
++(User*) getUser:(NSDictionary *)dictionary{
 
     User *user = [[User alloc] init];
     user.dictionary = dictionary;

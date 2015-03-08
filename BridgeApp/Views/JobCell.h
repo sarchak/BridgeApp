@@ -12,8 +12,8 @@
 @interface JobCell : UITableViewCell
 
 @property (nonatomic, strong) Job * job;
-@property (weak, nonatomic) IBOutlet UILabel *jobTitle;
-@property (weak, nonatomic) IBOutlet UILabel *jobSummary;
-@property (weak, nonatomic) IBOutlet UILabel *jobPrice;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
 @end

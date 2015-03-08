@@ -54,9 +54,9 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="jobPrice" destination="er2-Sx-ZAN" id="Xh0-zI-z6o"/>
-                <outlet property="jobSummary" destination="mzN-3e-aUx" id="GcY-xo-MTO"/>
-                <outlet property="jobTitle" destination="ruQ-Q2-hkC" id="z5K-6G-IG9"/>
+                <outlet property="priceLabel" destination="er2-Sx-ZAN" id="Bb1-9J-5bX"/>
+                <outlet property="summaryLabel" destination="mzN-3e-aUx" id="gy6-56-xd3"/>
+                <outlet property="titleLabel" destination="ruQ-Q2-hkC" id="RSX-cN-tNC"/>
             </connections>
             <point key="canvasLocation" x="320" y="337.5"/>
         </tableViewCell>

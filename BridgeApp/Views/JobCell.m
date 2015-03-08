@@ -21,8 +21,9 @@
 }
 
 - (void)setJob:(Job *)job {
-    self.jobSummary.text = job.jobDescription;
-    
+    self.titleLabel.text = job.title;
+    self.summaryLabel.text = job.jobDescription;
+    self.priceLabel.text = [NSString stringWithFormat:@"%@", job.price];
 }
 
 @end

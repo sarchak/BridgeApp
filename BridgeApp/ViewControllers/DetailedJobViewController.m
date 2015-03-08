@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dueDateLabel;
+
 @property (weak, nonatomic) IBOutlet UITableView *threadsTableView;
 @property (weak, nonatomic) IBOutlet UIButton *applyButton;
 @property (weak, nonatomic) IBOutlet UIButton *deliverButton;
@@ -35,6 +36,14 @@
     [self setButtonState];
     
     self.jobTitleLabel.text = self.job.title;
+    self.priceLabel.text = [NSString stringWithFormat:@"$%@", self.job.price];
+    self.summaryLabel.text = self.job.jobDescription;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yyyy"];
+    NSString *stringFromDate = [formatter stringFromDate:self.job.dueDate];
+    
+    self.dueDateLabel.text = stringFromDate;
     
     self.threadsTableView.delegate = self;
     self.threadsTableView.dataSource = self;

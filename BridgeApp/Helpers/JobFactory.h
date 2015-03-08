@@ -12,5 +12,6 @@
 @interface JobFactory : NSObject
 
 + (Job *)getJob1;
++ (Job *)getJob2;
 
 @end
