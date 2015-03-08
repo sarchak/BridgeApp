@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "CreateJobScene1ViewController.h"
 #import "LoginViewController.h"
+#import "Parse/Parse.h"
+#import "ParseUI/ParseUI.h"
+#import "UserFactory.h"
 @interface AppDelegate ()
 
 @end
@@ -23,9 +26,16 @@
     
     LoginViewController *lvc = [[LoginViewController alloc] init];
 
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:lvc];
-    self.window.rootViewController = nvc;
     
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:lvc];
+    
+    [Parse setApplicationId:@"skXmwEdM7oNPNJcuvhjSyDYauwS4tEaDHHdbvJsM" clientKey: @"gQgOjJZUKz8gHQ1VpCcDigH2qJTNuQ2OBIww263x"];
+
+//    PFUser *user = [UserFactory getBusinessAsPFUser];
+//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        NSLog(@"User signedup");
+//    }];
+    self.window.rootViewController = nvc;
     [self.window makeKeyAndVisible];
     return YES;
 }

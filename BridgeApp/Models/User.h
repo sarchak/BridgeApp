@@ -8,8 +8,10 @@
 
 #import "DBModel.h"
 #import "Job.h"
+#import "Constants.h"
+#import "Parse/Parse.h"
 
-typedef enum UserType : NSUInteger {
+typedef enum UserType : NSInteger {
     UserTypeFreeLancer,
     UserTypeBusiness
 } UserType;
@@ -17,6 +19,7 @@ typedef enum UserType : NSUInteger {
 @interface User : DBModel
 @property (nonatomic, strong) NSDictionary *dictionary;
 @property (nonatomic, strong) NSString* username;
+@property (nonatomic, strong) NSString* businessName;
 @property (nonatomic, strong) NSString* password; //TODO: should we have this? A hash maybe?
 @property (nonatomic, strong) NSString* profileImageURL;
 @property (nonatomic, strong) NSString* email;
@@ -36,5 +39,7 @@ typedef enum UserType : NSUInteger {
 -(void)signUpWithCompletion:(void (^)(NSDictionary *result, NSError *error))completion;
 -(void)login:(NSString*)username password:(NSString*)password completion:(void (^)(NSDictionary *result, NSError *error))completion;
 +(void) setCurrentUser:(User*) currentUser;
+
+-(PFUser*) getAsPFUser;
 
 @end

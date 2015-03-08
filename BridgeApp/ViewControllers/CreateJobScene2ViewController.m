@@ -12,6 +12,8 @@
 #import "Constants.h"
 #import "THDatePickerViewController.h"
 #import "PriceViewController.h"
+#import "ParseClient.h"
+#import "Parse/Parse.h"
 
 @interface CreateJobScene2ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -130,6 +132,28 @@
                                                                   KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
                                                                   }];
 }
+
+
+- (IBAction)createJob:(id)sender {
+    PFObject *jobObject = [PFObject objectWithClassName:@"Jobs"];
+    jobObject[TITLE] = self.job.title;
+    jobObject[SUMMARY] = self.job.jobDescription;
+    jobObject[DUE_DATE] = self.job.dueDate;
+    jobObject[PRICE] = self.job.price;
+    jobObject[CATEGORY] = self.category;
+    jobObject[OWNER] = [PFUser currentUser];
+    jobObject[JOBSTATUS] = [NSNumber numberWithInt:self.job.status];
+    
+    [jobObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if(error == nil){
+            NSLog(@"Job created");
+        } else {
+            NSLog(@"Job creation failed :%@", error);
+        }
+
+    }];
+}
+
 
 - (void)datePickerDonePressed:(THDatePickerViewController *)datePicker {
     self.curDate = datePicker.date;

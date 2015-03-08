@@ -24,6 +24,8 @@
 		566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D980E1AAB7050007D1C55 /* PriceViewController.xib */; };
 		566D98131AAB8D64007D1C55 /* UserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98121AAB8D64007D1C55 /* UserFactory.m */; };
 		566D98161AAB8E36007D1C55 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98151AAB8E36007D1C55 /* Constants.m */; };
+		566D981A1AABD2F6007D1C55 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98181AABD2F6007D1C55 /* SignUpViewController.m */; };
+		566D981B1AABD2F6007D1C55 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D98191AABD2F6007D1C55 /* SignUpViewController.xib */; };
 		567E0ABE1AA832E700C5C10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0ABD1AA832E700C5C10B /* main.m */; };
 		567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC01AA832E700C5C10B /* AppDelegate.m */; };
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
@@ -89,6 +91,9 @@
 		566D98121AAB8D64007D1C55 /* UserFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserFactory.m; path = Helpers/UserFactory.m; sourceTree = "<group>"; };
 		566D98141AAB8DE7007D1C55 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Helpers/Constants.h; sourceTree = "<group>"; };
 		566D98151AAB8E36007D1C55 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Helpers/Constants.m; sourceTree = "<group>"; };
+		566D98171AABD2F6007D1C55 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		566D98181AABD2F6007D1C55 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		566D98191AABD2F6007D1C55 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		567E0AB81AA832E700C5C10B /* BridgeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0ABC1AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0ABD1AA832E700C5C10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -293,6 +298,9 @@
 				566D980C1AAB7050007D1C55 /* PriceViewController.h */,
 				566D980D1AAB7050007D1C55 /* PriceViewController.m */,
 				566D980E1AAB7050007D1C55 /* PriceViewController.xib */,
+				566D98171AABD2F6007D1C55 /* SignUpViewController.h */,
+				566D98181AABD2F6007D1C55 /* SignUpViewController.m */,
+				566D98191AABD2F6007D1C55 /* SignUpViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -406,6 +414,7 @@
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
 				BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */,
+				566D981B1AABD2F6007D1C55 /* SignUpViewController.xib in Resources */,
 				BFA1DDDC1AAAF63E00CDD4FC /* LoginViewController.xib in Resources */,
 				317DF99F1AAAF03800F71962 /* bridge-logo-circle.png in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
@@ -480,6 +489,7 @@
 				315B0B7D1AA86CE3004428BE /* Message.m in Sources */,
 				566D98131AAB8D64007D1C55 /* UserFactory.m in Sources */,
 				567E0ABE1AA832E700C5C10B /* main.m in Sources */,
+				566D981A1AABD2F6007D1C55 /* SignUpViewController.m in Sources */,
 				56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

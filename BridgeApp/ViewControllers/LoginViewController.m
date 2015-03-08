@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "CreateJobScene1ViewController.h"
 #import "FreelancerProfileViewController.h"
+#import "SignUpViewController.h"
+
 #import "UserFactory.h"
 #import "User.h"
 
@@ -45,6 +47,11 @@
     } else if ([self.usernameTextField.text  isEqual: @"freelancer"]) {
         [self goToFreelancerView];
     }
+}
+
+- (IBAction)signup:(id)sender {
+    SignUpViewController *svc = [[SignUpViewController alloc] init];
+    [self.navigationController pushViewController:svc animated:YES];
 }
 
 // cheat code for development

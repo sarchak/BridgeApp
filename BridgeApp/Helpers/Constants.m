@@ -13,7 +13,10 @@ NSString *const TITLE             = @"title";
 NSString *const SUMMARY           = @"summary";
 NSString *const DUE_DATE          = @"due_date";
 NSString *const PRICE             = @"price";
-
+NSString *const JOBSTATUS         = @"job_status";
+NSString *const OWNER             = @"owner";
+NSString *const CATEGORY          = @"category";
+NSString *const BUSINESSNAME      = @"business_name";
 
 
 NSString *const USERNAME          = @"username";

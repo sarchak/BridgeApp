@@ -109,6 +109,7 @@
         
     }];
 }
+
 -(void)insert:(NSString*)tableName withFilter:(NSArray*)queryFilters sortOption:(QuerySortOption*)sortOption completion:(void (^)(NSDictionary *result, NSError *error))completion {
     PFObject *object = [PFObject objectWithClassName:tableName];
     //TODO(emrahs): Populate object from NSDictionary and handle results
@@ -118,15 +119,24 @@
 //    gameScore[@"cheatMode"] = @NO;
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            // The object has been saved.
+            completion(object,nil);
         } else {
             // There was a problem, check error.description
         }
     }];
 }
+
 -(void)remove:(NSString*)tableName withFilter:(NSArray*)queryFilters sortOption:(QuerySortOption*)sortOption completion:(void (^)(NSDictionary *result, NSError *error))completion {
 //    [gameScore deleteInBackground];
     //TODO(emrahs): actually use deleteInBackgroundWithBlock or deleteInBackgroundWithTarget:selector: to call the completion callback after deleting
 }
 
+
+-(NSDictionary*) mapPFObjectToDict:(PFObject*) object {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    for (NSString *key in [object allKeys]) {
+        [dict setObject:[object objectForKey:key] forKey:key];
+    }
+    return dict;
+}
 @end

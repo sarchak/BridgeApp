@@ -22,11 +22,24 @@
                         <constraint firstAttribute="height" constant="280" id="ZZU-gU-hmV"/>
                     </constraints>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvx-io-oEK">
+                    <rect key="frame" x="115" y="221" width="90" height="37"/>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                    <state key="normal" title="Create Job">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="createJob:" destination="-1" eventType="touchUpInside" id="y3m-C6-SXF"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Xvx-io-oEK" secondAttribute="trailing" constant="115" id="7e3-Mw-eQg"/>
                 <constraint firstAttribute="trailing" secondItem="frh-ni-vuw" secondAttribute="trailing" id="9uA-KA-6TV"/>
                 <constraint firstAttribute="bottom" secondItem="frh-ni-vuw" secondAttribute="bottom" id="Bad-tQ-dmb"/>
+                <constraint firstItem="Xvx-io-oEK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="221" id="fsB-yH-gR3"/>
+                <constraint firstItem="Xvx-io-oEK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="115" id="qpK-WF-cZw"/>
                 <constraint firstItem="frh-ni-vuw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sEc-uT-eSO"/>
             </constraints>
             <point key="canvasLocation" x="305" y="373"/>
