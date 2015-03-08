@@ -271,6 +271,16 @@
     return dict;
 }
 
+-(NSMutableArray*) convertPFObjectArrayToNSDictionary:(NSArray*)pfObjects {
+    NSMutableArray* array = [[NSMutableArray alloc] init];
+    
+    for (PFObject* pfObject in pfObjects) {
+        [array addObject:[self convertPFObjectToNSDictionary:pfObject]];
+    }
+    
+    return array;
+}
+
 
 -(NSDictionary*) mapPFObjectToDict:(PFObject*) object {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];

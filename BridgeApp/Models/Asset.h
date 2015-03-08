@@ -13,4 +13,7 @@
 @property (nonatomic, strong) NSString* ownerId;
 @property (nonatomic, strong) NSString* assetURL;
 
+
++(NSMutableArray*) assetsWithDictionaries:(NSArray*)dictionaries;
+
 @end

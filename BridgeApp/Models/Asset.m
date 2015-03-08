@@ -10,6 +10,18 @@
 
 @implementation Asset
 
++(NSMutableArray*) assetsWithDictionaries:(NSArray*)dictionaries {
+    NSMutableArray *assets = [[NSMutableArray alloc] init];
+    Asset* temp = nil;
+    
+    for (NSDictionary* assetDict in dictionaries) {
+        temp = [[Asset alloc] initWithDictionary:assetDict];
+        [assets addObject:temp];
+    }
+    
+    return assets;
+}
+
 -(Asset*)initWithDictionary:(NSDictionary*)dict {
     
     self = [super init];

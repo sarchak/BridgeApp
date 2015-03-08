@@ -26,15 +26,24 @@ typedef enum JobStatus : NSUInteger {
 @property (nonatomic, strong) NSString* jobDescription;
 @property (nonatomic, strong) NSDate* dueDate;
 @property (nonatomic, strong) NSNumber* price;
-@property (nonatomic, strong) NSString* ownerId;
 @property (nonatomic, assign) JobStatus status;
 @property (nonatomic, strong) NSString* statusText;
 @property (nonatomic, assign) BOOL reviewed;
 @property (nonatomic, strong) NSNumber* rating;
 @property (nonatomic, strong) NSString* category;
-@property (nonatomic, strong) NSArray* attachmentIds;
-@property (nonatomic, strong) NSMutableArray* applicantIds;
 @property (nonatomic, assign) NSUInteger numberOfAssets;
+
+// Relations
 @property (nonatomic, strong) User *owner;
+@property (nonatomic, strong) PFUser* ownerPFUser;
+
+@property (nonatomic, strong) User *assignedToUser;
+@property (nonatomic, strong) PFUser* assignedToUserPFUser;
+
+@property (nonatomic, strong) NSMutableArray* applicants; // Array of User objects
+@property (nonatomic, strong) NSMutableArray* applicantsPFUsers; // Array of PFUser objects
+
+@property (nonatomic, strong) NSMutableArray* attachments; // Array of Asset objects
+@property (nonatomic, strong) NSMutableArray* attachmentsPFObjects; // Array of PFObjects
 
 @end

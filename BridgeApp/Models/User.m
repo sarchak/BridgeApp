@@ -21,6 +21,18 @@
     [p login:username password:password completion:completion];
 }
 
++(NSMutableArray*) usersWithDictionaries:(NSArray*)dictionaries {
+    NSMutableArray *users = [[NSMutableArray alloc] init];
+    User* temp = nil;
+    
+    for (NSDictionary* userDict in dictionaries) {
+        temp = [[User alloc] initWithDictionary:userDict];
+        [users addObject:temp];
+    }
+    
+    return users;
+}
+
 -(User*)initWithDictionary:(NSDictionary*)dict {
     
     self = [super init];

@@ -44,6 +44,7 @@ typedef enum UserType : NSUInteger {
 
 +(User*)currentUser;
 +(void)login:(NSString*)username password:(NSString*)password completion:(void (^)(NSError *error))completion;
++(NSMutableArray*) usersWithDictionaries:(NSArray*)dictionaries;
 
 -(void)setAsCurrentUser;
 -(void)signUpWithCompletion:(void (^)(NSError *error))completion;
