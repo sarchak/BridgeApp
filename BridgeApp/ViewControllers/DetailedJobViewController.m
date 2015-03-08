@@ -7,10 +7,21 @@
 //
 
 #import "DetailedJobViewController.h"
+#import "ConversationThread.h"
+#import "ThreadCell.h"
 
 @interface DetailedJobViewController ()
 
 @property (strong, nonatomic) Job* job;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dueDateLabel;
+@property (weak, nonatomic) IBOutlet UITableView *threadsTableView;
+@property (weak, nonatomic) IBOutlet UIButton *applyButton;
+@property (weak, nonatomic) IBOutlet UIButton *deliverButton;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
+
 
 @end
 
@@ -19,12 +30,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+
+    [self setButtonState];
+    
     self.jobTitleLabel.text = self.job.title;
+    
+    self.threadsTableView.delegate = self;
+    self.threadsTableView.dataSource = self;
+    self.threadsTableView.rowHeight = UITableViewAutomaticDimension;
+    [self.threadsTableView registerNib:[UINib nibWithNibName:@"ThreadCell" bundle:nil] forCellReuseIdentifier:@"ThreadCell"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ThreadCell *cell = [self.threadsTableView dequeueReusableCellWithIdentifier:@"ThreadCell"];
+    return cell;
 }
 
 /*
@@ -36,6 +65,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)setButtonState {
+    self.applyButton.enabled = NO;
+    self.editButton.enabled = NO;
+    self.deliverButton.enabled = NO;
+}
 
 - (DetailedJobViewController *)initWithJob:(Job *)job {
     self.job = job;

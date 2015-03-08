@@ -6,7 +6,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailedJobViewController">
             <connections>
+                <outlet property="applyButton" destination="MNC-qq-ULP" id="g12-F2-mM4"/>
+                <outlet property="deliverButton" destination="vKe-vd-7O6" id="gkl-W4-UXj"/>
+                <outlet property="dueDateLabel" destination="5SF-pa-kjg" id="B9Y-vA-izp"/>
+                <outlet property="editButton" destination="7RN-Ef-BSU" id="P40-cu-1AA"/>
                 <outlet property="jobTitleLabel" destination="qFA-3h-ZOG" id="EUC-6u-aL6"/>
+                <outlet property="priceLabel" destination="aBP-1T-Pty" id="HoD-LQ-hze"/>
+                <outlet property="summaryLabel" destination="HGi-yw-NOE" id="aEH-qJ-zyy"/>
+                <outlet property="threadsTableView" destination="yBS-5O-uLo" id="a2M-ec-TVX"/>
+                <outlet property="titleLabel" destination="qFA-3h-ZOG" id="XQs-v7-Psj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,14 +23,96 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant stuff needed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFA-3h-ZOG">
-                    <rect key="frame" x="34" y="170" width="184" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RN-Ef-BSU">
+                    <rect key="frame" x="111" y="530" width="30" height="30"/>
+                    <state key="normal" title="Edit">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKe-vd-7O6">
+                    <rect key="frame" x="56" y="530" width="47" height="30"/>
+                    <state key="normal" title="Deliver">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNC-qq-ULP">
+                    <rect key="frame" x="8" y="530" width="40" height="30"/>
+                    <state key="normal" title="Apply">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yBS-5O-uLo">
+                    <rect key="frame" x="0.0" y="350.5" width="320" height="171.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgz-7T-LwT">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="360.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant stuff needed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFA-3h-ZOG">
+                            <rect key="frame" x="13" y="109" width="176" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/31/2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SF-pa-kjg">
+                            <rect key="frame" x="13" y="282" width="107" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$300" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBP-1T-Pty">
+                            <rect key="frame" x="13" y="137" width="47" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-yw-NOE">
+                            <rect key="frame" x="13" y="137" width="292" height="165"/>
+                            <string key="text">We will be opening our restaurant in Septepmber and we urgently need a business logo. Please help! The main theme color of the restaurant is blue with a hint of red.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="5SF-pa-kjg" secondAttribute="bottom" constant="58" id="267-EL-WHS"/>
+                        <constraint firstItem="aBP-1T-Pty" firstAttribute="top" secondItem="qFA-3h-ZOG" secondAttribute="bottom" constant="8" id="Jq6-Dg-mr7"/>
+                        <constraint firstItem="aBP-1T-Pty" firstAttribute="leading" secondItem="Jgz-7T-LwT" secondAttribute="leading" constant="13" id="QNm-kP-o11"/>
+                        <constraint firstItem="5SF-pa-kjg" firstAttribute="leading" secondItem="Jgz-7T-LwT" secondAttribute="leading" constant="13" id="Qak-7P-LIa"/>
+                        <constraint firstAttribute="trailing" secondItem="5SF-pa-kjg" secondAttribute="trailing" constant="200" id="VMR-rV-z5a"/>
+                        <constraint firstAttribute="trailing" secondItem="aBP-1T-Pty" secondAttribute="trailing" constant="260" id="WFj-hI-R8y"/>
+                        <constraint firstItem="qFA-3h-ZOG" firstAttribute="leading" secondItem="Jgz-7T-LwT" secondAttribute="leading" constant="13" id="Xvc-sa-4Xe"/>
+                        <constraint firstAttribute="trailing" secondItem="HGi-yw-NOE" secondAttribute="trailing" constant="15" id="iU2-iu-liS"/>
+                        <constraint firstItem="5SF-pa-kjg" firstAttribute="top" secondItem="aBP-1T-Pty" secondAttribute="bottom" constant="124" id="jdN-ki-iT3"/>
+                        <constraint firstAttribute="bottom" secondItem="HGi-yw-NOE" secondAttribute="bottom" constant="58" id="nSS-lF-dEU"/>
+                        <constraint firstItem="HGi-yw-NOE" firstAttribute="leading" secondItem="Jgz-7T-LwT" secondAttribute="leading" constant="13" id="oZ4-vj-A2L"/>
+                        <constraint firstItem="HGi-yw-NOE" firstAttribute="top" secondItem="qFA-3h-ZOG" secondAttribute="bottom" constant="8" id="tf1-0L-VQP"/>
+                        <constraint firstAttribute="trailing" secondItem="qFA-3h-ZOG" secondAttribute="trailing" constant="131" id="u2Y-Fd-SvU"/>
+                        <constraint firstItem="qFA-3h-ZOG" firstAttribute="top" secondItem="Jgz-7T-LwT" secondAttribute="top" constant="109" id="xGL-a0-mxk"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Jgz-7T-LwT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4IG-dl-aDO"/>
+                <constraint firstItem="yBS-5O-uLo" firstAttribute="top" secondItem="Jgz-7T-LwT" secondAttribute="bottom" constant="-10" id="JAh-Qj-D7g"/>
+                <constraint firstAttribute="trailing" secondItem="yBS-5O-uLo" secondAttribute="trailing" id="NYR-PZ-jIR"/>
+                <constraint firstAttribute="trailing" secondItem="7RN-Ef-BSU" secondAttribute="trailing" constant="179" id="P74-yE-fmK"/>
+                <constraint firstAttribute="bottom" secondItem="MNC-qq-ULP" secondAttribute="bottom" constant="8" id="QYb-Lg-l3y"/>
+                <constraint firstItem="vKe-vd-7O6" firstAttribute="top" secondItem="yBS-5O-uLo" secondAttribute="bottom" constant="8" id="ZJj-re-ISQ"/>
+                <constraint firstAttribute="trailing" secondItem="Jgz-7T-LwT" secondAttribute="trailing" id="aLk-fy-r0k"/>
+                <constraint firstAttribute="bottom" secondItem="vKe-vd-7O6" secondAttribute="bottom" constant="8" id="dpa-YC-RTA"/>
+                <constraint firstItem="7RN-Ef-BSU" firstAttribute="leading" secondItem="vKe-vd-7O6" secondAttribute="trailing" constant="8" id="isA-bf-oIf"/>
+                <constraint firstAttribute="bottom" secondItem="7RN-Ef-BSU" secondAttribute="bottom" constant="8" id="jab-fY-FvK"/>
+                <constraint firstItem="yBS-5O-uLo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="n1S-Wc-lPC"/>
+                <constraint firstItem="MNC-qq-ULP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="oc8-Ub-H8o"/>
+                <constraint firstItem="vKe-vd-7O6" firstAttribute="leading" secondItem="MNC-qq-ULP" secondAttribute="trailing" constant="8" id="rJG-1h-hZe"/>
+                <constraint firstItem="MNC-qq-ULP" firstAttribute="top" secondItem="yBS-5O-uLo" secondAttribute="bottom" constant="8" id="t89-Db-ltN"/>
+                <constraint firstItem="Jgz-7T-LwT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uJp-fM-NEn"/>
+                <constraint firstItem="MNC-qq-ULP" firstAttribute="top" secondItem="yBS-5O-uLo" secondAttribute="bottom" constant="8" id="xrj-Ks-O4N"/>
+                <constraint firstItem="7RN-Ef-BSU" firstAttribute="top" secondItem="yBS-5O-uLo" secondAttribute="bottom" constant="8" id="yz9-U4-TNz"/>
+            </constraints>
             <point key="canvasLocation" x="267" y="379"/>
         </view>
     </objects>

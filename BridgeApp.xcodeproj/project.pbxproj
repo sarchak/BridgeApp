@@ -50,6 +50,8 @@
 		BFA1DDE61AABA19A00CDD4FC /* JobCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDE41AABA19A00CDD4FC /* JobCell.xib */; };
 		BFA1DDEA1AABBC6800CDD4FC /* DetailedJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDE81AABBC6800CDD4FC /* DetailedJobViewController.m */; };
 		BFA1DDEB1AABBC6800CDD4FC /* DetailedJobViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDE91AABBC6800CDD4FC /* DetailedJobViewController.xib */; };
+		BFA1DDEF1AABDA7900CDD4FC /* ThreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDED1AABDA7900CDD4FC /* ThreadCell.m */; };
+		BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDEE1AABDA7900CDD4FC /* ThreadCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +137,9 @@
 		BFA1DDE71AABBC6800CDD4FC /* DetailedJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedJobViewController.h; sourceTree = "<group>"; };
 		BFA1DDE81AABBC6800CDD4FC /* DetailedJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedJobViewController.m; sourceTree = "<group>"; };
 		BFA1DDE91AABBC6800CDD4FC /* DetailedJobViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedJobViewController.xib; sourceTree = "<group>"; };
+		BFA1DDEC1AABDA7900CDD4FC /* ThreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadCell.h; sourceTree = "<group>"; };
+		BFA1DDED1AABDA7900CDD4FC /* ThreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadCell.m; sourceTree = "<group>"; };
+		BFA1DDEE1AABDA7900CDD4FC /* ThreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +205,9 @@
 				BFA1DDE21AABA19A00CDD4FC /* JobCell.h */,
 				BFA1DDE31AABA19A00CDD4FC /* JobCell.m */,
 				BFA1DDE41AABA19A00CDD4FC /* JobCell.xib */,
+				BFA1DDEC1AABDA7900CDD4FC /* ThreadCell.h */,
+				BFA1DDED1AABDA7900CDD4FC /* ThreadCell.m */,
+				BFA1DDEE1AABDA7900CDD4FC /* ThreadCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +431,7 @@
 				56C221A61AA9925900E6B55A /* TextViewController.xib in Resources */,
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
+				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
 				56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */,
 				566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */,
@@ -503,6 +512,7 @@
 				315B0B751AA86CA6004428BE /* Job.m in Sources */,
 				56C221A71AA9925900E6B55A /* TitleSubtitleCell.m in Sources */,
 				BFA1DDE01AABA0D200CDD4FC /* OpenJobsViewController.m in Sources */,
+				BFA1DDEF1AABDA7900CDD4FC /* ThreadCell.m in Sources */,
 				315B0B641AA85F0F004428BE /* ParseClient.m in Sources */,
 				315B0B7A1AA86CD4004428BE /* ConversationThread.m in Sources */,
 				BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */,

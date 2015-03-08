@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Job.h"
 
-@interface DetailedJobViewController : UIViewController
+@interface DetailedJobViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *jobTitleLabel;
 

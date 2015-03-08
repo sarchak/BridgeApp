@@ -10,7 +10,7 @@
 #import "Job.h"
 
 typedef enum UserType : NSUInteger {
-    UserTypeFreeLancer,
+    UserTypeFreelancer,
     UserTypeBusiness
 } UserType;
 

@@ -16,7 +16,7 @@
     User *user = [[User alloc] init];
     user.username = @"DevGuy";
     user.password = @"Something";
-    user.usertype = UserTypeFreeLancer;
+    user.usertype = UserTypeFreelancer;
     
     user.dictionary = @{@"username": user.username,@"password": user.password, @"usertype": [NSNumber numberWithInt:user.usertype]};
     return user;
