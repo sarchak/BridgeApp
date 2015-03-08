@@ -25,6 +25,10 @@
 		566D98161AAB8E36007D1C55 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98151AAB8E36007D1C55 /* Constants.m */; };
 		566D981A1AABD2F6007D1C55 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98181AABD2F6007D1C55 /* SignUpViewController.m */; };
 		566D981B1AABD2F6007D1C55 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D98191AABD2F6007D1C55 /* SignUpViewController.xib */; };
+		566D98211AAC13BB007D1C55 /* BusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D981F1AAC13BB007D1C55 /* BusinessViewController.m */; };
+		566D98221AAC13BB007D1C55 /* BusinessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D98201AAC13BB007D1C55 /* BusinessViewController.xib */; };
+		566D98261AAC16AA007D1C55 /* BusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98241AAC16AA007D1C55 /* BusinessCell.m */; };
+		566D98271AAC16AA007D1C55 /* BusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D98251AAC16AA007D1C55 /* BusinessCell.xib */; };
 		567E0ABE1AA832E700C5C10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0ABD1AA832E700C5C10B /* main.m */; };
 		567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC01AA832E700C5C10B /* AppDelegate.m */; };
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
@@ -100,6 +104,12 @@
 		566D98171AABD2F6007D1C55 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		566D98181AABD2F6007D1C55 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		566D98191AABD2F6007D1C55 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		566D981E1AAC13BB007D1C55 /* BusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessViewController.h; sourceTree = "<group>"; };
+		566D981F1AAC13BB007D1C55 /* BusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessViewController.m; sourceTree = "<group>"; };
+		566D98201AAC13BB007D1C55 /* BusinessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessViewController.xib; sourceTree = "<group>"; };
+		566D98231AAC16AA007D1C55 /* BusinessCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessCell.h; sourceTree = "<group>"; };
+		566D98241AAC16AA007D1C55 /* BusinessCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessCell.m; sourceTree = "<group>"; };
+		566D98251AAC16AA007D1C55 /* BusinessCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessCell.xib; sourceTree = "<group>"; };
 		567E0AB81AA832E700C5C10B /* BridgeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0ABC1AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0ABD1AA832E700C5C10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -211,6 +221,9 @@
 				BFA1DDEC1AABDA7900CDD4FC /* ThreadCell.h */,
 				BFA1DDED1AABDA7900CDD4FC /* ThreadCell.m */,
 				BFA1DDEE1AABDA7900CDD4FC /* ThreadCell.xib */,
+				566D98231AAC16AA007D1C55 /* BusinessCell.h */,
+				566D98241AAC16AA007D1C55 /* BusinessCell.m */,
+				566D98251AAC16AA007D1C55 /* BusinessCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -330,6 +343,9 @@
 				566D98171AABD2F6007D1C55 /* SignUpViewController.h */,
 				566D98181AABD2F6007D1C55 /* SignUpViewController.m */,
 				566D98191AABD2F6007D1C55 /* SignUpViewController.xib */,
+				566D981E1AAC13BB007D1C55 /* BusinessViewController.h */,
+				566D981F1AAC13BB007D1C55 /* BusinessViewController.m */,
+				566D98201AAC13BB007D1C55 /* BusinessViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -438,11 +454,13 @@
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
+				566D98271AAC16AA007D1C55 /* BusinessCell.xib in Resources */,
 				56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */,
 				566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */,
 				BFA1DDE61AABA19A00CDD4FC /* JobCell.xib in Resources */,
 				BFA1DDEB1AABBC6800CDD4FC /* DetailedJobViewController.xib in Resources */,
 				317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */,
+				566D98221AAC13BB007D1C55 /* BusinessViewController.xib in Resources */,
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
 				BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */,
@@ -513,6 +531,7 @@
 				56C221A31AA9925900E6B55A /* CreateJobScene2ViewController.m in Sources */,
 				56C2219F1AA9925900E6B55A /* CategoryCell.m in Sources */,
 				567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */,
+				566D98211AAC13BB007D1C55 /* BusinessViewController.m in Sources */,
 				315B0B801AA86CF8004428BE /* Asset.m in Sources */,
 				315B0B751AA86CA6004428BE /* Job.m in Sources */,
 				56C221A71AA9925900E6B55A /* TitleSubtitleCell.m in Sources */,
@@ -525,6 +544,7 @@
 				BFA1DDEA1AABBC6800CDD4FC /* DetailedJobViewController.m in Sources */,
 				566D98131AAB8D64007D1C55 /* UserFactory.m in Sources */,
 				567E0ABE1AA832E700C5C10B /* main.m in Sources */,
+				566D98261AAC16AA007D1C55 /* BusinessCell.m in Sources */,
 				566D981A1AABD2F6007D1C55 /* SignUpViewController.m in Sources */,
 				56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */,
 			);

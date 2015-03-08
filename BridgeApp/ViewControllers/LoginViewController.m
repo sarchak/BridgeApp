@@ -11,7 +11,7 @@
 #import "FreelancerProfileViewController.h"
 #import "OpenJobsViewController.h"
 #import "SignUpViewController.h"
-
+#import "BusinessViewController.h"
 #import "UserFactory.h"
 #import "User.h"
 
@@ -67,8 +67,11 @@
     /* Setup the business owner */
     User *user = [UserFactory getBusiness];
     [User setCurrentUser: user];
-    CreateJobScene1ViewController *cvc = [[CreateJobScene1ViewController alloc] init];
-    [self.navigationController pushViewController:cvc animated:YES];
+//    CreateJobScene1ViewController *cvc = [[CreateJobScene1ViewController alloc] init];
+    
+    BusinessViewController *bvc = [[BusinessViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:bvc];
+    [self presentViewController:nvc animated:YES completion:nil];
     
 }
 
