@@ -10,7 +10,7 @@
 #import "CreateJobScene1ViewController.h"
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
-#import "ParseUI/ParseUI.h"
+
 #import "UserFactory.h"
 @interface AppDelegate ()
 
@@ -35,6 +35,9 @@
 //    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 //        NSLog(@"User signedup");
 //    }];
+    [User login:@"Philz Coffee" password:@"Something" completion:^(NSError *error) {
+        NSLog(@"User logged in %@", [User currentUser]);
+    }];
     self.window.rootViewController = nvc;
     [self.window makeKeyAndVisible];
     return YES;

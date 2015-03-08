@@ -7,11 +7,13 @@
 //
 
 #import "ThreadCell.h"
+#import "StarRatingView.h"
 
 @implementation ThreadCell
 
 - (void)awakeFromNib {
     // Initialization code
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

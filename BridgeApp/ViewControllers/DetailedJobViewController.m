@@ -62,6 +62,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ThreadCell *cell = [self.threadsTableView dequeueReusableCellWithIdentifier:@"ThreadCell"];
+    [cell.myRatingView displayRating:4.0f];
     return cell;
 }
 

@@ -66,6 +66,12 @@
 #define COCOAPODS_VERSION_MINOR_Parse 6
 #define COCOAPODS_VERSION_PATCH_Parse 4
 
+// StarRatingView
+#define COCOAPODS_POD_AVAILABLE_StarRatingView
+#define COCOAPODS_VERSION_MAJOR_StarRatingView 1
+#define COCOAPODS_VERSION_MINOR_StarRatingView 0
+#define COCOAPODS_VERSION_PATCH_StarRatingView 0
+
 // THCalendarDatePicker
 #define COCOAPODS_POD_AVAILABLE_THCalendarDatePicker
 #define COCOAPODS_VERSION_MAJOR_THCalendarDatePicker 1

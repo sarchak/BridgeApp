@@ -24,12 +24,14 @@ PODS:
   - KNSemiModalViewController (0.3)
   - Parse (1.6.4):
     - Bolts (~> 1.1)
+  - StarRatingView (1.0.0)
   - THCalendarDatePicker (1.0.0):
     - KNSemiModalViewController (~> 0.3)
 
 DEPENDENCIES:
   - AFNetworking
   - Parse
+  - StarRatingView
   - THCalendarDatePicker (~> 1.0.0)
 
 SPEC CHECKSUMS:
@@ -37,6 +39,7 @@ SPEC CHECKSUMS:
   Bolts: dd9fb8433d67f5acc3b6b4d1379bbc5513d716c1
   KNSemiModalViewController: 6fb1e2f6a4d84238b524cb705e91118b0fa6bbc9
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
+  StarRatingView: c3e81fe39e1fdd5a11d3bee4ccbf7fadf8491107
   THCalendarDatePicker: c482d4f630262bae6fe88113d0298f54bad1fd9d
 
 COCOAPODS: 0.36.0.rc.1
