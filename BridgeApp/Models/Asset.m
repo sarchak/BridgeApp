@@ -51,10 +51,18 @@
 }
 
 -(NSString*)tableName {
+    return [Asset tableName];
+}
+
++(NSString*)tableName {
     return @"Asset";
 }
 
 -(NSArray*) includeKeys {
+    return [Asset includeKeys];
+}
+
++(NSArray*) includeKeys {
     return @[];
 }
 

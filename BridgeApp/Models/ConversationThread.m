@@ -42,10 +42,18 @@
 }
 
 -(NSString*)tableName {
+    return [ConversationThread tableName];
+}
+
++(NSString*)tableName {
     return @"ConversationThread";
 }
 
 -(NSArray*) includeKeys {
+    return [ConversationThread includeKeys];
+}
+
++(NSArray*) includeKeys {
     return @[];
 }
 

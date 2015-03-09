@@ -15,5 +15,7 @@
 
 
 +(NSMutableArray*) assetsWithDictionaries:(NSArray*)dictionaries;
++(NSString*)tableName;
++(NSArray*) includeKeys;
 
 @end

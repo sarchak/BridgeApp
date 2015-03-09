@@ -85,10 +85,18 @@
 }
 
 -(NSString*)tableName {
+    return [User tableName];
+}
+
++(NSString*)tableName {
     return @"_User";
 }
 
 -(NSArray*) includeKeys {
+    return [User includeKeys];
+}
+
++(NSArray*) includeKeys {
     return @[];
 }
 
