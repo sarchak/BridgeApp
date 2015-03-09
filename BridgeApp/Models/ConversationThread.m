@@ -7,6 +7,7 @@
 //
 
 #import "ConversationThread.h"
+#import "ParseClient.h"
 
 @implementation ConversationThread
 
@@ -42,6 +43,19 @@
 
 -(NSString*)tableName {
     return @"ConversationThread";
+}
+
+static ConversationThread *_thread = nil;
+
+- (ConversationThread *)getConversationByJobId:(NSString *)jobId completion:(void (^)(NSError *error))completion {
+    ParseClient *p = [ParseClient sharedInstance];
+    
+    [p readById:[self tableName] objectId:jobId completion:^(NSDictionary *result, NSError *error) {
+        
+        _thread = [[ConversationThread alloc] initWithDictionary:result];
+    }];
+    
+    return _thread;
 }
 
 
