@@ -58,17 +58,33 @@
     return nil;
 }
 
+-(NSArray*) requiredFields  {
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    
+    return nil;
+}
+
 -(void)saveWithCompletion:(void (^)(NSError *error))completion {
+    
+    NSDictionary* serializedCopy = [self serialize];
+    
+    for (NSString* key in [self requiredFields]) {
+        if (serializedCopy[key] == nil || [serializedCopy[key] isEqual:[NSNull null]]){
+            NSString* errorMessage = [NSString stringWithFormat:@"%@ is a required field and it must be set before saving a record.", key];
+            completion([NSError errorWithDomain:errorMessage code:1 userInfo:nil]);
+        }
+    }
 
     ParseClient* p = [ParseClient sharedInstance];
     if (self.objectId) {
-        [p update:self.tableName row:self.serialize completion:^(NSDictionary *dict, NSError *error) {
+        [p update:self.tableName row:serializedCopy completion:^(NSDictionary *dict, NSError *error) {
             [self updateWithDictionary:dict];
             completion(error);
         }];
     }
     else {
-        [p insert:self.tableName row:self.serialize completion:^(NSDictionary *dict, NSError *error) {
+        [p insert:self.tableName row:serializedCopy completion:^(NSDictionary *dict, NSError *error) {
             [self updateWithDictionary:dict];
             completion(error);
         }];

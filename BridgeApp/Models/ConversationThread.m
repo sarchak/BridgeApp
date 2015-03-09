@@ -49,6 +49,14 @@
     return @[];
 }
 
+-(NSArray*)requiredFields {
+    return @[
+             @"jobId",
+             @"businessId",
+             @"freelancerId"
+             ];
+}
+
 static ConversationThread *_thread = nil;
 
 - (ConversationThread *)getConversationByJobId:(NSString *)jobId completion:(void (^)(NSError *error))completion {

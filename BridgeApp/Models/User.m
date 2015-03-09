@@ -85,11 +85,17 @@
 }
 
 -(NSString*)tableName {
-    return @"User";
+    return @"_User";
 }
 
 -(NSArray*) includeKeys {
     return @[];
+}
+
+-(NSArray*)requiredFields {
+    return @[
+             @"username"
+    ];
 }
 
 -(void)setAsCurrentUser {

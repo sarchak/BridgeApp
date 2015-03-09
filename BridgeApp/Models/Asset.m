@@ -58,5 +58,12 @@
     return @[];
 }
 
+-(NSArray*)requiredFields {
+    return @[
+             @"ownerId",
+             @"assetURL"
+             ];
+}
+
 
 @end

@@ -48,5 +48,13 @@
     return @[];
 }
 
+-(NSArray*)requiredFields {
+    return @[
+             @"threadId",
+             @"senderId",
+             @"message"
+             ];
+}
+
 
 @end

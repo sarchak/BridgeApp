@@ -82,6 +82,13 @@
     return @[@"owner", @"assignedToUser"];
 }
 
+-(NSArray*)requiredFields {
+    return @[
+             @"title",
+             @"owner"
+             ];
+}
+
 -(void)addApplicant:(User*)user {
     if (self.applicants == nil) {
         static dispatch_once_t onceToken;
