@@ -46,7 +46,7 @@
 }
 
 -(void) fetchData {
-    Job *job = [[Job alloc] init];
+//    Job *job = [[Job alloc] init];
 //    [job findWithCompletion:nil sortOptions:nil completion:^(NSArray *foundObjects, NSError *error) {
 //        self.jobs = foundObjects;
 //        NSLog(@"%@", self.jobs);
@@ -55,6 +55,7 @@
 //    }];
 
     PFQuery *query = [PFQuery queryWithClassName:@"Jobs"];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             self.jobs = objects;
@@ -89,9 +90,17 @@
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
+//    Job *job = self.jobs[indexPath.row];
+//    NSLog(@"Title : %@", job.title);
+//    cell.titleLabel.text = job.title;
+    
     PFObject *job = self.jobs[indexPath.row];
     NSLog(@"Title : %@", job[TITLE]);
     cell.titleLabel.text = job[TITLE];
+    cell.summary.text = job[SUMMARY];
+    NSInteger num = (indexPath.row % 3) + 1;
+    NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
+    cell.profileImage.image = [UIImage imageNamed:filename];
     return cell;
 }
 @end

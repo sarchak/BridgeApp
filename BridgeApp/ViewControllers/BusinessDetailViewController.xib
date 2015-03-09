@@ -20,13 +20,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo Design" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htd-bw-HZG">
-                    <rect key="frame" x="8" y="30" width="97.5" height="23.5"/>
-                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                    <rect key="frame" x="8" y="30" width="304" height="23.5"/>
+                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I need a logo designed for " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-l1-I0X">
-                    <rect key="frame" x="8" y="58" width="207.5" height="23.5"/>
+                    <rect key="frame" x="8" y="58" width="304" height="23.5"/>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -63,11 +63,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="4gn-Wu-aCA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1f1-fS-DVC"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="htd-bw-HZG" secondAttribute="trailing" constant="8" id="3eT-uv-6sn"/>
                 <constraint firstItem="zjk-tY-X80" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="97" id="7g9-xo-yLJ"/>
                 <constraint firstItem="Zla-K4-YA5" firstAttribute="top" secondItem="ikK-l1-I0X" secondAttribute="bottom" constant="7.5" id="81H-rr-ILy"/>
+                <constraint firstAttribute="trailing" secondItem="htd-bw-HZG" secondAttribute="trailing" constant="8" id="AKl-7J-ECE"/>
                 <constraint firstItem="Zla-K4-YA5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="97" id="CDb-ZO-dGs"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ikK-l1-I0X" secondAttribute="trailing" constant="104" id="Czf-QM-es5"/>
+                <constraint firstAttribute="trailing" secondItem="ikK-l1-I0X" secondAttribute="trailing" constant="8" id="Czf-QM-es5"/>
                 <constraint firstItem="zjk-tY-X80" firstAttribute="top" secondItem="Zla-K4-YA5" secondAttribute="bottom" constant="7.5" id="EO0-bt-ZBM"/>
                 <constraint firstAttribute="bottom" secondItem="LJW-Lh-tin" secondAttribute="bottom" id="EPn-io-Baz"/>
                 <constraint firstItem="LJW-Lh-tin" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oum-qK-vGb"/>

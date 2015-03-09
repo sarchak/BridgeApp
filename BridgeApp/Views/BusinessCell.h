@@ -11,5 +11,6 @@
 @interface BusinessCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summary;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
 @end

@@ -31,6 +31,9 @@
 		566D98271AAC16AA007D1C55 /* BusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D98251AAC16AA007D1C55 /* BusinessCell.xib */; };
 		566D982B1AAD459F007D1C55 /* BusinessDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98291AAD459F007D1C55 /* BusinessDetailViewController.m */; };
 		566D982C1AAD459F007D1C55 /* BusinessDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D982A1AAD459F007D1C55 /* BusinessDetailViewController.xib */; };
+		566D98311AAD7572007D1C55 /* profile3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 566D982E1AAD7572007D1C55 /* profile3.jpg */; };
+		566D98321AAD7572007D1C55 /* profile2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 566D982F1AAD7572007D1C55 /* profile2.jpg */; };
+		566D98331AAD7572007D1C55 /* profile1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 566D98301AAD7572007D1C55 /* profile1.jpg */; };
 		567E0ABE1AA832E700C5C10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0ABD1AA832E700C5C10B /* main.m */; };
 		567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC01AA832E700C5C10B /* AppDelegate.m */; };
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
@@ -116,6 +119,9 @@
 		566D98281AAD459F007D1C55 /* BusinessDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessDetailViewController.h; sourceTree = "<group>"; };
 		566D98291AAD459F007D1C55 /* BusinessDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessDetailViewController.m; sourceTree = "<group>"; };
 		566D982A1AAD459F007D1C55 /* BusinessDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessDetailViewController.xib; sourceTree = "<group>"; };
+		566D982E1AAD7572007D1C55 /* profile3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile3.jpg; sourceTree = "<group>"; };
+		566D982F1AAD7572007D1C55 /* profile2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile2.jpg; sourceTree = "<group>"; };
+		566D98301AAD7572007D1C55 /* profile1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile1.jpg; sourceTree = "<group>"; };
 		567E0AB81AA832E700C5C10B /* BridgeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0ABC1AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0ABD1AA832E700C5C10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -258,6 +264,16 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		566D982D1AAD755E007D1C55 /* uiassets */ = {
+			isa = PBXGroup;
+			children = (
+				566D982E1AAD7572007D1C55 /* profile3.jpg */,
+				566D982F1AAD7572007D1C55 /* profile2.jpg */,
+				566D98301AAD7572007D1C55 /* profile1.jpg */,
+			);
+			name = uiassets;
+			sourceTree = "<group>";
+		};
 		567E0AAF1AA832E700C5C10B = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +298,7 @@
 		567E0ABA1AA832E700C5C10B /* BridgeApp */ = {
 			isa = PBXGroup;
 			children = (
+				566D982D1AAD755E007D1C55 /* uiassets */,
 				566D98081AAB5DBF007D1C55 /* Helpers */,
 				315B0B611AA85ED5004428BE /* Models */,
 				315B0B841AA87D3D004428BE /* Views */,
@@ -467,6 +484,7 @@
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
+				566D98331AAD7572007D1C55 /* profile1.jpg in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
 				566D98271AAC16AA007D1C55 /* BusinessCell.xib in Resources */,
 				56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */,
@@ -476,6 +494,7 @@
 				317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */,
 				566D98221AAC13BB007D1C55 /* BusinessViewController.xib in Resources */,
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
+				566D98321AAD7572007D1C55 /* profile2.jpg in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
 				BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */,
 				566D981B1AABD2F6007D1C55 /* SignUpViewController.xib in Resources */,
@@ -483,6 +502,7 @@
 				317DF99F1AAAF03800F71962 /* bridge-logo-circle.png in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
 				567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */,
+				566D98311AAD7572007D1C55 /* profile3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
