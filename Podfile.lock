@@ -21,6 +21,9 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts (1.1.4)
+  - JSQMessagesViewController (6.1.3):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - KNSemiModalViewController (0.3)
   - Parse (1.6.4):
     - Bolts (~> 1.1)
@@ -30,6 +33,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - JSQMessagesViewController
   - Parse
   - StarRatingView
   - THCalendarDatePicker (~> 1.0.0)
@@ -37,6 +41,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   Bolts: dd9fb8433d67f5acc3b6b4d1379bbc5513d716c1
+  JSQMessagesViewController: e93a288a9662d4519c95a28a8c0eec10beae1bfc
+  JSQSystemSoundPlayer: 55528c699a283aae2220d3ae7b8b527d2ecef4b4
   KNSemiModalViewController: 6fb1e2f6a4d84238b524cb705e91118b0fa6bbc9
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
   StarRatingView: c3e81fe39e1fdd5a11d3bee4ccbf7fadf8491107
