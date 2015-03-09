@@ -78,6 +78,10 @@
 }
 
 -(NSArray*) includeKeys {
+    return [Job includeKeys];
+}
+
++(NSArray*) includeKeys {
     //return @[@"owner", @"assignedToUser", @"applicants", @"attachments"];
     return @[@"owner", @"assignedToUser"];
 }
