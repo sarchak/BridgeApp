@@ -14,4 +14,7 @@
 @property (nonatomic, strong) NSString* senderId;
 @property (nonatomic, strong) NSString* message;
 
++(NSString*)tableName;
++(NSArray*) includeKeys;
+
 @end

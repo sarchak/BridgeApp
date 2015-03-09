@@ -41,10 +41,18 @@
 }
 
 -(NSString*)tableName {
+    return [Message tableName];
+}
+
++(NSString*)tableName {
     return @"Message";
 }
 
 -(NSArray*) includeKeys {
+    return [Message includeKeys];
+}
+
++(NSArray*) includeKeys {
     return @[];
 }
 

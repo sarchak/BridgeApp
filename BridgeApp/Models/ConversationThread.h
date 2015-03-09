@@ -14,5 +14,8 @@
 @property (nonatomic, strong) NSString* businessId;
 @property (nonatomic, strong) NSString* freelancerId;
 
++(NSString*)tableName;
++(NSArray*) includeKeys;
+
 - (ConversationThread *)getConversationByJobId:(NSString *)jobId completion:(void (^)(NSError *error))completion;
 @end
