@@ -39,6 +39,15 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createJob)];
 
     [self fetchData];
+    
+    /*
+     * ATTENTION!!
+     * This should be the same as DetailedJobViewController
+     * Please merge with DetailedJobViewController. They should look pretty much the same.
+     * Except for different conversation threads and buttons (apply, deliver, edit).
+     *
+     *
+     */
 }
 
 -(void) refreshTable {
