@@ -19,6 +19,8 @@
 		315B0B821AA87B51004428BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 315B0B811AA87B51004428BE /* .gitignore */; };
 		317DF99F1AAAF03800F71962 /* bridge-logo-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99D1AAAF03800F71962 /* bridge-logo-circle.png */; };
 		317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99E1AAAF03800F71962 /* bridge-logo.png */; };
+		31DE5EF81AAD94EB005E16B2 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */; };
+		31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */; };
 		566D980F1AAB7050007D1C55 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D980D1AAB7050007D1C55 /* PriceViewController.m */; };
 		566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D980E1AAB7050007D1C55 /* PriceViewController.xib */; };
 		566D98131AAB8D64007D1C55 /* UserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98121AAB8D64007D1C55 /* UserFactory.m */; };
@@ -100,6 +102,9 @@
 		315B0B811AA87B51004428BE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		317DF99D1AAAF03800F71962 /* bridge-logo-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-logo-circle.png"; sourceTree = "<group>"; };
 		317DF99E1AAAF03800F71962 /* bridge-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-logo.png"; sourceTree = "<group>"; };
+		31DE5EF51AAD94EB005E16B2 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
 		566D980C1AAB7050007D1C55 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
 		566D980D1AAB7050007D1C55 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
 		566D980E1AAB7050007D1C55 /* PriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceViewController.xib; sourceTree = "<group>"; };
@@ -376,6 +381,9 @@
 				566D98281AAD459F007D1C55 /* BusinessDetailViewController.h */,
 				566D98291AAD459F007D1C55 /* BusinessDetailViewController.m */,
 				566D982A1AAD459F007D1C55 /* BusinessDetailViewController.xib */,
+				31DE5EF51AAD94EB005E16B2 /* MessagesViewController.h */,
+				31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */,
+				31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -480,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56C221A61AA9925900E6B55A /* TextViewController.xib in Resources */,
+				31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */,
 				566D982C1AAD459F007D1C55 /* BusinessDetailViewController.xib in Resources */,
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
@@ -556,6 +565,7 @@
 				315B0B721AA86C94004428BE /* User.m in Sources */,
 				315B0B671AA86047004428BE /* QueryFilter.m in Sources */,
 				315B0B6A1AA86055004428BE /* QuerySortOption.m in Sources */,
+				31DE5EF81AAD94EB005E16B2 /* MessagesViewController.m in Sources */,
 				56C221A51AA9925900E6B55A /* TextViewController.m in Sources */,
 				BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */,
 				BFA1DDE51AABA19A00CDD4FC /* JobCell.m in Sources */,

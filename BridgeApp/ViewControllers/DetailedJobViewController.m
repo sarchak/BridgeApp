@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *applyButton;
 @property (weak, nonatomic) IBOutlet UIButton *deliverButton;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UIButton *messageButton;
 
 
 @end
@@ -85,6 +86,9 @@
 - (DetailedJobViewController *)initWithJob:(Job *)job {
     self.job = job;
     return self;
+}
+- (IBAction)onMessage:(id)sender {
+    
 }
 
 @end
