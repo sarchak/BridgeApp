@@ -29,6 +29,8 @@
 		566D98221AAC13BB007D1C55 /* BusinessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D98201AAC13BB007D1C55 /* BusinessViewController.xib */; };
 		566D98261AAC16AA007D1C55 /* BusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98241AAC16AA007D1C55 /* BusinessCell.m */; };
 		566D98271AAC16AA007D1C55 /* BusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D98251AAC16AA007D1C55 /* BusinessCell.xib */; };
+		566D982B1AAD459F007D1C55 /* BusinessDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98291AAD459F007D1C55 /* BusinessDetailViewController.m */; };
+		566D982C1AAD459F007D1C55 /* BusinessDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D982A1AAD459F007D1C55 /* BusinessDetailViewController.xib */; };
 		567E0ABE1AA832E700C5C10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0ABD1AA832E700C5C10B /* main.m */; };
 		567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC01AA832E700C5C10B /* AppDelegate.m */; };
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
@@ -111,6 +113,9 @@
 		566D98231AAC16AA007D1C55 /* BusinessCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessCell.h; sourceTree = "<group>"; };
 		566D98241AAC16AA007D1C55 /* BusinessCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessCell.m; sourceTree = "<group>"; };
 		566D98251AAC16AA007D1C55 /* BusinessCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessCell.xib; sourceTree = "<group>"; };
+		566D98281AAD459F007D1C55 /* BusinessDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessDetailViewController.h; sourceTree = "<group>"; };
+		566D98291AAD459F007D1C55 /* BusinessDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessDetailViewController.m; sourceTree = "<group>"; };
+		566D982A1AAD459F007D1C55 /* BusinessDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessDetailViewController.xib; sourceTree = "<group>"; };
 		567E0AB81AA832E700C5C10B /* BridgeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0ABC1AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0ABD1AA832E700C5C10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -351,6 +356,9 @@
 				566D981E1AAC13BB007D1C55 /* BusinessViewController.h */,
 				566D981F1AAC13BB007D1C55 /* BusinessViewController.m */,
 				566D98201AAC13BB007D1C55 /* BusinessViewController.xib */,
+				566D98281AAD459F007D1C55 /* BusinessDetailViewController.h */,
+				566D98291AAD459F007D1C55 /* BusinessDetailViewController.m */,
+				566D982A1AAD459F007D1C55 /* BusinessDetailViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -455,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56C221A61AA9925900E6B55A /* TextViewController.xib in Resources */,
+				566D982C1AAD459F007D1C55 /* BusinessDetailViewController.xib in Resources */,
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
@@ -549,6 +558,7 @@
 				315B0B7D1AA86CE3004428BE /* Message.m in Sources */,
 				BFA1DDEA1AABBC6800CDD4FC /* DetailedJobViewController.m in Sources */,
 				566D98131AAB8D64007D1C55 /* UserFactory.m in Sources */,
+				566D982B1AAD459F007D1C55 /* BusinessDetailViewController.m in Sources */,
 				567E0ABE1AA832E700C5C10B /* main.m in Sources */,
 				566D98261AAC16AA007D1C55 /* BusinessCell.m in Sources */,
 				566D981A1AABD2F6007D1C55 /* SignUpViewController.m in Sources */,

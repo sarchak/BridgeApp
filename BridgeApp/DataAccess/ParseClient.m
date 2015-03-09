@@ -138,6 +138,8 @@
     }
     
     PFQuery *query = [self buildQuery:fromTableName withFilter:queryFilters sortOptions:sortOptions];
+    [query includeKey:@"owner"];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             NSMutableArray* objectDictionaries = [[NSMutableArray alloc] init];

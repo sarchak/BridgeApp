@@ -11,6 +11,7 @@
 #import "Parse/Parse.h"
 #import "Job.h"
 #import "CreateJobScene1ViewController.h"
+#import "BusinessDetailViewController.h"
 
 @interface BusinessViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -45,6 +46,14 @@
 }
 
 -(void) fetchData {
+    Job *job = [[Job alloc] init];
+//    [job findWithCompletion:nil sortOptions:nil completion:^(NSArray *foundObjects, NSError *error) {
+//        self.jobs = foundObjects;
+//        NSLog(@"%@", self.jobs);
+//        [self.refreshControl endRefreshing];
+//        [self.tableView reloadData];
+//    }];
+
     PFQuery *query = [PFQuery queryWithClassName:@"Jobs"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -71,6 +80,13 @@
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.jobs.count;
 }
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    BusinessDetailViewController *bvc = [[BusinessDetailViewController alloc] init];
+    bvc.job = self.jobs[indexPath.row];
+    [self.navigationController pushViewController:bvc animated:YES];
+}
+
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
     PFObject *job = self.jobs[indexPath.row];

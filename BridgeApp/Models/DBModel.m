@@ -43,7 +43,6 @@
 
 -(NSDictionary*)serialize {
     NSMutableDictionary* subClassProperties = [self toDictionary];
-    
     [subClassProperties setObject:(self.objectId ?: [NSNull null]) forKey:@"objectId"];
     [subClassProperties setObject:(self.createdAt ?: [NSNull null]) forKey:@"createdAt"];
     [subClassProperties setObject:(self.updatedAt ?: [NSNull null]) forKey:@"updatedAt"];

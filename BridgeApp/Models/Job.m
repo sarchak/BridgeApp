@@ -12,6 +12,7 @@
 
 @implementation Job
 
+
 -(Job*)initWithDictionary:(NSDictionary*)dict {
     
     self = [super init];
