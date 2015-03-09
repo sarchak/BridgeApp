@@ -34,6 +34,7 @@
     
     // @TODO fill with real data
     self.jobs = [[NSArray alloc] initWithObjects:[JobFactory getJob1], [JobFactory getJob2], nil];
+    //self.jobs = [Job ge
 }
 
 - (void)didReceiveMemoryWarning {

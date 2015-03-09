@@ -162,4 +162,14 @@ NSString * const kCurrentUser = @"kCurrentUser";
     [self findWithCompletionFromTable:@"Jobs" filters:filters sortOptions:nil completion:completion];
 }
 
+static User *_user = nil;
++(User*)getUserById:(NSString *)id {
+    ParseClient *p = [ParseClient sharedInstance];
+    [p readById:@"_User" objectId:id completion:^(NSDictionary *result, NSError *error) {
+        _user = [[User alloc] initWithDictionary:result];
+    }];
+    return _user;
+}
+
+
 @end

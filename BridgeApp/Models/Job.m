@@ -115,4 +115,9 @@
     [self.attachments addObject:asset];
 }
 
++(void)getAllOpenJobs:(void (^)(NSArray *foundObjects, NSError *error))completion {
+    NSMutableArray* filters = [[NSMutableArray alloc] init];
+    //[Job findWithCompletionFromTable:@"Jobs" filters:filters sortOptions:nil completion:completion];
+}
+
 @end

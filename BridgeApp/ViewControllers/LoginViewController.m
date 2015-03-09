@@ -75,7 +75,9 @@
 }
 
 - (void)goToFreelancerView {
-    [User setCurrentUser:[UserFactory getFreelancer]];
+    User *user = [User getUserById:@"ns4dUkKz9Z"];
+    [User setCurrentUser:user];
+    //[User setCurrentUser:[UserFactory getFreelancer]];
     OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
     [self.navigationController pushViewController:jvc animated:YES];
 }

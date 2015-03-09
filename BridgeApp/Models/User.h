@@ -56,4 +56,6 @@ typedef enum UserType : NSUInteger {
 
 -(PFUser*) getAsPFUser;
 
++(User*) getUserById:(NSString *)id;
+
 @end
