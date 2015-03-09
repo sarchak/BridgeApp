@@ -152,9 +152,14 @@
 //        }
 //
 //    }];
-
+    self.job.owner = [User currentUser];
     [self.job saveWithCompletion:^(NSError *error) {
         NSLog(@"Save with completion : %@", error);
+        self.job = [[Job alloc] init];
+        self.job.category = self.category;
+        self.job.owner = [User currentUser];
+        self.job.status = JobStatusPendingAssignment;
+        
     }];
 }
 

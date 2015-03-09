@@ -7,7 +7,6 @@
 //
 
 #import "ThreadCell.h"
-#import "StarRatingView.h"
 
 @implementation ThreadCell
 

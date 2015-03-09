@@ -49,7 +49,7 @@
 
 -(void)signUp:(User *)user completion:(void (^)(NSError *error))completion {
     PFUser *pfUser = [PFUser user];
-    pfUser.username = user.email;
+    pfUser.username = user.username;
     pfUser.email = user.email;
     pfUser.password = user.password;
 
@@ -69,7 +69,7 @@
     
     [pfUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            [self login:user.email password:user.password completion:completion];
+            [self login:user.username password:user.password completion:completion];
         } else {
             completion(error);
         }
@@ -108,8 +108,8 @@
     }];
 }
 
--(void)login:(NSString*)email password:(NSString*)password completion:(void (^)(NSError *error))completion {
-    [PFUser logInWithUsernameInBackground:email password:password
+-(void)login:(NSString*)username password:(NSString*)password completion:(void (^)(NSError *error))completion {
+    [PFUser logInWithUsernameInBackground:username password:password
         block:^(PFUser *pfUser, NSError *error) {
             if (pfUser) {
                 @try {
@@ -204,6 +204,7 @@
     }
     
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Object: %@", object);
         completion([self convertPFObjectToNSDictionary:object], error);
     }];
 }
@@ -260,6 +261,10 @@
 
 -(NSMutableDictionary*)convertPFObjectToNSDictionary:(PFObject*)pfObject {
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    if(pfObject == nil){
+        return nil;
+    }
+    
     NSArray* keys = [pfObject allKeys];
     for (id key in keys) {
         dict[key] = pfObject[key];

@@ -39,9 +39,15 @@
     // Relations
     ParseClient *p = [ParseClient sharedInstance];
     self.owner = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:dict[@"owner"]]];
-    self.assignedToUser = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:dict[@"assignedToUser"]]];
-    self.applicants = [User usersWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"applicants"]]];
-    self.attachments = [Asset assetsWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"attachments"]]];
+    if(dict[@"assignedToUser"] != nil && ![dict[@"assignedToUser"] isEqual:[NSNull null]]){
+        self.assignedToUser = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:dict[@"assignedToUser"]]];
+    }
+    if(dict[@"applicants"] != nil && ![dict[@"applicants"] isEqual:[NSNull null]]){
+        self.applicants = [User usersWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"applicants"]]];
+    }
+    if(dict[@"attachments"] != nil && ![dict[@"attachments"] isEqual:[NSNull null]]){
+        self.attachments = [Asset assetsWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"attachments"]]];
+    }
 }
 
 -(NSMutableDictionary*)toDictionary {

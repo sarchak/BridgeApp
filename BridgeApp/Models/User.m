@@ -47,6 +47,7 @@
 -(void)updateWithDictionary:(NSDictionary*) dict {
     [super updateWithDictionary:dict];
     
+    self.username = dict[@"username"];
     self.email = dict[@"email"];
     self.password = dict[@"password"];
     self.name = dict[@"name"];
@@ -65,6 +66,7 @@
 -(NSMutableDictionary*)toDictionary {
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
     
+    [dict setObject:(self.username ?: [NSNull null]) forKey:@"username"];
     [dict setObject:(self.email ?: [NSNull null]) forKey:@"email"];
     [dict setObject:(self.password ?: [NSNull null]) forKey:@"password"];
     [dict setObject:(self.name ?: [NSNull null]) forKey:@"name"];
@@ -118,22 +120,23 @@ static User *_currentUser = nil;
 NSString * const kCurrentUser = @"kCurrentUser";
 
 +(User*) currentUser {
-    if(_currentUser == nil){
-        NSData *data =  [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentUser];
-        if(data != nil){
-            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-            _currentUser = [UserFactory getUser:dictionary];
-        }
-    }
+//    if(_currentUser == nil){
+//        NSData *data =  [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentUser];
+//        if(data != nil){
+//            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+//            _currentUser = [UserFactory getUser:dictionary];
+//        }
+//    }
     return _currentUser;
 }
 
 +(void) setCurrentUser:(User *)currentUser {
     _currentUser = currentUser;
     if(_currentUser != nil){
-        NSData *data = [NSJSONSerialization dataWithJSONObject:currentUser.dictionary options:0 error:NULL];
-        [[NSUserDefaults standardUserDefaults] setObject:data forKey:kCurrentUser];
-        [[NSUserDefaults standardUserDefaults] synchronize];        
+
+//        NSData *data = [NSJSONSerialization dataWithJSONObject:[currentUser serialize] options:0 error:NULL];
+//        [[NSUserDefaults standardUserDefaults] setObject:data forKey:kCurrentUser];
+//        [[NSUserDefaults standardUserDefaults] synchronize];        
     }
 }
 

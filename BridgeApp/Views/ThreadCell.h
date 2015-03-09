@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StarRatingView.h"
+
 
 @interface ThreadCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet StarRatingView *myRatingView;
 @property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
 
 @end

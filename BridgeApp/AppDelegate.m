@@ -31,13 +31,31 @@
     
     [Parse setApplicationId:@"skXmwEdM7oNPNJcuvhjSyDYauwS4tEaDHHdbvJsM" clientKey: @"gQgOjJZUKz8gHQ1VpCcDigH2qJTNuQ2OBIww263x"];
 
-//    PFUser *user = [UserFactory getBusinessAsPFUser];
+    PFUser *user = [PFUser user];
+    user.username = @"philz";
+    user.password = @"bridgeapp";
+//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        NSLog(@"Signup completed :%@",error);
+//    }];
+//    [PFUser logInWithUsernameInBackground:@"philz" password:@"bridgeapp" block:^(PFUser *user, NSError *error) {
+//        NSLog(@"user :%@", user);
+//        NSLog(@"error :%@", error);
+//    }];
+    
 //    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 //        NSLog(@"User signedup");
 //    }];
-    [User login:@"Philz Coffee" password:@"Something" completion:^(NSError *error) {
+    [User login:@"philz" password:@"bridgeapp" completion:^(NSError *error) {
         NSLog(@"User logged in %@", [User currentUser]);
     }];
+    
+//    User *user = [[User alloc] init];
+//    user.username = @"philz";
+//    user.password = @"brigeapp";
+//    [user signUpWithCompletion:^(NSError *error) {
+//        NSLog(@"Signed up :%@", error);
+//
+//    }];
     self.window.rootViewController = nvc;
     [self.window makeKeyAndVisible];
     return YES;

@@ -65,8 +65,7 @@
 
 - (void)goToBusinessView {
     /* Setup the business owner */
-    User *user = [UserFactory getBusiness];
-    [User setCurrentUser: user];
+    [User setCurrentUser: [User currentUser]];
 //    CreateJobScene1ViewController *cvc = [[CreateJobScene1ViewController alloc] init];
     
     BusinessViewController *bvc = [[BusinessViewController alloc] init];
