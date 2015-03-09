@@ -87,9 +87,12 @@
 }
 
 -(void)findWithCompletion:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions completion:(void (^)(NSArray *foundObjects, NSError *error))completion {
-    
+    [self findWithCompletionFromTable:self.tableName filters:queryFilters sortOptions:sortOptions completion:completion];
+}
+
+-(void)findWithCompletionFromTable:(NSString*)tableName filters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions completion:(void (^)(NSArray *foundObjects, NSError *error))completion {
     ParseClient* p = [ParseClient sharedInstance];
-    [p read:self.tableName withFilters:queryFilters sortOptions:sortOptions includeKeys:[self includeKeys] completion:^(NSArray *result, NSError *error) {
+    [p read:tableName withFilters:queryFilters sortOptions:sortOptions includeKeys:[self includeKeys] completion:^(NSArray *result, NSError *error) {
         NSMutableArray* array = [[NSMutableArray alloc] init];
         for (NSDictionary* dict in result) {
             DBModel *object = [[[self class] alloc] initWithDictionary:dict];
@@ -97,13 +100,15 @@
         }
         completion(array, error);
     }];
-    
 }
 
 -(void)findByIdWithCompletion:(NSString*)objectId completion:(void (^)(DBModel *foundObject, NSError *error))completion {
-    
+    [self findByIdWithCompletionFromTable:self.tableName objectId:objectId completion:completion];
+}
+
+-(void)findByIdWithCompletionFromTable:(NSString*)tableName objectId:(NSString*)objectId completion:(void (^)(DBModel *foundObject, NSError *error))completion {
     ParseClient* p = [ParseClient sharedInstance];
-    [p readById:self.tableName objectId:objectId completion:^(NSDictionary *result, NSError *error) {
+    [p readById:tableName objectId:objectId completion:^(NSDictionary *result, NSError *error) {
         
         if (result == nil) {
             if (error == nil) {
@@ -118,7 +123,6 @@
         }
         
     }];
-    
 }
 
 -(NSArray*) includeKeys {

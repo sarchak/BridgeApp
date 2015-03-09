@@ -144,4 +144,16 @@ NSString * const kCurrentUser = @"kCurrentUser";
     }
 }
 
+-(void)getAssignedJobsWithCompletion:(void (^)(NSArray *foundObjects, NSError *error))completion {
+    NSMutableArray* filters = [[NSMutableArray alloc] init];
+    [filters addObject:[QueryFilter filterByField:@"assignedToUser" operator:QueryFilterOperatorEquals value:self.pfObject]];
+    [self findWithCompletionFromTable:@"Jobs" filters:filters sortOptions:nil completion:completion];
+}
+
+-(void)getCreatedJobsWithCompletion:(void (^)(NSArray *foundObjects, NSError *error))completion {
+    NSMutableArray* filters = [[NSMutableArray alloc] init];
+    [filters addObject:[QueryFilter filterByField:@"owner" operator:QueryFilterOperatorEquals value:self.pfObject]];
+    [self findWithCompletionFromTable:@"Jobs" filters:filters sortOptions:nil completion:completion];
+}
+
 @end

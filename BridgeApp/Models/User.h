@@ -49,6 +49,8 @@ typedef enum UserType : NSUInteger {
 -(void)setAsCurrentUser;
 -(void)signUpWithCompletion:(void (^)(NSError *error))completion;
 -(void)saveWithCompletion:(void (^)(NSError *error))completion;
+-(void)getAssignedJobsWithCompletion:(void (^)(NSArray *foundObjects, NSError *error))completion;
+-(void)getCreatedJobsWithCompletion:(void (^)(NSArray *foundObjects, NSError *error))completion;
 
 +(void) setCurrentUser:(User*) currentUser;
 
