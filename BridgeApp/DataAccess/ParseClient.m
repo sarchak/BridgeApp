@@ -129,7 +129,7 @@
     }];
 }
 
--(void)read:(NSString*)fromTableName withFilters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions completion:(void (^)(NSArray *result, NSError *error))completion {
+-(void)read:(NSString*)fromTableName withFilters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions includeKeys:(NSArray*)includeKeys completion:(void (^)(NSArray *result, NSError *error))completion {
     
     if ([fromTableName isEqual:@"User"]) {
         NSError* error = [NSError errorWithDomain:@"Unfortunately User table cannot be queried in the generic way." code:1 userInfo:nil];
@@ -137,9 +137,7 @@
         return;
     }
     
-    PFQuery *query = [self buildQuery:fromTableName withFilter:queryFilters sortOptions:sortOptions];
-    [query includeKey:@"owner"];
-    
+    PFQuery *query = [self buildQuery:fromTableName withFilter:queryFilters sortOptions:sortOptions includeKeys:includeKeys];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             NSMutableArray* objectDictionaries = [[NSMutableArray alloc] init];
@@ -212,7 +210,7 @@
 }
 
 -(void)remove:(NSString*)tableName withFilter:(NSArray*)queryFilters completion:(void (^)(NSError *error))completion {
-    PFQuery *query = [self buildQuery:tableName withFilter:queryFilters sortOptions:nil];
+    PFQuery *query = [self buildQuery:tableName withFilter:queryFilters sortOptions:nil includeKeys:nil];
     
     [query getFirstObjectInBackgroundWithBlock:^(PFObject * foundObject, NSError *error) {
         if (!error) {
@@ -225,7 +223,7 @@
         }
     }];
 }
--(PFQuery*)buildQuery:(NSString*)tableName withFilter:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions {
+-(PFQuery*)buildQuery:(NSString*)tableName withFilter:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions includeKeys:(NSArray*)includeKeys {
     PFQuery *query = [PFQuery queryWithClassName:tableName];
     
     for (QueryFilter* filter in queryFilters) {
@@ -256,6 +254,10 @@
                 [query orderByDescending:option.fieldNames];
                 break;
         }
+    }
+    
+    for (NSString* key in includeKeys) {
+        [query includeKey:key];
     }
     
     return query;

@@ -45,6 +45,10 @@
     return @"ConversationThread";
 }
 
+-(NSArray*) includeKeys {
+    return @[];
+}
+
 static ConversationThread *_thread = nil;
 
 - (ConversationThread *)getConversationByJobId:(NSString *)jobId completion:(void (^)(NSError *error))completion {

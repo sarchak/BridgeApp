@@ -44,5 +44,9 @@
     return @"Message";
 }
 
+-(NSArray*) includeKeys {
+    return @[];
+}
+
 
 @end

@@ -54,5 +54,9 @@
     return @"Asset";
 }
 
+-(NSArray*) includeKeys {
+    return @[];
+}
+
 
 @end

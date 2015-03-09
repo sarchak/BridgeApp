@@ -88,6 +88,10 @@
     return @"User";
 }
 
+-(NSArray*) includeKeys {
+    return @[];
+}
+
 -(void)setAsCurrentUser {
     _currentUser = self;
 }

@@ -89,10 +89,11 @@
 -(void)findWithCompletion:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions completion:(void (^)(NSArray *foundObjects, NSError *error))completion {
     
     ParseClient* p = [ParseClient sharedInstance];
-    [p read:self.tableName withFilters:queryFilters sortOptions:sortOptions completion:^(NSArray *result, NSError *error) {
+    [p read:self.tableName withFilters:queryFilters sortOptions:sortOptions includeKeys:[self includeKeys] completion:^(NSArray *result, NSError *error) {
         NSMutableArray* array = [[NSMutableArray alloc] init];
         for (NSDictionary* dict in result) {
-            [array addObject:[self initWithDictionary:dict]];
+            DBModel *object = [[[self class] alloc] initWithDictionary:dict];
+            [array addObject:object];
         }
         completion(array, error);
     }];
@@ -118,6 +119,12 @@
         
     }];
     
+}
+
+-(NSArray*) includeKeys {
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return nil;
 }
 
 @end

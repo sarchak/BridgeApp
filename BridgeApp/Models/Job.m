@@ -77,6 +77,11 @@
     return @"Jobs";
 }
 
+-(NSArray*) includeKeys {
+    //return @[@"owner", @"assignedToUser", @"applicants", @"attachments"];
+    return @[@"owner", @"assignedToUser"];
+}
+
 -(void)addApplicant:(User*)user {
     if (self.applicants == nil) {
         static dispatch_once_t onceToken;
