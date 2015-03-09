@@ -44,7 +44,7 @@ typedef enum JobStatus : NSUInteger {
 @property (nonatomic, strong) NSMutableArray* attachmentsPFObjects; // Array of PFObjects
 
 +(NSArray*) includeKeys;
-+(void)getAllOpenJobs:(void (^)(NSArray *foundObjects, NSError *error))completion;
 
++(void)getAllOpenJobs:(void (^)(NSArray *foundObjects, NSError *error))completion;
 
 @end

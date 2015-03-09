@@ -42,20 +42,26 @@ typedef enum UserType : NSUInteger {
 //@property (nonatomic, assign) int reviewCount;
 
 
+//  static getters
 +(User*)currentUser;
-+(void)login:(NSString*)username password:(NSString*)password completion:(void (^)(NSError *error))completion;
-+(NSMutableArray*) usersWithDictionaries:(NSArray*)dictionaries;
++(User*) getUserById:(NSString *)id;
 
--(void)setAsCurrentUser;
--(void)signUpWithCompletion:(void (^)(NSError *error))completion;
--(void)saveWithCompletion:(void (^)(NSError *error))completion;
--(void)getAssignedJobsWithCompletion:(void (^)(NSArray *foundObjects, NSError *error))completion;
--(void)getCreatedJobsWithCompletion:(void (^)(NSArray *foundObjects, NSError *error))completion;
-
+// static setters
 +(void) setCurrentUser:(User*) currentUser;
 
+// instance getters
+-(void)getAssignedJobsWithCompletion:(void (^)(NSArray *foundObjects, NSError *error))completion;
+-(void)getCreatedJobsWithCompletion:(void (^)(NSArray *foundObjects, NSError *error))completion;
 -(PFUser*) getAsPFUser;
 
-+(User*) getUserById:(NSString *)id;
+// instance setters
+-(void)setAsCurrentUser;
+
+// actions
++(void)login:(NSString*)username password:(NSString*)password completion:(void (^)(NSError *error))completion;
++(NSMutableArray*) usersWithDictionaries:(NSArray*)dictionaries;
+-(void)signUpWithCompletion:(void (^)(NSError *error))completion;
+-(void)saveWithCompletion:(void (^)(NSError *error))completion;
+
 
 @end
