@@ -124,6 +124,7 @@
         NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
         cell.profileImage.image = [UIImage imageNamed:filename];
         cell.statusView.backgroundColor = [UIColor greenColor];
+        cell.profileImage.hidden  = NO;
     } else {
         cell.profileImage.hidden  = YES;
         cell.statusView.backgroundColor = [UIColor lightGrayColor];

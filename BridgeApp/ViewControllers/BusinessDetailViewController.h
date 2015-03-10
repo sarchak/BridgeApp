@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 
-@interface BusinessDetailViewController : UIViewController
+@interface BusinessDetailViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) PFObject *job;
 @end

@@ -8,6 +8,7 @@
 
 #import "BusinessDetailViewController.h"
 #import "Constants.h"
+#import "BusinessCell.h"
 
 @interface BusinessDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -25,6 +26,10 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.titleLabel.text = self.job[TITLE];
     self.jobDescription.text = self.job[SUMMARY];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,14 +37,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
-*/
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Applicants";
+}
+
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
+}
+
+-(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
+    return cell;
+}
 @end
