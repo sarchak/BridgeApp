@@ -44,7 +44,7 @@ typedef enum UserType : NSUInteger {
 
 //  static getters
 +(User*)currentUser;
-+(User*) getUserById:(NSString *)id;
++(void)getUserById:(NSString *)id completion:(void (^)(NSDictionary *foundObjects, NSError *error))completion;
 
 // static setters
 +(void) setCurrentUser:(User*) currentUser;

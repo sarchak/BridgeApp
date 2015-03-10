@@ -171,12 +171,9 @@ NSString * const kCurrentUser = @"kCurrentUser";
 }
 
 static User *_user = nil;
-+(User*)getUserById:(NSString *)id {
++(void)getUserById:(NSString *)id completion:(void (^)(NSDictionary *, NSError *))completion {
     ParseClient *p = [ParseClient sharedInstance];
-    [p readById:@"_User" objectId:id completion:^(NSDictionary *result, NSError *error) {
-        _user = [[User alloc] initWithDictionary:result];
-    }];
-    return _user;
+    [p readById:@"_User" objectId:id completion:completion];
 }
 
 

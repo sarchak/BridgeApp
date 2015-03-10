@@ -75,9 +75,12 @@
 }
 
 - (void)goToFreelancerView {
-    User *user = [User getUserById:@"ns4dUkKz9Z"];
-    [User setCurrentUser:user];
+    [User getUserById:@"ns4dUkKz9Z" completion:^(NSDictionary *foundObjects, NSError *error) {
+        [User setCurrentUser:[[User alloc] initWithDictionary:foundObjects]];
+        NSLog(@"Current user: %@", [User currentUser]);
+    }];
     //[User setCurrentUser:[UserFactory getFreelancer]];
+
     OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
     [self.navigationController pushViewController:jvc animated:YES];
 }

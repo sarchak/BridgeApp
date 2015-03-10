@@ -78,7 +78,7 @@
 */
 
 - (void)setButtonState {
-    self.applyButton.enabled = NO;
+    self.applyButton.enabled = YES;
     self.editButton.enabled = NO;
     self.deliverButton.enabled = NO;
 }
@@ -86,6 +86,10 @@
 - (DetailedJobViewController *)initWithJob:(Job *)job {
     self.job = job;
     return self;
+}
+- (IBAction)onApply:(id)sender {
+    [self.job addApplicant:[User currentUser]];
+    self.applyButton.enabled = NO;
 }
 - (IBAction)onMessage:(id)sender {
     

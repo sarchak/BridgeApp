@@ -106,6 +106,9 @@
     [self.applicants addObject:user];
 }
 
+// @TODO
+// need to implement: (bool)hasUserApplied:(User*)user;
+
 -(void)addAttachment:(Asset*)asset {
     if (self.attachments == nil) {
         static dispatch_once_t onceToken;

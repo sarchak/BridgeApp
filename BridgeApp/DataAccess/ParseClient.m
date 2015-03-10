@@ -154,7 +154,7 @@
 -(void)readById:(NSString*)tableName objectId:(NSString*)objectId completion:(void (^)(NSDictionary *result, NSError *error))completion {
     PFQuery *query = [PFQuery queryWithClassName:tableName];
     if (objectId != nil) {
-        [query whereKey:@"id" equalTo:objectId];
+        [query whereKey:@"objectId" equalTo:objectId];
     }
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

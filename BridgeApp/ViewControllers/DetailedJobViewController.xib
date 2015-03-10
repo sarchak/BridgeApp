@@ -41,6 +41,9 @@
                     <state key="normal" title="Apply">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onApply:" destination="-1" eventType="touchUpInside" id="GB8-oh-lbC"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yBS-5O-uLo">
                     <rect key="frame" x="0.0" y="351" width="320" height="172"/>
