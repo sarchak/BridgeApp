@@ -48,4 +48,4 @@ SPEC CHECKSUMS:
   StarRatingView: c3e81fe39e1fdd5a11d3bee4ccbf7fadf8491107
   THCalendarDatePicker: c482d4f630262bae6fe88113d0298f54bad1fd9d
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.0.rc.1
