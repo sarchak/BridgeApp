@@ -81,6 +81,15 @@
     self.applyButton.enabled = YES;
     self.editButton.enabled = NO;
     self.deliverButton.enabled = NO;
+    
+    // disable certain buttons if applicable
+    if ([self.job hasUserApplied:[User currentUser]]) {
+        [self setAppliedButton];
+    }
+}
+- (void)setAppliedButton {
+    self.applyButton.enabled = NO;
+    [self.applyButton setTitle:@"Applied" forState:UIControlStateNormal];
 }
 
 - (DetailedJobViewController *)initWithJob:(Job *)job {
@@ -89,7 +98,7 @@
 }
 - (IBAction)onApply:(id)sender {
     [self.job addApplicant:[User currentUser]];
-    self.applyButton.enabled = NO;
+    [self setAppliedButton];
 }
 - (IBAction)onMessage:(id)sender {
     

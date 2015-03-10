@@ -101,13 +101,15 @@
                 self.applicants = [[NSMutableArray alloc] init];
             }
         });
+        // @TODO this is working almost properly, but it doesn't seem to be adding the applicant to Parse
     }
     
     [self.applicants addObject:user];
 }
 
-// @TODO
-// need to implement: (bool)hasUserApplied:(User*)user;
+-(bool)hasUserApplied:(User*)user {
+    return [self.applicants containsObject:user];
+}
 
 -(void)addAttachment:(Asset*)asset {
     if (self.attachments == nil) {
