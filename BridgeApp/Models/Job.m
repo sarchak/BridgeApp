@@ -22,6 +22,9 @@
 
 @implementation Job
 
+static dispatch_once_t _applicantsArrayOnceToken;
+static dispatch_once_t _attachmentsArrayOnceToken;
+
 
 -(Job*)initWithDictionary:(NSDictionary*)dict {
     
@@ -53,11 +56,26 @@
     if(dict[@"assignedToUser"] != nil && ![dict[@"assignedToUser"] isEqual:[NSNull null]]){
         self.assignedToUser = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:dict[@"assignedToUser"]]];
     }
+    
+    self.applicantsArray = nil;
+    self.applicantsPFUsers = nil;
+    _applicantsArrayOnceToken = 0;
     if(dict[@"applicants"] != nil && ![dict[@"applicants"] isEqual:[NSNull null]]){
-        self.applicantsArray = [User usersWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"applicants"]]];
+        for (PFObject* pfObject in dict[@"applicants"]) {
+            User* user = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:pfObject]];
+            [self addApplicant:user];
+        }
+        
     }
+    
+    self.attachmentsArray = nil;
+    self.attachmentsPFObjects = nil;
+    _attachmentsArrayOnceToken = 0;
     if(dict[@"attachments"] != nil && ![dict[@"attachments"] isEqual:[NSNull null]]){
-        self.attachmentsArray = [Asset assetsWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"attachments"]]];
+        for (PFObject* pfObject in dict[@"attachments"]) {
+            Asset* attachment = [[Asset alloc] initWithDictionary:[p convertPFObjectToNSDictionary:pfObject]];
+            [self addAttachment:attachment];
+        }
     }
 }
 
@@ -92,8 +110,7 @@
 }
 
 +(NSArray*) includeKeys {
-    //return @[@"owner", @"assignedToUser", @"applicants", @"attachments"];
-    return @[@"owner", @"assignedToUser"];
+    return @[@"owner", @"assignedToUser", @"applicants", @"attachments"];
 }
 
 -(NSArray*)requiredFields {
@@ -105,8 +122,7 @@
 
 -(void)addApplicant:(User*)user {
     if (self.applicantsArray == nil) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
+        dispatch_once(&_applicantsArrayOnceToken, ^{
             if (self.applicantsArray == nil) {
                 self.applicantsArray = [[NSMutableArray alloc] init];
             }
@@ -132,8 +148,7 @@
 
 -(void)addAttachment:(Asset*)asset {
     if (self.attachmentsArray == nil) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
+        dispatch_once(&_attachmentsArrayOnceToken, ^{
             if (self.attachmentsArray == nil) {
                 self.attachmentsArray = [[NSMutableArray alloc] init];
             }
