@@ -49,6 +49,5 @@ typedef enum JobStatus : NSUInteger {
 +(NSArray*) includeKeys;
 
 +(void)getAllOpenJobs:(void (^)(NSArray *foundObjects, NSError *error))completion;
--(void)addApplicant:(User*)user;
 -(bool)hasUserApplied:(User*)user;
 @end

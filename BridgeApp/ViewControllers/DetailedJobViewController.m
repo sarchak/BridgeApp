@@ -98,6 +98,13 @@
 }
 - (IBAction)onApply:(id)sender {
     [self.job addApplicant:[User currentUser]];
+    [self.job saveWithCompletion:^(NSError *error) {
+        if (error == nil) {
+            NSLog(@"job applied successfully");
+        } else {
+            NSLog(@"job application failed: %@", error);
+        }
+    }];
     [self setAppliedButton];
 }
 - (IBAction)onMessage:(id)sender {
