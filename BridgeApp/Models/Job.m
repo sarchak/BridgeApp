@@ -143,7 +143,15 @@ static dispatch_once_t _attachmentsArrayOnceToken;
 }
 
 -(bool)hasUserApplied:(User*)user {
-    return [self.applicants containsObject:user];
+
+    for (User* userInArray in self.applicantsArray) {
+        if ([user.objectId isEqual:userInArray.objectId]) {
+            return true;
+        }
+    }
+    return false;
+    // won't work: return [self.applicantsArray containsObject:user];
+    // because it's a different object reference
 }
 
 -(void)addAttachment:(Asset*)asset {
