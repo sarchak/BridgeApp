@@ -87,9 +87,24 @@
 
 }
 
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(section == 0){
+        return 2;
+    } 
     return self.jobs.count;
 }
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if(section == 0) {
+        return @"Assigned Jobs";
+    }
+    return @"Unassigned Jobs";
+}
+
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BusinessDetailViewController *bvc = [[BusinessDetailViewController alloc] init];
@@ -99,17 +114,21 @@
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
-//    Job *job = self.jobs[indexPath.row];
-//    NSLog(@"Title : %@", job.title);
-//    cell.titleLabel.text = job.title;
-    
+
     PFObject *job = self.jobs[indexPath.row];
     NSLog(@"Title : %@", job[TITLE]);
     cell.titleLabel.text = job[TITLE];
     cell.summary.text = job[SUMMARY];
     NSInteger num = (indexPath.row % 3) + 1;
-    NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
-    cell.profileImage.image = [UIImage imageNamed:filename];
+    if(indexPath.section == 0){
+        NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
+        cell.profileImage.image = [UIImage imageNamed:filename];
+        cell.statusView.backgroundColor = [UIColor greenColor];
+    } else {
+        cell.profileImage.hidden  = YES;
+        cell.statusView.backgroundColor = [UIColor lightGrayColor];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 @end
