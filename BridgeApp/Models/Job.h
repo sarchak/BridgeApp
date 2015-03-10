@@ -8,6 +8,7 @@
 
 #import "DBModel.h"
 #import "User.h"
+#import "Asset.h"
 #import "Parse/Parse.h"
 
 @class User;
@@ -37,11 +38,13 @@ typedef enum JobStatus : NSUInteger {
 @property (nonatomic, strong) User *owner;
 @property (nonatomic, strong) User *assignedToUser;
 
-@property (nonatomic, strong) NSMutableArray* applicants; // Array of User objects
-@property (nonatomic, strong) NSMutableArray* applicantsPFUsers; // Array of PFUser objects
 
-@property (nonatomic, strong) NSMutableArray* attachments; // Array of Asset objects
-@property (nonatomic, strong) NSMutableArray* attachmentsPFObjects; // Array of PFObjects
+-(NSArray*) applicants;
+-(void)addApplicant:(User*)user;
+
+-(NSArray*) attachments;
+-(void)addAttachment:(Asset*)asset;
+
 
 +(NSArray*) includeKeys;
 

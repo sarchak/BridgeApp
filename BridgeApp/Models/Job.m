@@ -10,6 +10,16 @@
 #import "ParseClient.h"
 #import "Asset.h"
 
+@interface Job ()
+
+@property (nonatomic, strong) NSMutableArray* applicantsArray; // Array of User objects
+@property (nonatomic, strong) NSMutableArray* applicantsPFUsers; // Array of PFUser objects
+
+@property (nonatomic, strong) NSMutableArray* attachmentsArray; // Array of Asset objects
+@property (nonatomic, strong) NSMutableArray* attachmentsPFObjects; // Array of PFObjects
+
+@end
+
 @implementation Job
 
 
@@ -44,10 +54,10 @@
         self.assignedToUser = [[User alloc] initWithDictionary:[p convertPFObjectToNSDictionary:dict[@"assignedToUser"]]];
     }
     if(dict[@"applicants"] != nil && ![dict[@"applicants"] isEqual:[NSNull null]]){
-        self.applicants = [User usersWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"applicants"]]];
+        self.applicantsArray = [User usersWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"applicants"]]];
     }
     if(dict[@"attachments"] != nil && ![dict[@"attachments"] isEqual:[NSNull null]]){
-        self.attachments = [Asset assetsWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"attachments"]]];
+        self.attachmentsArray = [Asset assetsWithDictionaries:[p convertPFObjectArrayToNSDictionaries:dict[@"attachments"]]];
     }
 }
 
@@ -94,17 +104,26 @@
 }
 
 -(void)addApplicant:(User*)user {
-    if (self.applicants == nil) {
+    if (self.applicantsArray == nil) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            if (self.applicants == nil) {
-                self.applicants = [[NSMutableArray alloc] init];
+            if (self.applicantsArray == nil) {
+                self.applicantsArray = [[NSMutableArray alloc] init];
+            }
+            if (self.applicantsPFUsers == nil) {
+                self.applicantsPFUsers = [[NSMutableArray alloc] init];
             }
         });
         // @TODO this is working almost properly, but it doesn't seem to be adding the applicant to Parse
     }
     
-    [self.applicants addObject:user];
+    [self.applicantsArray addObject:user];
+    [self.applicantsPFUsers addObject:user.pfObject];
+}
+
+-(NSArray*) applicants {
+    // return a new array to make sure outsiders don't modify ours
+    return [NSArray arrayWithArray:self.applicantsArray];
 }
 
 -(bool)hasUserApplied:(User*)user {
@@ -112,16 +131,25 @@
 }
 
 -(void)addAttachment:(Asset*)asset {
-    if (self.attachments == nil) {
+    if (self.attachmentsArray == nil) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            if (self.attachments == nil) {
-                self.attachments = [[NSMutableArray alloc] init];
+            if (self.attachmentsArray == nil) {
+                self.attachmentsArray = [[NSMutableArray alloc] init];
+            }
+            if (self.attachmentsPFObjects == nil) {
+                self.attachmentsPFObjects = [[NSMutableArray alloc] init];
             }
         });
     }
     
-    [self.attachments addObject:asset];
+    [self.attachmentsArray addObject:asset];
+    [self.attachmentsPFObjects addObject:asset.pfObject];
+}
+
+-(NSArray*) attachments {
+    // return a new array to make sure outsiders don't modify ours
+    return [NSArray arrayWithArray:self.attachmentsArray];
 }
 
 +(void)getAllOpenJobs:(void (^)(NSArray *foundObjects, NSError *error))completion {
