@@ -108,10 +108,10 @@
 
 -(void)findWithCompletionFromTable:(NSString*)tableName filters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions completion:(void (^)(NSArray *foundObjects, NSError *error))completion {
     
-    [DBModel findWithCompletionFromTable:tableName filters:queryFilters sortOptions:sortOptions includeKeys:[self includeKeys] completion:completion];
+    [self findWithCompletionFromTable:tableName filters:queryFilters sortOptions:sortOptions includeKeys:[self includeKeys] completion:completion];
 }
 
-+(void)findWithCompletionFromTable:(NSString*)tableName filters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions includeKeys:(NSArray*)includeKeys completion:(void (^)(NSArray *foundObjects, NSError *error))completion {
+-(void)findWithCompletionFromTable:(NSString*)tableName filters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions includeKeys:(NSArray*)includeKeys completion:(void (^)(NSArray *foundObjects, NSError *error))completion {
     
     ParseClient* p = [ParseClient sharedInstance];
     [p read:tableName withFilters:queryFilters sortOptions:sortOptions includeKeys:includeKeys completion:^(NSArray *result, NSError *error) {
@@ -125,10 +125,10 @@
 }
 
 -(void)findByIdWithCompletion:(NSString*)objectId completion:(void (^)(DBModel *foundObject, NSError *error))completion {
-    [DBModel findByIdWithCompletionFromTable:self.tableName objectId:objectId completion:completion];
+    [self findByIdWithCompletionFromTable:self.tableName objectId:objectId completion:completion];
 }
 
-+(void)findByIdWithCompletionFromTable:(NSString*)tableName objectId:(NSString*)objectId completion:(void (^)(DBModel *foundObject, NSError *error))completion {
+-(void)findByIdWithCompletionFromTable:(NSString*)tableName objectId:(NSString*)objectId completion:(void (^)(DBModel *foundObject, NSError *error))completion {
     ParseClient* p = [ParseClient sharedInstance];
     [p readById:tableName objectId:objectId completion:^(NSDictionary *result, NSError *error) {
         

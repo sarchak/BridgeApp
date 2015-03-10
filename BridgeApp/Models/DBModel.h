@@ -26,9 +26,9 @@
 -(void)deleteWithCompletion:(void (^)(NSError *error))completion;
 -(void)findWithCompletion:(NSArray*)withFilters sortOptions:(NSArray*)sortOptions completion:(void (^)(NSArray *foundObjects, NSError *error))completion;
 -(void)findWithCompletionFromTable:(NSString*)tableName filters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions completion:(void (^)(NSArray *foundObjects, NSError *error))completion;
-+(void)findWithCompletionFromTable:(NSString*)tableName filters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions includeKeys:(NSArray*)includeKeys completion:(void (^)(NSArray *foundObjects, NSError *error))completion;
+-(void)findWithCompletionFromTable:(NSString*)tableName filters:(NSArray*)queryFilters sortOptions:(NSArray*)sortOptions includeKeys:(NSArray*)includeKeys completion:(void (^)(NSArray *foundObjects, NSError *error))completion;
 -(void)findByIdWithCompletion:(NSString*)objectId completion:(void (^)(DBModel *foundObject, NSError *error))completion;
-+(void)findByIdWithCompletionFromTable:(NSString*)tableName objectId:(NSString*)objectId completion:(void (^)(DBModel *foundObject, NSError *error))completion;
+-(void)findByIdWithCompletionFromTable:(NSString*)tableName objectId:(NSString*)objectId completion:(void (^)(DBModel *foundObject, NSError *error))completion;
 
 
 @end
