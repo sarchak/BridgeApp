@@ -36,7 +36,7 @@
         self.jobs = foundObjects;
         [self.tableView reloadData];
     }];
-    NSLog(@"Now in ojvc, Current user: %@", [User currentUser]);
+    NSLog(@"Now in ojvc, Current user: %@", [User currentUser].username);
 }
 
 - (void)didReceiveMemoryWarning {

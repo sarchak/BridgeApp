@@ -9,6 +9,7 @@
 #import "Job.h"
 #import "ParseClient.h"
 #import "Asset.h"
+#import "QueryFilter.h"
 
 @interface Job ()
 
@@ -121,18 +122,19 @@ static dispatch_once_t _attachmentsArrayOnceToken;
 }
 
 -(void)addApplicant:(User*)user {
+    
     if (self.applicantsArray == nil) {
-        dispatch_once(&_applicantsArrayOnceToken, ^{
+//        dispatch_once(&_applicantsArrayOnceToken, ^{
             if (self.applicantsArray == nil) {
                 self.applicantsArray = [[NSMutableArray alloc] init];
             }
             if (self.applicantsPFUsers == nil) {
                 self.applicantsPFUsers = [[NSMutableArray alloc] init];
             }
-        });
+//        });
         // @TODO this is working almost properly, but it doesn't seem to be adding the applicant to Parse
     }
-    
+    self.status = JobStatusHasApplicants;
     [self.applicantsArray addObject:user];
     [self.applicantsPFUsers addObject:user.pfObject];
 }
@@ -179,6 +181,15 @@ static dispatch_once_t _attachmentsArrayOnceToken;
     NSMutableArray* filters = [[NSMutableArray alloc] init];
     Job* job = [[Job alloc] init];
     [job findWithCompletionFromTable:@"Jobs" filters:filters sortOptions:nil completion:completion];
+}
+
++(void)getJobWithOptions: (JobStatus) status completion: (void (^)(NSArray *foundObjects, NSError *error))completion {
+    QueryFilter *filter = [[QueryFilter alloc] init];
+    filter.operator = QueryFilterOperatorEquals;
+    filter.fieldName = @"status";
+    filter.value = [NSNumber numberWithInt:status];
+    Job* job = [[Job alloc] init];
+    [job findWithCompletionFromTable:@"Jobs" filters:@[filter] sortOptions:nil completion:completion];
 }
 
 @end

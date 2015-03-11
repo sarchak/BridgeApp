@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
+#import "Job.h"
 
 @interface BusinessDetailViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
-@property (strong, nonatomic) PFObject *job;
+@property (strong, nonatomic) Job *job;
 @end

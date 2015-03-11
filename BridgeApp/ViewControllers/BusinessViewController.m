@@ -16,7 +16,9 @@
 @interface BusinessViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-@property (strong, nonatomic) NSArray *jobs;
+@property (strong, nonatomic) NSArray *assignedJobs;
+@property (strong, nonatomic) NSArray *readyToAssignJobs;
+@property (strong, nonatomic) NSArray *pendingJobs;
 @end
 
 @implementation BusinessViewController
@@ -40,6 +42,8 @@
 
     [self fetchData];
     
+    
+
     /*
      * ATTENTION!!
      * This should be the same as DetailedJobViewController
@@ -55,6 +59,34 @@
 }
 
 -(void) fetchData {
+    
+     /* Fetch assigned jobs */
+    [Job getJobWithOptions:JobStatusAssigned completion:^(NSArray *foundObjects, NSError *error) {
+        self.assignedJobs = foundObjects;
+        [self.refreshControl endRefreshing];
+        [self.tableView reloadData];
+    }];
+    
+    /* Fetch ready to assign jobs. Jobs with applicants */
+    [Job getJobWithOptions:JobStatusHasApplicants completion:^(NSArray *foundObjects, NSError *error) {
+        self.readyToAssignJobs = foundObjects;
+        [self.refreshControl endRefreshing];
+        [self.tableView reloadData];
+    }];
+
+    [Job getJobWithOptions:JobStatusPendingAssignment completion:^(NSArray *foundObjects, NSError *error) {
+        self.pendingJobs = foundObjects;
+        [self.refreshControl endRefreshing];
+        [self.tableView reloadData];
+        
+        for(Job *tjob in foundObjects){
+            NSLog(@"#### %@ ", tjob.title);
+            for(User *applicant in tjob.applicants){
+                NSLog(@"@@@@ user %@", applicant.username);
+            }
+        }
+    }];
+    
 //    Job *job = [[Job alloc] init];
 //    [job findWithCompletion:nil sortOptions:nil completion:^(NSArray *foundObjects, NSError *error) {
 //        self.jobs = foundObjects;
@@ -63,18 +95,18 @@
 //        [self.tableView reloadData];
 //    }];
 
-    PFQuery *query = [PFQuery queryWithClassName:@"Jobs"];
-    [query orderByDescending:@"createdAt"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            self.jobs = objects;
-            [self.refreshControl endRefreshing];
-            [self.tableView reloadData];
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+//    PFQuery *query = [PFQuery queryWithClassName:@"Jobs"];
+//    [query orderByDescending:@"createdAt"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            self.jobs = objects;
+//            [self.refreshControl endRefreshing];
+//            [self.tableView reloadData];
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
 }
 
 -(void) createJob{
@@ -88,37 +120,54 @@
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(section == 0){
-        return 2;
-    } 
-    return self.jobs.count;
+        return self.assignedJobs.count;
+    } else if(section == 1){
+        return self.readyToAssignJobs.count;
+    } else if(section == 2){
+        return self.pendingJobs.count;
+    }
+    return 0;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0) {
         return @"Assigned Jobs";
+    }else if (section == 1) {
+        return @"Ready to assign Jobs";
+    }else if (section == 2) {
+        return @"Unassigned Jobs";
     }
-    return @"Unassigned Jobs";
+    return @"";
 }
 
 
+-(Job*) getJob: (NSIndexPath*) indexPath{
+    Job *job = nil;
+    if(indexPath.section == 0){
+        job = self.assignedJobs[indexPath.row];
+    } else if(indexPath.section == 1){
+        job = self.readyToAssignJobs[indexPath.row];
+    } else if(indexPath.section == 2){
+        job = self.pendingJobs[indexPath.row];
+    }
+    return job;
+}
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BusinessDetailViewController *bvc = [[BusinessDetailViewController alloc] init];
-    bvc.job = self.jobs[indexPath.row];
+    bvc.job = [self getJob:indexPath];
     [self.navigationController pushViewController:bvc animated:YES];
 }
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
-
-    PFObject *job = self.jobs[indexPath.row];
-    NSLog(@"Title : %@", job[TITLE]);
-    cell.titleLabel.text = job[TITLE];
-    cell.summary.text = job[SUMMARY];
+    Job *job = [self getJob:indexPath];
+    cell.titleLabel.text = job.title;
+    cell.summary.text = job.jobDescription;
     NSInteger num = (indexPath.row % 3) + 1;
     if(indexPath.section == 0){
         NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
@@ -129,7 +178,24 @@
         cell.profileImage.hidden  = YES;
         cell.statusView.backgroundColor = [UIColor lightGrayColor];
     }
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+    
+//    
+//    PFObject *job = self.jobs[indexPath.row];
+//
+//    cell.titleLabel.text = job[TITLE];
+//    cell.summary.text = job[SUMMARY];
+//    NSInteger num = (indexPath.row % 3) + 1;
+//    if(indexPath.section == 0){
+//        NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
+//        cell.profileImage.image = [UIImage imageNamed:filename];
+//        cell.statusView.backgroundColor = [UIColor greenColor];
+//        cell.profileImage.hidden  = NO;
+//    } else {
+//        cell.profileImage.hidden  = YES;
+//        cell.statusView.backgroundColor = [UIColor lightGrayColor];
+//    }
 }
 @end

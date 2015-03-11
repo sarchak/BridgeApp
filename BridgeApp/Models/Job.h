@@ -13,11 +13,12 @@
 
 @class User;
 typedef enum JobStatus : NSUInteger {
-    JobStatusPendingAssignment,
-    JobStatusActive,
-    JobStatusAssigned,
-    JobStatusCanceled,
-    JobStatusCompleted,
+    JobStatusPendingAssignment,  /* Initial state when the job is created */
+    JobStatusHasApplicants,      /* Job state when the applicant applies for the job */
+    JobStatusAssigned,           /* Job state when the owner assigns to a freelancer */
+    JobStatusDelivered,          /* Job state when the freelancer delivers the project */
+    JobStatusCanceled,           /* Job state if the job is cancelled */
+    JobStatusAccepted,           /* This is the final state when the job is accepted.. Trigger any rating flow here */
 } JobStatus;
 
 
@@ -47,7 +48,7 @@ typedef enum JobStatus : NSUInteger {
 
 
 +(NSArray*) includeKeys;
-
++(void)getJobWithOptions: (JobStatus) status completion: (void (^)(NSArray *foundObjects, NSError *error))completion ;
 +(void)getAllOpenJobs:(void (^)(NSArray *foundObjects, NSError *error))completion;
 -(bool)hasUserApplied:(User*)user;
 @end

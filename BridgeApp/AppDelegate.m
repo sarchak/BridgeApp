@@ -45,9 +45,6 @@
 //    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 //        NSLog(@"User signedup");
 //    }];
-    [User login:@"philz" password:@"bridgeapp" completion:^(NSError *error) {
-        NSLog(@"User logged in %@", [User currentUser]);
-    }];
     
 //    User *user = [[User alloc] init];
 //    user.username = @"philz";

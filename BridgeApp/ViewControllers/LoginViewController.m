@@ -65,24 +65,23 @@
 
 - (void)goToBusinessView {
     /* Setup the business owner */
-    [User setCurrentUser: [User currentUser]];
-//    CreateJobScene1ViewController *cvc = [[CreateJobScene1ViewController alloc] init];
+    [User login:@"philz" password:@"bridgeapp" completion:^(NSError *error) {
+        NSLog(@"User logged in %@", [User currentUser].username);
+        BusinessViewController *bvc = [[BusinessViewController alloc] init];
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:bvc];
+        [self presentViewController:nvc animated:YES completion:nil];
+    }];
+
     
-    BusinessViewController *bvc = [[BusinessViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:bvc];
-    [self presentViewController:nvc animated:YES completion:nil];
+    
     
 }
 
 - (void)goToFreelancerView {
-    [User getUserById:@"ns4dUkKz9Z" completion:^(NSDictionary *foundObjects, NSError *error) {
-        [User setCurrentUser:[[User alloc] initWithDictionary:foundObjects]];
-        NSLog(@"Current user: %@", [User currentUser]);
+    [User login:@"DevGuy" password:@"Something" completion:^(NSError *error) {
+        OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
+        [self.navigationController pushViewController:jvc animated:YES];
     }];
-    //[User setCurrentUser:[UserFactory getFreelancer]];
-
-    OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
-    [self.navigationController pushViewController:jvc animated:YES];
 }
 
 @end

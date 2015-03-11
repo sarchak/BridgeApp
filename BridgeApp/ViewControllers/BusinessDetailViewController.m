@@ -24,8 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.titleLabel.text = self.job[TITLE];
-    self.jobDescription.text = self.job[SUMMARY];
+    self.titleLabel.text = self.job.title;
+    self.jobDescription.text = self.job.jobDescription;
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -48,11 +48,27 @@
 
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return self.job.applicants.count;
 }
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
+    cell.titleLabel.text = self.job.title;
+    cell.summary.text = self.job.jobDescription;
+    NSInteger num = (indexPath.row % 3) + 1;
+    if(indexPath.section == 0){
+        NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
+        cell.profileImage.image = [UIImage imageNamed:filename];
+        cell.statusView.backgroundColor = [UIColor greenColor];
+        cell.profileImage.hidden  = NO;
+    } else {
+        cell.profileImage.hidden  = YES;
+        cell.statusView.backgroundColor = [UIColor lightGrayColor];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+    
     return cell;
 }
 @end
