@@ -10,6 +10,7 @@
 #import "CreateJobScene1ViewController.h"
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "User.h"
 
 #import "UserFactory.h"
 @interface AppDelegate ()
@@ -31,9 +32,9 @@
     
     [Parse setApplicationId:@"skXmwEdM7oNPNJcuvhjSyDYauwS4tEaDHHdbvJsM" clientKey: @"gQgOjJZUKz8gHQ1VpCcDigH2qJTNuQ2OBIww263x"];
 
-    PFUser *user = [PFUser user];
-    user.username = @"philz";
-    user.password = @"bridgeapp";
+//    PFUser *user = [PFUser user];
+//    user.username = @"shrikar";
+//    user.password = @"bridgeapp";
 //    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 //        NSLog(@"Signup completed :%@",error);
 //    }];
@@ -47,8 +48,10 @@
 //    }];
     
 //    User *user = [[User alloc] init];
-//    user.username = @"philz";
+//    user.username = @"shrikar";
 //    user.password = @"brigeapp";
+//    user.usertype = UserTypeFreelancer;
+//    user.summary = @"iOS Developer and a Backend Developer";
 //    [user signUpWithCompletion:^(NSError *error) {
 //        NSLog(@"Signed up :%@", error);
 //

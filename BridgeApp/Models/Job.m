@@ -187,9 +187,12 @@ static dispatch_once_t _attachmentsArrayOnceToken;
 }
 
 +(void)getAllOpenJobs:(void (^)(NSArray *foundObjects, NSError *error))completion {
-    NSMutableArray* filters = [[NSMutableArray alloc] init];
+    QueryFilter *filter = [[QueryFilter alloc] init];
+    filter.operator = QueryFilterOperatorEquals;
+    filter.fieldName = @"status";
+    filter.value = [NSNumber numberWithInt:JobStatusPendingAssignment];
     Job* job = [[Job alloc] init];
-    [job findWithCompletionFromTable:@"Jobs" filters:filters sortOptions:nil completion:completion];
+    [job findWithCompletionFromTable:@"Jobs" filters:@[filter] sortOptions:nil completion:completion];
 }
 
 +(void)getJobWithOptions: (JobStatus) status completion: (void (^)(NSArray *foundObjects, NSError *error))completion {
@@ -200,5 +203,28 @@ static dispatch_once_t _attachmentsArrayOnceToken;
     Job* job = [[Job alloc] init];
     [job findWithCompletionFromTable:@"Jobs" filters:@[filter] sortOptions:nil completion:completion];
 }
+
++(void)getJobAssignedToUserWithStatus:(User*) user status:(JobStatus) status completion: (void (^)(NSArray *foundObjects, NSError *error))completion {
+    
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"objectId" equalTo:user.objectId];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        PFUser *pfuser = objects.firstObject;
+
+        QueryFilter *filter = [[QueryFilter alloc] init];
+        filter.operator = QueryFilterOperatorEquals;
+        filter.fieldName = @"status";
+        filter.value = [NSNumber numberWithInt:status];
+        QueryFilter *userfilter = [[QueryFilter alloc] init];
+        userfilter.operator = QueryFilterOperatorEquals;
+        userfilter.fieldName = @"assignedToUser";
+        userfilter.value = pfuser;
+        
+        Job* job = [[Job alloc] init];
+        [job findWithCompletionFromTable:@"Jobs" filters:@[userfilter,filter] sortOptions:nil completion:completion];
+    }];
+}
+
 
 @end

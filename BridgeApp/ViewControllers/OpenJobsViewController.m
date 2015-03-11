@@ -9,15 +9,14 @@
 #import "OpenJobsViewController.h"
 #import "Job.h"
 #import "JobCell.h"
+#import "BusinessCell.h"
 #import "DetailedJobViewController.h"
-
-#import "JobFactory.h"
 
 @interface OpenJobsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray* jobs;
-
+@property (strong, nonatomic) NSArray* myJobs;
 @end
 
 @implementation OpenJobsViewController
@@ -26,17 +25,40 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 80;
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:@"JobCell" bundle:nil] forCellReuseIdentifier:@"JobCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
+    [self fetchData];
     
+    NSLog(@"Now in ojvc, Current user: %@", [User currentUser].username);
+}
+
+-(void) fetchData {
+    
+    /* All  jobs */
     [Job getAllOpenJobs:^(NSArray *foundObjects, NSError *error) {
         self.jobs = foundObjects;
-        [self.tableView reloadData];
+        NSMutableArray *array = [NSMutableArray arrayWithArray:foundObjects];
+        [Job getJobWithOptions:JobStatusHasApplicants completion:^(NSArray *foundObjects, NSError *error) {
+            [array addObjectsFromArray:foundObjects];
+            self.jobs = [NSArray arrayWithArray:array];
+            [self.tableView reloadData];            
+        }];
+
+
     }];
-    NSLog(@"Now in ojvc, Current user: %@", [User currentUser].username);
+
+    
+   [Job getJobAssignedToUserWithStatus:[User currentUser] status:JobStatusAssigned completion:^(NSArray *foundObjects, NSError *error) {
+
+       self.myJobs = foundObjects;
+       [self.tableView reloadData];
+   }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,16 +67,43 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    JobCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JobCell"];
+    BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
+    Job* job = nil;
+    if(indexPath.section == 0){
+        job = self.myJobs[indexPath.row];
+    } else {
+        job = self.jobs[indexPath.row];
+    }
+    cell.assignButton.hidden = YES;
+    cell.titleLabel.text = job.title;
+    cell.summary.text = job.jobDescription;
+    cell.name.hidden = YES;
+    cell.assignedLabel.hidden = YES;
+    cell.profileImage.hidden  = YES;
     
-    cell.job = self.jobs[indexPath.row];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if(section == 0) {
+        return @"Your Jobs";
+    }
+    return @"Available Jobs";
+}
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(section == 0){
+        return self.myJobs.count;
+    }
     return self.jobs.count;
 }
+
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
