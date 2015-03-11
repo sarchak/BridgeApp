@@ -42,7 +42,7 @@
 
     [self fetchData];
     
-    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTable) name:JOBSTATUSCHANGED object:nil];
 
     /*
      * ATTENTION!!
@@ -57,6 +57,7 @@
 -(void) refreshTable {
     [self fetchData];
 }
+
 
 -(void) fetchData {
     
@@ -165,6 +166,7 @@
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
+    cell.assignButton.hidden = YES;
     Job *job = [self getJob:indexPath];
     cell.titleLabel.text = job.title;
     cell.summary.text = job.jobDescription;
@@ -174,9 +176,14 @@
         cell.profileImage.image = [UIImage imageNamed:filename];
         cell.statusView.backgroundColor = [UIColor greenColor];
         cell.profileImage.hidden  = NO;
+        cell.name.hidden = NO;
+        cell.assignedLabel.hidden = NO;
+        
     } else {
         cell.profileImage.hidden  = YES;
         cell.statusView.backgroundColor = [UIColor lightGrayColor];
+        cell.name.hidden = YES;
+        cell.assignedLabel.hidden = YES;
     }
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -198,4 +205,6 @@
 //        cell.statusView.backgroundColor = [UIColor lightGrayColor];
 //    }
 }
+
+
 @end

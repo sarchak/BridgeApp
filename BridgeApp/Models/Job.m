@@ -156,6 +156,15 @@ static dispatch_once_t _attachmentsArrayOnceToken;
     // because it's a different object reference
 }
 
+-(bool)isAssignedTo:(User*)user {
+    if ([user.objectId isEqual:self.assignedToUser.objectId]) {
+        return true;
+    }
+    return false;
+    // won't work: return [self.applicantsArray containsObject:user];
+    // because it's a different object reference
+}
+
 -(void)addAttachment:(Asset*)asset {
     if (self.attachmentsArray == nil) {
         dispatch_once(&_attachmentsArrayOnceToken, ^{

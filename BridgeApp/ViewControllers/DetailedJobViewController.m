@@ -96,6 +96,7 @@
     self.job = job;
     return self;
 }
+
 - (IBAction)onApply:(id)sender {
     [self.job addApplicant:[User currentUser]];
     [self.job saveWithCompletion:^(NSError *error) {

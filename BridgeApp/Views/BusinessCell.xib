@@ -58,11 +58,20 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Mar 15th" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByI-Lm-7IH">
-                        <rect key="frame" x="79" y="57.5" width="57.5" height="19.5"/>
+                        <rect key="frame" x="79" y="57" width="57.5" height="19.5"/>
                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axY-Lm-Xth">
+                        <rect key="frame" x="149" y="51" width="46" height="30"/>
+                        <state key="normal" title="Assign">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="apply:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="AhI-Z9-YaT"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="wOP-ua-ufM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="1Fq-vj-Hz5"/>
@@ -76,6 +85,7 @@
                     <constraint firstAttribute="trailing" secondItem="re7-Kb-iUS" secondAttribute="trailing" constant="16" id="Pmc-2V-NCA"/>
                     <constraint firstAttribute="trailing" secondItem="19C-bN-65h" secondAttribute="trailing" constant="18" id="SsJ-tP-MpM"/>
                     <constraint firstItem="C9j-6w-Jsf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TMC-2T-3as"/>
+                    <constraint firstItem="ByI-Lm-7IH" firstAttribute="centerY" secondItem="axY-Lm-Xth" secondAttribute="centerY" id="TV0-9D-dlW"/>
                     <constraint firstAttribute="bottom" secondItem="jdd-i8-4gQ" secondAttribute="bottom" constant="2.5" id="XwF-Kk-alf"/>
                     <constraint firstItem="h85-X8-1Mz" firstAttribute="top" secondItem="SOx-5y-zt9" secondAttribute="bottom" constant="6" id="YK8-xl-okc"/>
                     <constraint firstItem="C9j-6w-Jsf" firstAttribute="leading" secondItem="re7-Kb-iUS" secondAttribute="trailing" constant="6" id="b6E-go-L2Y"/>
@@ -83,11 +93,13 @@
                     <constraint firstAttribute="bottom" secondItem="re7-Kb-iUS" secondAttribute="bottom" constant="2.5" id="bxU-1Q-U3G"/>
                     <constraint firstItem="re7-Kb-iUS" firstAttribute="leading" secondItem="jdd-i8-4gQ" secondAttribute="trailing" constant="7" id="dWw-8M-YAK"/>
                     <constraint firstAttribute="trailing" secondItem="C9j-6w-Jsf" secondAttribute="trailing" id="eLs-T8-y06"/>
+                    <constraint firstItem="axY-Lm-Xth" firstAttribute="leading" secondItem="ByI-Lm-7IH" secondAttribute="trailing" constant="12.5" id="kn5-hG-vZ4"/>
                     <constraint firstItem="SOx-5y-zt9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vjp-Ea-hDH"/>
                     <constraint firstAttribute="bottom" secondItem="h85-X8-1Mz" secondAttribute="bottom" constant="2.5" id="z8O-q7-p2p"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="assignButton" destination="axY-Lm-Xth" id="Tsw-qg-I0X"/>
                 <outlet property="assignedLabel" destination="jdd-i8-4gQ" id="oZk-qg-iyH"/>
                 <outlet property="dueDate" destination="ByI-Lm-7IH" id="NhA-B7-jL1"/>
                 <outlet property="name" destination="re7-Kb-iUS" id="khN-ou-Bez"/>

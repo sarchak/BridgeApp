@@ -9,6 +9,7 @@
 #import "BusinessDetailViewController.h"
 #import "Constants.h"
 #import "BusinessCell.h"
+#import "Job.h"
 
 @interface BusinessDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -51,24 +52,54 @@
     return self.job.applicants.count;
 }
 
+//- (void)setButtonState {
+//    self.assignButton.enabled = YES;
+//    // disable certain buttons if applicable
+//    if ([self.job hasUserApplied:[User currentUser]]) {
+//        [self setAppliedButton];
+//    }
+//}
+//- (void)setAppliedButton {
+//    self.applyButton.enabled = NO;
+//    [self.applyButton setTitle:@"Applied" forState:UIControlStateNormal];
+//}
+
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
-    cell.titleLabel.text = self.job.title;
-    cell.summary.text = self.job.jobDescription;
+    User *user = self.job.applicants[indexPath.row];
+    NSLog(@"%@", user.username);
+    cell.titleLabel.text = user.username;
+    cell.summary.text = @"Some summary about this guy";
     NSInteger num = (indexPath.row % 3) + 1;
-    if(indexPath.section == 0){
-        NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
-        cell.profileImage.image = [UIImage imageNamed:filename];
-        cell.statusView.backgroundColor = [UIColor greenColor];
-        cell.profileImage.hidden  = NO;
-    } else {
-        cell.profileImage.hidden  = YES;
-        cell.statusView.backgroundColor = [UIColor lightGrayColor];
-    }
-    
+    NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
+    cell.profileImage.image = [UIImage imageNamed:filename];
+    cell.statusView.backgroundColor = [UIColor lightGrayColor];
+    cell.assignedLabel.hidden = YES;
+    cell.dueDate.hidden = YES;
+    cell.delegate = self;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
-    
+
+
+    if([self.job isAssignedTo:user]){
+        cell.assignButton.enabled = NO;
+        [cell.assignButton setTitle:@"Assigned" forState:UIControlStateNormal];
+    } else {
+        cell.assignButton.enabled = YES;
+        [cell.assignButton setTitle:@"Assign" forState:UIControlStateNormal];
+    }
     return cell;
 }
+
+-(void) businessCell:(BusinessCell *)businessCell apply:(BOOL)value{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:businessCell];
+    User *user = self.job.applicants[indexPath.row];
+    self.job.status = JobStatusAssigned;
+    self.job.assignedToUser = user;
+    [self.job saveWithCompletion:^(NSError *error) {
+        NSLog(@"Job status updated to assigned");
+        [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
+    }];
+}
+
+
 @end

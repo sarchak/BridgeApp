@@ -22,3 +22,5 @@ NSString *const BUSINESSNAME      = @"businessName";
 NSString *const USERNAME          = @"username";
 NSString *const PASSWORD          = @"password";
 NSString *const USERTYPE          = @"usertype";
+
+NSString *const JOBSTATUSCHANGED  = @"jobstatuschanged";

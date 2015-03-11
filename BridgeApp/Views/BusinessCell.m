@@ -20,5 +20,10 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)apply:(id)sender {
+    self.assignButton.enabled = NO;
+    [self.assignButton setTitle:@"Assigned" forState:UIControlStateNormal];
+    [self.delegate businessCell:self apply:YES];
+}
 
 @end
