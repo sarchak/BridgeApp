@@ -107,8 +107,14 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    Job *currentJob = self.jobs[indexPath.row];
-        
+    Job *currentJob = nil;
+
+    if(indexPath.section == 0){
+        currentJob = self.myJobs[indexPath.row];
+    } else {
+        currentJob = self.jobs[indexPath.row];
+    }
+
     DetailedJobViewController *djvc = [[DetailedJobViewController alloc] initWithJob:currentJob];
     [self.navigationController pushViewController:djvc animated:YES];
 }

@@ -36,7 +36,7 @@
 
     [self setButtonState];
     
-    self.jobTitleLabel.text = self.job.title;
+    self.titleLabel.text = self.job.title;
     self.priceLabel.text = [NSString stringWithFormat:@"$%@", self.job.price];
     self.summaryLabel.text = self.job.jobDescription;
     
@@ -58,7 +58,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -91,6 +91,15 @@
     self.applyButton.enabled = NO;
     [self.applyButton setTitle:@"Applied" forState:UIControlStateNormal];
 }
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Conversations";
+}
+
 
 - (DetailedJobViewController *)initWithJob:(Job *)job {
     self.job = job;
