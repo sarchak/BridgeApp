@@ -7,7 +7,9 @@
 //
 
 #import "JSQMessagesViewController.h"
+#import "User.h"
 
 @interface MessagesViewController : JSQMessagesViewController
-
+@property (nonatomic, strong) User* fromUser;
+@property (nonatomic, strong) NSString* threadId;
 @end

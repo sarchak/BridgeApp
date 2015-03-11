@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray* jobs;
 @property (strong, nonatomic) NSArray* myJobs;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation OpenJobsViewController
@@ -35,6 +36,12 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
     [self fetchData];
     
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(fetchData) forControlEvents:UIControlEventValueChanged];
+    
+
+    
     NSLog(@"Now in ojvc, Current user: %@", [User currentUser].username);
 }
 
@@ -47,6 +54,7 @@
         [Job getJobWithOptions:JobStatusHasApplicants completion:^(NSArray *foundObjects, NSError *error) {
             [array addObjectsFromArray:foundObjects];
             self.jobs = [NSArray arrayWithArray:array];
+            [self.refreshControl endRefreshing];
             [self.tableView reloadData];            
         }];
 
@@ -55,7 +63,7 @@
 
     
    [Job getJobAssignedToUserWithStatus:[User currentUser] status:JobStatusAssigned completion:^(NSArray *foundObjects, NSError *error) {
-
+       [self.refreshControl endRefreshing];
        self.myJobs = foundObjects;
        [self.tableView reloadData];
    }];

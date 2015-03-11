@@ -10,6 +10,8 @@
 #import "Constants.h"
 #import "BusinessCell.h"
 #import "Job.h"
+#import "MessagesViewController.h"
+#import "ChatMessageThread.h"
 
 @interface BusinessDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -27,6 +29,9 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.titleLabel.text = self.job.title;
     self.jobDescription.text = self.job.jobDescription;
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 80;
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -102,4 +107,18 @@
 }
 
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    MessagesViewController *mvc = [[MessagesViewController alloc] init];
+    mvc.fromUser = [User currentUser];
+
+    User *user = self.job.applicants[indexPath.row];
+    
+    [ChatMessageThread createMessageThread:self.job.objectId businessId:self.job.owner.objectId freelancerId:user.objectId completion:^(NSString *threadID, NSError *error) {
+        NSLog(@"### Thread id :%@", threadID);
+        mvc.threadId = threadID;
+        [self.navigationController pushViewController:mvc animated:YES];
+    }];
+
+}
 @end

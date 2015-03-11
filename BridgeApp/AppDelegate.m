@@ -11,7 +11,7 @@
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 #import "User.h"
-
+#import "NSUserDefaults+ChatSettings.h"
 #import "UserFactory.h"
 @interface AppDelegate ()
 
@@ -56,6 +56,9 @@
 //        NSLog(@"Signed up :%@", error);
 //
 //    }];
+    [NSUserDefaults saveIncomingAvatarSetting:YES];
+    [NSUserDefaults saveOutgoingAvatarSetting:YES];
+    
     self.window.rootViewController = nvc;
     [self.window makeKeyAndVisible];
     return YES;

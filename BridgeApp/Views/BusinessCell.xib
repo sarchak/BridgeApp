@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axY-Lm-Xth">
-                        <rect key="frame" x="149" y="51" width="46" height="30"/>
+                        <rect key="frame" x="148.5" y="52" width="46" height="30"/>
                         <state key="normal" title="Assign">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -88,6 +88,7 @@
                     <constraint firstItem="ByI-Lm-7IH" firstAttribute="centerY" secondItem="axY-Lm-Xth" secondAttribute="centerY" id="TV0-9D-dlW"/>
                     <constraint firstAttribute="bottom" secondItem="jdd-i8-4gQ" secondAttribute="bottom" constant="2.5" id="XwF-Kk-alf"/>
                     <constraint firstItem="h85-X8-1Mz" firstAttribute="top" secondItem="SOx-5y-zt9" secondAttribute="bottom" constant="6" id="YK8-xl-okc"/>
+                    <constraint firstItem="19C-bN-65h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wOP-ua-ufM" secondAttribute="trailing" constant="8" id="ZB2-DP-8qu"/>
                     <constraint firstItem="C9j-6w-Jsf" firstAttribute="leading" secondItem="re7-Kb-iUS" secondAttribute="trailing" constant="6" id="b6E-go-L2Y"/>
                     <constraint firstItem="h85-X8-1Mz" firstAttribute="centerY" secondItem="ByI-Lm-7IH" secondAttribute="centerY" id="b9m-No-MuV"/>
                     <constraint firstAttribute="bottom" secondItem="re7-Kb-iUS" secondAttribute="bottom" constant="2.5" id="bxU-1Q-U3G"/>

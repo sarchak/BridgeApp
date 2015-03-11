@@ -9,6 +9,8 @@
 #import "DetailedJobViewController.h"
 #import "ConversationThread.h"
 #import "ThreadCell.h"
+#import "MessagesViewController.h"
+#import "ChatMessageThread.h"
 
 @interface DetailedJobViewController ()
 
@@ -49,6 +51,7 @@
     self.threadsTableView.delegate = self;
     self.threadsTableView.dataSource = self;
     self.threadsTableView.rowHeight = UITableViewAutomaticDimension;
+
     [self.threadsTableView registerNib:[UINib nibWithNibName:@"ThreadCell" bundle:nil] forCellReuseIdentifier:@"ThreadCell"];
 }
 
@@ -118,7 +121,15 @@
     [self setAppliedButton];
 }
 - (IBAction)onMessage:(id)sender {
-    
+    MessagesViewController *mvc = [[MessagesViewController alloc] init];
+    mvc.fromUser = [User currentUser];
+
+    [ChatMessageThread createMessageThread:self.job.objectId businessId:self.job.owner.objectId freelancerId:[User currentUser].objectId completion:^(NSString *threadID, NSError *error) {
+        NSLog(@"### Thread id :%@", threadID);
+        mvc.threadId = threadID;
+       [self.navigationController pushViewController:mvc animated:YES];
+    }];
+
 }
 
 @end

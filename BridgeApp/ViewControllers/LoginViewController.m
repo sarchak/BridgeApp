@@ -68,8 +68,7 @@
     [User login:@"philz" password:@"bridgeapp" completion:^(NSError *error) {
         NSLog(@"User logged in %@", [User currentUser].username);
         BusinessViewController *bvc = [[BusinessViewController alloc] init];
-        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:bvc];
-        [self presentViewController:nvc animated:YES completion:nil];
+        [self.navigationController pushViewController:bvc animated:YES];
     }];
 
     

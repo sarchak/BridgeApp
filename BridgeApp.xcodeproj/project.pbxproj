@@ -21,6 +21,9 @@
 		317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99E1AAAF03800F71962 /* bridge-logo.png */; };
 		31DE5EF81AAD94EB005E16B2 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */; };
 		31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */; };
+		565DF40B1AB0CDB200212799 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DF40A1AB0CDB200212799 /* ChatMessage.m */; };
+		565DF4101AB0DBD100212799 /* NSUserDefaults+ChatSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DF40F1AB0DBD100212799 /* NSUserDefaults+ChatSettings.m */; };
+		565DF4131AB0E3A600212799 /* ChatMessageThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DF4121AB0E3A600212799 /* ChatMessageThread.m */; };
 		566D980F1AAB7050007D1C55 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D980D1AAB7050007D1C55 /* PriceViewController.m */; };
 		566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D980E1AAB7050007D1C55 /* PriceViewController.xib */; };
 		566D98131AAB8D64007D1C55 /* UserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98121AAB8D64007D1C55 /* UserFactory.m */; };
@@ -105,6 +108,12 @@
 		31DE5EF51AAD94EB005E16B2 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
+		565DF4091AB0CDB200212799 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
+		565DF40A1AB0CDB200212799 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
+		565DF40E1AB0DBD000212799 /* NSUserDefaults+ChatSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+ChatSettings.h"; path = "Helpers/NSUserDefaults+ChatSettings.h"; sourceTree = "<group>"; };
+		565DF40F1AB0DBD100212799 /* NSUserDefaults+ChatSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+ChatSettings.m"; path = "Helpers/NSUserDefaults+ChatSettings.m"; sourceTree = "<group>"; };
+		565DF4111AB0E3A600212799 /* ChatMessageThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageThread.h; sourceTree = "<group>"; };
+		565DF4121AB0E3A600212799 /* ChatMessageThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageThread.m; sourceTree = "<group>"; };
 		566D980C1AAB7050007D1C55 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
 		566D980D1AAB7050007D1C55 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
 		566D980E1AAB7050007D1C55 /* PriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceViewController.xib; sourceTree = "<group>"; };
@@ -221,6 +230,10 @@
 				315B0B7C1AA86CE3004428BE /* Message.m */,
 				315B0B7E1AA86CF8004428BE /* Asset.h */,
 				315B0B7F1AA86CF8004428BE /* Asset.m */,
+				565DF4091AB0CDB200212799 /* ChatMessage.h */,
+				565DF40A1AB0CDB200212799 /* ChatMessage.m */,
+				565DF4111AB0E3A600212799 /* ChatMessageThread.h */,
+				565DF4121AB0E3A600212799 /* ChatMessageThread.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,6 +278,8 @@
 				566D98121AAB8D64007D1C55 /* UserFactory.m */,
 				BFA1DDF11AABE03F00CDD4FC /* JobFactory.h */,
 				BFA1DDF21AABE03F00CDD4FC /* JobFactory.m */,
+				565DF40E1AB0DBD000212799 /* NSUserDefaults+ChatSettings.h */,
+				565DF40F1AB0DBD100212799 /* NSUserDefaults+ChatSettings.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -567,6 +582,7 @@
 				315B0B6A1AA86055004428BE /* QuerySortOption.m in Sources */,
 				31DE5EF81AAD94EB005E16B2 /* MessagesViewController.m in Sources */,
 				56C221A51AA9925900E6B55A /* TextViewController.m in Sources */,
+				565DF4131AB0E3A600212799 /* ChatMessageThread.m in Sources */,
 				BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */,
 				BFA1DDE51AABA19A00CDD4FC /* JobCell.m in Sources */,
 				566D98161AAB8E36007D1C55 /* Constants.m in Sources */,
@@ -575,9 +591,11 @@
 				56C221A31AA9925900E6B55A /* CreateJobScene2ViewController.m in Sources */,
 				56C2219F1AA9925900E6B55A /* CategoryCell.m in Sources */,
 				567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */,
+				565DF40B1AB0CDB200212799 /* ChatMessage.m in Sources */,
 				566D98211AAC13BB007D1C55 /* BusinessViewController.m in Sources */,
 				315B0B801AA86CF8004428BE /* Asset.m in Sources */,
 				315B0B751AA86CA6004428BE /* Job.m in Sources */,
+				565DF4101AB0DBD100212799 /* NSUserDefaults+ChatSettings.m in Sources */,
 				56C221A71AA9925900E6B55A /* TitleSubtitleCell.m in Sources */,
 				BFA1DDE01AABA0D200CDD4FC /* OpenJobsViewController.m in Sources */,
 				BFA1DDEF1AABDA7900CDD4FC /* ThreadCell.m in Sources */,
