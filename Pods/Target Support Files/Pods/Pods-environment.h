@@ -90,3 +90,9 @@
 #define COCOAPODS_VERSION_MINOR_THCalendarDatePicker 0
 #define COCOAPODS_VERSION_PATCH_THCalendarDatePicker 0
 
+// ZFDragableModalTransition
+#define COCOAPODS_POD_AVAILABLE_ZFDragableModalTransition
+#define COCOAPODS_VERSION_MAJOR_ZFDragableModalTransition 0
+#define COCOAPODS_VERSION_MINOR_ZFDragableModalTransition 4
+#define COCOAPODS_VERSION_PATCH_ZFDragableModalTransition 0
+

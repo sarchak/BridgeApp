@@ -58,6 +58,15 @@
 //    }];
     [NSUserDefaults saveIncomingAvatarSetting:YES];
     [NSUserDefaults saveOutgoingAvatarSetting:YES];
+
+    UINavigationBar *navBar = [UINavigationBar appearance];
+    [navBar setBarTintColor:[UIColor colorWithRed:85.0/255 green:172.0/255 blue:238.0/255 alpha:1.0]];
+//    [navBar setBarTintColor:[UIColor flatSkyBlueColor]];
+    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    [navBar setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UIToolbar appearance] setTranslucent:NO];
     
     self.window.rootViewController = nvc;
     [self.window makeKeyAndVisible];

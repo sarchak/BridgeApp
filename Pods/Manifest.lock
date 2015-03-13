@@ -30,6 +30,7 @@ PODS:
   - StarRatingView (1.0.0)
   - THCalendarDatePicker (1.0.0):
     - KNSemiModalViewController (~> 0.3)
+  - ZFDragableModalTransition (0.4)
 
 DEPENDENCIES:
   - AFNetworking
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - Parse
   - StarRatingView
   - THCalendarDatePicker (~> 1.0.0)
+  - ZFDragableModalTransition
 
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
@@ -47,5 +49,6 @@ SPEC CHECKSUMS:
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
   StarRatingView: c3e81fe39e1fdd5a11d3bee4ccbf7fadf8491107
   THCalendarDatePicker: c482d4f630262bae6fe88113d0298f54bad1fd9d
+  ZFDragableModalTransition: 7d62a412b7b72ad37b7b04cdfed53b31d684a15b
 
 COCOAPODS: 0.36.0.rc.1

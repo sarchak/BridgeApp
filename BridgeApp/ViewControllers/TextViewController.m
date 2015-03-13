@@ -19,7 +19,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.jobTextView becomeFirstResponder];
-    // Do any additional setup after loading the view from its nib.
+ 
+    self.navigationItem.rightBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemDone target:self action:@selector(donePressed)];
+    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target:self action:@selector(cancelPressed)];
+
+}
+
+
+-(void) donePressed {
+    [self.jobTextView resignFirstResponder];
+    if(self.isTitle){
+        self.job.title = self.jobTextView.text;
+    } else {
+        self.job.jobDescription = self.jobTextView.text;
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+-(void) cancelPressed {
+    [self.jobTextView resignFirstResponder];    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -44,11 +64,6 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-    if(self.isTitle){
-        self.job.title = self.jobTextView.text;
-    } else {
-        self.job.jobDescription = self.jobTextView.text;
-    }
 
 }
 - (void)didReceiveMemoryWarning {

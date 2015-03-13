@@ -18,7 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.navigationItem.rightBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemDone target:self action:@selector(donePressed)];
+    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target:self action:@selector(cancelPressed)];
+    
+}
+
+
+-(void) donePressed {
+    self.job.price = [NSNumber numberWithInt:[self.price.text intValue]];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+-(void) cancelPressed {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +40,7 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-    self.job.price = [NSNumber numberWithInt:[self.price.text intValue]];
+//    self.job.price = [NSNumber numberWithInt:[self.price.text intValue]];
 }
 
 /*

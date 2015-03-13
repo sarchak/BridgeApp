@@ -15,11 +15,13 @@
 #import "ParseClient.h"
 #import "Parse/Parse.h"
 
-@interface CreateJobScene2ViewController ()
+@interface CreateJobScene2ViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) THDatePickerViewController * datePicker;
 @property (nonatomic, retain) NSDate * curDate;
 @property (nonatomic, retain) NSDateFormatter * formatter;
+@property (nonatomic, assign) BOOL isPresenting;
+@property (nonatomic, assign) double animationDuration;
 @end
 
 @implementation CreateJobScene2ViewController
@@ -29,7 +31,7 @@
     // Do any additional setup after loading the view from its nib.
     [self.tableView registerNib:[UINib nibWithNibName:@"TitleSubtitleCell" bundle:nil] forCellReuseIdentifier:@"TitleSubtitleCell"];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
+    self.animationDuration = 0.5;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.job = [[Job alloc] init];
@@ -56,18 +58,30 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     TextViewController *tvc = [[TextViewController alloc] init];
     tvc.job = self.job;
+    UINavigationController *nvc = nil;
     if(indexPath.row == 0){
         tvc.isTitle = YES;
-        [self.navigationController pushViewController:tvc animated:YES];
+        nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
+        nvc.modalPresentationStyle = UIModalPresentationCustom;
+        nvc.transitioningDelegate = self;
+        
+        [self presentViewController:nvc animated:YES completion:nil];
     } else if(indexPath.row == 1) {
         tvc.isTitle = NO;
-        [self.navigationController pushViewController:tvc animated:YES];
+        nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
+        nvc.modalPresentationStyle = UIModalPresentationCustom;
+        nvc.transitioningDelegate = self;
+        
+        [self presentViewController:nvc animated:YES completion:nil];
     } else if(indexPath.row == 3){
         PriceViewController *pvc = [[PriceViewController alloc] init];
         pvc.job = self.job;
-        [self.navigationController pushViewController:pvc animated:YES];
+        nvc = [[UINavigationController alloc] initWithRootViewController:pvc];
+        nvc.modalPresentationStyle = UIModalPresentationCustom;
+        nvc.transitioningDelegate = self;
+        
+        [self presentViewController:nvc animated:YES completion:nil];
     }
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -135,23 +149,6 @@
 
 
 - (IBAction)createJob:(id)sender {
-//    PFObject *jobObject = [PFObject objectWithClassName:@"Jobs"];
-//    jobObject[TITLE] = self.job.title;
-//    jobObject[SUMMARY] = self.job.jobDescription;
-//    jobObject[DUE_DATE] = self.job.dueDate;
-//    jobObject[PRICE] = self.job.price;
-//    jobObject[CATEGORY] = self.category;
-//    jobObject[OWNER] = [User currentUser];
-//    jobObject[JOBSTATUS] = [NSNumber numberWithInt:self.job.status];
-    
-//    [jobObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if(error == nil){
-//            NSLog(@"Job created");
-//        } else {
-//            NSLog(@"Job creation failed :%@", error);
-//        }
-//
-//    }];
     self.job.owner = [User currentUser];
     [self.job saveWithCompletion:^(NSError *error) {
         NSLog(@"Save with completion : %@", error);
@@ -187,5 +184,76 @@
     NSLog(@"Due Date : %@", self.job.dueDate);
     NSLog(@"Price : %@", self.job.price);
 }
+
+
+#pragma Transitioning code
+
+
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    self.isPresenting = YES;
+    return self;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+    self.isPresenting = NO;
+    return self;
+}
+
+//- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator;
+//
+//- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator;
+
+//- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source NS_AVAILABLE_IOS(8_0);
+
+
+
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
+    return self.animationDuration;
+}
+
+// This method can only  be a nop if the transition is interactive and not a percentDriven interactive transition.
+- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
+    UIView *containerView = [transitionContext containerView];
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    if(self.isPresenting){
+        [containerView addSubview:toViewController.view];
+        toViewController.view.alpha = 0;
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            toViewController.view.alpha = 1;
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+        }];
+    } else {
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            fromViewController.view.alpha = 0;
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+            [fromViewController.view removeFromSuperview];
+        }];
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
