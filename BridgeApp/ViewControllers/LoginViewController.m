@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"Bridge";
 }
 
 - (void)didReceiveMemoryWarning {

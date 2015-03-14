@@ -14,6 +14,7 @@
 #import "PriceViewController.h"
 #import "ParseClient.h"
 #import "Parse/Parse.h"
+#import "BusinessViewController.h"
 
 @interface CreateJobScene2ViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,7 +32,7 @@
     // Do any additional setup after loading the view from its nib.
     [self.tableView registerNib:[UINib nibWithNibName:@"TitleSubtitleCell" bundle:nil] forCellReuseIdentifier:@"TitleSubtitleCell"];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.animationDuration = 0.5;
+    self.animationDuration = 0.3;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.job = [[Job alloc] init];
@@ -56,6 +57,7 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"Coming in");
     TextViewController *tvc = [[TextViewController alloc] init];
     tvc.job = self.job;
     UINavigationController *nvc = nil;
@@ -156,8 +158,11 @@
         self.job.category = self.category;
         self.job.owner = [User currentUser];
         self.job.status = JobStatusPendingAssignment;
-        
+        [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
+        UIViewController* viewcontroller = [self.navigationController.viewControllers objectAtIndex:1];
+        [self.navigationController popToViewController:viewcontroller animated:YES];
     }];
+    
 }
 
 
@@ -217,18 +222,21 @@
     UIView *containerView = [transitionContext containerView];
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
+    NSLog(@"Animation transition");
     if(self.isPresenting){
         [containerView addSubview:toViewController.view];
         toViewController.view.alpha = 0;
+        toViewController.view.transform = CGAffineTransformMakeScale(0, 0);
         [UIView animateWithDuration:self.animationDuration animations:^{
             toViewController.view.alpha = 1;
+            toViewController.view.transform = CGAffineTransformMakeScale(1, 1);
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
         }];
     } else {
         [UIView animateWithDuration:self.animationDuration animations:^{
             fromViewController.view.alpha = 0;
+            fromViewController.view.transform = CGAffineTransformMakeScale(0.001, 0.001);
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
             [fromViewController.view removeFromSuperview];

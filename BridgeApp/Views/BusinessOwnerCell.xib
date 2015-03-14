@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="BusinessOwnerCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Aht-4u-oHI">
+                        <rect key="frame" x="3" y="4" width="65" height="65"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="65" id="cbu-ZM-Ks2"/>
+                            <constraint firstAttribute="width" constant="65" id="gN8-Bm-Jua"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Philz Coffee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARl-eb-tLT">
+                        <rect key="frame" x="76" y="8" width="97" height="25"/>
+                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-x7-WiF" customClass="RateView">
+                        <rect key="frame" x="76" y="36" width="100" height="20"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="I4a-rB-7Cg"/>
+                            <constraint firstAttribute="height" constant="20" id="J1D-L3-41W"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GJO-x7-WiF" firstAttribute="top" secondItem="ARl-eb-tLT" secondAttribute="bottom" constant="3" id="AA0-TO-2Gl"/>
+                    <constraint firstItem="GJO-x7-WiF" firstAttribute="leading" secondItem="Aht-4u-oHI" secondAttribute="trailing" constant="8" id="CRs-tA-z6Q"/>
+                    <constraint firstAttribute="bottom" secondItem="Aht-4u-oHI" secondAttribute="bottom" constant="2.5" id="DpN-yr-Jyy"/>
+                    <constraint firstItem="ARl-eb-tLT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="R00-9b-6u9"/>
+                    <constraint firstItem="Aht-4u-oHI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="Spt-TN-cEE"/>
+                    <constraint firstItem="Aht-4u-oHI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="eKm-lT-6g2"/>
+                    <constraint firstItem="ARl-eb-tLT" firstAttribute="leading" secondItem="Aht-4u-oHI" secondAttribute="trailing" constant="8" id="hdU-9h-bhf"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ARl-eb-tLT" secondAttribute="trailing" constant="8" id="ona-5r-X7h"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="businessName" destination="ARl-eb-tLT" id="gau-h2-gN6"/>
+                <outlet property="profileImageView" destination="Aht-4u-oHI" id="g8D-vJ-jYo"/>
+                <outlet property="ratingView" destination="GJO-x7-WiF" id="Wcm-Qy-DgJ"/>
+            </connections>
+            <point key="canvasLocation" x="422" y="304"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="profile1.jpg" width="128" height="128"/>
+    </resources>
+</document>

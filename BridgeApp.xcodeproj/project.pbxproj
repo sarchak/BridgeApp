@@ -21,6 +21,8 @@
 		317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99E1AAAF03800F71962 /* bridge-logo.png */; };
 		31DE5EF81AAD94EB005E16B2 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */; };
 		31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */; };
+		565DD3B91AB3B532004EE4A1 /* ApplicantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DD3B71AB3B532004EE4A1 /* ApplicantCell.m */; };
+		565DD3BA1AB3B532004EE4A1 /* ApplicantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565DD3B81AB3B532004EE4A1 /* ApplicantCell.xib */; };
 		565DF40B1AB0CDB200212799 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DF40A1AB0CDB200212799 /* ChatMessage.m */; };
 		565DF4101AB0DBD100212799 /* NSUserDefaults+ChatSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DF40F1AB0DBD100212799 /* NSUserDefaults+ChatSettings.m */; };
 		565DF4131AB0E3A600212799 /* ChatMessageThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DF4121AB0E3A600212799 /* ChatMessageThread.m */; };
@@ -44,6 +46,8 @@
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
 		567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 567E0ACA1AA832E700C5C10B /* LaunchScreen.xib */; };
 		567E0AD81AA832E700C5C10B /* BridgeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AD71AA832E700C5C10B /* BridgeAppTests.m */; };
+		567F88041AB3876300D8E5F0 /* BusinessOwnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F88021AB3876300D8E5F0 /* BusinessOwnerCell.m */; };
+		567F88051AB3876300D8E5F0 /* BusinessOwnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 567F88031AB3876300D8E5F0 /* BusinessOwnerCell.xib */; };
 		56C2219F1AA9925900E6B55A /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C221911AA9925900E6B55A /* CategoryCell.m */; };
 		56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C221921AA9925900E6B55A /* CategoryCell.xib */; };
 		56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C221941AA9925900E6B55A /* CreateJobScene1ViewController.m */; };
@@ -108,6 +112,9 @@
 		31DE5EF51AAD94EB005E16B2 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
+		565DD3B61AB3B532004EE4A1 /* ApplicantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicantCell.h; sourceTree = "<group>"; };
+		565DD3B71AB3B532004EE4A1 /* ApplicantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicantCell.m; sourceTree = "<group>"; };
+		565DD3B81AB3B532004EE4A1 /* ApplicantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicantCell.xib; sourceTree = "<group>"; };
 		565DF4091AB0CDB200212799 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
 		565DF40A1AB0CDB200212799 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
 		565DF40E1AB0DBD000212799 /* NSUserDefaults+ChatSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+ChatSettings.h"; path = "Helpers/NSUserDefaults+ChatSettings.h"; sourceTree = "<group>"; };
@@ -146,6 +153,9 @@
 		567E0AD11AA832E700C5C10B /* BridgeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BridgeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0AD61AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0AD71AA832E700C5C10B /* BridgeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeAppTests.m; sourceTree = "<group>"; };
+		567F88011AB3876300D8E5F0 /* BusinessOwnerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessOwnerCell.h; sourceTree = "<group>"; };
+		567F88021AB3876300D8E5F0 /* BusinessOwnerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessOwnerCell.m; sourceTree = "<group>"; };
+		567F88031AB3876300D8E5F0 /* BusinessOwnerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessOwnerCell.xib; sourceTree = "<group>"; };
 		56C221901AA9925900E6B55A /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		56C221911AA9925900E6B55A /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		56C221921AA9925900E6B55A /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
@@ -256,6 +266,12 @@
 				566D98231AAC16AA007D1C55 /* BusinessCell.h */,
 				566D98241AAC16AA007D1C55 /* BusinessCell.m */,
 				566D98251AAC16AA007D1C55 /* BusinessCell.xib */,
+				567F88011AB3876300D8E5F0 /* BusinessOwnerCell.h */,
+				567F88021AB3876300D8E5F0 /* BusinessOwnerCell.m */,
+				567F88031AB3876300D8E5F0 /* BusinessOwnerCell.xib */,
+				565DD3B61AB3B532004EE4A1 /* ApplicantCell.h */,
+				565DD3B71AB3B532004EE4A1 /* ApplicantCell.m */,
+				565DD3B81AB3B532004EE4A1 /* ApplicantCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -506,6 +522,7 @@
 				31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */,
 				566D982C1AAD459F007D1C55 /* BusinessDetailViewController.xib in Resources */,
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
+				565DD3BA1AB3B532004EE4A1 /* ApplicantCell.xib in Resources */,
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
 				566D98331AAD7572007D1C55 /* profile1.jpg in Resources */,
@@ -519,6 +536,7 @@
 				566D98221AAC13BB007D1C55 /* BusinessViewController.xib in Resources */,
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
 				566D98321AAD7572007D1C55 /* profile2.jpg in Resources */,
+				567F88051AB3876300D8E5F0 /* BusinessOwnerCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
 				BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */,
 				566D981B1AABD2F6007D1C55 /* SignUpViewController.xib in Resources */,
@@ -583,6 +601,7 @@
 				31DE5EF81AAD94EB005E16B2 /* MessagesViewController.m in Sources */,
 				56C221A51AA9925900E6B55A /* TextViewController.m in Sources */,
 				565DF4131AB0E3A600212799 /* ChatMessageThread.m in Sources */,
+				565DD3B91AB3B532004EE4A1 /* ApplicantCell.m in Sources */,
 				BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */,
 				BFA1DDE51AABA19A00CDD4FC /* JobCell.m in Sources */,
 				566D98161AAB8E36007D1C55 /* Constants.m in Sources */,
@@ -611,6 +630,7 @@
 				566D98261AAC16AA007D1C55 /* BusinessCell.m in Sources */,
 				566D981A1AABD2F6007D1C55 /* SignUpViewController.m in Sources */,
 				56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */,
+				567F88041AB3876300D8E5F0 /* BusinessOwnerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,6 +745,7 @@
 			baseConfigurationReference = 049C0555B31B986263BA42D6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BridgeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -736,6 +757,7 @@
 			baseConfigurationReference = 0785315DDCC97639B4E7DB26 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BridgeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

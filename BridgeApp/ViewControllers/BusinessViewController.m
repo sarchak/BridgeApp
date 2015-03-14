@@ -13,19 +13,22 @@
 #import "CreateJobScene1ViewController.h"
 #import "BusinessDetailViewController.h"
 
-@interface BusinessViewController ()
+#import "ChameleonFramework/Chameleon.h"
+@interface BusinessViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSArray *assignedJobs;
 @property (strong, nonatomic) NSArray *readyToAssignJobs;
 @property (strong, nonatomic) NSArray *pendingJobs;
+@property (assign, nonatomic) BOOL isPresenting;
+@property (assign, nonatomic) double animationDuration;
 @end
 
 @implementation BusinessViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.animationDuration = 0.2;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
@@ -44,6 +47,8 @@
     
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTable) name:JOBSTATUSCHANGED object:nil];
 
+    self.title = @"Bridge";
+    self.tableView.backgroundColor = [UIColor flatWhiteColor];
     /*
      * ATTENTION!!
      * This should be the same as DetailedJobViewController
@@ -87,27 +92,6 @@
             }
         }
     }];
-    
-//    Job *job = [[Job alloc] init];
-//    [job findWithCompletion:nil sortOptions:nil completion:^(NSArray *foundObjects, NSError *error) {
-//        self.jobs = foundObjects;
-//        NSLog(@"%@", self.jobs);
-//        [self.refreshControl endRefreshing];
-//        [self.tableView reloadData];
-//    }];
-
-//    PFQuery *query = [PFQuery queryWithClassName:@"Jobs"];
-//    [query orderByDescending:@"createdAt"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            self.jobs = objects;
-//            [self.refreshControl endRefreshing];
-//            [self.tableView reloadData];
-//        } else {
-//            // Log details of the failure
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
 }
 
 -(void) createJob{
@@ -174,37 +158,79 @@
     if(indexPath.section == 0){
         NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
         cell.profileImage.image = [UIImage imageNamed:filename];
-        cell.statusView.backgroundColor = [UIColor greenColor];
+        cell.statusView.backgroundColor = [UIColor flatGreenColor];
         cell.profileImage.hidden  = NO;
         cell.name.hidden = NO;
         cell.assignedLabel.hidden = NO;
         
+    } else if(indexPath.section == 1){
+        cell.profileImage.hidden  = YES;
+        cell.statusView.backgroundColor = [UIColor flatYellowColorDark];
+        cell.name.hidden = YES;
+        cell.assignedLabel.hidden = YES;
     } else {
         cell.profileImage.hidden  = YES;
-        cell.statusView.backgroundColor = [UIColor lightGrayColor];
+        cell.statusView.backgroundColor = [UIColor flatGrayColor];
         cell.name.hidden = YES;
         cell.assignedLabel.hidden = YES;
     }
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
-    
-//    
-//    PFObject *job = self.jobs[indexPath.row];
-//
-//    cell.titleLabel.text = job[TITLE];
-//    cell.summary.text = job[SUMMARY];
-//    NSInteger num = (indexPath.row % 3) + 1;
-//    if(indexPath.section == 0){
-//        NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
-//        cell.profileImage.image = [UIImage imageNamed:filename];
-//        cell.statusView.backgroundColor = [UIColor greenColor];
-//        cell.profileImage.hidden  = NO;
-//    } else {
-//        cell.profileImage.hidden  = YES;
-//        cell.statusView.backgroundColor = [UIColor lightGrayColor];
-//    }
 }
 
+#pragma Transitioning code
+
+
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    self.isPresenting = YES;
+    return self;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+    self.isPresenting = NO;
+    return self;
+}
+
+//- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator;
+//
+//- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator;
+
+//- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source NS_AVAILABLE_IOS(8_0);
+
+
+
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
+    return self.animationDuration;
+}
+
+// This method can only  be a nop if the transition is interactive and not a percentDriven interactive transition.
+- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
+    UIView *containerView = [transitionContext containerView];
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    if(self.isPresenting){
+        [containerView addSubview:toViewController.view];
+        toViewController.view.alpha = 0;
+        toViewController.view.transform = CGAffineTransformMakeScale(0, 0);
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            toViewController.view.alpha = 1;
+//            toViewController.view.frame = fromViewController.view.frame;
+            toViewController.view.transform = CGAffineTransformMakeScale(1, 1);
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+        }];
+    } else {
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            fromViewController.view.alpha = 0;
+//            fromViewController.view.transform = CGAffineTransformMakeScale(0.001, 0.001);
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+            [fromViewController.view removeFromSuperview];
+        }];
+    }
+}
 
 @end

@@ -8,12 +8,14 @@
 
 #import "BusinessDetailViewController.h"
 #import "Constants.h"
-#import "BusinessCell.h"
+#import "ApplicantCell.h"
 #import "Job.h"
 #import "MessagesViewController.h"
 #import "ChatMessageThread.h"
+#import "ChameleonFramework/Chameleon.h"
+#import "SWTableViewCell.h"
 
-@interface BusinessDetailViewController ()
+@interface BusinessDetailViewController () <SWTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jobDescription;
 @property (weak, nonatomic) IBOutlet UILabel *dueDate;
@@ -35,7 +37,8 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
+    self.tableView.backgroundColor = [UIColor flatWhiteColor];    
+    [self.tableView registerNib:[UINib nibWithNibName:@"ApplicantCell" bundle:nil] forCellReuseIdentifier:@"ApplicantCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,40 +60,29 @@
     return self.job.applicants.count;
 }
 
-//- (void)setButtonState {
-//    self.assignButton.enabled = YES;
-//    // disable certain buttons if applicable
-//    if ([self.job hasUserApplied:[User currentUser]]) {
-//        [self setAppliedButton];
-//    }
-//}
-//- (void)setAppliedButton {
-//    self.applyButton.enabled = NO;
-//    [self.applyButton setTitle:@"Applied" forState:UIControlStateNormal];
-//}
-
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BusinessCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
+    ApplicantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApplicantCell"];
     User *user = self.job.applicants[indexPath.row];
     NSLog(@"%@", user.username);
-    cell.titleLabel.text = user.username;
+    
+    cell.nameLabel.text = user.username;
     cell.summary.text = @"Some summary about this guy";
     NSInteger num = (indexPath.row % 3) + 1;
     NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
-    cell.profileImage.image = [UIImage imageNamed:filename];
-    cell.statusView.backgroundColor = [UIColor lightGrayColor];
-    cell.assignedLabel.hidden = YES;
-    cell.dueDate.hidden = YES;
-    cell.delegate = self;
+    cell.profileImageView.image = [UIImage imageNamed:filename];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-
-    if([self.job isAssignedTo:user]){
-        cell.assignButton.enabled = NO;
-        [cell.assignButton setTitle:@"Assigned" forState:UIControlStateNormal];
+    if(user.objectId == self.job.assignedToUser.objectId){
+        cell.statusView.backgroundColor = [UIColor flatGreenColor];
     } else {
-        cell.assignButton.enabled = YES;
-        [cell.assignButton setTitle:@"Assign" forState:UIControlStateNormal];
+        /* Assign button */
+        NSMutableArray *leftUtilityButtons = [NSMutableArray new];
+        [leftUtilityButtons sw_addUtilityButtonWithColor: [UIColor flatGreenColor]
+                                                   title:@"Assign"];
+        cell.leftUtilityButtons = leftUtilityButtons;
+        cell.delegate = self;
+        
     }
     return cell;
 }
@@ -121,4 +113,17 @@
     }];
 
 }
+
+-(void) swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    User *user = self.job.applicants[indexPath.row];
+    self.job.status = JobStatusAssigned;
+    self.job.assignedToUser = user;
+    [self.job saveWithCompletion:^(NSError *error) {
+        NSLog(@"Job status updated to assigned");
+        [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
+    }];
+    [cell hideUtilityButtonsAnimated:YES];
+}
+
 @end

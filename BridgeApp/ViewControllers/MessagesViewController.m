@@ -11,7 +11,7 @@
 #import "ChatMessage.h"
 #import "NSUserDefaults+ChatSettings.h"
 #import "JSQMessages.h"
-
+#import "ChameleonFramework/Chameleon.h"
 @interface MessagesViewController ()
 @property (nonatomic, strong) NSMutableArray *messages;
 @property (strong, nonatomic) NSDictionary *avatars;
@@ -50,7 +50,7 @@
     
     self.messages = [NSMutableArray array];
     
-    
+    self.collectionView.backgroundColor = [UIColor flatWhiteColor];
     /**
      *  You can set custom avatar sizes
      */
@@ -72,8 +72,8 @@
      */
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     
-    self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
-    self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
+    self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor lightGrayColor]];
+    self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor flatGreenColor]];
  
     [ChatMessage getAllMessages:self.threadId completion:^(NSArray *messages, NSError *error) {
         self.messages = messages;

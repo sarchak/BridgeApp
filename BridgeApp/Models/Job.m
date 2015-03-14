@@ -201,7 +201,10 @@ static dispatch_once_t _attachmentsArrayOnceToken;
     filter.fieldName = @"status";
     filter.value = [NSNumber numberWithInt:status];
     Job* job = [[Job alloc] init];
-    [job findWithCompletionFromTable:@"Jobs" filters:@[filter] sortOptions:nil completion:completion];
+    QuerySortOption *sort = [[QuerySortOption alloc] init];
+    sort.sortDirection = QuerySortDirectionDescending;
+    sort.fieldNames = @"createdAt";
+    [job findWithCompletionFromTable:@"Jobs" filters:@[filter] sortOptions:@[sort] completion:completion];
 }
 
 +(void)getJobAssignedToUserWithStatus:(User*) user status:(JobStatus) status completion: (void (^)(NSArray *foundObjects, NSError *error))completion {

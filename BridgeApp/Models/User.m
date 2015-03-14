@@ -61,6 +61,7 @@
     self.phone = dict[@"phone"];
     self.website = dict[@"website"];
     self.profileImageURL = dict[@"profileImageURL"];
+    self.businessName = dict[@"business_name"];
 }
 
 -(NSMutableDictionary*)toDictionary {
@@ -80,7 +81,7 @@
     [dict setObject:@(self.usertype) forKey:@"type"];
     [dict setObject:@(self.reviewCount) forKey:@"reviewCount"];
     [dict setObject:@(self.assetCount) forKey:@"assetCount"];
-    
+    [dict setObject:(self.businessName ?: [NSNull null]) forKey:@"business_name"];
     return dict;
 }
 

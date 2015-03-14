@@ -11,7 +11,8 @@
 #import "ThreadCell.h"
 #import "MessagesViewController.h"
 #import "ChatMessageThread.h"
-
+#import "BusinessOwnerCell.h"
+#import "ChameleonFramework/Chameleon.h"
 @interface DetailedJobViewController ()
 
 @property (strong, nonatomic) Job* job;
@@ -24,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *applyButton;
 @property (weak, nonatomic) IBOutlet UIButton *deliverButton;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
-@property (weak, nonatomic) IBOutlet UIButton *messageButton;
+
 
 
 @end
@@ -37,7 +38,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
     [self setButtonState];
-    
+    self.threadsTableView.backgroundColor = [UIColor flatWhiteColor];
     self.titleLabel.text = self.job.title;
     self.priceLabel.text = [NSString stringWithFormat:@"$%@", self.job.price];
     self.summaryLabel.text = self.job.jobDescription;
@@ -51,8 +52,12 @@
     self.threadsTableView.delegate = self;
     self.threadsTableView.dataSource = self;
     self.threadsTableView.rowHeight = UITableViewAutomaticDimension;
+    self.threadsTableView.estimatedRowHeight = 72;
+    [self.threadsTableView registerNib:[UINib nibWithNibName:@"BusinessOwnerCell" bundle:nil] forCellReuseIdentifier:@"BusinessOwnerCell"];
 
-    [self.threadsTableView registerNib:[UINib nibWithNibName:@"ThreadCell" bundle:nil] forCellReuseIdentifier:@"ThreadCell"];
+    self.applyButton.layer.cornerRadius = 5.0;
+    self.editButton.layer.cornerRadius = 5.0;
+    self.deliverButton.layer.cornerRadius = 5.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +70,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ThreadCell *cell = [self.threadsTableView dequeueReusableCellWithIdentifier:@"ThreadCell"];
+    BusinessOwnerCell *cell = [self.threadsTableView dequeueReusableCellWithIdentifier:@"BusinessOwnerCell"];
+    cell.businessName.text = self.job.owner.businessName;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.ratingView.rating = 3.25;
+    cell.ratingView.starSize = 15;
+    cell.ratingView.starFillColor = [UIColor orangeColor];
 
     return cell;
 }
@@ -82,9 +93,9 @@
 
 - (void)setButtonState {
     self.applyButton.enabled = YES;
-    self.editButton.enabled = NO;
-    self.deliverButton.enabled = NO;
-    
+//    self.editButton.enabled = NO;
+//    self.deliverButton.enabled = NO;
+
     // disable certain buttons if applicable
     if ([self.job hasUserApplied:[User currentUser]]) {
         [self setAppliedButton];
@@ -120,16 +131,22 @@
     }];
     [self setAppliedButton];
 }
-- (IBAction)onMessage:(id)sender {
+
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     MessagesViewController *mvc = [[MessagesViewController alloc] init];
     mvc.fromUser = [User currentUser];
-
-    [ChatMessageThread createMessageThread:self.job.objectId businessId:self.job.owner.objectId freelancerId:[User currentUser].objectId completion:^(NSString *threadID, NSError *error) {
+    
+    User *user = self.job.owner;
+    
+    [ChatMessageThread createMessageThread:self.job.objectId businessId:self.job.owner.objectId freelancerId:user.objectId completion:^(NSString *threadID, NSError *error) {
         NSLog(@"### Thread id :%@", threadID);
         mvc.threadId = threadID;
-       [self.navigationController pushViewController:mvc animated:YES];
+        [self.navigationController pushViewController:mvc animated:YES];
     }];
-
+    
 }
+
 
 @end

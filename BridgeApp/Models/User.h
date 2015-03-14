@@ -32,7 +32,6 @@ typedef enum UserType : NSUInteger {
 @property (nonatomic, strong) NSString* phone;
 @property (nonatomic, strong) NSString* website;
 @property (nonatomic, strong) NSString* profileImageURL;
-
 @property (nonatomic, strong) NSDictionary *dictionary;
 @property (nonatomic, strong) NSString* businessName;
 

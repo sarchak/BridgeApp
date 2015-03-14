@@ -11,6 +11,7 @@
 #import "JobCell.h"
 #import "BusinessCell.h"
 #import "DetailedJobViewController.h"
+#import "ChameleonFramework/Chameleon.h"
 
 @interface OpenJobsViewController ()
 
@@ -39,7 +40,7 @@
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(fetchData) forControlEvents:UIControlEventValueChanged];
-    
+    self.tableView.backgroundColor = [UIColor flatWhiteColor];
 
     
     NSLog(@"Now in ojvc, Current user: %@", [User currentUser].username);
@@ -79,8 +80,10 @@
     Job* job = nil;
     if(indexPath.section == 0){
         job = self.myJobs[indexPath.row];
+        cell.statusView.backgroundColor = [UIColor flatGreenColor];
     } else {
         job = self.jobs[indexPath.row];
+        cell.statusView.backgroundColor = [UIColor flatGrayColor];
     }
     cell.assignButton.hidden = YES;
     cell.titleLabel.text = job.title;

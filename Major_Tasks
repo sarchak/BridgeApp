@@ -1,0 +1,19 @@
+Major Tasks
+
+1) Push Notification (Shrikar)
+2) User Rating (Emrah)
+3) ProfilePage for User (David)
+4) ProfilePage for Business (Shrikar)
+5) Feedback Flow / Rating Flow (Emrah)
+6) Uploading Assets (Emrah) ( File picker from box)
+7) Custom Transition (Shrikar)
+8) UI polishing. (Shrikar,Emrah,David)
+
+Minor:
+1) Refreshing the Viewcontroller on job status change ()
+2) Set the price modally instead on pushing. ()
+3) Dismiss Create Job after job is posted and go back to parent view controller.
+4) Assign button for job should not be per cell. Have a top level button. On click should allow you to select.
+
+Nice to Have
+1) Job status in a graph ()
