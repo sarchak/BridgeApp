@@ -13,6 +13,8 @@
 #import "ChatMessageThread.h"
 #import "BusinessOwnerCell.h"
 #import "ChameleonFramework/Chameleon.h"
+#import "FreelancerProfileViewController.h"
+
 @interface DetailedJobViewController ()
 
 @property (strong, nonatomic) Job* job;
@@ -58,6 +60,8 @@
     self.applyButton.layer.cornerRadius = 5.0;
     self.editButton.layer.cornerRadius = 5.0;
     self.deliverButton.layer.cornerRadius = 5.0;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(goToProfile)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +83,11 @@
     cell.ratingView.starFillColor = [UIColor orangeColor];
 
     return cell;
+}
+
+-(void)goToProfile {
+    FreelancerProfileViewController *fvc = [[FreelancerProfileViewController alloc] initWithUser:[User currentUser]];
+    [self.navigationController pushViewController:fvc animated:YES];
 }
 
 /*

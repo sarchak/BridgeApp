@@ -7,8 +7,9 @@
 //
 
 #import "FreelancerProfileViewController.h"
+#import "PortfolioCell.h"
 
-@interface FreelancerProfileViewController ()
+@interface FreelancerProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *starLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
@@ -26,11 +27,63 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    self.nameLabel.text = self.user.username;
+    
+    NSMutableString *starString = [[NSMutableString alloc] init];
+    if (self.user.rating == NULL) {
+        for (int i = 0; i < (int)self.user.rating; i++) {
+            [starString appendString:@"★"];
+        }
+    } else {
+        [starString setString:@"newbie"];
+    }
+    self.starLabel.text = starString;
+    
+    NSString *reviewCount = nil;
+    if (self.user.reviewCount) {
+        reviewCount = [NSString stringWithFormat:@"%ld Reviews", (long)self.user.reviewCount];
+    } else {
+        reviewCount = @"0 Review";
+    }
+    self.numOfReviewsLabel.text = reviewCount;
+
+    NSString *filename = @"profile1.jpg";
+    self.profileImageView.image = [UIImage imageNamed:filename];
+    
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"PortfolioCell"];
+    
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 10;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    PortfolioCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PortfolioCell" forIndexPath:indexPath];
+    //cell.backgroundColor = [UIColor yellowColor];
+    return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"clicked cell");
+}
+
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(50, 20, 50, 20);
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize size = CGSizeMake(130, 130);
+    return size;
 }
 
 /*

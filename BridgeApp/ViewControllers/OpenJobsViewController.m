@@ -12,6 +12,7 @@
 #import "BusinessCell.h"
 #import "DetailedJobViewController.h"
 #import "ChameleonFramework/Chameleon.h"
+#import "FreelancerProfileViewController.h"
 
 @interface OpenJobsViewController ()
 
@@ -42,11 +43,12 @@
     [self.refreshControl addTarget:self action:@selector(fetchData) forControlEvents:UIControlEventValueChanged];
     self.tableView.backgroundColor = [UIColor flatWhiteColor];
 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(goToProfile)];
+
     
-    NSLog(@"Now in ojvc, Current user: %@", [User currentUser].username);
 }
 
--(void) fetchData {
+-(void)fetchData {
     
     /* All  jobs */
     [Job getAllOpenJobs:^(NSArray *foundObjects, NSError *error) {
@@ -68,6 +70,11 @@
        self.myJobs = foundObjects;
        [self.tableView reloadData];
    }];
+}
+
+-(void)goToProfile {
+    FreelancerProfileViewController *fvc = [[FreelancerProfileViewController alloc] initWithUser:[User currentUser]];
+    [self.navigationController pushViewController:fvc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
