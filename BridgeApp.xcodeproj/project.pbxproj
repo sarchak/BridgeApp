@@ -23,6 +23,7 @@
 		31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */; };
 		565DD3B91AB3B532004EE4A1 /* ApplicantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DD3B71AB3B532004EE4A1 /* ApplicantCell.m */; };
 		565DD3BA1AB3B532004EE4A1 /* ApplicantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565DD3B81AB3B532004EE4A1 /* ApplicantCell.xib */; };
+		565DD3BE1AB40158004EE4A1 /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 565DD3BD1AB40158004EE4A1 /* bridge.png */; };
 		565DF40B1AB0CDB200212799 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DF40A1AB0CDB200212799 /* ChatMessage.m */; };
 		565DF4101AB0DBD100212799 /* NSUserDefaults+ChatSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DF40F1AB0DBD100212799 /* NSUserDefaults+ChatSettings.m */; };
 		565DF4131AB0E3A600212799 /* ChatMessageThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DF4121AB0E3A600212799 /* ChatMessageThread.m */; };
@@ -115,6 +116,7 @@
 		565DD3B61AB3B532004EE4A1 /* ApplicantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicantCell.h; sourceTree = "<group>"; };
 		565DD3B71AB3B532004EE4A1 /* ApplicantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicantCell.m; sourceTree = "<group>"; };
 		565DD3B81AB3B532004EE4A1 /* ApplicantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicantCell.xib; sourceTree = "<group>"; };
+		565DD3BD1AB40158004EE4A1 /* bridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge.png; sourceTree = "<group>"; };
 		565DF4091AB0CDB200212799 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
 		565DF40A1AB0CDB200212799 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
 		565DF40E1AB0DBD000212799 /* NSUserDefaults+ChatSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+ChatSettings.h"; path = "Helpers/NSUserDefaults+ChatSettings.h"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		566D982D1AAD755E007D1C55 /* uiassets */ = {
 			isa = PBXGroup;
 			children = (
+				565DD3BD1AB40158004EE4A1 /* bridge.png */,
 				566D982E1AAD7572007D1C55 /* profile3.jpg */,
 				566D982F1AAD7572007D1C55 /* profile2.jpg */,
 				566D98301AAD7572007D1C55 /* profile1.jpg */,
@@ -524,6 +527,7 @@
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
 				565DD3BA1AB3B532004EE4A1 /* ApplicantCell.xib in Resources */,
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
+				565DD3BE1AB40158004EE4A1 /* bridge.png in Resources */,
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
 				566D98331AAD7572007D1C55 /* profile1.jpg in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,

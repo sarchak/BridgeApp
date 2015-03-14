@@ -2,6 +2,7 @@ pod "Parse"
 pod "AFNetworking"
 pod "StarRatingView"
 pod "RateView"
+pod 'Shimmer', '~> 1.0'
 pod 'THCalendarDatePicker', '~> 1.0.0'
 pod 'ZFDragableModalTransition'
 pod 'JSQMessagesViewController'

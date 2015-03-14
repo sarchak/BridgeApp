@@ -72,7 +72,11 @@
     cell.profileImageView.image = [UIImage imageNamed:filename];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.ratingView.rating = 3.75;
+    cell.ratingView.starSize = 15;
+    cell.ratingView.starFillColor = [UIColor orangeColor];
 
+    
     if(user.objectId == self.job.assignedToUser.objectId){
         cell.statusView.backgroundColor = [UIColor flatGreenColor];
     } else {

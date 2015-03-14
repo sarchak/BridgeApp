@@ -29,6 +29,7 @@ PODS:
   - Parse (1.6.4):
     - Bolts (~> 1.1)
   - RateView (1.1)
+  - Shimmer (1.0.2)
   - StarRatingView (1.0.0)
   - SWTableViewCell (0.3.7)
   - THCalendarDatePicker (1.0.0):
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - JSQMessagesViewController
   - Parse
   - RateView
+  - Shimmer (~> 1.0)
   - StarRatingView
   - SWTableViewCell (~> 0.3.7)
   - THCalendarDatePicker (~> 1.0.0)
@@ -55,6 +57,7 @@ SPEC CHECKSUMS:
   KNSemiModalViewController: 6fb1e2f6a4d84238b524cb705e91118b0fa6bbc9
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
   RateView: 4142c146bd42fe7715adc3365fa2ffd71ff327e0
+  Shimmer: 057fcfe9c1c978d69d50b64fce93a61080cd08ec
   StarRatingView: c3e81fe39e1fdd5a11d3bee4ccbf7fadf8491107
   SWTableViewCell: 25de71898e3fcd11cf75707ef90245acf990ec03
   THCalendarDatePicker: c482d4f630262bae6fe88113d0298f54bad1fd9d

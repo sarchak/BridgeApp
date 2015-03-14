@@ -70,20 +70,20 @@
     [Job getJobWithOptions:JobStatusAssigned completion:^(NSArray *foundObjects, NSError *error) {
         self.assignedJobs = foundObjects;
         [self.refreshControl endRefreshing];
-        [self.tableView reloadData];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
     
     /* Fetch ready to assign jobs. Jobs with applicants */
     [Job getJobWithOptions:JobStatusHasApplicants completion:^(NSArray *foundObjects, NSError *error) {
         self.readyToAssignJobs = foundObjects;
         [self.refreshControl endRefreshing];
-        [self.tableView reloadData];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
 
     [Job getJobWithOptions:JobStatusPendingAssignment completion:^(NSArray *foundObjects, NSError *error) {
         self.pendingJobs = foundObjects;
         [self.refreshControl endRefreshing];
-        [self.tableView reloadData];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
         
         for(Job *tjob in foundObjects){
             NSLog(@"#### %@ ", tjob.title);
