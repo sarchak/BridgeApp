@@ -65,6 +65,12 @@
 		BF5706611AB4F109007D9B60 /* PortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF57065F1AB4F109007D9B60 /* PortfolioCell.m */; };
 		BF5706621AB4F109007D9B60 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5706601AB4F109007D9B60 /* PortfolioCell.xib */; };
 		BF5706641AB57C3B007D9B60 /* user-male.png in Resources */ = {isa = PBXBuildFile; fileRef = BF5706631AB57C3B007D9B60 /* user-male.png */; };
+		BF57066C1AB6434C007D9B60 /* portfolio1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF5706661AB6434C007D9B60 /* portfolio1.jpg */; };
+		BF57066D1AB6434C007D9B60 /* portfolio2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF5706671AB6434C007D9B60 /* portfolio2.jpg */; };
+		BF57066E1AB6434C007D9B60 /* portfolio3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF5706681AB6434C007D9B60 /* portfolio3.jpg */; };
+		BF57066F1AB6434C007D9B60 /* portfolio4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF5706691AB6434C007D9B60 /* portfolio4.jpg */; };
+		BF5706701AB6434C007D9B60 /* portfolio5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF57066A1AB6434C007D9B60 /* portfolio5.jpg */; };
+		BF5706711AB6434C007D9B60 /* portfolio6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF57066B1AB6434C007D9B60 /* portfolio6.jpg */; };
 		BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */; };
 		BFA1DDDC1AAAF63E00CDD4FC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */; };
 		BFA1DDE01AABA0D200CDD4FC /* OpenJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDDE1AABA0D200CDD4FC /* OpenJobsViewController.m */; };
@@ -183,6 +189,12 @@
 		BF57065F1AB4F109007D9B60 /* PortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortfolioCell.m; sourceTree = "<group>"; };
 		BF5706601AB4F109007D9B60 /* PortfolioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortfolioCell.xib; sourceTree = "<group>"; };
 		BF5706631AB57C3B007D9B60 /* user-male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-male.png"; sourceTree = "<group>"; };
+		BF5706661AB6434C007D9B60 /* portfolio1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio1.jpg; sourceTree = "<group>"; };
+		BF5706671AB6434C007D9B60 /* portfolio2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio2.jpg; sourceTree = "<group>"; };
+		BF5706681AB6434C007D9B60 /* portfolio3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio3.jpg; sourceTree = "<group>"; };
+		BF5706691AB6434C007D9B60 /* portfolio4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio4.jpg; sourceTree = "<group>"; };
+		BF57066A1AB6434C007D9B60 /* portfolio5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio5.jpg; sourceTree = "<group>"; };
+		BF57066B1AB6434C007D9B60 /* portfolio6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio6.jpg; sourceTree = "<group>"; };
 		BFA1DDD81AAAF63E00CDD4FC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -315,6 +327,7 @@
 		566D982D1AAD755E007D1C55 /* uiassets */ = {
 			isa = PBXGroup;
 			children = (
+				BF5706651AB64334007D9B60 /* Portfolio */,
 				BF5706631AB57C3B007D9B60 /* user-male.png */,
 				565DD3BD1AB40158004EE4A1 /* bridge.png */,
 				566D982E1AAD7572007D1C55 /* profile3.jpg */,
@@ -450,6 +463,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BF5706651AB64334007D9B60 /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				BF5706661AB6434C007D9B60 /* portfolio1.jpg */,
+				BF5706671AB6434C007D9B60 /* portfolio2.jpg */,
+				BF5706681AB6434C007D9B60 /* portfolio3.jpg */,
+				BF5706691AB6434C007D9B60 /* portfolio4.jpg */,
+				BF57066A1AB6434C007D9B60 /* portfolio5.jpg */,
+				BF57066B1AB6434C007D9B60 /* portfolio6.jpg */,
+			);
+			name = Portfolio;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -535,6 +561,7 @@
 				56C221A61AA9925900E6B55A /* TextViewController.xib in Resources */,
 				31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */,
 				566D982C1AAD459F007D1C55 /* BusinessDetailViewController.xib in Resources */,
+				BF57066F1AB6434C007D9B60 /* portfolio4.jpg in Resources */,
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
 				565DD3BA1AB3B532004EE4A1 /* ApplicantCell.xib in Resources */,
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
@@ -544,7 +571,10 @@
 				BF5706641AB57C3B007D9B60 /* user-male.png in Resources */,
 				566D98331AAD7572007D1C55 /* profile1.jpg in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
+				BF57066D1AB6434C007D9B60 /* portfolio2.jpg in Resources */,
 				566D98271AAC16AA007D1C55 /* BusinessCell.xib in Resources */,
+				BF5706701AB6434C007D9B60 /* portfolio5.jpg in Resources */,
+				BF57066C1AB6434C007D9B60 /* portfolio1.jpg in Resources */,
 				56C221A01AA9925900E6B55A /* CategoryCell.xib in Resources */,
 				566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */,
 				BFA1DDE61AABA19A00CDD4FC /* JobCell.xib in Resources */,
@@ -556,9 +586,11 @@
 				567F88051AB3876300D8E5F0 /* BusinessOwnerCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
 				BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */,
+				BF5706711AB6434C007D9B60 /* portfolio6.jpg in Resources */,
 				566D981B1AABD2F6007D1C55 /* SignUpViewController.xib in Resources */,
 				BFA1DDDC1AAAF63E00CDD4FC /* LoginViewController.xib in Resources */,
 				317DF99F1AAAF03800F71962 /* bridge-logo-circle.png in Resources */,
+				BF57066E1AB6434C007D9B60 /* portfolio3.jpg in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
 				567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */,
 				566D98311AAD7572007D1C55 /* profile3.jpg in Resources */,

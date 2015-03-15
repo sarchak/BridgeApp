@@ -78,7 +78,7 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return 6;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -88,11 +88,10 @@
     //cell.photo = [UIImage imageNamed:@"bridge.png"];
     //imageView.clipsToBounds = YES;
     //cell.someLabel.text = @".p";
-    [cell setPhoto:[UIImage imageNamed:@"bridge.png"]];
+    [cell setPhoto:[UIImage imageNamed:[NSString stringWithFormat:@"portfolio%ld.jpg", (long)indexPath.row + 1]]];
 
     
     cell.backgroundColor = [UIColor whiteColor];
-    //cell.backgroundColor = [UIColor yellowColor];
     return cell;
 }
 
@@ -101,11 +100,11 @@
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(50, 20, 50, 20);
+    return UIEdgeInsetsMake(20, 20, 20, 20);
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize size = CGSizeMake(130, 130);
+    CGSize size = CGSizeMake(140, 140);
     return size;
 }
 
