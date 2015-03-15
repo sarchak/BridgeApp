@@ -57,7 +57,6 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Coming in");
     TextViewController *tvc = [[TextViewController alloc] init];
     tvc.job = self.job;
     UINavigationController *nvc = nil;
@@ -75,6 +74,8 @@
         nvc.transitioningDelegate = self;
         
         [self presentViewController:nvc animated:YES completion:nil];
+    } else if(indexPath.row == 2) {
+        [self showCalendarView];
     } else if(indexPath.row == 3){
         PriceViewController *pvc = [[PriceViewController alloc] init];
         pvc.job = self.job;
@@ -92,7 +93,7 @@
 
 -(void) titleSubtitleCell:(TitleSubtitleCell *)cell iconTapped:(BOOL)tapped{
     NSLog(@"Calendar icon tapped");
-    [self showCalendarView];
+//    [self showCalendarView];
 }
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

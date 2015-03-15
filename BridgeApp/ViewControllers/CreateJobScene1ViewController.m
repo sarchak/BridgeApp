@@ -10,7 +10,7 @@
 #import "CreateJobScene2ViewController.h"
 #import "CategoryCell.h"
 #import "User.h"
-
+#import "ChameleonFramework/Chameleon.h"
 @interface CreateJobScene1ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *categories;
@@ -54,6 +54,7 @@
     cell.categoryLabel.text = self.categories[indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.contentView.superview.backgroundColor = [UIColor colorWithRed:247.0/255 green:246.0/255 blue:244.0/255 alpha:1];
     return cell;
 }
 
