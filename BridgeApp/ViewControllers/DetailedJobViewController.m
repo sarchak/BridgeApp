@@ -61,7 +61,7 @@
     self.editButton.layer.cornerRadius = 5.0;
     self.deliverButton.layer.cornerRadius = 5.0;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(goToProfile)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"user-male.png"] style:UIBarButtonItemStylePlain target:self action:@selector(goToProfile)];
 }
 
 - (void)didReceiveMemoryWarning {

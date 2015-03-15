@@ -64,6 +64,7 @@
 		BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */; };
 		BF5706611AB4F109007D9B60 /* PortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF57065F1AB4F109007D9B60 /* PortfolioCell.m */; };
 		BF5706621AB4F109007D9B60 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5706601AB4F109007D9B60 /* PortfolioCell.xib */; };
+		BF5706641AB57C3B007D9B60 /* user-male.png in Resources */ = {isa = PBXBuildFile; fileRef = BF5706631AB57C3B007D9B60 /* user-male.png */; };
 		BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */; };
 		BFA1DDDC1AAAF63E00CDD4FC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */; };
 		BFA1DDE01AABA0D200CDD4FC /* OpenJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDDE1AABA0D200CDD4FC /* OpenJobsViewController.m */; };
@@ -181,6 +182,7 @@
 		BF57065E1AB4F109007D9B60 /* PortfolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortfolioCell.h; sourceTree = "<group>"; };
 		BF57065F1AB4F109007D9B60 /* PortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortfolioCell.m; sourceTree = "<group>"; };
 		BF5706601AB4F109007D9B60 /* PortfolioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortfolioCell.xib; sourceTree = "<group>"; };
+		BF5706631AB57C3B007D9B60 /* user-male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-male.png"; sourceTree = "<group>"; };
 		BFA1DDD81AAAF63E00CDD4FC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		566D982D1AAD755E007D1C55 /* uiassets */ = {
 			isa = PBXGroup;
 			children = (
+				BF5706631AB57C3B007D9B60 /* user-male.png */,
 				565DD3BD1AB40158004EE4A1 /* bridge.png */,
 				566D982E1AAD7572007D1C55 /* profile3.jpg */,
 				566D982F1AAD7572007D1C55 /* profile2.jpg */,
@@ -538,6 +541,7 @@
 				565DD3BE1AB40158004EE4A1 /* bridge.png in Resources */,
 				BF5706621AB4F109007D9B60 /* PortfolioCell.xib in Resources */,
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
+				BF5706641AB57C3B007D9B60 /* user-male.png in Resources */,
 				566D98331AAD7572007D1C55 /* profile1.jpg in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
 				566D98271AAC16AA007D1C55 /* BusinessCell.xib in Resources */,
