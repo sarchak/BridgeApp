@@ -12,10 +12,15 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    //[self.portfolioPosterView setImage:self.poster];
+
 }
 
--(void)setLabel:(NSString *)text {
-    self.someLabel.text = @"..";
+- (void)setPhoto:(UIImage *)photo{
+    if (_photo != photo) {
+        _photo = photo;
+    }
+    self.portfolioPosterView.image = photo;
 }
 
 @end

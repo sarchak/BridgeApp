@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PortfolioCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *someLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *portfolioPosterView;
+@property (strong, nonatomic) UIImage *photo;
 
+-(void)setPhoto:(UIImage *)photo;
 @end

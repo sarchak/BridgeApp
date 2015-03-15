@@ -8,11 +8,12 @@
 
 #import "FreelancerProfileViewController.h"
 #import "PortfolioCell.h"
+#import <RateView.h>
 
 @interface FreelancerProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *starLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIView *starView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *numOfReviewsLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -30,15 +31,26 @@
     
     self.nameLabel.text = self.user.username;
     
-    NSMutableString *starString = [[NSMutableString alloc] init];
-    if (self.user.rating == NULL) {
-        for (int i = 0; i < (int)self.user.rating; i++) {
-            [starString appendString:@"★"];
-        }
+//    NSMutableString *starString = [[NSMutableString alloc] init];
+//    if (self.user.rating == NULL) {
+//        for (int i = 0; i < (int)self.user.rating; i++) {
+//            [starString appendString:@"★"];
+//        }
+//    } else {
+//        [starString setString:@"newbie"];
+//    }
+//    self.starLabel.text = starString;
+    
+    if ([self.user.rating isEqual:[NSNull null]] || [self.user.rating isEqualToNumber:0]) {
+        UILabel *starLabelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+        [starLabelView setText:@"newbie"];
+        starLabelView.tintColor = [UIColor blackColor];
+        [self.starView addSubview:starLabelView];
+
     } else {
-        [starString setString:@"newbie"];
+        [self.starView addSubview:[RateView rateViewWithRating:[self.user.rating floatValue]]];
     }
-    self.starLabel.text = starString;
+    
     
     NSString *reviewCount = nil;
     if (self.user.reviewCount) {
@@ -54,7 +66,9 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"PortfolioCell"];
-    
+    //[self.collectionView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:@"TweetCell"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"PortfolioCell" bundle:nil] forCellWithReuseIdentifier:@"PortfolioCell"];
+
     [self.collectionView reloadData];
 }
 
@@ -68,7 +82,16 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     PortfolioCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PortfolioCell" forIndexPath:indexPath];
+    
+    //cell.photo = [UIImage imageNamed:@"bridge.png"];
+    //imageView.clipsToBounds = YES;
+    //cell.someLabel.text = @".p";
+    [cell setPhoto:[UIImage imageNamed:@"bridge.png"]];
+
+    
+    cell.backgroundColor = [UIColor whiteColor];
     //cell.backgroundColor = [UIColor yellowColor];
     return cell;
 }

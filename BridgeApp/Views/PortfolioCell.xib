@@ -6,23 +6,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PortfolioCell">
+        <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PortfolioCell" id="gTV-IL-0wX" customClass="PortfolioCell">
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wneo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6E-bp-obc">
-                        <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hu2-98-dg9">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Hu2-98-dg9" secondAttribute="bottom" id="Pu0-5b-VsQ"/>
+                <constraint firstAttribute="trailing" secondItem="Hu2-98-dg9" secondAttribute="trailing" id="QXF-S2-CNZ"/>
+                <constraint firstItem="Hu2-98-dg9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kxk-lR-GRj"/>
+                <constraint firstItem="Hu2-98-dg9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="q2H-Ri-uEr"/>
+            </constraints>
             <connections>
-                <outlet property="someLabel" destination="b6E-bp-obc" id="KY4-WO-0fe"/>
+                <outlet property="portfolioPosterView" destination="Hu2-98-dg9" id="8V0-lZ-eXs"/>
             </connections>
         </collectionViewCell>
     </objects>
