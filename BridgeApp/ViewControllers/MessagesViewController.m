@@ -76,7 +76,7 @@
     self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor flatGreenColor]];
  
     [ChatMessage getAllMessages:self.threadId completion:^(NSArray *messages, NSError *error) {
-        self.messages = messages;
+        self.messages = [[NSMutableArray alloc] initWithArray:messages];
         NSLog(@"$$$ Messages = %@", messages);
         [self.collectionView reloadData];
     }];
