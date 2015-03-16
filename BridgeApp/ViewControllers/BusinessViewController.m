@@ -12,7 +12,7 @@
 #import "Job.h"
 #import "CreateJobScene1ViewController.h"
 #import "BusinessDetailViewController.h"
-
+#import "SVProgressHUD.h"
 #import "ChameleonFramework/Chameleon.h"
 @interface BusinessViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -65,32 +65,32 @@
 
 
 -(void) fetchData {
-    
+    [SVProgressHUD show];
+
      /* Fetch assigned jobs */
     [Job getJobWithOptions:JobStatusAssigned completion:^(NSArray *foundObjects, NSError *error) {
         self.assignedJobs = foundObjects;
         [self.refreshControl endRefreshing];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView reloadData];
+//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+        [SVProgressHUD dismiss];
     }];
     
     /* Fetch ready to assign jobs. Jobs with applicants */
     [Job getJobWithOptions:JobStatusHasApplicants completion:^(NSArray *foundObjects, NSError *error) {
         self.readyToAssignJobs = foundObjects;
         [self.refreshControl endRefreshing];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView reloadData];
+//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
+        [SVProgressHUD dismiss];
     }];
 
     [Job getJobWithOptions:JobStatusPendingAssignment completion:^(NSArray *foundObjects, NSError *error) {
         self.pendingJobs = foundObjects;
         [self.refreshControl endRefreshing];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
-        
-        for(Job *tjob in foundObjects){
-            NSLog(@"#### %@ ", tjob.title);
-            for(User *applicant in tjob.applicants){
-                NSLog(@"@@@@ user %@", applicant.username);
-            }
-        }
+        [self.tableView reloadData];
+//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
+        [SVProgressHUD dismiss];
     }];
 }
 

@@ -31,6 +31,7 @@ PODS:
   - RateView (1.1)
   - Shimmer (1.0.2)
   - StarRatingView (1.0.0)
+  - SVProgressHUD (1.1.2)
   - SWTableViewCell (0.3.7)
   - THCalendarDatePicker (1.0.0):
     - KNSemiModalViewController (~> 0.3)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - RateView
   - Shimmer (~> 1.0)
   - StarRatingView
+  - SVProgressHUD (~> 1.1)
   - SWTableViewCell (~> 0.3.7)
   - THCalendarDatePicker (~> 1.0.0)
   - ZFDragableModalTransition
@@ -59,8 +61,9 @@ SPEC CHECKSUMS:
   RateView: 4142c146bd42fe7715adc3365fa2ffd71ff327e0
   Shimmer: 057fcfe9c1c978d69d50b64fce93a61080cd08ec
   StarRatingView: c3e81fe39e1fdd5a11d3bee4ccbf7fadf8491107
+  SVProgressHUD: da7a49e789af645d9279ffbca62318945a832438
   SWTableViewCell: 25de71898e3fcd11cf75707ef90245acf990ec03
   THCalendarDatePicker: c482d4f630262bae6fe88113d0298f54bad1fd9d
   ZFDragableModalTransition: 7d62a412b7b72ad37b7b04cdfed53b31d684a15b
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.0.rc.1
