@@ -71,6 +71,8 @@
 		BF57066F1AB6434C007D9B60 /* portfolio4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF5706691AB6434C007D9B60 /* portfolio4.jpg */; };
 		BF5706701AB6434C007D9B60 /* portfolio5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF57066A1AB6434C007D9B60 /* portfolio5.jpg */; };
 		BF5706711AB6434C007D9B60 /* portfolio6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF57066B1AB6434C007D9B60 /* portfolio6.jpg */; };
+		BF5706731AB669B5007D9B60 /* pushpin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF5706721AB669B5007D9B60 /* pushpin.jpg */; };
+		BF5706751AB66BC1007D9B60 /* cork-board.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF5706741AB66BC1007D9B60 /* cork-board.jpg */; };
 		BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */; };
 		BFA1DDDC1AAAF63E00CDD4FC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */; };
 		BFA1DDE01AABA0D200CDD4FC /* OpenJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDDE1AABA0D200CDD4FC /* OpenJobsViewController.m */; };
@@ -195,6 +197,8 @@
 		BF5706691AB6434C007D9B60 /* portfolio4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio4.jpg; sourceTree = "<group>"; };
 		BF57066A1AB6434C007D9B60 /* portfolio5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio5.jpg; sourceTree = "<group>"; };
 		BF57066B1AB6434C007D9B60 /* portfolio6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio6.jpg; sourceTree = "<group>"; };
+		BF5706721AB669B5007D9B60 /* pushpin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pushpin.jpg; sourceTree = "<group>"; };
+		BF5706741AB66BC1007D9B60 /* cork-board.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cork-board.jpg"; sourceTree = "<group>"; };
 		BFA1DDD81AAAF63E00CDD4FC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BFA1DDD91AAAF63E00CDD4FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BFA1DDDA1AAAF63E00CDD4FC /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -466,6 +470,8 @@
 		BF5706651AB64334007D9B60 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
+				BF5706741AB66BC1007D9B60 /* cork-board.jpg */,
+				BF5706721AB669B5007D9B60 /* pushpin.jpg */,
 				BF5706661AB6434C007D9B60 /* portfolio1.jpg */,
 				BF5706671AB6434C007D9B60 /* portfolio2.jpg */,
 				BF5706681AB6434C007D9B60 /* portfolio3.jpg */,
@@ -559,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56C221A61AA9925900E6B55A /* TextViewController.xib in Resources */,
+				BF5706751AB66BC1007D9B60 /* cork-board.jpg in Resources */,
 				31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */,
 				566D982C1AAD459F007D1C55 /* BusinessDetailViewController.xib in Resources */,
 				BF57066F1AB6434C007D9B60 /* portfolio4.jpg in Resources */,
@@ -568,6 +575,7 @@
 				565DD3BE1AB40158004EE4A1 /* bridge.png in Resources */,
 				BF5706621AB4F109007D9B60 /* PortfolioCell.xib in Resources */,
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
+				BF5706731AB669B5007D9B60 /* pushpin.jpg in Resources */,
 				BF5706641AB57C3B007D9B60 /* user-male.png in Resources */,
 				566D98331AAD7572007D1C55 /* profile1.jpg in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
