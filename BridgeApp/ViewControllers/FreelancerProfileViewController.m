@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) User *user;
 @property (weak, nonatomic) IBOutlet UIView *topView;
+@property (weak, nonatomic) IBOutlet UIButton *availableButton;
 
 
 @end
@@ -108,6 +109,18 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size = CGSizeMake(140, 140);
     return size;
+}
+
+- (IBAction)onAvailableButton:(id)sender {
+    if (self.availableButton.tintColor != [UIColor grayColor]) {
+        [self.availableButton setTitle:@"Unavailable" forState:UIControlStateNormal];
+        //self.availableButton.enabled = NO;
+        self.availableButton.tintColor = [UIColor grayColor];
+    } else {
+        [self.availableButton setTitle:@"Available" forState:UIControlStateNormal];
+        self.availableButton.tintColor = [UIColor lightTextColor];
+        //self.availableButton.enabled = YES;
+    }
 }
 
 /*
