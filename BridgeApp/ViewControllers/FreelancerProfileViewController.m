@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numOfReviewsLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) User *user;
+@property (weak, nonatomic) IBOutlet UIView *topView;
 
 
 @end
@@ -69,6 +70,7 @@
     //[self.collectionView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:@"TweetCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"PortfolioCell" bundle:nil] forCellWithReuseIdentifier:@"PortfolioCell"];
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cork-board.jpg"]];
+    self.topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"california-san-francisco-neighborhoods.jpg"]];
     [self.collectionView reloadData];
 }
 
@@ -100,7 +102,7 @@
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(20, 20, 20, 20);
+    return UIEdgeInsetsMake(-10, 20, 30, 20);
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
