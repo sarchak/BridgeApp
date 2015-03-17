@@ -10,7 +10,7 @@
 #import "PortfolioCell.h"
 #import <RateView.h>
 
-@interface FreelancerProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface FreelancerProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIView *starView;
@@ -20,6 +20,8 @@
 @property (strong, nonatomic) User *user;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIButton *availableButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 
 @end
@@ -64,15 +66,25 @@
 
     NSString *filename = @"profile1.jpg";
     self.profileImageView.image = [UIImage imageNamed:filename];
+    self.profileImageView.contentMode = UIViewContentModeScaleToFill;
+    self.profileImageView.layer.cornerRadius = 30;
+    self.profileImageView.layer.masksToBounds = YES;
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"PortfolioCell"];
-    //[self.collectionView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:@"TweetCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"PortfolioCell" bundle:nil] forCellWithReuseIdentifier:@"PortfolioCell"];
-    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cork-board.jpg"]];
+    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"black_wood.jpg"]];
     self.topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"california-san-francisco-neighborhoods.jpg"]];
     [self.collectionView reloadData];
+    
+    self.tableView.alpha = 0.0f;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.tableView registerNib:[UINib nibWithNibName:@"PastJobCell" bundle:nil] forCellReuseIdentifier:@"PastJobCell"];
+
+    
+    self.segmentedControl.layer.cornerRadius = 5;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -136,6 +148,16 @@
 - (FreelancerProfileViewController *)initWithUser:(User *)user {
     self.user = user;
     return self;
+}
+
+- (IBAction)onSegmentedChanged:(id)sender {
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        self.collectionView.alpha = 1;
+        self.tableView.alpha = 0;
+    } else {
+        self.collectionView.alpha = 0;
+        self.tableView.alpha = 1;
+    }
 }
 
 @end

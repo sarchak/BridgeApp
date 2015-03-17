@@ -66,4 +66,4 @@ SPEC CHECKSUMS:
   THCalendarDatePicker: c482d4f630262bae6fe88113d0298f54bad1fd9d
   ZFDragableModalTransition: 7d62a412b7b72ad37b7b04cdfed53b31d684a15b
 
-COCOAPODS: 0.36.0.rc.1
+COCOAPODS: 0.35.0
