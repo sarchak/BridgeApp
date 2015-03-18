@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *availableButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong, nonatomic) NSArray *completedJobs;
 
 
 @end
@@ -83,9 +84,16 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"PastJobCell" bundle:nil] forCellReuseIdentifier:@"PastJobCell"];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 80;
 
-    
     self.segmentedControl.layer.cornerRadius = 5;
+    
+    // @TODO(dtong) change to JobStatusApproved. Now JobStatusAssigned is for demo only!!!!!!!!!!!!!!!!!
+    [Job getJobAssignedToUserWithStatus:self.user status:JobStatusAssigned completion:^(NSArray *foundObjects, NSError *error) {
+        self.completedJobs = foundObjects;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,11 +133,13 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.completedJobs.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PastJobCell* cell = [tableView dequeueReusableCellWithIdentifier:@"PastJobCell"];
+    cell.job = self.completedJobs[indexPath.row];
+    cell.jobTitleLabel.text = cell.job.title;
     return cell;
 }
 

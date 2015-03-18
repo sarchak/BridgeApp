@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Job.h"
 
 @interface PastJobCell : UITableViewCell
+
+@property (strong, nonatomic) Job* job;
+@property (weak, nonatomic) IBOutlet UILabel *jobTitleLabel;
 
 @end

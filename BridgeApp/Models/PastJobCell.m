@@ -8,6 +8,7 @@
 
 #import "PastJobCell.h"
 
+
 @implementation PastJobCell
 
 - (void)awakeFromNib {

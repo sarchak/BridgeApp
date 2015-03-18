@@ -227,9 +227,9 @@
 		BFA1DDEE1AABDA7900CDD4FC /* ThreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadCell.xib; sourceTree = "<group>"; };
 		BFA1DDF11AABE03F00CDD4FC /* JobFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobFactory.h; path = Helpers/JobFactory.h; sourceTree = "<group>"; };
 		BFA1DDF21AABE03F00CDD4FC /* JobFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobFactory.m; path = Helpers/JobFactory.m; sourceTree = "<group>"; };
-		BFD6EFFF1AB9510000BFCD93 /* PastJobCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastJobCell.h; sourceTree = "<group>"; };
-		BFD6F0001AB9510000BFCD93 /* PastJobCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastJobCell.m; sourceTree = "<group>"; };
-		BFD6F0011AB9510000BFCD93 /* PastJobCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PastJobCell.xib; sourceTree = "<group>"; };
+		BFD6EFFF1AB9510000BFCD93 /* PastJobCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PastJobCell.h; path = ../Models/PastJobCell.h; sourceTree = "<group>"; };
+		BFD6F0001AB9510000BFCD93 /* PastJobCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PastJobCell.m; path = ../Models/PastJobCell.m; sourceTree = "<group>"; };
+		BFD6F0011AB9510000BFCD93 /* PastJobCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PastJobCell.xib; path = ../Models/PastJobCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,9 +283,6 @@
 				565DF40A1AB0CDB200212799 /* ChatMessage.m */,
 				565DF4111AB0E3A600212799 /* ChatMessageThread.h */,
 				565DF4121AB0E3A600212799 /* ChatMessageThread.m */,
-				BFD6EFFF1AB9510000BFCD93 /* PastJobCell.h */,
-				BFD6F0001AB9510000BFCD93 /* PastJobCell.m */,
-				BFD6F0011AB9510000BFCD93 /* PastJobCell.xib */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +314,9 @@
 				565DD3B61AB3B532004EE4A1 /* ApplicantCell.h */,
 				565DD3B71AB3B532004EE4A1 /* ApplicantCell.m */,
 				565DD3B81AB3B532004EE4A1 /* ApplicantCell.xib */,
+				BFD6EFFF1AB9510000BFCD93 /* PastJobCell.h */,
+				BFD6F0001AB9510000BFCD93 /* PastJobCell.m */,
+				BFD6F0011AB9510000BFCD93 /* PastJobCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
