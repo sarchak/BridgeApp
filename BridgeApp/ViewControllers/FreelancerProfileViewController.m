@@ -8,6 +8,7 @@
 
 #import "FreelancerProfileViewController.h"
 #import "PortfolioCell.h"
+#import "PastJobCell.h"
 #import <RateView.h>
 
 @interface FreelancerProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate>
@@ -121,6 +122,15 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size = CGSizeMake(140, 140);
     return size;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PastJobCell* cell = [tableView dequeueReusableCellWithIdentifier:@"PastJobCell"];
+    return cell;
 }
 
 - (IBAction)onAvailableButton:(id)sender {

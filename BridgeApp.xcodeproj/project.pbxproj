@@ -88,6 +88,8 @@
 		BFA1DDEF1AABDA7900CDD4FC /* ThreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDED1AABDA7900CDD4FC /* ThreadCell.m */; };
 		BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1DDEE1AABDA7900CDD4FC /* ThreadCell.xib */; };
 		BFA1DDF31AABE03F00CDD4FC /* JobFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1DDF21AABE03F00CDD4FC /* JobFactory.m */; };
+		BFD6F0021AB9510000BFCD93 /* PastJobCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F0001AB9510000BFCD93 /* PastJobCell.m */; };
+		BFD6F0031AB9510000BFCD93 /* PastJobCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD6F0011AB9510000BFCD93 /* PastJobCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,6 +227,9 @@
 		BFA1DDEE1AABDA7900CDD4FC /* ThreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadCell.xib; sourceTree = "<group>"; };
 		BFA1DDF11AABE03F00CDD4FC /* JobFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobFactory.h; path = Helpers/JobFactory.h; sourceTree = "<group>"; };
 		BFA1DDF21AABE03F00CDD4FC /* JobFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobFactory.m; path = Helpers/JobFactory.m; sourceTree = "<group>"; };
+		BFD6EFFF1AB9510000BFCD93 /* PastJobCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastJobCell.h; sourceTree = "<group>"; };
+		BFD6F0001AB9510000BFCD93 /* PastJobCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastJobCell.m; sourceTree = "<group>"; };
+		BFD6F0011AB9510000BFCD93 /* PastJobCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PastJobCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +283,9 @@
 				565DF40A1AB0CDB200212799 /* ChatMessage.m */,
 				565DF4111AB0E3A600212799 /* ChatMessageThread.h */,
 				565DF4121AB0E3A600212799 /* ChatMessageThread.m */,
+				BFD6EFFF1AB9510000BFCD93 /* PastJobCell.h */,
+				BFD6F0001AB9510000BFCD93 /* PastJobCell.m */,
+				BFD6F0011AB9510000BFCD93 /* PastJobCell.xib */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -603,6 +611,7 @@
 				566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */,
 				BFA1DDE61AABA19A00CDD4FC /* JobCell.xib in Resources */,
 				BFA1DDEB1AABBC6800CDD4FC /* DetailedJobViewController.xib in Resources */,
+				BFD6F0031AB9510000BFCD93 /* PastJobCell.xib in Resources */,
 				5629F9941AB92954009ED396 /* philz.jpg in Resources */,
 				317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */,
 				566D98221AAC13BB007D1C55 /* BusinessViewController.xib in Resources */,
@@ -697,6 +706,7 @@
 				BFA1DDDB1AAAF63E00CDD4FC /* LoginViewController.m in Sources */,
 				BFA1DDF31AABE03F00CDD4FC /* JobFactory.m in Sources */,
 				315B0B7D1AA86CE3004428BE /* Message.m in Sources */,
+				BFD6F0021AB9510000BFCD93 /* PastJobCell.m in Sources */,
 				BFA1DDEA1AABBC6800CDD4FC /* DetailedJobViewController.m in Sources */,
 				566D98131AAB8D64007D1C55 /* UserFactory.m in Sources */,
 				566D982B1AAD459F007D1C55 /* BusinessDetailViewController.m in Sources */,
