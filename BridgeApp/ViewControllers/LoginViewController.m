@@ -15,6 +15,9 @@
 #import "UserFactory.h"
 #import "User.h"
 #import "FBShimmeringView.h"
+#import "BusinessProfileViewController.h"
+#import "FreelancerProfileViewController.h"
+#import "ChameleonFramework/Chameleon.h"
 
 @interface LoginViewController ()
 
@@ -109,8 +112,31 @@
     /* Setup the business owner */
     [User login:@"philz" password:@"bridgeapp" completion:^(NSError *error) {
         NSLog(@"User logged in %@", [User currentUser].username);
+
+        BusinessProfileViewController *bpvc = [[BusinessProfileViewController alloc] init];
         BusinessViewController *bvc = [[BusinessViewController alloc] init];
-        [self.navigationController pushViewController:bvc animated:YES];
+        
+        UITabBarController *tbc = [[UITabBarController alloc] init];
+        [tbc setViewControllers:@[bvc,bpvc]];
+        
+        NSArray *items = tbc.tabBar.items;
+        
+        UITabBarItem *home = [items objectAtIndex:0];
+        UITabBarItem *profile = [items objectAtIndex:1];
+
+        UITabBar *tabBar = [UITabBar appearance];
+        [tabBar setBarTintColor:[UIColor flatNavyBlueColor]];
+        
+        [tabBar setTintColor:[UIColor flatWhiteColor]];
+        
+
+        
+        [home initWithTitle:@"Jobs" image:[UIImage imageNamed:@"jobs"] selectedImage: [UIImage imageNamed:@"jobs"]];
+        
+        [profile initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile"] selectedImage: [UIImage imageNamed:@"profile"]];
+        
+        
+        [self.navigationController pushViewController:tbc animated:YES];
     }];
 
     
@@ -120,8 +146,29 @@
 
 - (void)goToFreelancerView {
     [User login:@"DevGuy" password:@"Something" completion:^(NSError *error) {
+        FreelancerProfileViewController *fpvc = [[FreelancerProfileViewController alloc] init];
         OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
-        [self.navigationController pushViewController:jvc animated:YES];
+        
+        UITabBarController *tbc = [[UITabBarController alloc] init];
+        [tbc setViewControllers:@[jvc,fpvc]];
+        
+        NSArray *items = tbc.tabBar.items;
+        
+        UITabBarItem *home = [items objectAtIndex:0];
+        UITabBarItem *profile = [items objectAtIndex:1];
+        
+        UITabBar *tabBar = [UITabBar appearance];
+        [tabBar setBarTintColor:[UIColor flatNavyBlueColor]];
+        
+        [tabBar setTintColor:[UIColor flatWhiteColor]];
+        
+        [home initWithTitle:@"Jobs" image:[UIImage imageNamed:@"jobs"] selectedImage: [UIImage imageNamed:@"jobs"]];
+        
+        [profile initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile"] selectedImage: [UIImage imageNamed:@"profile"]];
+        
+        
+
+        [self.navigationController pushViewController:tbc animated:YES];
     }];
 }
 

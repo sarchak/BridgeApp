@@ -34,6 +34,7 @@
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(fetchData) forControlEvents:UIControlEventValueChanged];
     [self fetchData];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchData) name:JOBSTATUSCHANGED object:nil];
 }
 
 -(void) fetchData {

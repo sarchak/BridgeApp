@@ -14,6 +14,8 @@
 #import "NSUserDefaults+ChatSettings.h"
 #import "UserFactory.h"
 #import "ChameleonFramework/Chameleon.h"
+#import "BusinessDetailViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -30,7 +32,18 @@
 
     
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:lvc];
+
+    [nvc.navigationBar setBackIndicatorImage:
+     [UIImage imageNamed:@"back"]];
+    [nvc.navigationController.navigationBar setBackIndicatorTransitionMaskImage:
+     [UIImage imageNamed:@"back"]];
+    nvc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
+                                             initWithTitle:@""
+                                             style:UIBarButtonItemStylePlain
+                                             target:nil
+                                             action:nil];
     
+
     [Parse setApplicationId:@"skXmwEdM7oNPNJcuvhjSyDYauwS4tEaDHHdbvJsM" clientKey: @"gQgOjJZUKz8gHQ1VpCcDigH2qJTNuQ2OBIww263x"];
 
 //    PFUser *user = [PFUser user];
