@@ -15,6 +15,7 @@
 #import "ParseClient.h"
 #import "Parse/Parse.h"
 #import "BusinessViewController.h"
+#import "Pop/Pop.h"
 
 @interface CreateJobScene2ViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -224,24 +225,41 @@
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     NSLog(@"Animation transition");
+    
     if(self.isPresenting){
+        POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+        scaleAnimation.springBounciness = 8;
+        scaleAnimation.fromValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 0, 0)];
+        [toViewController.view.layer pop_addAnimation:scaleAnimation forKey:@"scale"];
         [containerView addSubview:toViewController.view];
-        toViewController.view.alpha = 0;
-        toViewController.view.transform = CGAffineTransformMakeScale(0, 0);
-        [UIView animateWithDuration:self.animationDuration animations:^{
-            toViewController.view.alpha = 1;
-            toViewController.view.transform = CGAffineTransformMakeScale(1, 1);
-        } completion:^(BOOL finished) {
-            [transitionContext completeTransition:YES];
+        [scaleAnimation setCompletionBlock:^(POPAnimation * animation, BOOL completed) {
+           [transitionContext completeTransition:YES];
         }];
+//        toViewController.view.alpha = 0;
+//        toViewController.view.transform = CGAffineTransformMakeScale(0, 0);
+//        [UIView animateWithDuration:self.animationDuration animations:^{
+//            toViewController.view.alpha = 1;
+//            toViewController.view.transform = CGAffineTransformMakeScale(1, 1);
+//        } completion:^(BOOL finished) {
+//            [transitionContext completeTransition:YES];
+//        }];
     } else {
-        [UIView animateWithDuration:self.animationDuration animations:^{
-            fromViewController.view.alpha = 0;
-            fromViewController.view.transform = CGAffineTransformMakeScale(0.001, 0.001);
-        } completion:^(BOOL finished) {
+
+        POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+        opacityAnimation.toValue = @(0.0);
+        [opacityAnimation setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
             [transitionContext completeTransition:YES];
             [fromViewController.view removeFromSuperview];
         }];
+        [fromViewController.view.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
+        
+//        [UIView animateWithDuration:self.animationDuration animations:^{
+//            fromViewController.view.alpha = 0;
+//            fromViewController.view.transform = CGAffineTransformMakeScale(0.001, 0.001);
+//        } completion:^(BOOL finished) {
+//            [transitionContext completeTransition:YES];
+//            [fromViewController.view removeFromSuperview];
+//        }];
     }
 }
 

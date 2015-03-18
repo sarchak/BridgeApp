@@ -28,6 +28,7 @@ PODS:
   - KNSemiModalViewController (0.3)
   - Parse (1.6.4):
     - Bolts (~> 1.1)
+  - pop (1.0.7)
   - RateView (1.1)
   - Shimmer (1.0.2)
   - StarRatingView (1.0.0)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - ChameleonFramework
   - JSQMessagesViewController
   - Parse
+  - Pop
   - RateView
   - Shimmer (~> 1.0)
   - StarRatingView
@@ -58,6 +60,7 @@ SPEC CHECKSUMS:
   JSQSystemSoundPlayer: 55528c699a283aae2220d3ae7b8b527d2ecef4b4
   KNSemiModalViewController: 6fb1e2f6a4d84238b524cb705e91118b0fa6bbc9
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
+  pop: 2f14a1ea61339767af9e66741b418c831b3844df
   RateView: 4142c146bd42fe7715adc3365fa2ffd71ff327e0
   Shimmer: 057fcfe9c1c978d69d50b64fce93a61080cd08ec
   StarRatingView: c3e81fe39e1fdd5a11d3bee4ccbf7fadf8491107
