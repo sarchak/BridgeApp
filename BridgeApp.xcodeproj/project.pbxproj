@@ -21,6 +21,9 @@
 		317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99E1AAAF03800F71962 /* bridge-logo.png */; };
 		31DE5EF81AAD94EB005E16B2 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */; };
 		31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */; };
+		5629F9911AB928CF009ED396 /* BusinessProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */; };
+		5629F9921AB928CF009ED396 /* BusinessProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */; };
+		5629F9941AB92954009ED396 /* philz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5629F9931AB92954009ED396 /* philz.jpg */; };
 		565DD3B91AB3B532004EE4A1 /* ApplicantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565DD3B71AB3B532004EE4A1 /* ApplicantCell.m */; };
 		565DD3BA1AB3B532004EE4A1 /* ApplicantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565DD3B81AB3B532004EE4A1 /* ApplicantCell.xib */; };
 		565DD3BE1AB40158004EE4A1 /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 565DD3BD1AB40158004EE4A1 /* bridge.png */; };
@@ -125,6 +128,10 @@
 		31DE5EF51AAD94EB005E16B2 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
+		5629F98E1AB928CF009ED396 /* BusinessProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessProfileViewController.h; sourceTree = "<group>"; };
+		5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessProfileViewController.m; sourceTree = "<group>"; };
+		5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessProfileViewController.xib; sourceTree = "<group>"; };
+		5629F9931AB92954009ED396 /* philz.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = philz.jpg; sourceTree = "<group>"; };
 		565DD3B61AB3B532004EE4A1 /* ApplicantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicantCell.h; sourceTree = "<group>"; };
 		565DD3B71AB3B532004EE4A1 /* ApplicantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicantCell.m; sourceTree = "<group>"; };
 		565DD3B81AB3B532004EE4A1 /* ApplicantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicantCell.xib; sourceTree = "<group>"; };
@@ -333,6 +340,7 @@
 		566D982D1AAD755E007D1C55 /* uiassets */ = {
 			isa = PBXGroup;
 			children = (
+				5629F9931AB92954009ED396 /* philz.jpg */,
 				BF5706651AB64334007D9B60 /* Portfolio */,
 				BF5706631AB57C3B007D9B60 /* user-male.png */,
 				565DD3BD1AB40158004EE4A1 /* bridge.png */,
@@ -448,6 +456,9 @@
 				31DE5EF51AAD94EB005E16B2 /* MessagesViewController.h */,
 				31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */,
 				31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */,
+				5629F98E1AB928CF009ED396 /* BusinessProfileViewController.h */,
+				5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */,
+				5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -577,6 +588,7 @@
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
 				565DD3BE1AB40158004EE4A1 /* bridge.png in Resources */,
 				BF57067B1AB8014D007D9B60 /* black_wood.jpg in Resources */,
+				5629F9921AB928CF009ED396 /* BusinessProfileViewController.xib in Resources */,
 				BF5706621AB4F109007D9B60 /* PortfolioCell.xib in Resources */,
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
 				BF5706731AB669B5007D9B60 /* pushpin.jpg in Resources */,
@@ -591,6 +603,7 @@
 				566D98101AAB7050007D1C55 /* PriceViewController.xib in Resources */,
 				BFA1DDE61AABA19A00CDD4FC /* JobCell.xib in Resources */,
 				BFA1DDEB1AABBC6800CDD4FC /* DetailedJobViewController.xib in Resources */,
+				5629F9941AB92954009ED396 /* philz.jpg in Resources */,
 				317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */,
 				566D98221AAC13BB007D1C55 /* BusinessViewController.xib in Resources */,
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
@@ -692,6 +705,7 @@
 				566D98261AAC16AA007D1C55 /* BusinessCell.m in Sources */,
 				566D981A1AABD2F6007D1C55 /* SignUpViewController.m in Sources */,
 				56C221A11AA9925900E6B55A /* CreateJobScene1ViewController.m in Sources */,
+				5629F9911AB928CF009ED396 /* BusinessProfileViewController.m in Sources */,
 				567F88041AB3876300D8E5F0 /* BusinessOwnerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

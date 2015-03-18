@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BusinessDetailViewController">
             <connections>
+                <outlet property="acceptButton" destination="i7v-E8-XFD" id="ba4-5x-Iqn"/>
                 <outlet property="dueDate" destination="Zla-K4-YA5" id="2JD-vY-I5P"/>
                 <outlet property="jobDescription" destination="ikK-l1-I0X" id="miJ-lI-eJB"/>
                 <outlet property="priceLabel" destination="zjk-tY-X80" id="UAM-Qp-NOI"/>
@@ -37,10 +38,6 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LJW-Lh-tin">
-                    <rect key="frame" x="0.0" y="169" width="320" height="399"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gn-Wu-aCA">
                     <rect key="frame" x="8" y="88" width="72" height="19.5"/>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
@@ -59,6 +56,21 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7v-E8-XFD">
+                    <rect key="frame" x="8" y="146" width="60" height="30"/>
+                    <color key="backgroundColor" red="0.15868747229999999" green="0.2182204425" blue="0.30320093040000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Accept">
+                        <color key="titleColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="acceptJob:" destination="-1" eventType="touchUpInside" id="rh1-Xk-q3v"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LJW-Lh-tin">
+                    <rect key="frame" x="0.0" y="187" width="320" height="399"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -69,13 +81,13 @@
                 <constraint firstItem="Zla-K4-YA5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="97" id="CDb-ZO-dGs"/>
                 <constraint firstAttribute="trailing" secondItem="ikK-l1-I0X" secondAttribute="trailing" constant="8" id="Czf-QM-es5"/>
                 <constraint firstItem="zjk-tY-X80" firstAttribute="top" secondItem="Zla-K4-YA5" secondAttribute="bottom" constant="7.5" id="EO0-bt-ZBM"/>
-                <constraint firstAttribute="bottom" secondItem="LJW-Lh-tin" secondAttribute="bottom" id="EPn-io-Baz"/>
+                <constraint firstAttribute="bottom" secondItem="LJW-Lh-tin" secondAttribute="bottom" constant="-18" id="EPn-io-Baz"/>
                 <constraint firstItem="LJW-Lh-tin" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oum-qK-vGb"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zjk-tY-X80" secondAttribute="trailing" constant="8" id="PkZ-aA-HBQ"/>
                 <constraint firstItem="4gn-Wu-aCA" firstAttribute="top" secondItem="ikK-l1-I0X" secondAttribute="bottom" constant="6.5" id="S01-PM-OC3"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zla-K4-YA5" secondAttribute="trailing" constant="8" id="TAb-gy-1RB"/>
                 <constraint firstItem="Zla-K4-YA5" firstAttribute="leading" secondItem="4gn-Wu-aCA" secondAttribute="trailing" constant="17" id="YpB-oi-ZGt"/>
-                <constraint firstItem="LJW-Lh-tin" firstAttribute="top" secondItem="zjk-tY-X80" secondAttribute="bottom" constant="33.5" id="bHc-E0-VE1"/>
+                <constraint firstItem="LJW-Lh-tin" firstAttribute="top" secondItem="zjk-tY-X80" secondAttribute="bottom" constant="51.5" id="bHc-E0-VE1"/>
                 <constraint firstItem="Y2G-yQ-t4a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="k4V-V5-ohs"/>
                 <constraint firstAttribute="trailing" secondItem="LJW-Lh-tin" secondAttribute="trailing" id="kGM-tf-sRn"/>
                 <constraint firstItem="ikK-l1-I0X" firstAttribute="top" secondItem="htd-bw-HZG" secondAttribute="bottom" constant="4.5" id="mqp-me-HNJ"/>

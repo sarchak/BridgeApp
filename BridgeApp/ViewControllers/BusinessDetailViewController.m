@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dueDate;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *acceptButton;
 
 @end
 
@@ -39,6 +40,20 @@
     self.tableView.delegate = self;
     self.tableView.backgroundColor = [UIColor flatWhiteColor];    
     [self.tableView registerNib:[UINib nibWithNibName:@"ApplicantCell" bundle:nil] forCellReuseIdentifier:@"ApplicantCell"];
+    
+    NSLog(@"JOB status : %ld", self.job.status);
+    if(self.job.status == JobStatusDelivered){
+        self.acceptButton.hidden = NO;
+        [self setAcceptButtonState:@"Accept"];
+    } else if(self.job.status == JobStatusAccepted){
+        self.acceptButton.enabled = NO;
+        self.acceptButton.hidden = NO;        
+        [self setAcceptButtonState:@"Accepted"];
+    }
+}
+
+- (void)setAcceptButtonState:(NSString*)text {
+    [self.acceptButton setTitle:text forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,5 +144,16 @@
     }];
     [cell hideUtilityButtonsAnimated:YES];
 }
+
+- (IBAction)acceptJob:(id)sender {
+    self.job.status = JobStatusAccepted;
+
+    [self.job saveWithCompletion:^(NSError *error) {
+        NSLog(@"accept job");
+        [self setAcceptButtonState:@"Accepted"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
+    }];
+}
+
 
 @end
