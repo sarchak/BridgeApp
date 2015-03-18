@@ -33,16 +33,6 @@
     
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:lvc];
 
-    [nvc.navigationBar setBackIndicatorImage:
-     [UIImage imageNamed:@"back"]];
-    [nvc.navigationController.navigationBar setBackIndicatorTransitionMaskImage:
-     [UIImage imageNamed:@"back"]];
-    nvc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
-                                             initWithTitle:@""
-                                             style:UIBarButtonItemStylePlain
-                                             target:nil
-                                             action:nil];
-    
 
     [Parse setApplicationId:@"skXmwEdM7oNPNJcuvhjSyDYauwS4tEaDHHdbvJsM" clientKey: @"gQgOjJZUKz8gHQ1VpCcDigH2qJTNuQ2OBIww263x"];
 
@@ -93,7 +83,7 @@
     [application registerForRemoteNotifications];
     
     
-    self.window.rootViewController = nvc;
+    self.window.rootViewController = lvc;
     [self.window makeKeyAndVisible];
     return YES;
 }

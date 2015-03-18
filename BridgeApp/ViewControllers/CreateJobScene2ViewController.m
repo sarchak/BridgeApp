@@ -67,14 +67,22 @@
         nvc.modalPresentationStyle = UIModalPresentationCustom;
         nvc.transitioningDelegate = self;
         
-        [self presentViewController:nvc animated:YES completion:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self presentViewController:nvc animated:YES completion:nil];
+        });
+
+        
+        
     } else if(indexPath.row == 1) {
         tvc.isTitle = NO;
         nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
         nvc.modalPresentationStyle = UIModalPresentationCustom;
         nvc.transitioningDelegate = self;
         
-        [self presentViewController:nvc animated:YES completion:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self presentViewController:nvc animated:YES completion:nil];
+        });
+
     } else if(indexPath.row == 2) {
         [self showCalendarView];
     } else if(indexPath.row == 3){
@@ -84,7 +92,10 @@
         nvc.modalPresentationStyle = UIModalPresentationCustom;
         nvc.transitioningDelegate = self;
         
-        [self presentViewController:nvc animated:YES completion:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self presentViewController:nvc animated:YES completion:nil];
+        });
+
     }
 }
 
@@ -235,14 +246,6 @@
         [scaleAnimation setCompletionBlock:^(POPAnimation * animation, BOOL completed) {
            [transitionContext completeTransition:YES];
         }];
-//        toViewController.view.alpha = 0;
-//        toViewController.view.transform = CGAffineTransformMakeScale(0, 0);
-//        [UIView animateWithDuration:self.animationDuration animations:^{
-//            toViewController.view.alpha = 1;
-//            toViewController.view.transform = CGAffineTransformMakeScale(1, 1);
-//        } completion:^(BOOL finished) {
-//            [transitionContext completeTransition:YES];
-//        }];
     } else {
 
         POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
@@ -252,14 +255,6 @@
             [fromViewController.view removeFromSuperview];
         }];
         [fromViewController.view.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
-        
-//        [UIView animateWithDuration:self.animationDuration animations:^{
-//            fromViewController.view.alpha = 0;
-//            fromViewController.view.transform = CGAffineTransformMakeScale(0.001, 0.001);
-//        } completion:^(BOOL finished) {
-//            [transitionContext completeTransition:YES];
-//            [fromViewController.view removeFromSuperview];
-//        }];
     }
 }
 

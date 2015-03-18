@@ -50,6 +50,19 @@
         self.acceptButton.hidden = NO;        
         [self setAcceptButtonState:@"Accepted"];
     }
+    self.navigationItem.rightBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemDone target:self action:@selector(donePressed)];
+    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target:self action:@selector(cancelPressed)];
+    
+}
+
+-(void) donePressed {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+-(void) cancelPressed {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setAcceptButtonState:(NSString*)text {

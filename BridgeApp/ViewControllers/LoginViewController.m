@@ -116,8 +116,9 @@
         BusinessProfileViewController *bpvc = [[BusinessProfileViewController alloc] init];
         BusinessViewController *bvc = [[BusinessViewController alloc] init];
         
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:bvc];
         UITabBarController *tbc = [[UITabBarController alloc] init];
-        [tbc setViewControllers:@[bvc,bpvc]];
+        [tbc setViewControllers:@[nvc,bpvc]];
         
         NSArray *items = tbc.tabBar.items;
         
@@ -135,8 +136,10 @@
         
         [profile initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile"] selectedImage: [UIImage imageNamed:@"profile"]];
         
+
+//        [self.navigationController pushViewController:tbc animated:YES];
+        [self presentViewController:tbc animated:NO completion:nil];
         
-        [self.navigationController pushViewController:tbc animated:YES];
     }];
 
     

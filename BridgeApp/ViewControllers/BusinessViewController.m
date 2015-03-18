@@ -15,7 +15,7 @@
 #import "SVProgressHUD.h"
 #import "ChameleonFramework/Chameleon.h"
 #import "BusinessProfileViewController.h"
-
+#import "Pop/Pop.h"
 @interface BusinessViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.animationDuration = 0.2;
+    self.animationDuration = 1.4;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
@@ -45,7 +45,7 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createJob)];
 
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(businessProfile)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(businessProfile)];
     
     [self fetchData];
     
@@ -53,19 +53,10 @@
 
     self.title = @"Bridge";
     self.tableView.backgroundColor = [UIColor flatWhiteColor];
-    /*
-     * ATTENTION!!
-     * This should be the same as DetailedJobViewController
-     * Please merge with DetailedJobViewController. They should look pretty much the same.
-     * Except for different conversation threads and buttons (apply, deliver, edit).
-     *
-     *
-     */
 }
 
 -(void) businessProfile{
-    BusinessProfileViewController *bpvc = [[BusinessProfileViewController alloc] init];
-    [self presentViewController:bpvc animated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void) refreshTable {
     [self fetchData];
@@ -156,10 +147,18 @@
     }
     return job;
 }
+
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BusinessDetailViewController *bvc = [[BusinessDetailViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:bvc];
     bvc.job = [self getJob:indexPath];
-    [self.navigationController pushViewController:bvc animated:YES];
+    nvc.modalPresentationStyle = UIModalPresentationCustom;
+    nvc.transitioningDelegate = self;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self presentViewController:nvc animated:YES completion:nil];
+    });
+
 }
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -207,12 +206,6 @@
     return self;
 }
 
-//- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator;
-//
-//- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator;
-
-//- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source NS_AVAILABLE_IOS(8_0);
-
 
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
@@ -224,27 +217,48 @@
     UIView *containerView = [transitionContext containerView];
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
+    NSLog(@"Animation transition");
     if(self.isPresenting){
+//        POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewBounds];
+//        anim.fromValue = [NSValue valueWithCGRect:fromViewController.view.bounds];
+//        anim.toValue = [NSValue valueWithCGRect:containerView.bounds];
+//        anim.springBounciness = 5;
+//        anim.springSpeed = 10;
+        
+        POPBasicAnimation *basicAnimation = [POPBasicAnimation animation];
+        basicAnimation.property = [POPAnimatableProperty propertyWithName:kPOPLayerSize];
+        basicAnimation.toValue= [NSValue valueWithCGSize:toViewController.view.frame.size];
+        basicAnimation.fromValue= [NSValue valueWithCGSize:fromViewController.view.frame.size];
+        [toViewController.view.layer pop_addAnimation:basicAnimation forKey:@"size"];
+        
+        POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+        opacityAnimation.toValue = @(1.0);
+        [toViewController.view.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
+        
+//        POPBasicAnimation *opacity = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+//        opacity.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//        opacity.fromValue = @(0.0);
+//        opacity.toValue = @(1.0);
+//        [toViewController.view pop_addAnimation:opacity forKey:@"fade"];
+        
         [containerView addSubview:toViewController.view];
-        toViewController.view.alpha = 0;
-        toViewController.view.transform = CGAffineTransformMakeScale(0, 0);
-        [UIView animateWithDuration:self.animationDuration animations:^{
-            toViewController.view.alpha = 1;
-//            toViewController.view.frame = fromViewController.view.frame;
-            toViewController.view.transform = CGAffineTransformMakeScale(1, 1);
-        } completion:^(BOOL finished) {
+        
+        [opacityAnimation setCompletionBlock:^(POPAnimation * animation, BOOL completed) {
             [transitionContext completeTransition:YES];
         }];
     } else {
-        [UIView animateWithDuration:self.animationDuration animations:^{
-            fromViewController.view.alpha = 0;
-//            fromViewController.view.transform = CGAffineTransformMakeScale(0.001, 0.001);
-        } completion:^(BOOL finished) {
+        
+        POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+        opacityAnimation.toValue = @(0.0);
+        [opacityAnimation setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
             [transitionContext completeTransition:YES];
             [fromViewController.view removeFromSuperview];
         }];
+        [fromViewController.view.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
     }
 }
+
+
+
 
 @end
