@@ -151,9 +151,9 @@
     [User login:@"Phil" password:@"Something" completion:^(NSError *error) {
         FreelancerProfileViewController *fpvc = [[FreelancerProfileViewController alloc] initWithUser:[User currentUser]];
         OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
-        
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:jvc];
         UITabBarController *tbc = [[UITabBarController alloc] init];
-        [tbc setViewControllers:@[jvc,fpvc]];
+        [tbc setViewControllers:@[nvc,fpvc]];
         
         NSArray *items = tbc.tabBar.items;
         
@@ -171,7 +171,7 @@
         
         
 
-        [self.navigationController pushViewController:tbc animated:YES];
+        [self presentViewController:tbc animated:NO completion:nil];
     }];
 }
 
