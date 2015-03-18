@@ -14,6 +14,8 @@
 #import "BusinessDetailViewController.h"
 #import "SVProgressHUD.h"
 #import "ChameleonFramework/Chameleon.h"
+#import "BusinessProfileViewController.h"
+
 @interface BusinessViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
@@ -43,6 +45,8 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createJob)];
 
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(businessProfile)];
+
     [self fetchData];
     
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTable) name:JOBSTATUSCHANGED object:nil];
@@ -59,6 +63,10 @@
      */
 }
 
+-(void) businessProfile{
+    BusinessProfileViewController *bpvc = [[BusinessProfileViewController alloc] init];
+    [self presentViewController:bpvc animated:YES completion:nil];
+}
 -(void) refreshTable {
     [self fetchData];
 }
@@ -68,12 +76,20 @@
     [SVProgressHUD show];
 
      /* Fetch assigned jobs */
-    [Job getJobWithOptions:JobStatusAssigned completion:^(NSArray *foundObjects, NSError *error) {
+    [Job getJobWithOptions:JobStatusDelivered completion:^(NSArray *foundObjects, NSError *error) {
         self.assignedJobs = foundObjects;
-        [self.refreshControl endRefreshing];
-        [self.tableView reloadData];
-//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
-        [SVProgressHUD dismiss];
+        [Job getJobWithOptions:JobStatusAssigned completion:^(NSArray *foundObjects, NSError *error) {
+            NSMutableArray *tmp = [NSMutableArray arrayWithArray:self.assignedJobs];
+            [tmp addObjectsFromArray:foundObjects];
+            self.assignedJobs = [NSArray arrayWithArray:tmp];
+            for(Job *tjob in self.assignedJobs){
+                NSLog(@"Status : %ld",tjob.status);
+            }
+            [self.refreshControl endRefreshing];
+            [self.tableView reloadData];
+            [SVProgressHUD dismiss];
+            
+        }];
     }];
     
     /* Fetch ready to assign jobs. Jobs with applicants */
@@ -81,7 +97,6 @@
         self.readyToAssignJobs = foundObjects;
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
-//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
         [SVProgressHUD dismiss];
     }];
 
@@ -89,7 +104,6 @@
         self.pendingJobs = foundObjects;
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
-//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
         [SVProgressHUD dismiss];
     }];
 }

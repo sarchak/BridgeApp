@@ -121,7 +121,7 @@ static dispatch_once_t _attachmentsArrayOnceToken;
              ];
 }
 
--(void)addApplicant:(User*)user {
+-(void)addApplicant:(User*)user  {
     
     if (self.applicantsArray == nil) {
 //        dispatch_once(&_applicantsArrayOnceToken, ^{
@@ -134,7 +134,6 @@ static dispatch_once_t _attachmentsArrayOnceToken;
 //        });
         // @TODO this is working almost properly, but it doesn't seem to be adding the applicant to Parse
     }
-    self.status = JobStatusHasApplicants;
     [self.applicantsArray addObject:user];
     [self.applicantsPFUsers addObject:user.pfObject];
 }
@@ -200,6 +199,11 @@ static dispatch_once_t _attachmentsArrayOnceToken;
     filter.operator = QueryFilterOperatorEquals;
     filter.fieldName = @"status";
     filter.value = [NSNumber numberWithInt:status];
+//    QueryFilter *filter1 = [[QueryFilter alloc] init];
+//    filter1.operator = QueryFilterOperatorEquals;
+//    filter1.fieldName = @"status";
+//    filter1.value = [NSNumber numberWithInt:JobStatusDelivered];
+    
     Job* job = [[Job alloc] init];
     QuerySortOption *sort = [[QuerySortOption alloc] init];
     sort.sortDirection = QuerySortDirectionDescending;

@@ -115,6 +115,12 @@
     [self.applyButton setTitle:@"Applied" forState:UIControlStateNormal];
 }
 
+- (void)setDeliveredButton {
+    self.deliverButton.enabled = NO;
+    [self.deliverButton setTitle:@"Delivered" forState:UIControlStateNormal];
+}
+
+
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -130,6 +136,7 @@
 }
 
 - (IBAction)onApply:(id)sender {
+    self.job.status = JobStatusHasApplicants;
     [self.job addApplicant:[User currentUser]];
     [self.job saveWithCompletion:^(NSError *error) {
         if (error == nil) {
@@ -139,6 +146,19 @@
         }
     }];
     [self setAppliedButton];
+}
+
+- (IBAction)onDeliver:(id)sender {
+    self.job.status = JobStatusDelivered;
+    [self.job saveWithCompletion:^(NSError *error) {
+        if (error == nil) {
+            NSLog(@"job delivered successfully");
+        } else {
+            NSLog(@"job delivery failed: %@", error);
+        }
+    }];
+    [self setDeliveredButton];
+    
 }
 
 
