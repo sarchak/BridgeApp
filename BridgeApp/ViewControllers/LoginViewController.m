@@ -152,8 +152,10 @@
         FreelancerProfileViewController *fpvc = [[FreelancerProfileViewController alloc] initWithUser:[User currentUser]];
         OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:jvc];
+        UINavigationController *nvc2 = [[UINavigationController alloc] initWithRootViewController:fpvc];
+        
         UITabBarController *tbc = [[UITabBarController alloc] init];
-        [tbc setViewControllers:@[nvc,fpvc]];
+        [tbc setViewControllers:@[nvc,nvc2]];
         
         NSArray *items = tbc.tabBar.items;
         

@@ -34,6 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationItem.title = @"Bridge";
     
     self.nameLabel.text = self.user.username;
     

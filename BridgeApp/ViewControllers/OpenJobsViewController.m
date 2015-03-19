@@ -46,9 +46,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchData) name:JOBSTATUSCHANGED object:nil];
     //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(goToProfile)];
 
-    self.navigationItem.title = @"Bridge";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"user-male.png"] style:UIBarButtonItemStylePlain target:self action:@selector(goToProfile)];
-    
+    self.navigationItem.title = @"Bridge";    
 }
 
 -(void)fetchData {
