@@ -77,8 +77,12 @@
     self.collectionView.delegate = self;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"PortfolioCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"PortfolioCell" bundle:nil] forCellWithReuseIdentifier:@"PortfolioCell"];
-    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"black_wood.jpg"]];
-    self.topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"california-san-francisco-neighborhoods.jpg"]];
+    
+    //self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"black_wood.jpg"]];
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    
+    //self.topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"desert.jpg"]];
+    
     [self.collectionView reloadData];
     
     self.tableView.alpha = 0.0f;

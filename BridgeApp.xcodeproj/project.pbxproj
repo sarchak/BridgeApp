@@ -63,6 +63,7 @@
 		56C221A71AA9925900E6B55A /* TitleSubtitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */; };
 		56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */; };
 		A8B5D6D690C660C75298EDAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3025BFD0A723ABB56918A9 /* libPods.a */; };
+		BF36950D1ABA777C00BB2C95 /* desert.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF36950C1ABA777C00BB2C95 /* desert.jpg */; };
 		BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */; };
 		BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */; };
 		BF5706611AB4F109007D9B60 /* PortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF57065F1AB4F109007D9B60 /* PortfolioCell.m */; };
@@ -194,6 +195,7 @@
 		56C2219C1AA9925900E6B55A /* TitleSubtitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleSubtitleCell.h; sourceTree = "<group>"; };
 		56C2219D1AA9925900E6B55A /* TitleSubtitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleSubtitleCell.m; sourceTree = "<group>"; };
 		56C2219E1AA9925900E6B55A /* TitleSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleSubtitleCell.xib; sourceTree = "<group>"; };
+		BF36950C1ABA777C00BB2C95 /* desert.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = desert.jpg; sourceTree = "<group>"; };
 		BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreelancerProfileViewController.h; sourceTree = "<group>"; };
 		BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreelancerProfileViewController.m; sourceTree = "<group>"; };
 		BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreelancerProfileViewController.xib; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 		566D982D1AAD755E007D1C55 /* uiassets */ = {
 			isa = PBXGroup;
 			children = (
+				BF36950C1ABA777C00BB2C95 /* desert.jpg */,
 				5629F9931AB92954009ED396 /* philz.jpg */,
 				BF5706651AB64334007D9B60 /* Portfolio */,
 				BF5706631AB57C3B007D9B60 /* user-male.png */,
@@ -592,6 +595,7 @@
 				BF57066F1AB6434C007D9B60 /* portfolio4.jpg in Resources */,
 				BF5706791AB66F7C007D9B60 /* california-san-francisco-neighborhoods.jpg in Resources */,
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
+				BF36950D1ABA777C00BB2C95 /* desert.jpg in Resources */,
 				565DD3BA1AB3B532004EE4A1 /* ApplicantCell.xib in Resources */,
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
 				565DD3BE1AB40158004EE4A1 /* bridge.png in Resources */,
