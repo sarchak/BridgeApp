@@ -81,6 +81,7 @@
     //self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"black_wood.jpg"]];
     self.collectionView.backgroundColor = [UIColor clearColor];
     
+    
     //self.topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"desert.jpg"]];
     
     [self.collectionView reloadData];
@@ -91,6 +92,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"PastJobCell" bundle:nil] forCellReuseIdentifier:@"PastJobCell"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 80;
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
 
     self.segmentedControl.layer.cornerRadius = 5;
     
@@ -129,11 +132,11 @@
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(-10, 20, 30, 20);
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize size = CGSizeMake(140, 140);
+    CGSize size = CGSizeMake(180, 180);
     return size;
 }
 
