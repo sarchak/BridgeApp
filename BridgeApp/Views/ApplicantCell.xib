@@ -40,7 +40,8 @@
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GjQ-0b-4ds" customClass="RateView">
                         <rect key="frame" x="93" y="56" width="160" height="20"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96470588239999999" green="0.94509803920000002" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.96470588239999999" green="0.94509803920000002" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="160" id="Het-bd-uNm"/>
                             <constraint firstAttribute="height" constant="20" id="eQ7-MB-gDW"/>
@@ -54,6 +55,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="0.96470588235294119" green="0.94509803921568625" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Dt-kz-GBd" secondAttribute="trailing" constant="165.5" id="44x-zt-ylh"/>
                     <constraint firstAttribute="bottom" secondItem="SX3-9g-IfZ" secondAttribute="bottom" priority="750" constant="4" id="75q-n7-kMq"/>

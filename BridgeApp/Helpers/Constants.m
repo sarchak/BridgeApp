@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NSString *const JOB_TYPE          = @"job_type";
 NSString *const TITLE             = @"title";
@@ -24,3 +25,5 @@ NSString *const PASSWORD          = @"password";
 NSString *const USERTYPE          = @"usertype";
 
 NSString *const JOBSTATUSCHANGED  = @"jobstatuschanged";
+
+

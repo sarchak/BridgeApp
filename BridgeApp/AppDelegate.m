@@ -65,10 +65,20 @@
 
     UINavigationBar *navBar = [UINavigationBar appearance];
 
-    [navBar setBarTintColor:[UIColor flatNavyBlueColor]];
-    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
-    [navBar setTintColor:[UIColor whiteColor]];
+    
+    NSArray *colors = @[[UIColor colorWithRed:59.0/255 green:35.0/255 blue:80.0/255 alpha:1.0], [UIColor colorWithRed:62.0/255 green:48.0/255 blue:22.0/255 alpha:1.0]];
+    UIColor *tmp = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:self.window.frame andColors:(NSArray *)colors];
+    //rgb(48, 22, 48)
+    
+    
+    [navBar setBarTintColor: NAVBARCOLOR];
+
+    UIColor *tintColor = NAVTEXTCOLOR;
+    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : NAVTEXTCOLOR}];
+    
+
+    [navBar setTintColor: tintColor];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UIToolbar appearance] setTranslucent:NO];
     

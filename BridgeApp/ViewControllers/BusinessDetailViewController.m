@@ -38,9 +38,14 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.backgroundColor = [UIColor flatWhiteColor];    
-    [self.tableView registerNib:[UINib nibWithNibName:@"ApplicantCell" bundle:nil] forCellReuseIdentifier:@"ApplicantCell"];
+
     
+    NSArray *colors = @[NAVBARCOLOR,TABLEVIEWCELLCOLOR];
+    UIColor *tmp = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:self.view.frame andColors:(NSArray *)colors];
+    self.tableView.backgroundColor = HEADERBARCOLOR;
+    self.view.backgroundColor = TABLEVIEWCELLCOLOR;
+    [self.tableView registerNib:[UINib nibWithNibName:@"ApplicantCell" bundle:nil] forCellReuseIdentifier:@"ApplicantCell"];
+
     NSLog(@"JOB status : %ld", self.job.status);
     if(self.job.status == JobStatusDelivered){
         self.acceptButton.hidden = NO;
@@ -103,8 +108,8 @@
     cell.ratingView.rating = 3.75;
     cell.ratingView.starSize = 15;
     cell.ratingView.starFillColor = [UIColor orangeColor];
-
-    
+    cell.ratingView.starBorderColor = [UIColor colorWithRed:48.0/255 green:22.0/255 blue:48.0/255 alpha:1.0];
+    cell.backgroundColor = TABLEVIEWCELLCOLOR;
     if(user.objectId == self.job.assignedToUser.objectId){
         cell.statusView.backgroundColor = [UIColor flatGreenColor];
     } else {

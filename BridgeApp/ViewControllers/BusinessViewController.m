@@ -45,15 +45,49 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createJob)];
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(businessProfile)];
     
     [self fetchData];
     
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTable) name:JOBSTATUSCHANGED object:nil];
 
     self.title = @"Bridge";
-    self.tableView.backgroundColor = [UIColor flatWhiteColor];
+    NSArray *colors = @[[UIColor flatYellowColor],[UIColor flatOrangeColor]];
+    UIColor *tmp = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:self.tableView.frame andColors:(NSArray *)colors];
+
+    //rgb(119, 53, 73)
+    self.tableView.backgroundColor = HEADERBARCOLOR;
+    self.tableView.tableFooterView.hidden = YES;
+    self.tableView.tableHeaderView.hidden = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.tableView.sectionHeaderHeight = 0;
+//    self.tableView.sectionFooterHeight = 0;
 }
+
+//-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    // 1. The view for the header
+//    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 22)];
+//    
+//    // 2. Set a custom background color and a border
+//    headerView.backgroundColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+////    headerView.layer.borderColor = [UIColor colorWithWhite:0.5 alpha:1.0].CGColor;
+////    headerView.layer.borderWidth = 1.0;
+//    
+////    // 3. Add a label
+////    UILabel* headerLabel = [[UILabel alloc] init];
+////    headerLabel.frame = CGRectMake(5, 2, tableView.frame.size.width - 5, 22);
+////    headerLabel.backgroundColor = [UIColor clearColor];
+////    headerLabel.textColor = [UIColor whiteColor];
+////    headerLabel.font = [UIFont boldSystemFontOfSize:16.0];
+////    headerLabel.text = @"This is the custom header view";
+////    headerLabel.textAlignment = NSTextAlignmentLeft;
+////    
+////    // 4. Add the label to the header view
+////    [headerView addSubview:headerLabel];
+//    
+//    // 5. Finally return
+//    return headerView;
+//}
 
 -(void) businessProfile{
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -187,7 +221,7 @@
         cell.name.hidden = YES;
         cell.assignedLabel.hidden = YES;
     }
-
+    cell.layoutMargins = UIEdgeInsetsZero;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

@@ -8,7 +8,7 @@
 
 #ifndef BridgeApp_Constants_h
 #define BridgeApp_Constants_h
-
+#import <UIKit/UIKit.h>
 #pragma Job Related
 
 FOUNDATION_EXPORT NSString *const JOB_TYPE;
@@ -31,5 +31,15 @@ FOUNDATION_EXPORT NSString *const BUSINESSNAME;
 FOUNDATION_EXPORT NSString *const JOBSTATUSCHANGED;
 
 
+#pragma color
+extern UIColor const *navBarColor;
+extern UIColor const *headerBarColor;
+extern UIColor const *tableViewCellColor;
+extern UIColor const *textColor;
 
+#define NAVBARCOLOR [UIColor colorWithRed:218.0/255.0 green:80.0/255.0 blue:14.0/255.0 alpha:1.0]
+#define HEADERBARCOLOR [UIColor colorWithRed:0.827 green:0.807 blue:0.777 alpha:1.0]
+#define TABLEVIEWCELLCOLOR [UIColor colorWithRed:246.0/255.0 green:241.0/255.0 blue:234.0/255.0 alpha:1.0]
+#define NAVTEXTCOLOR [UIColor colorWithRed:246.0/255.0 green:241.0/255.0 blue:234.0/255.0 alpha:1.0]
+#define TEXTCOLOR [UIColor colorWithRed:68.0/255.0 green:68.0/255.0 blue:68.0/255.0 alpha:1.0]
 #endif

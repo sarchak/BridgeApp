@@ -126,9 +126,9 @@
         UITabBarItem *profile = [items objectAtIndex:1];
 
         UITabBar *tabBar = [UITabBar appearance];
-        [tabBar setBarTintColor:[UIColor flatNavyBlueColor]];
+        [tabBar setBarTintColor:NAVBARCOLOR];
         
-        [tabBar setTintColor:[UIColor flatWhiteColor]];
+        [tabBar setTintColor:HEADERBARCOLOR];
         
 
         
@@ -137,6 +137,7 @@
         [profile initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile"] selectedImage: [UIImage imageNamed:@"profile"]];
         
 
+        
 //        [self.navigationController pushViewController:tbc animated:YES];
         [self presentViewController:tbc animated:NO completion:nil];
         

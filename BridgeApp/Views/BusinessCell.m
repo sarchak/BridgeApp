@@ -14,6 +14,7 @@
     // Initialization code
     self.profileImage.layer.cornerRadius = 27.5;
     self.summary.preferredMaxLayoutWidth = self.summary.frame.size.width;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
