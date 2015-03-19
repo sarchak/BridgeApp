@@ -140,6 +140,9 @@
     [self.job saveWithCompletion:^(NSError *error) {
         if (error == nil) {
             NSLog(@"job applied successfully");
+            PFInstallation *installation = [PFInstallation currentInstallation];
+            installation[@"user"] = [PFUser currentUser];
+            [installation saveInBackground];
         } else {
             NSLog(@"job application failed: %@", error);
         }
