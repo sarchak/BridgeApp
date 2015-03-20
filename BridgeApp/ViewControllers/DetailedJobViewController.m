@@ -50,11 +50,22 @@
     NSString *stringFromDate = [formatter stringFromDate:self.job.dueDate];
     
     self.dueDateLabel.text = stringFromDate;
-    
+
+    self.threadsTableView.backgroundColor = HEADERBARCOLOR;
+    self.view.backgroundColor = TABLEVIEWCELLCOLOR;
+
     self.threadsTableView.delegate = self;
     self.threadsTableView.dataSource = self;
     self.threadsTableView.rowHeight = UITableViewAutomaticDimension;
     self.threadsTableView.estimatedRowHeight = 72;
+    
+
+    if(![self.job.assignedToUser.username isEqual:[User currentUser].username ]){
+        self.applyButton.backgroundColor = NAVBARCOLOR;
+    } else {
+        self.applyButton.backgroundColor = [UIColor flatGrayColor];
+        self.deliverButton.backgroundColor = NAVBARCOLOR;
+    }
     [self.threadsTableView registerNib:[UINib nibWithNibName:@"BusinessOwnerCell" bundle:nil] forCellReuseIdentifier:@"BusinessOwnerCell"];
 
     self.applyButton.layer.cornerRadius = 5.0;
@@ -80,7 +91,7 @@
     cell.ratingView.rating = 3.25;
     cell.ratingView.starSize = 15;
     cell.ratingView.starFillColor = [UIColor orangeColor];
-
+    cell.backgroundColor = TABLEVIEWCELLCOLOR;
     return cell;
 }
 

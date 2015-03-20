@@ -110,6 +110,7 @@
     cell.ratingView.starFillColor = [UIColor orangeColor];
     cell.ratingView.starBorderColor = [UIColor colorWithRed:48.0/255 green:22.0/255 blue:48.0/255 alpha:1.0];
     cell.backgroundColor = TABLEVIEWCELLCOLOR;
+    cell.ratingView.backgroundColor  = TABLEVIEWCELLCOLOR;
     if(user.objectId == self.job.assignedToUser.objectId){
         cell.statusView.backgroundColor = [UIColor flatGreenColor];
     } else {

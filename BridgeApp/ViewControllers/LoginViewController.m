@@ -164,9 +164,9 @@
         UITabBarItem *profile = [items objectAtIndex:1];
         
         UITabBar *tabBar = [UITabBar appearance];
-        [tabBar setBarTintColor:[UIColor flatNavyBlueColor]];
+        [tabBar setBarTintColor:NAVBARCOLOR];
         
-        [tabBar setTintColor:[UIColor flatWhiteColor]];
+        [tabBar setTintColor:HEADERBARCOLOR];
         
         [home initWithTitle:@"Jobs" image:[UIImage imageNamed:@"jobs"] selectedImage: [UIImage imageNamed:@"jobs"]];
         

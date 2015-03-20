@@ -12,6 +12,8 @@
 #import "NSUserDefaults+ChatSettings.h"
 #import "JSQMessages.h"
 #import "ChameleonFramework/Chameleon.h"
+#import "Constants.h"
+
 @interface MessagesViewController ()
 @property (nonatomic, strong) NSMutableArray *messages;
 @property (strong, nonatomic) NSDictionary *avatars;
@@ -50,7 +52,7 @@
     
     self.messages = [NSMutableArray array];
     
-    self.collectionView.backgroundColor = [UIColor flatWhiteColor];
+    self.collectionView.backgroundColor = TABLEVIEWCELLCOLOR;
     /**
      *  You can set custom avatar sizes
      */

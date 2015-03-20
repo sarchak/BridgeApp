@@ -45,6 +45,10 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchData) name:JOBSTATUSCHANGED object:nil];
     //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(goToProfile)];
+    self.tableView.backgroundColor = HEADERBARCOLOR;
+    self.tableView.tableFooterView.hidden = YES;
+    self.tableView.tableHeaderView.hidden = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 
     self.navigationItem.title = @"Bridge";    
 }
