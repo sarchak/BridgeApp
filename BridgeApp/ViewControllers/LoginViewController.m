@@ -132,12 +132,12 @@
         
 
         
-        [home initWithTitle:@"Jobs" image:[UIImage imageNamed:@"jobs"] selectedImage: [UIImage imageNamed:@"jobs"]];
+        UITabBarItem *tmp = [home initWithTitle:@"Jobs" image:[UIImage imageNamed:@"jobs"] selectedImage: [UIImage imageNamed:@"jobs"]];
         
-        [profile initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile"] selectedImage: [UIImage imageNamed:@"profile"]];
+        tmp = [profile initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile"] selectedImage: [UIImage imageNamed:@"profile"]];
         
 
-        
+
 //        [self.navigationController pushViewController:tbc animated:YES];
         [self presentViewController:tbc animated:NO completion:nil];
         

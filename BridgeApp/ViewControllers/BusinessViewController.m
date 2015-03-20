@@ -53,17 +53,14 @@
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTable) name:JOBSTATUSCHANGED object:nil];
 
     self.title = @"Bridge";
-    NSArray *colors = @[[UIColor flatYellowColor],[UIColor flatOrangeColor]];
-    UIColor *tmp = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:self.tableView.frame andColors:(NSArray *)colors];
-
-    //rgb(119, 53, 73)
     self.tableView.backgroundColor = HEADERBARCOLOR;
     self.tableView.tableFooterView.hidden = YES;
     self.tableView.tableHeaderView.hidden = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
-//    self.tableView.sectionHeaderHeight = 0;
-//    self.tableView.sectionFooterHeight = 0;
-    
+}
+
+-(void) back {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -95,6 +92,7 @@
 -(void) businessProfile{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 -(void) refreshTable {
     [self fetchData];
 }
@@ -138,6 +136,10 @@
 
 -(void) createJob{
     CreateJobScene1ViewController *cvc = [[CreateJobScene1ViewController alloc] init];
+    cvc.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:cvc action:@selector(back)];
+    
+    self.title = @"Jobs";
+    
     [self.navigationController pushViewController:cvc animated:YES];
 }
 

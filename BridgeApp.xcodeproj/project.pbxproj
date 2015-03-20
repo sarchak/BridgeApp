@@ -21,6 +21,12 @@
 		317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 317DF99E1AAAF03800F71962 /* bridge-logo.png */; };
 		31DE5EF81AAD94EB005E16B2 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */; };
 		31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */; };
+		56124C941ABBEC8C00984820 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C921ABBAE3E00984820 /* OpenSans-Light.ttf */; };
+		56124C951ABBEC8C00984820 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C931ABBAE3E00984820 /* OpenSans-Regular.ttf */; };
+		56124C961ABBEC8C00984820 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C8F1ABBAE1300984820 /* Lato-Medium.ttf */; };
+		56124C971ABBEC8C00984820 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C901ABBAE1300984820 /* Lato-Regular.ttf */; };
+		56124C981ABBEC8C00984820 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C911ABBAE1300984820 /* Lato-Thin.ttf */; };
+		56124C991ABBEC8C00984820 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C8E1ABBADF500984820 /* Lato-Light.ttf */; };
 		5629F9911AB928CF009ED396 /* BusinessProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */; };
 		5629F9921AB928CF009ED396 /* BusinessProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */; };
 		5629F9941AB92954009ED396 /* philz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5629F9931AB92954009ED396 /* philz.jpg */; };
@@ -601,6 +607,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56124C941ABBEC8C00984820 /* OpenSans-Light.ttf in Resources */,
+				56124C951ABBEC8C00984820 /* OpenSans-Regular.ttf in Resources */,
+				56124C961ABBEC8C00984820 /* Lato-Medium.ttf in Resources */,
+				56124C971ABBEC8C00984820 /* Lato-Regular.ttf in Resources */,
+				56124C981ABBEC8C00984820 /* Lato-Thin.ttf in Resources */,
+				56124C991ABBEC8C00984820 /* Lato-Light.ttf in Resources */,
 				56C221A61AA9925900E6B55A /* TextViewController.xib in Resources */,
 				31DE5EF91AAD94EB005E16B2 /* MessagesViewController.xib in Resources */,
 				566D982C1AAD459F007D1C55 /* BusinessDetailViewController.xib in Resources */,

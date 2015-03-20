@@ -48,6 +48,13 @@
     [_formatter setDateFormat:@"dd/MM/yyyy --- HH:mm"];
 
     self.view.backgroundColor = TABLEVIEWCELLCOLOR;
+    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    
+    self.title = self.job.title;
+}
+
+-(void) back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

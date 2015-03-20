@@ -31,7 +31,7 @@
     LoginViewController *lvc = [[LoginViewController alloc] init];
 
     
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:lvc];
+
 
 
     [Parse setApplicationId:@"skXmwEdM7oNPNJcuvhjSyDYauwS4tEaDHHdbvJsM" clientKey: @"gQgOjJZUKz8gHQ1VpCcDigH2qJTNuQ2OBIww263x"];
@@ -67,9 +67,6 @@
 
     
     
-    NSArray *colors = @[[UIColor colorWithRed:59.0/255 green:35.0/255 blue:80.0/255 alpha:1.0], [UIColor colorWithRed:62.0/255 green:48.0/255 blue:22.0/255 alpha:1.0]];
-    UIColor *tmp = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:self.window.frame andColors:(NSArray *)colors];
-    //rgb(48, 22, 48)
     
     
     [navBar setBarTintColor: NAVBARCOLOR];
