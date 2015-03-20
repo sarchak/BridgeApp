@@ -302,7 +302,9 @@
 
 -(void)onProfileTap:(User *)user {
     FreelancerProfileViewController * fpvc = [[FreelancerProfileViewController alloc] initWithUser:user];
-    [self presentViewController:fpvc animated:YES completion:nil];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fpvc];
+
+    [self presentViewController:nvc animated:YES completion:nil];
 
 }
 
