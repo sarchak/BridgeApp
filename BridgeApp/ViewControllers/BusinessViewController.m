@@ -39,6 +39,7 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 80;
     
+    
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
@@ -310,6 +311,7 @@
 
 -(void)businessCell:(BusinessCell *)businessCell apply:(BOOL)value {
 }
+
 
 
 @end

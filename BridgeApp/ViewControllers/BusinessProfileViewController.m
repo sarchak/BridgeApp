@@ -35,6 +35,8 @@
     [self.refreshControl addTarget:self action:@selector(fetchData) forControlEvents:UIControlEventValueChanged];
     [self fetchData];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchData) name:JOBSTATUSCHANGED object:nil];
+    self.tableView.backgroundColor = HEADERBARCOLOR;
+    
 }
 
 -(void) fetchData {
@@ -74,6 +76,8 @@
     cell.assignButton.hidden = YES;
     cell.titleLabel.text = job.title;
     cell.summary.text = job.jobDescription;
+    cell.dueDate.hidden = YES;
+    
     NSInteger num = (indexPath.row % 3) + 1;
     if(indexPath.section == 0){
         NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];

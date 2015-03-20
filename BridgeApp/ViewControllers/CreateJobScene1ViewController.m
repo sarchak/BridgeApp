@@ -30,7 +30,7 @@
     /* Register the uitableview cell */
     [self.tableView registerNib:[UINib nibWithNibName:@"CategoryCell" bundle:nil] forCellReuseIdentifier:@"CategoryCell"];
 
-    NSLog(@"Current user : %@", [User currentUser].username);
+    self.view.backgroundColor = TABLEVIEWCELLCOLOR;
 }
 
 - (void)didReceiveMemoryWarning {

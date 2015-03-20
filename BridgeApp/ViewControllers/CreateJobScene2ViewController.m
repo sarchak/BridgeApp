@@ -47,6 +47,7 @@
     self.formatter = [[NSDateFormatter alloc] init];
     [_formatter setDateFormat:@"dd/MM/yyyy --- HH:mm"];
 
+    self.view.backgroundColor = TABLEVIEWCELLCOLOR;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -174,6 +175,10 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
         UIViewController* viewcontroller = [self.navigationController.viewControllers objectAtIndex:1];
         [self.navigationController popToViewController:viewcontroller animated:YES];
+        
+        PFInstallation *installation = [PFInstallation currentInstallation];
+        installation[@"ownerid"] = [PFUser currentUser].objectId;
+        [installation saveInBackground];
     }];
     
 }

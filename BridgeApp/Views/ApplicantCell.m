@@ -7,13 +7,15 @@
 //
 
 #import "ApplicantCell.h"
+#import "Constants.h"
 
 @implementation ApplicantCell
 
 - (void)awakeFromNib {
     // Initialization code
     self.profileImageView.layer.cornerRadius = 5;
-    
+    self.backgroundColor = TABLEVIEWCELLCOLOR;
+    self.ratingView.backgroundColor = TABLEVIEWCELLCOLOR;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

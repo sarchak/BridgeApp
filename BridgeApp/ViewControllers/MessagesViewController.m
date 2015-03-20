@@ -74,14 +74,22 @@
      */
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     
-    self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor lightGrayColor]];
+    self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor colorWithWhite:0.8 alpha:0.5]];
     self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor flatGreenColor]];
  
     [ChatMessage getAllMessages:self.threadId completion:^(NSArray *messages, NSError *error) {
         self.messages = [NSMutableArray arrayWithArray:messages];
         [self.collectionView reloadData];
     }];
+    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    
 }
+
+-(void) back {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

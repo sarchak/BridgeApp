@@ -16,13 +16,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdP-FV-iwo">
-                    <rect key="frame" x="8" y="105" width="80" height="28"/>
+                    <rect key="frame" x="8" y="105" width="79.5" height="27.5"/>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price in dollars" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nCZ-20-lfF">
-                    <rect key="frame" x="108" y="104" width="117" height="30"/>
+                    <rect key="frame" x="107" y="104" width="205" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="205" id="16W-24-8ON"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
@@ -34,7 +37,7 @@
                 <constraint firstItem="nCZ-20-lfF" firstAttribute="leading" secondItem="gdP-FV-iwo" secondAttribute="trailing" constant="20" id="du5-2S-8uN"/>
                 <constraint firstItem="nCZ-20-lfF" firstAttribute="centerY" secondItem="gdP-FV-iwo" secondAttribute="centerY" id="s0G-yf-C8k"/>
             </constraints>
-            <point key="canvasLocation" x="673" y="381"/>
+            <point key="canvasLocation" x="673.5" y="381"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -131,6 +131,12 @@
 		31DE5EF51AAD94EB005E16B2 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		31DE5EF61AAD94EB005E16B2 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		31DE5EF71AAD94EB005E16B2 /* MessagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
+		56124C8E1ABBADF500984820 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		56124C8F1ABBAE1300984820 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		56124C901ABBAE1300984820 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		56124C911ABBAE1300984820 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		56124C921ABBAE3E00984820 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		56124C931ABBAE3E00984820 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		5629F98E1AB928CF009ED396 /* BusinessProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessProfileViewController.h; sourceTree = "<group>"; };
 		5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessProfileViewController.m; sourceTree = "<group>"; };
 		5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessProfileViewController.xib; sourceTree = "<group>"; };
@@ -405,6 +411,12 @@
 		567E0ABB1AA832E700C5C10B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				56124C921ABBAE3E00984820 /* OpenSans-Light.ttf */,
+				56124C931ABBAE3E00984820 /* OpenSans-Regular.ttf */,
+				56124C8F1ABBAE1300984820 /* Lato-Medium.ttf */,
+				56124C901ABBAE1300984820 /* Lato-Regular.ttf */,
+				56124C911ABBAE1300984820 /* Lato-Thin.ttf */,
+				56124C8E1ABBADF500984820 /* Lato-Light.ttf */,
 				567E0ABC1AA832E700C5C10B /* Info.plist */,
 				567E0ABD1AA832E700C5C10B /* main.m */,
 			);

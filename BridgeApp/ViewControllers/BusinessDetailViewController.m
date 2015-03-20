@@ -40,13 +40,10 @@
     self.tableView.delegate = self;
 
     
-    NSArray *colors = @[NAVBARCOLOR,TABLEVIEWCELLCOLOR];
-    UIColor *tmp = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:self.view.frame andColors:(NSArray *)colors];
     self.tableView.backgroundColor = HEADERBARCOLOR;
     self.view.backgroundColor = TABLEVIEWCELLCOLOR;
     [self.tableView registerNib:[UINib nibWithNibName:@"ApplicantCell" bundle:nil] forCellReuseIdentifier:@"ApplicantCell"];
 
-    NSLog(@"JOB status : %ld", self.job.status);
     if(self.job.status == JobStatusDelivered){
         self.acceptButton.hidden = NO;
         [self setAcceptButtonState:@"Accept"];
@@ -55,18 +52,12 @@
         self.acceptButton.hidden = NO;        
         [self setAcceptButtonState:@"Accepted"];
     }
-    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target:self action:@selector(cancelPressed)];
-    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(cancelPressed)];
+    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     
+    self.title = self.job.title;
 }
 
--(void) donePressed {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
--(void) cancelPressed {
-
+-(void) back {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -108,7 +99,6 @@
     cell.ratingView.rating = 3.75;
     cell.ratingView.starSize = 15;
     cell.ratingView.starFillColor = [UIColor orangeColor];
-    cell.ratingView.starBorderColor = [UIColor colorWithRed:48.0/255 green:22.0/255 blue:48.0/255 alpha:1.0];
     cell.backgroundColor = TABLEVIEWCELLCOLOR;
     cell.ratingView.backgroundColor  = TABLEVIEWCELLCOLOR;
     if(user.objectId == self.job.assignedToUser.objectId){
@@ -171,6 +161,17 @@
         NSLog(@"accept job");
         [self setAcceptButtonState:@"Accepted"];
         [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
+        // Create our Installation query
+        PFQuery *pushQuery = [PFInstallation query];
+        [pushQuery whereKey:@"freelancerid" equalTo:self.job.assignedToUser.objectId];
+        
+        // Send push notification to query
+        PFPush *push = [[PFPush alloc] init];
+        [push setQuery:pushQuery]; // Set our Installation query
+        NSString *message = [NSString stringWithFormat:@"Job : %@ accepted.",self.job.title];
+        [push setMessage:message];
+        [push sendPushInBackground];
+        
     }];
 }
 

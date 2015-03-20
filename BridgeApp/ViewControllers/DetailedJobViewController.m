@@ -68,9 +68,9 @@
     }
     [self.threadsTableView registerNib:[UINib nibWithNibName:@"BusinessOwnerCell" bundle:nil] forCellReuseIdentifier:@"BusinessOwnerCell"];
 
-    self.applyButton.layer.cornerRadius = 5.0;
-    self.editButton.layer.cornerRadius = 5.0;
-    self.deliverButton.layer.cornerRadius = 5.0;
+//    self.applyButton.layer.cornerRadius = 5.0;
+//    self.editButton.layer.cornerRadius = 5.0;
+//    self.deliverButton.layer.cornerRadius = 5.0;
     
 }
 
@@ -158,6 +158,24 @@
             NSLog(@"job application failed: %@", error);
         }
     }];
+    
+    /* Add the current user to the installation object */
+    PFInstallation *installation = [PFInstallation currentInstallation];
+    installation[@"freelancerid"] = [User currentUser].objectId;
+    [installation saveInBackground];
+
+    // Create our Installation query
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"ownerid" equalTo:self.job.owner.objectId];
+    
+    // Send push notification to query
+    PFPush *push = [[PFPush alloc] init];
+    [push setQuery:pushQuery]; // Set our Installation query
+    User *curr = [User currentUser];
+    NSString *message = [NSString stringWithFormat:@"%@ applied to %@", curr.username, self.job.title];
+    [push setMessage:message];
+    [push sendPushInBackground];
+    
     [self setAppliedButton];
 }
 
@@ -170,8 +188,20 @@
             NSLog(@"job delivery failed: %@", error);
         }
     }];
-    [self setDeliveredButton];
     
+    [self setDeliveredButton];
+    // Create our Installation query
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"ownerid" equalTo:self.job.owner.objectId];
+    
+    // Send push notification to query
+    PFPush *push = [[PFPush alloc] init];
+    [push setQuery:pushQuery]; // Set our Installation query
+    User *curr = [User currentUser];
+    NSString *message = [NSString stringWithFormat:@"%@ delivered job %@", curr.username, self.job.title];
+    [push setMessage:message];
+    [push sendPushInBackground];
+
 }
 
 

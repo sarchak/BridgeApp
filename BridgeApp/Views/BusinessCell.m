@@ -43,4 +43,8 @@
     [self.delegate onProfileTap:[User currentUser]];
 }
 
+- (UIEdgeInsets)layoutMargins
+{
+    return UIEdgeInsetsZero;
+}
 @end
