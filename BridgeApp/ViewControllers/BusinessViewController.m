@@ -15,6 +15,7 @@
 #import "SVProgressHUD.h"
 #import "ChameleonFramework/Chameleon.h"
 #import "BusinessProfileViewController.h"
+#import "FreelancerProfileViewController.h"
 #import "Pop/Pop.h"
 @interface BusinessViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -61,6 +62,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
 //    self.tableView.sectionHeaderHeight = 0;
 //    self.tableView.sectionFooterHeight = 0;
+    
 }
 
 //-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -202,6 +204,11 @@
     cell.titleLabel.text = job.title;
     cell.summary.text = job.jobDescription;
     NSInteger num = (indexPath.row % 3) + 1;
+    
+    
+    // @TODO assign actual user object to cell.user!!!
+    
+    
     if(indexPath.section == 0){
         NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
         cell.profileImage.image = [UIImage imageNamed:filename];
@@ -223,6 +230,7 @@
     }
     cell.layoutMargins = UIEdgeInsetsZero;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.delegate = self;
     return cell;
 }
 
@@ -292,7 +300,14 @@
     }
 }
 
+-(void)onProfileTap:(User *)user {
+    FreelancerProfileViewController * fpvc = [[FreelancerProfileViewController alloc] initWithUser:user];
+    [self presentViewController:fpvc animated:YES completion:nil];
 
+}
+
+-(void)businessCell:(BusinessCell *)businessCell apply:(BOOL)value {
+}
 
 
 @end

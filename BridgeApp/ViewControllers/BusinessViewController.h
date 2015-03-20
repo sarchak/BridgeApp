@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BusinessCell.h"
 
-@interface BusinessViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@interface BusinessViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, BusinessCellDelegate>
 
 @end

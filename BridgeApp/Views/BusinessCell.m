@@ -39,14 +39,8 @@
 
 
 - (IBAction)onProfileTap:(UITapGestureRecognizer *)sender {
-    
-    
-    FreelancerProfileViewController * fpvc = [[FreelancerProfileViewController alloc] initWithUser:[User currentUser]];
-
-    //[self presentViewController:fpvc animated:NO completion:nil];
-
-    
-
+    //@TODO use actual user!!!!!!
+    [self.delegate onProfileTap:[User currentUser]];
 }
 
 @end

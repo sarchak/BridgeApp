@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @class BusinessCell;
 
 @protocol BusinessCellDelegate <NSObject>
 
 -(void) businessCell: (BusinessCell*) businessCell apply:(BOOL) value;
+-(void) onProfileTap: (User*) user;
+
 
 @end
 @interface BusinessCell : UITableViewCell
@@ -24,5 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UIView *statusView;
 @property (weak, nonatomic) IBOutlet UIButton *assignButton;
+@property (weak, nonatomic) User *user;
 @property (weak, nonatomic) id<BusinessCellDelegate> delegate;
 @end
