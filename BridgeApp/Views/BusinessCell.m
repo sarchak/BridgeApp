@@ -7,6 +7,7 @@
 //
 
 #import "BusinessCell.h"
+#import "FreelancerProfileViewController.h"
 
 @implementation BusinessCell
 
@@ -14,7 +15,10 @@
     // Initialization code
     self.profileImage.layer.cornerRadius = 27.5;
     self.summary.preferredMaxLayoutWidth = self.summary.frame.size.width;
-    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onProfileTap:)];
+    tap.numberOfTapsRequired = 1;
+    self.profileImage.userInteractionEnabled = YES; //if you want touch on your image you'll need this
+    [self.profileImage addGestureRecognizer:tap];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -32,4 +36,17 @@
     [super layoutSubviews];
     self.summary.preferredMaxLayoutWidth = self.summary.frame.size.width;
 }
+
+
+- (IBAction)onProfileTap:(UITapGestureRecognizer *)sender {
+    
+    
+    FreelancerProfileViewController * fpvc = [[FreelancerProfileViewController alloc] initWithUser:[User currentUser]];
+
+    //[self presentViewController:fpvc animated:NO completion:nil];
+
+    
+
+}
+
 @end
