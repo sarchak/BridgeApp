@@ -36,21 +36,11 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = @"Bridge";
     
-    // only when applicable... (in business view)
-    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target:self action:@selector(backPressed)];
     self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backPressed)];
     
     self.nameLabel.text = self.user.username;
     
-//    NSMutableString *starString = [[NSMutableString alloc] init];
-//    if (self.user.rating == NULL) {
-//        for (int i = 0; i < (int)self.user.rating; i++) {
-//            [starString appendString:@"★"];
-//        }
-//    } else {
-//        [starString setString:@"newbie"];
-//    }
-//    self.starLabel.text = starString;
+    
     
     if ([self.user.rating isEqual:[NSNull null]] || [self.user.rating isEqualToNumber:0]) {
         UILabel *starLabelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];

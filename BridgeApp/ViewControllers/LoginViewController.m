@@ -165,13 +165,12 @@
         
         UITabBar *tabBar = [UITabBar appearance];
         [tabBar setBarTintColor:NAVBARCOLOR];
-        
         [tabBar setTintColor:HEADERBARCOLOR];
         
         [home initWithTitle:@"Jobs" image:[UIImage imageNamed:@"jobs"] selectedImage: [UIImage imageNamed:@"jobs"]];
         
         [profile initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile"] selectedImage: [UIImage imageNamed:@"profile"]];
-        
+
         
 
         [self presentViewController:tbc animated:NO completion:nil];
