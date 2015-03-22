@@ -40,6 +40,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    self.title = self.job.title;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM/dd/yyyy"];
     NSString *stringFromDate = [formatter stringFromDate:self.job.dueDate];

@@ -33,7 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.animationDuration = 0.3;
+    self.animationDuration = 0.5;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
@@ -285,6 +285,7 @@
         }];
     } else {
         self.selectedCell.alpha = 0;
+
         [UIView animateWithDuration:self.animationDuration animations:^{
             fromViewController.view.alpha = 0;
             fromViewController.view.frame = self.selectedCell.frame;
