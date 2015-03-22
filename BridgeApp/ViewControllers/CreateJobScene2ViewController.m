@@ -252,7 +252,7 @@
     if(self.isPresenting){
         POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
         scaleAnimation.springBounciness = 8;
-        scaleAnimation.fromValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 0, 0)];
+//        scaleAnimation.fromValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 0, 0)];
         [toViewController.view.layer pop_addAnimation:scaleAnimation forKey:@"scale"];
         [containerView addSubview:toViewController.view];
         [scaleAnimation setCompletionBlock:^(POPAnimation * animation, BOOL completed) {

@@ -38,6 +38,12 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yyyy"];
+    NSString *stringFromDate = [formatter stringFromDate:self.job.dueDate];
+    
+    self.dueDate.text = stringFromDate;
 
     
     self.tableView.backgroundColor = HEADERBARCOLOR;
@@ -54,7 +60,6 @@
     }
     self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     
-    self.title = self.job.title;
 }
 
 -(void) back {
@@ -68,6 +73,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded]; // forces an immediate layout pass
 }
 
 

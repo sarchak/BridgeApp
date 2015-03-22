@@ -40,8 +40,6 @@
     
     self.nameLabel.text = self.user.username;
     
-    
-    
     if ([self.user.rating isEqual:[NSNull null]] || [self.user.rating isEqualToNumber:0]) {
         UILabel *starLabelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
         [starLabelView setText:@"newbie"];
@@ -76,7 +74,6 @@
     self.collectionView.backgroundColor = [UIColor clearColor];
     
     
-    //self.topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"desert.jpg"]];
     
     [self.collectionView reloadData];
     

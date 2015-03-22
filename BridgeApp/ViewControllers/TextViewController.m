@@ -22,7 +22,12 @@
  
     self.navigationItem.rightBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemDone target:self action:@selector(donePressed)];
     self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target:self action:@selector(cancelPressed)];
-
+    self.view.backgroundColor = TABLEVIEWCELLCOLOR;
+    if(self.isTitle){
+        self.title = @"Title";
+    }else {
+        self.title = @"Job Summary";        
+    }
 }
 
 

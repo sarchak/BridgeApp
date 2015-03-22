@@ -3,6 +3,18 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+            <string>OpenSans-Light</string>
+            <string>OpenSans-Light</string>
+            <string>OpenSans-Light</string>
+            <string>OpenSans-Light</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailedJobViewController">
             <connections>
@@ -22,43 +34,43 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo Design" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-mj-6XJ">
-                    <rect key="frame" x="8" y="30" width="98" height="24"/>
-                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                    <rect key="frame" x="8" y="30" width="91" height="20.5"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I need a logo designed for " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXt-bP-j5b">
-                    <rect key="frame" x="8" y="58" width="208" height="24"/>
-                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                    <rect key="frame" x="8" y="54" width="202.5" height="23.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 15th 2015" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqC-bT-Opb">
-                    <rect key="frame" x="86" y="87" width="93" height="20"/>
-                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
+                    <rect key="frame" x="84" y="83" width="93.5" height="19.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd4-0H-CsF">
-                    <rect key="frame" x="8" y="87" width="61" height="20"/>
-                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
+                    <rect key="frame" x="8" y="83" width="59.5" height="19.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-sj-boD">
-                    <rect key="frame" x="8" y="114" width="32" height="20"/>
-                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
+                    <rect key="frame" x="8" y="107" width="33.5" height="20.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10$" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfl-4V-UjI">
-                    <rect key="frame" x="84" y="114" width="24" height="20"/>
-                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
+                    <rect key="frame" x="82" y="107" width="26" height="20.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3v-pU-ctA">
-                    <rect key="frame" x="8" y="144" width="120" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3v-pU-ctA">
+                    <rect key="frame" x="8" y="135" width="100" height="30"/>
                     <color key="backgroundColor" red="0.85490196080000003" green="0.3803921569" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="4nV-Bd-FE9"/>
@@ -73,7 +85,7 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="yBS-5O-uLo">
-                    <rect key="frame" x="0.0" y="208" width="320" height="360"/>
+                    <rect key="frame" x="0.0" y="199" width="320" height="369"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -82,7 +94,7 @@
                     </userDefinedRuntimeAttributes>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3D-dd-U1e">
-                    <rect key="frame" x="212" y="143" width="100" height="30"/>
+                    <rect key="frame" x="212" y="134" width="100" height="30"/>
                     <color key="backgroundColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="rxy-nT-EXw"/>
@@ -100,7 +112,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DXt-bP-j5b" secondAttribute="trailing" constant="8" id="2vM-n1-ahf"/>
-                <constraint firstItem="dfl-4V-UjI" firstAttribute="leading" secondItem="fyx-sj-boD" secondAttribute="trailing" constant="44" id="4zD-BS-xE8"/>
+                <constraint firstItem="dfl-4V-UjI" firstAttribute="leading" secondItem="fyx-sj-boD" secondAttribute="trailing" constant="41" id="4zD-BS-xE8"/>
                 <constraint firstAttribute="centerX" secondItem="W3D-dd-U1e" secondAttribute="centerX" constant="-102" id="65x-n3-qSm"/>
                 <constraint firstItem="yBS-5O-uLo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="76Q-pb-bAD"/>
                 <constraint firstItem="Xd4-0H-CsF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="7IL-YW-5Ki"/>
@@ -108,7 +120,7 @@
                 <constraint firstItem="a3v-pU-ctA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="N15-go-be4"/>
                 <constraint firstAttribute="trailing" secondItem="yBS-5O-uLo" secondAttribute="trailing" id="NYR-PZ-jIR"/>
                 <constraint firstItem="DXt-bP-j5b" firstAttribute="top" secondItem="Wcp-mj-6XJ" secondAttribute="bottom" constant="4" id="Tbi-Ac-7EL"/>
-                <constraint firstItem="fyx-sj-boD" firstAttribute="top" secondItem="Xd4-0H-CsF" secondAttribute="bottom" constant="7" id="Vsx-JH-YZ6"/>
+                <constraint firstItem="fyx-sj-boD" firstAttribute="top" secondItem="Xd4-0H-CsF" secondAttribute="bottom" constant="4.5" id="Vsx-JH-YZ6"/>
                 <constraint firstItem="Wcp-mj-6XJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30.5" id="YGh-ev-n3e"/>
                 <constraint firstItem="Wcp-mj-6XJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Zbe-bF-x7J"/>
                 <constraint firstItem="yBS-5O-uLo" firstAttribute="top" secondItem="a3v-pU-ctA" secondAttribute="bottom" constant="34" id="ZjH-mx-thy"/>
@@ -116,10 +128,10 @@
                 <constraint firstItem="Xd4-0H-CsF" firstAttribute="centerY" secondItem="eqC-bT-Opb" secondAttribute="centerY" id="bw6-ox-iB6"/>
                 <constraint firstAttribute="trailing" secondItem="yBS-5O-uLo" secondAttribute="trailing" id="ct3-Ca-Ybg"/>
                 <constraint firstItem="W3D-dd-U1e" firstAttribute="centerY" secondItem="a3v-pU-ctA" secondAttribute="centerY" constant="-1" id="cu3-cc-6lR"/>
-                <constraint firstItem="a3v-pU-ctA" firstAttribute="top" secondItem="fyx-sj-boD" secondAttribute="bottom" constant="9.5" id="eb1-oP-CNC"/>
+                <constraint firstItem="a3v-pU-ctA" firstAttribute="top" secondItem="fyx-sj-boD" secondAttribute="bottom" constant="8" id="eb1-oP-CNC"/>
                 <constraint firstItem="DXt-bP-j5b" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="hq1-6B-ngw"/>
                 <constraint firstItem="yBS-5O-uLo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="n1S-Wc-lPC"/>
-                <constraint firstItem="dfl-4V-UjI" firstAttribute="centerY" secondItem="fyx-sj-boD" secondAttribute="centerY" id="qKD-qa-gs3"/>
+                <constraint firstItem="dfl-4V-UjI" firstAttribute="centerY" secondItem="fyx-sj-boD" secondAttribute="centerY" constant="0.5" id="qKD-qa-gs3"/>
                 <constraint firstAttribute="bottom" secondItem="yBS-5O-uLo" secondAttribute="bottom" id="xpf-Us-kgm"/>
                 <constraint firstItem="Xd4-0H-CsF" firstAttribute="top" secondItem="DXt-bP-j5b" secondAttribute="bottom" constant="5.5" id="xrX-Zu-Kks"/>
             </constraints>

@@ -10,6 +10,7 @@
 #import "RateView.h"
 #import "SWTableViewCell.h"
 
+
 @interface ApplicantCell : SWTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;

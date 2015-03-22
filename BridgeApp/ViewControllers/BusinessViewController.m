@@ -25,19 +25,25 @@
 @property (strong, nonatomic) NSArray *pendingJobs;
 @property (assign, nonatomic) BOOL isPresenting;
 @property (assign, nonatomic) double animationDuration;
+@property (strong, nonatomic) BusinessCell *selectedCell;
+@property (strong, nonatomic) NSDateFormatter *formatter;
 @end
 
 @implementation BusinessViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.animationDuration = 1.4;
+    self.animationDuration = 0.3;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 80;
+
+    self.formatter = [[NSDateFormatter alloc] init];
+    [self.formatter setDateFormat:@"MM/dd/yyyy"];
+
     
     
     self.refreshControl = [[UIRefreshControl alloc]init];
@@ -194,6 +200,7 @@
     nvc.modalPresentationStyle = UIModalPresentationCustom;
     nvc.transitioningDelegate = self;
     
+    self.selectedCell = (BusinessCell*)[tableView cellForRowAtIndexPath:indexPath];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self presentViewController:nvc animated:YES completion:nil];
     });
@@ -233,6 +240,8 @@
     }
     cell.layoutMargins = UIEdgeInsetsZero;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSString *stringFromDate = [self.formatter stringFromDate:job.dueDate];
+    cell.dueDate.text = stringFromDate;
     cell.delegate = self;
     return cell;
 }
@@ -262,44 +271,28 @@
     UIView *containerView = [transitionContext containerView];
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    [toViewController.view setNeedsLayout];
     NSLog(@"Animation transition");
     if(self.isPresenting){
-//        POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewBounds];
-//        anim.fromValue = [NSValue valueWithCGRect:fromViewController.view.bounds];
-//        anim.toValue = [NSValue valueWithCGRect:containerView.bounds];
-//        anim.springBounciness = 5;
-//        anim.springSpeed = 10;
-        
-        POPBasicAnimation *basicAnimation = [POPBasicAnimation animation];
-        basicAnimation.property = [POPAnimatableProperty propertyWithName:kPOPLayerSize];
-        basicAnimation.toValue= [NSValue valueWithCGSize:toViewController.view.frame.size];
-        basicAnimation.fromValue= [NSValue valueWithCGSize:fromViewController.view.frame.size];
-        [toViewController.view.layer pop_addAnimation:basicAnimation forKey:@"size"];
-        
-        POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
-        opacityAnimation.toValue = @(1.0);
-        [toViewController.view.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
-        
-//        POPBasicAnimation *opacity = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
-//        opacity.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-//        opacity.fromValue = @(0.0);
-//        opacity.toValue = @(1.0);
-//        [toViewController.view pop_addAnimation:opacity forKey:@"fade"];
-        
-        [containerView addSubview:toViewController.view];
-        
-        [opacityAnimation setCompletionBlock:^(POPAnimation * animation, BOOL completed) {
+        toViewController.view.alpha = 0;
+        toViewController.view.frame = self.selectedCell.frame;
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            toViewController.view.alpha = 1;
+            toViewController.view.frame = fromViewController.view.frame;
+            [containerView addSubview:toViewController.view];
+        } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
         }];
     } else {
-        
-        POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
-        opacityAnimation.toValue = @(0.0);
-        [opacityAnimation setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
+        self.selectedCell.alpha = 0;
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            fromViewController.view.alpha = 0;
+            fromViewController.view.frame = self.selectedCell.frame;
+            self.selectedCell.alpha = 1;
+        } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
             [fromViewController.view removeFromSuperview];
         }];
-        [fromViewController.view.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
     }
 }
 
