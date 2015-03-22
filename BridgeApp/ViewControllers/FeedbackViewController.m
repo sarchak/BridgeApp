@@ -12,6 +12,7 @@
 @interface FeedbackViewController ()
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (strong, nonatomic) RateView* starView;
+@property (strong, nonatomic) Job *job;
 
 @end
 
@@ -23,8 +24,11 @@
     
     self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backPressed)];
     
-    // Do any additional setup after loading the view from its nib.
-    self.starView = [RateView rateViewWithRating:5.0f];
+    if (self.job.rating) {
+        self.starView = [RateView rateViewWithRating:[self.job.rating floatValue]];
+    } else {
+        self.starView = [RateView rateViewWithRating:0.0f];
+    }
     self.starView.canRate = YES;
     self.starView.starNormalColor = [UIColor grayColor];
     self.starView.starBorderColor = [UIColor blackColor];
@@ -32,8 +36,16 @@
 
     [self.containerView addSubview:self.starView];
 
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
+    tap.numberOfTapsRequired = 1;
+    self.starView.userInteractionEnabled = YES; //if you want touch on your image you'll need this
+    [self.starView addGestureRecognizer:tap];
 }
 
+-(FeedbackViewController *)initWithJob:(Job*)job {
+    self.job = job;
+    return self;
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +55,17 @@
 
 -(void) backPressed {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) onTap {
+    self.job.reviewed = true;
+    long roundedVal = lroundf(self.starView.rating);
+    
+    self.job.rating = [NSNumber numberWithLong:roundedVal];
+    
+    [self.job saveWithCompletion:^(NSError *error) {
+        [self backPressed];
+    }];
 }
 
 /*

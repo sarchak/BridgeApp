@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Job.h"
 
 @interface FeedbackViewController : UIViewController
+
+-(FeedbackViewController *)initWithJob:(Job*)job;
 
 @end

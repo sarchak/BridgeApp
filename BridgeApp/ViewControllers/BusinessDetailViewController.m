@@ -185,7 +185,7 @@
         [push setMessage:message];
         [push sendPushInBackground];
         
-        FeedbackViewController *fvc = [[FeedbackViewController alloc] init];
+        FeedbackViewController *fvc = [[FeedbackViewController alloc] initWithJob:self.job];
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fvc];
         [self presentViewController:nvc animated:YES completion:nil];
     }];
