@@ -88,7 +88,7 @@
     self.segmentedControl.layer.cornerRadius = 5;
     
     // @TODO(dtong) change to JobStatusApproved. Now JobStatusAssigned is for demo only!!!!!!!!!!!!!!!!!
-    [Job getJobAssignedToUserWithStatus:self.user status:JobStatusAssigned completion:^(NSArray *foundObjects, NSError *error) {
+    [Job getJobAssignedToUserWithStatus:self.user status:JobStatusDelivered completion:^(NSArray *foundObjects, NSError *error) {
         self.completedJobs = foundObjects;
         [self.tableView reloadData];
     }];
