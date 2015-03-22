@@ -72,6 +72,8 @@
 		BF36950D1ABA777C00BB2C95 /* desert.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF36950C1ABA777C00BB2C95 /* desert.jpg */; };
 		BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */; };
 		BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */; };
+		BF567A2E1ABE3803009A5638 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF567A2C1ABE3803009A5638 /* FeedbackViewController.m */; };
+		BF567A2F1ABE3803009A5638 /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF567A2D1ABE3803009A5638 /* FeedbackViewController.xib */; };
 		BF5706611AB4F109007D9B60 /* PortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF57065F1AB4F109007D9B60 /* PortfolioCell.m */; };
 		BF5706621AB4F109007D9B60 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5706601AB4F109007D9B60 /* PortfolioCell.xib */; };
 		BF5706641AB57C3B007D9B60 /* user-male.png in Resources */ = {isa = PBXBuildFile; fileRef = BF5706631AB57C3B007D9B60 /* user-male.png */; };
@@ -211,6 +213,9 @@
 		BF3799F51AAAD778007BCDCD /* FreelancerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreelancerProfileViewController.h; sourceTree = "<group>"; };
 		BF3799F61AAAD778007BCDCD /* FreelancerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreelancerProfileViewController.m; sourceTree = "<group>"; };
 		BF3799F71AAAD778007BCDCD /* FreelancerProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreelancerProfileViewController.xib; sourceTree = "<group>"; };
+		BF567A2B1ABE3803009A5638 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		BF567A2C1ABE3803009A5638 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		BF567A2D1ABE3803009A5638 /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
 		BF57065E1AB4F109007D9B60 /* PortfolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortfolioCell.h; sourceTree = "<group>"; };
 		BF57065F1AB4F109007D9B60 /* PortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortfolioCell.m; sourceTree = "<group>"; };
 		BF5706601AB4F109007D9B60 /* PortfolioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortfolioCell.xib; sourceTree = "<group>"; };
@@ -488,6 +493,9 @@
 				5629F98E1AB928CF009ED396 /* BusinessProfileViewController.h */,
 				5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */,
 				5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */,
+				BF567A2B1ABE3803009A5638 /* FeedbackViewController.h */,
+				BF567A2C1ABE3803009A5638 /* FeedbackViewController.m */,
+				BF567A2D1ABE3803009A5638 /* FeedbackViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -626,6 +634,7 @@
 				BF57067B1AB8014D007D9B60 /* black_wood.jpg in Resources */,
 				5629F9921AB928CF009ED396 /* BusinessProfileViewController.xib in Resources */,
 				BF5706621AB4F109007D9B60 /* PortfolioCell.xib in Resources */,
+				BF567A2F1ABE3803009A5638 /* FeedbackViewController.xib in Resources */,
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
 				BF5706731AB669B5007D9B60 /* pushpin.jpg in Resources */,
 				BF5706641AB57C3B007D9B60 /* user-male.png in Resources */,
@@ -713,6 +722,7 @@
 				56C221A51AA9925900E6B55A /* TextViewController.m in Sources */,
 				565DF4131AB0E3A600212799 /* ChatMessageThread.m in Sources */,
 				565DD3B91AB3B532004EE4A1 /* ApplicantCell.m in Sources */,
+				BF567A2E1ABE3803009A5638 /* FeedbackViewController.m in Sources */,
 				BF3799F81AAAD778007BCDCD /* FreelancerProfileViewController.m in Sources */,
 				BFA1DDE51AABA19A00CDD4FC /* JobCell.m in Sources */,
 				566D98161AAB8E36007D1C55 /* Constants.m in Sources */,

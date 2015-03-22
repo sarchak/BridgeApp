@@ -14,6 +14,7 @@
 #import "ChatMessageThread.h"
 #import "ChameleonFramework/Chameleon.h"
 #import "SWTableViewCell.h"
+#import "FeedbackViewController.h"
 
 @interface BusinessDetailViewController () <SWTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -184,6 +185,9 @@
         [push setMessage:message];
         [push sendPushInBackground];
         
+        FeedbackViewController *fvc = [[FeedbackViewController alloc] init];
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fvc];
+        [self presentViewController:nvc animated:YES completion:nil];
     }];
 }
 
