@@ -28,7 +28,7 @@
 -(void) donePressed {
     self.job.price = [NSNumber numberWithInt:[self.price.text intValue]];
     [self dismissViewControllerAnimated:YES completion:nil];
-    
+    [self.delegate priceViewController:self valueChanged:YES];
 }
 
 -(void) cancelPressed {

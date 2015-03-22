@@ -17,6 +17,7 @@
 #import "BusinessViewController.h"
 #import "Pop/Pop.h"
 #import "RKDropdownAlert.h"
+#import "BusinessDetailViewController.h"
 
 @interface CreateJobScene2ViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -45,13 +46,22 @@
     
     /* Configure date picker */
     self.curDate = [NSDate date];
-    self.formatter = [[NSDateFormatter alloc] init];
-    [_formatter setDateFormat:@"dd/MM/yyyy --- HH:mm"];
 
     self.view.backgroundColor = TABLEVIEWCELLCOLOR;
     self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    
+
+    self.formatter = [[NSDateFormatter alloc] init];
+    [self.formatter setDateFormat:@"MM/dd/yyyy"];
     self.title = self.job.title;
+
+    self.navigationItem.rightBarButtonItem =  [[UIBarButtonItem alloc] initWithTitle:@"Preview" style:UIBarButtonItemStyleDone target:self action:@selector(preview)];
+
+}
+
+-(void) preview {
+    BusinessDetailViewController *bdvc = [[BusinessDetailViewController alloc] init];
+    bdvc.job = self.job;
+    [self presentViewController:bdvc animated:YES completion:nil];
 }
 
 -(void) back {
@@ -69,6 +79,7 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     TextViewController *tvc = [[TextViewController alloc] init];
     tvc.job = self.job;
+    tvc.delegate = self;
     UINavigationController *nvc = nil;
     if(indexPath.row == 0){
         tvc.isTitle = YES;
@@ -97,6 +108,7 @@
     } else if(indexPath.row == 3){
         PriceViewController *pvc = [[PriceViewController alloc] init];
         pvc.job = self.job;
+        pvc.delegate = self;
         nvc = [[UINavigationController alloc] initWithRootViewController:pvc];
         nvc.modalPresentationStyle = UIModalPresentationCustom;
         nvc.transitioningDelegate = self;
@@ -109,7 +121,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self displayJob];
+    
+    [self.tableView reloadData];
 }
 
 -(void) titleSubtitleCell:(TitleSubtitleCell *)cell iconTapped:(BOOL)tapped{
@@ -119,19 +132,40 @@
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TitleSubtitleCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TitleSubtitleCell"];
-
+    cell.subTitleLabel.hidden = NO;
     switch (indexPath.row) {
-        case 0: cell.titleLabel.text =@"Write Title";
-                cell.subTitleLabel.text = @"Give your job a descriptive headline.";
+        case 0: if(self.job.title != nil && ![self.job.title isEqual:@""]){
+                    cell.titleLabel.text =self.job.title;
+                    cell.subTitleLabel.hidden = YES;
+                } else {
+                    cell.titleLabel.text =@"Write Title";
+                    cell.subTitleLabel.text = @"Give your job a descriptive headline.";
+                }
                 break;
-        case 1: cell.titleLabel.text =@"Write Summary";
-            cell.subTitleLabel.text = @"Summarize the highlights of your job.";
+        case 1: if(self.job.jobDescription != nil && ![self.job.jobDescription isEqual:@""]){
+                    cell.titleLabel.text = self.job.jobDescription;
+                    cell.subTitleLabel.hidden = YES;
+                } else {
+                    cell.titleLabel.text =@"Write Summary";
+                    cell.subTitleLabel.text = @"Summarize the highlights of your job.";
+                }
+                break;
+        case 2: if(self.job.dueDate != nil){
+                    NSString *stringFromDate = [self.formatter stringFromDate:self.job.dueDate];
+                    cell.titleLabel.text = [NSString stringWithFormat:@"Due Date: %@",stringFromDate];
+                    cell.subTitleLabel.hidden = YES;
+                } else {
+                    cell.titleLabel.text =@"Select a due date";
+                    cell.subTitleLabel.text = @"When do you want the job to be completed by.";                    
+                }
             break;
-        case 2: cell.titleLabel.text =@"Select a due date";
-            cell.subTitleLabel.text = @"When do you want the job to be completed by.";
-            break;
-        case 3: cell.titleLabel.text =@"Set Price";
-            cell.subTitleLabel.text = @"Price you are willing to pay for this job.";
+        case 3: if(self.job.price != nil){
+                    cell.titleLabel.text = [NSString stringWithFormat:@"Price in $: %@",self.job.price];
+                    cell.subTitleLabel.hidden = YES;
+                } else {
+                    cell.titleLabel.text =@"Set Price";
+                    cell.subTitleLabel.text = @"Price you are willing to pay for this job.";
+                }
             break;
             
         default:
@@ -210,6 +244,7 @@
 - (void)datePicker:(THDatePickerViewController *)datePicker selectedDate:(NSDate *)selectedDate {
     NSLog(@"Date selected: %@",[_formatter stringFromDate:selectedDate]);
     self.job.dueDate = selectedDate;
+    [self.tableView reloadData];
 }
 
 -(void) displayJob{
@@ -234,13 +269,6 @@
     return self;
 }
 
-//- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator;
-//
-//- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator;
-
-//- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source NS_AVAILABLE_IOS(8_0);
-
-
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
     return self.animationDuration;
@@ -251,12 +279,11 @@
     UIView *containerView = [transitionContext containerView];
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    NSLog(@"Animation transition");
+
     
     if(self.isPresenting){
         POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
         scaleAnimation.springBounciness = 8;
-//        scaleAnimation.fromValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 0, 0)];
         [toViewController.view.layer pop_addAnimation:scaleAnimation forKey:@"scale"];
         [containerView addSubview:toViewController.view];
         [scaleAnimation setCompletionBlock:^(POPAnimation * animation, BOOL completed) {
@@ -275,23 +302,12 @@
 }
 
 
+-(void) textViewController:(TextViewController *)textViewController valueChanged:(BOOL)value{
+    [self.tableView reloadData];
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-(void) priceViewController:(PriceViewController *)priceViewController valueChanged:(BOOL)value{
+    [self.tableView reloadData];
+}
 
 @end

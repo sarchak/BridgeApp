@@ -223,7 +223,7 @@
     cell.user = job.assignedToUser;
     
     if(indexPath.section == 0){
-        NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
+        NSString *filename = cell.user.profileImageURL;
         cell.profileImage.image = [UIImage imageNamed:filename];
         cell.statusView.backgroundColor = [UIColor flatGreenColor];
         cell.profileImage.hidden  = NO;

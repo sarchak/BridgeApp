@@ -104,9 +104,8 @@
     NSLog(@"%@", user.username);
     
     cell.nameLabel.text = user.username;
-    cell.summary.text = @"Some summary about this guy";
-    NSInteger num = (indexPath.row % 3) + 1;
-    NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
+    cell.summary.text = @"Developer, Designer.";
+    NSString *filename = user.profileImageURL;
     cell.profileImageView.image = [UIImage imageNamed:filename];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

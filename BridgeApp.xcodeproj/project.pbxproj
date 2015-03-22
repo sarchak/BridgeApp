@@ -28,6 +28,10 @@
 		56124C981ABBEC8C00984820 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C911ABBAE1300984820 /* Lato-Thin.ttf */; };
 		56124C991ABBEC8C00984820 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C8E1ABBADF500984820 /* Lato-Light.ttf */; };
 		5620D0FA1ABE5F5600132B3C /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620D0F91ABE5F5600132B3C /* RKDropdownAlert.m */; };
+		5620D0FE1ABE7EB500132B3C /* profile2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5620D0FB1ABE7EB500132B3C /* profile2.jpg */; };
+		5620D0FF1ABE7EB500132B3C /* profile3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5620D0FC1ABE7EB500132B3C /* profile3.jpg */; };
+		5620D1001ABE7EB500132B3C /* profile1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5620D0FD1ABE7EB500132B3C /* profile1.jpg */; };
+		5620D1021ABE830400132B3C /* profile4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5620D1011ABE830400132B3C /* profile4.jpg */; };
 		5629F9911AB928CF009ED396 /* BusinessProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */; };
 		5629F9921AB928CF009ED396 /* BusinessProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */; };
 		5629F9941AB92954009ED396 /* philz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5629F9931AB92954009ED396 /* philz.jpg */; };
@@ -49,9 +53,6 @@
 		566D98271AAC16AA007D1C55 /* BusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D98251AAC16AA007D1C55 /* BusinessCell.xib */; };
 		566D982B1AAD459F007D1C55 /* BusinessDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D98291AAD459F007D1C55 /* BusinessDetailViewController.m */; };
 		566D982C1AAD459F007D1C55 /* BusinessDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D982A1AAD459F007D1C55 /* BusinessDetailViewController.xib */; };
-		566D98311AAD7572007D1C55 /* profile3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 566D982E1AAD7572007D1C55 /* profile3.jpg */; };
-		566D98321AAD7572007D1C55 /* profile2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 566D982F1AAD7572007D1C55 /* profile2.jpg */; };
-		566D98331AAD7572007D1C55 /* profile1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 566D98301AAD7572007D1C55 /* profile1.jpg */; };
 		567E0ABE1AA832E700C5C10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0ABD1AA832E700C5C10B /* main.m */; };
 		567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567E0AC01AA832E700C5C10B /* AppDelegate.m */; };
 		567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E0AC81AA832E700C5C10B /* Images.xcassets */; };
@@ -148,6 +149,10 @@
 		56124C931ABBAE3E00984820 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		5620D0F81ABE5F5600132B3C /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
 		5620D0F91ABE5F5600132B3C /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
+		5620D0FB1ABE7EB500132B3C /* profile2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile2.jpg; sourceTree = "<group>"; };
+		5620D0FC1ABE7EB500132B3C /* profile3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile3.jpg; sourceTree = "<group>"; };
+		5620D0FD1ABE7EB500132B3C /* profile1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile1.jpg; sourceTree = "<group>"; };
+		5620D1011ABE830400132B3C /* profile4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile4.jpg; sourceTree = "<group>"; };
 		5629F98E1AB928CF009ED396 /* BusinessProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessProfileViewController.h; sourceTree = "<group>"; };
 		5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessProfileViewController.m; sourceTree = "<group>"; };
 		5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessProfileViewController.xib; sourceTree = "<group>"; };
@@ -181,9 +186,6 @@
 		566D98281AAD459F007D1C55 /* BusinessDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessDetailViewController.h; sourceTree = "<group>"; };
 		566D98291AAD459F007D1C55 /* BusinessDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessDetailViewController.m; sourceTree = "<group>"; };
 		566D982A1AAD459F007D1C55 /* BusinessDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessDetailViewController.xib; sourceTree = "<group>"; };
-		566D982E1AAD7572007D1C55 /* profile3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile3.jpg; sourceTree = "<group>"; };
-		566D982F1AAD7572007D1C55 /* profile2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile2.jpg; sourceTree = "<group>"; };
-		566D98301AAD7572007D1C55 /* profile1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile1.jpg; sourceTree = "<group>"; };
 		567E0AB81AA832E700C5C10B /* BridgeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567E0ABC1AA832E700C5C10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567E0ABD1AA832E700C5C10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -370,14 +372,15 @@
 		566D982D1AAD755E007D1C55 /* uiassets */ = {
 			isa = PBXGroup;
 			children = (
+				5620D1011ABE830400132B3C /* profile4.jpg */,
 				BF36950C1ABA777C00BB2C95 /* desert.jpg */,
+				5620D0FB1ABE7EB500132B3C /* profile2.jpg */,
+				5620D0FC1ABE7EB500132B3C /* profile3.jpg */,
+				5620D0FD1ABE7EB500132B3C /* profile1.jpg */,
 				5629F9931AB92954009ED396 /* philz.jpg */,
 				BF5706651AB64334007D9B60 /* Portfolio */,
 				BF5706631AB57C3B007D9B60 /* user-male.png */,
 				565DD3BD1AB40158004EE4A1 /* bridge.png */,
-				566D982E1AAD7572007D1C55 /* profile3.jpg */,
-				566D982F1AAD7572007D1C55 /* profile2.jpg */,
-				566D98301AAD7572007D1C55 /* profile1.jpg */,
 			);
 			name = uiassets;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				56124C941ABBEC8C00984820 /* OpenSans-Light.ttf in Resources */,
 				56124C951ABBEC8C00984820 /* OpenSans-Regular.ttf in Resources */,
 				56124C961ABBEC8C00984820 /* Lato-Medium.ttf in Resources */,
+				5620D1001ABE7EB500132B3C /* profile1.jpg in Resources */,
 				56124C971ABBEC8C00984820 /* Lato-Regular.ttf in Resources */,
 				56124C981ABBEC8C00984820 /* Lato-Thin.ttf in Resources */,
 				56124C991ABBEC8C00984820 /* Lato-Light.ttf in Resources */,
@@ -634,6 +638,7 @@
 				56C221A41AA9925900E6B55A /* CreateJobScene2ViewController.xib in Resources */,
 				BF36950D1ABA777C00BB2C95 /* desert.jpg in Resources */,
 				565DD3BA1AB3B532004EE4A1 /* ApplicantCell.xib in Resources */,
+				5620D0FE1ABE7EB500132B3C /* profile2.jpg in Resources */,
 				BFA1DDE11AABA0D200CDD4FC /* OpenJobsViewController.xib in Resources */,
 				565DD3BE1AB40158004EE4A1 /* bridge.png in Resources */,
 				BF57067B1AB8014D007D9B60 /* black_wood.jpg in Resources */,
@@ -643,7 +648,6 @@
 				BFA1DDF01AABDA7900CDD4FC /* ThreadCell.xib in Resources */,
 				BF5706731AB669B5007D9B60 /* pushpin.jpg in Resources */,
 				BF5706641AB57C3B007D9B60 /* user-male.png in Resources */,
-				566D98331AAD7572007D1C55 /* profile1.jpg in Resources */,
 				315B0B821AA87B51004428BE /* .gitignore in Resources */,
 				BF57066D1AB6434C007D9B60 /* portfolio2.jpg in Resources */,
 				566D98271AAC16AA007D1C55 /* BusinessCell.xib in Resources */,
@@ -658,18 +662,18 @@
 				317DF9A01AAAF03800F71962 /* bridge-logo.png in Resources */,
 				566D98221AAC13BB007D1C55 /* BusinessViewController.xib in Resources */,
 				56C221A81AA9925900E6B55A /* TitleSubtitleCell.xib in Resources */,
-				566D98321AAD7572007D1C55 /* profile2.jpg in Resources */,
 				567F88051AB3876300D8E5F0 /* BusinessOwnerCell.xib in Resources */,
 				56C221A21AA9925900E6B55A /* CreateJobScene1ViewController.xib in Resources */,
 				BF3799F91AAAD778007BCDCD /* FreelancerProfileViewController.xib in Resources */,
 				BF5706711AB6434C007D9B60 /* portfolio6.jpg in Resources */,
 				566D981B1AABD2F6007D1C55 /* SignUpViewController.xib in Resources */,
+				5620D0FF1ABE7EB500132B3C /* profile3.jpg in Resources */,
 				BFA1DDDC1AAAF63E00CDD4FC /* LoginViewController.xib in Resources */,
 				317DF99F1AAAF03800F71962 /* bridge-logo-circle.png in Resources */,
+				5620D1021ABE830400132B3C /* profile4.jpg in Resources */,
 				BF57066E1AB6434C007D9B60 /* portfolio3.jpg in Resources */,
 				567E0ACC1AA832E700C5C10B /* LaunchScreen.xib in Resources */,
 				567E0AC91AA832E700C5C10B /* Images.xcassets in Resources */,
-				566D98311AAD7572007D1C55 /* profile3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

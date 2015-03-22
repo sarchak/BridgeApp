@@ -38,8 +38,9 @@
     } else {
         self.job.jobDescription = self.jobTextView.text;
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
     
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate textViewController:self valueChanged:YES];
 }
 
 -(void) cancelPressed {

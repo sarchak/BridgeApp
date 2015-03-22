@@ -78,9 +78,8 @@
     cell.summary.text = job.jobDescription;
     cell.dueDate.hidden = YES;
     
-    NSInteger num = (indexPath.row % 3) + 1;
     if(indexPath.section == 0){
-        NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];
+        NSString *filename = job.assignedToUser.profileImageURL;
         cell.profileImage.image = [UIImage imageNamed:filename];
         cell.statusView.backgroundColor = [UIColor flatGreenColor];
         cell.profileImage.hidden  = NO;

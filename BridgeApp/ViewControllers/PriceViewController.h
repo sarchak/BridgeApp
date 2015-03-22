@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Job.h"
 
+@class PriceViewController;
+
+@protocol PriceViewControllerDelegate <NSObject>
+-(void) priceViewController: (PriceViewController*) priceViewController valueChanged:(BOOL)value;
+@end
+
 @interface PriceViewController : UIViewController
 @property (nonatomic, weak) Job *job;
+@property (nonatomic, weak) id<PriceViewControllerDelegate> delegate;
 @end
