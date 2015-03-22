@@ -17,6 +17,8 @@
 #import "BusinessProfileViewController.h"
 #import "FreelancerProfileViewController.h"
 #import "Pop/Pop.h"
+#import "RKDropdownAlert.h"
+
 @interface BusinessViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
@@ -63,6 +65,7 @@
     self.tableView.tableFooterView.hidden = YES;
     self.tableView.tableHeaderView.hidden = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
 }
 
 -(void) back {
@@ -216,8 +219,8 @@
     NSInteger num = (indexPath.row % 3) + 1;
     
     
-    // @TODO assign actual user object to cell.user!!!
-    
+    // @TODO assign actual user object to cell.user!!
+    cell.user = job.assignedToUser;
     
     if(indexPath.section == 0){
         NSString *filename = [NSString stringWithFormat:@"profile%ld.jpg", num];

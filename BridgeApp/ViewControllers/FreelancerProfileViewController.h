@@ -12,5 +12,5 @@
 @interface FreelancerProfileViewController : UIViewController
 
 - (FreelancerProfileViewController *)initWithUser: (User*)user;
-
+@property (assign, nonatomic) BOOL fromTabBar;
 @end

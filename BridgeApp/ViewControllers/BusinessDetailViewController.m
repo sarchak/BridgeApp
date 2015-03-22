@@ -145,7 +145,6 @@
 
     MessagesViewController *mvc = [[MessagesViewController alloc] init];
     mvc.fromUser = [User currentUser];
-
     User *user = self.job.applicants[indexPath.row];
     
     [ChatMessageThread createMessageThread:self.job.objectId businessId:self.job.owner.objectId freelancerId:user.objectId completion:^(NSString *threadID, NSError *error) {

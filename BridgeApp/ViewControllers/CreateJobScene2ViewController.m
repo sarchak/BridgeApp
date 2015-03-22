@@ -16,6 +16,7 @@
 #import "Parse/Parse.h"
 #import "BusinessViewController.h"
 #import "Pop/Pop.h"
+#import "RKDropdownAlert.h"
 
 @interface CreateJobScene2ViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -175,17 +176,20 @@
     self.job.owner = [User currentUser];
     [self.job saveWithCompletion:^(NSError *error) {
         NSLog(@"Save with completion : %@", error);
-        self.job = [[Job alloc] init];
         self.job.category = self.category;
         self.job.owner = [User currentUser];
         self.job.status = JobStatusPendingAssignment;
         [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
-        UIViewController* viewcontroller = [self.navigationController.viewControllers objectAtIndex:1];
-        [self.navigationController popToViewController:viewcontroller animated:YES];
-        
+
         PFInstallation *installation = [PFInstallation currentInstallation];
         installation[@"ownerid"] = [PFUser currentUser].objectId;
-        [installation saveInBackground];
+        [installation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            UIViewController* viewcontroller = [self.navigationController.viewControllers objectAtIndex:1];
+            [self.navigationController popToViewController:viewcontroller animated:YES];
+            [RKDropdownAlert title:@"Job Created!" message:self.job.title backgroundColor:NAVBARCOLOR textColor:[UIColor whiteColor] time:3];
+            self.job = [[Job alloc] init];
+        }];
+        
     }];
     
 }

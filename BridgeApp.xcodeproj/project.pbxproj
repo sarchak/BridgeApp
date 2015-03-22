@@ -27,6 +27,7 @@
 		56124C971ABBEC8C00984820 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C901ABBAE1300984820 /* Lato-Regular.ttf */; };
 		56124C981ABBEC8C00984820 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C911ABBAE1300984820 /* Lato-Thin.ttf */; };
 		56124C991ABBEC8C00984820 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56124C8E1ABBADF500984820 /* Lato-Light.ttf */; };
+		5620D0FA1ABE5F5600132B3C /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620D0F91ABE5F5600132B3C /* RKDropdownAlert.m */; };
 		5629F9911AB928CF009ED396 /* BusinessProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */; };
 		5629F9921AB928CF009ED396 /* BusinessProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */; };
 		5629F9941AB92954009ED396 /* philz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5629F9931AB92954009ED396 /* philz.jpg */; };
@@ -145,6 +146,8 @@
 		56124C911ABBAE1300984820 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
 		56124C921ABBAE3E00984820 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		56124C931ABBAE3E00984820 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		5620D0F81ABE5F5600132B3C /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
+		5620D0F91ABE5F5600132B3C /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
 		5629F98E1AB928CF009ED396 /* BusinessProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessProfileViewController.h; sourceTree = "<group>"; };
 		5629F98F1AB928CF009ED396 /* BusinessProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessProfileViewController.m; sourceTree = "<group>"; };
 		5629F9901AB928CF009ED396 /* BusinessProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessProfileViewController.xib; sourceTree = "<group>"; };
@@ -496,6 +499,8 @@
 				BF567A2B1ABE3803009A5638 /* FeedbackViewController.h */,
 				BF567A2C1ABE3803009A5638 /* FeedbackViewController.m */,
 				BF567A2D1ABE3803009A5638 /* FeedbackViewController.xib */,
+				5620D0F81ABE5F5600132B3C /* RKDropdownAlert.h */,
+				5620D0F91ABE5F5600132B3C /* RKDropdownAlert.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -730,6 +735,7 @@
 				566D980F1AAB7050007D1C55 /* PriceViewController.m in Sources */,
 				56C221A31AA9925900E6B55A /* CreateJobScene2ViewController.m in Sources */,
 				56C2219F1AA9925900E6B55A /* CategoryCell.m in Sources */,
+				5620D0FA1ABE5F5600132B3C /* RKDropdownAlert.m in Sources */,
 				567E0AC11AA832E700C5C10B /* AppDelegate.m in Sources */,
 				565DF40B1AB0CDB200212799 /* ChatMessage.m in Sources */,
 				566D98211AAC13BB007D1C55 /* BusinessViewController.m in Sources */,

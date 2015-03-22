@@ -151,6 +151,7 @@
 - (void)goToFreelancerView {
     [User login:@"Phil" password:@"Something" completion:^(NSError *error) {
         FreelancerProfileViewController *fpvc = [[FreelancerProfileViewController alloc] initWithUser:[User currentUser]];
+        fpvc.fromTabBar = YES;
         OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:jvc];
         UINavigationController *nvc2 = [[UINavigationController alloc] initWithRootViewController:fpvc];

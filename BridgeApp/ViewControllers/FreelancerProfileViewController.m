@@ -49,6 +49,7 @@
     }
     
     
+    
     NSString *reviewCount = nil;
     if (self.user.reviewCount) {
         reviewCount = [NSString stringWithFormat:@"%ld Reviews", (long)self.user.reviewCount];
@@ -91,6 +92,16 @@
         self.completedJobs = foundObjects;
         [self.tableView reloadData];
     }];
+    
+    
+    if(!self.fromTabBar){
+        self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    }
+    
+}
+
+-(void) back {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
