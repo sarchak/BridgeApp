@@ -8,13 +8,13 @@
 
 #import "BusinessDetailViewController.h"
 #import "Constants.h"
-#import "ApplicantCell.h"
 #import "Job.h"
 #import "MessagesViewController.h"
 #import "ChatMessageThread.h"
 #import "ChameleonFramework/Chameleon.h"
 #import "SWTableViewCell.h"
 #import "FeedbackViewController.h"
+#import "FreelancerProfileViewController.h"
 
 @interface BusinessDetailViewController () <SWTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.titleLabel.text = self.job.title;
     self.jobDescription.text = self.job.jobDescription;
@@ -122,9 +123,9 @@
         [leftUtilityButtons sw_addUtilityButtonWithColor: [UIColor flatGreenColor]
                                                    title:@"Assign"];
         cell.leftUtilityButtons = leftUtilityButtons;
-        cell.delegate = self;
         
     }
+    cell.delegate = self;
     return cell;
 }
 
@@ -190,5 +191,11 @@
     }];
 }
 
+-(void)onProfileTap:(User *)user {
+    FreelancerProfileViewController * fpvc = [[FreelancerProfileViewController alloc] initWithUser:user];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fpvc];
+    
+    [self presentViewController:nvc animated:YES completion:nil];
+}
 
 @end

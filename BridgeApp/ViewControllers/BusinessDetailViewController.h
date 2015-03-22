@@ -10,6 +10,9 @@
 #import "Parse/Parse.h"
 #import "Job.h"
 #import "BusinessCell.h"
-@interface BusinessDetailViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, BusinessCellDelegate>
+#import "ApplicantCell.h"
+
+
+@interface BusinessDetailViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, BusinessCellDelegate, ApplicantCellDelegate>
 @property (strong, nonatomic) Job *job;
 @end

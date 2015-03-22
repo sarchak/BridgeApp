@@ -8,12 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "RateView.h"
+#import "User.h"
+@class BusinessOwnerCell;
+
+@protocol BusinessOwnerCellDelegate <NSObject>
+
+-(void) onProfileTap: (User*) user;
+
+@end
 
 @interface BusinessOwnerCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *businessName;
 @property (weak, nonatomic) IBOutlet RateView *ratingView;
+@property (weak, nonatomic) id<BusinessOwnerCellDelegate> delegate;
 
 
 @end

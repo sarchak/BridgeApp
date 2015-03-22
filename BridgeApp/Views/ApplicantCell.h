@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "RateView.h"
 #import "SWTableViewCell.h"
+#import "User.h"
 
+@class ApplicantCell;
+
+@protocol ApplicantCellDelegate <SWTableViewCellDelegate>
+
+-(void) onProfileTap: (User*) user;
+
+@end
 
 @interface ApplicantCell : SWTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -18,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *summary;
 @property (weak, nonatomic) IBOutlet RateView *ratingView;
 @property (weak, nonatomic) IBOutlet UIView *statusView;
+@property (weak, nonatomic) id<ApplicantCellDelegate> delegate;
 
 @end
