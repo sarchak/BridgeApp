@@ -24,7 +24,7 @@
     
     self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backPressed)];
     
-    if (self.job.rating) {
+    if (self.job.rating && self.job.rating != (NSNumber *)[NSNull null]) {
         self.starView = [RateView rateViewWithRating:[self.job.rating floatValue]];
     } else {
         self.starView = [RateView rateViewWithRating:0.0f];
