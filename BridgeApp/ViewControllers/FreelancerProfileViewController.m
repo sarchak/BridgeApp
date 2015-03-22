@@ -36,8 +36,6 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = @"Bridge";
     
-    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backPressed)];
-    
     self.nameLabel.text = self.user.username;
     
     if ([self.user.rating isEqual:[NSNull null]] || [self.user.rating isEqualToNumber:0]) {
@@ -98,10 +96,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void) backPressed {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
