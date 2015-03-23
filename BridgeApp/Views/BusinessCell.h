@@ -14,8 +14,6 @@
 @protocol BusinessCellDelegate <NSObject>
 
 -(void) businessCell: (BusinessCell*) businessCell apply:(BOOL) value;
--(void) onProfileTap: (User*) user;
-
 
 @end
 @interface BusinessCell : UITableViewCell

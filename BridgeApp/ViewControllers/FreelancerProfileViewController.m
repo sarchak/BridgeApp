@@ -40,7 +40,7 @@
     
     if ([self.user.rating isEqual:[NSNull null]] || [self.user.rating isEqualToNumber:0]) {
         UILabel *starLabelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-        [starLabelView setText:@"newbie"];
+        [starLabelView setText:@"Newbie"];
         starLabelView.tintColor = [UIColor blackColor];
         [self.starView addSubview:starLabelView];
 

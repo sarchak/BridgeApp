@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSArray *completedJobs;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) NSDateFormatter *formatter;
 @end
 
 @implementation BusinessProfileViewController
@@ -28,6 +29,9 @@
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 80;
+
+    self.formatter = [[NSDateFormatter alloc] init];
+    [self.formatter setDateFormat:@"MM/dd/yyyy"];
 
     
     self.refreshControl = [[UIRefreshControl alloc]init];
@@ -69,7 +73,7 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0) {
-        return @"Completed Jobs";
+        return @"Available Jobs";
     }
     return @"";
 }
@@ -88,9 +92,11 @@
         cell.profileImage.image = [UIImage imageNamed:filename];
         cell.statusView.backgroundColor = [UIColor flatGreenColor];
         cell.profileImage.hidden  = NO;
-        cell.name.hidden = NO;
+        cell.name.hidden = YES;
         cell.assignedLabel.hidden = NO;
-        
+        NSString *stringFromDate = [self.formatter stringFromDate:job.dueDate];
+        cell.dueDate.text = stringFromDate;
+        cell.dueDate.hidden = NO;
     } else if(indexPath.section == 1){
         cell.profileImage.hidden  = YES;
         cell.statusView.backgroundColor = [UIColor flatYellowColorDark];

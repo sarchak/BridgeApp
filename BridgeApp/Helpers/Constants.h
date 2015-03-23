@@ -37,9 +37,9 @@ extern UIColor const *headerBarColor;
 extern UIColor const *tableViewCellColor;
 extern UIColor const *textColor;
 
-#define NAVBARCOLOR [UIColor colorWithRed:218.0/255.0 green:80.0/255.0 blue:14.0/255.0 alpha:1.0]
-#define HEADERBARCOLOR [UIColor colorWithRed:0.827 green:0.807 blue:0.777 alpha:1.0]
-#define TABLEVIEWCELLCOLOR [UIColor colorWithRed:246.0/255.0 green:241.0/255.0 blue:234.0/255.0 alpha:1.0]
+#define NAVBARCOLOR [UIColor colorWithRed:0.314 green:0.824 blue:0.753 alpha:1.0]
+#define HEADERBARCOLOR [UIColor colorWithRed:0.949 green:0.945 blue:0.906 alpha:1.0]
+#define TABLEVIEWCELLCOLOR [UIColor colorWithRed:1.000 green:1.000 blue:1.000 alpha:1.0]
 #define NAVTEXTCOLOR [UIColor colorWithRed:246.0/255.0 green:241.0/255.0 blue:234.0/255.0 alpha:1.0]
 #define TEXTCOLOR [UIColor colorWithRed:68.0/255.0 green:68.0/255.0 blue:68.0/255.0 alpha:1.0]
 #endif
