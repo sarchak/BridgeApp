@@ -92,6 +92,7 @@
     cell.ratingView.starSize = 15;
     cell.ratingView.starFillColor = [UIColor orangeColor];
     cell.backgroundColor = TABLEVIEWCELLCOLOR;
+    cell.profileImageView.image = [UIImage imageNamed:self.job.owner.profileImageURL];
     return cell;
 }
 
@@ -175,8 +176,8 @@
     NSString *message = [NSString stringWithFormat:@"%@ applied to %@", curr.username, self.job.title];
     [push setMessage:message];
     [push sendPushInBackground];
-    
     [self setAppliedButton];
+    [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];    
 }
 
 - (IBAction)onDeliver:(id)sender {
@@ -201,7 +202,7 @@
     NSString *message = [NSString stringWithFormat:@"%@ delivered job %@", curr.username, self.job.title];
     [push setMessage:message];
     [push sendPushInBackground];
-
+    [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
 }
 
 

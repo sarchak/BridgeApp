@@ -15,7 +15,7 @@
 
 @protocol ApplicantCellDelegate <SWTableViewCellDelegate>
 
--(void) onProfileTap: (User*) user;
+-(void) applicantCell: (ApplicantCell*) applicantCell;
 
 @end
 

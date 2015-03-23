@@ -18,6 +18,7 @@
 #import "Pop/Pop.h"
 #import "RKDropdownAlert.h"
 #import "BusinessDetailViewController.h"
+#import "ChameleonFramework/Chameleon.h"
 
 @interface CreateJobScene2ViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -59,9 +60,17 @@
 }
 
 -(void) preview {
-    BusinessDetailViewController *bdvc = [[BusinessDetailViewController alloc] init];
-    bdvc.job = self.job;
-    [self presentViewController:bdvc animated:YES completion:nil];
+    
+    if(self.job.title == nil){
+        [RKDropdownAlert title:@"Title Missing" message:@"Please provide a title and summary" backgroundColor:[UIColor flatRedColor] textColor:[UIColor whiteColor] time:1];
+    } else if(self.job.jobDescription == nil){
+        [RKDropdownAlert title:@"Job Description" message:@"Please provide a job description" backgroundColor:[UIColor flatRedColor] textColor:[UIColor whiteColor] time:1];
+    } else {
+        BusinessDetailViewController *bdvc = [[BusinessDetailViewController alloc] init];
+        bdvc.job = self.job;
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:bdvc];
+        [self presentViewController:nvc animated:YES completion:nil];
+    }
 }
 
 -(void) back {

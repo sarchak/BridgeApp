@@ -151,7 +151,7 @@
 }
 
 - (void)goToFreelancerView {
-    [User login:@"Phil" password:@"Something" completion:^(NSError *error) {
+    [User login:@"shrikar" password:@"bridgeapp" completion:^(NSError *error) {
         FreelancerProfileViewController *fpvc = [[FreelancerProfileViewController alloc] initWithUser:[User currentUser]];
         fpvc.fromTabBar = YES;
         OpenJobsViewController *jvc = [[OpenJobsViewController alloc] init];

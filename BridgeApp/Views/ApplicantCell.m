@@ -29,7 +29,6 @@
     // Configure the view for the selected state
 }
 - (IBAction)onProfileTap:(UITapGestureRecognizer *)sender {
-    //@TODO use actual user!!!!!!!!!!!
-    [self.delegate onProfileTap:[User currentUser]];
+    [self.delegate applicantCell:self];
 }
 @end

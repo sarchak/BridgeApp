@@ -89,7 +89,7 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];    
     self.window.rootViewController = lvc;
     [self.window makeKeyAndVisible];
     return YES;

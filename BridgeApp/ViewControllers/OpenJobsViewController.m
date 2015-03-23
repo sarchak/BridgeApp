@@ -50,7 +50,9 @@
     self.tableView.tableHeaderView.hidden = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
-    self.navigationItem.title = @"Bridge";    
+    self.navigationItem.title = @"Bridge";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchData) name:JOBSTATUSCHANGED object:nil];
+    
 }
 
 -(void)fetchData {

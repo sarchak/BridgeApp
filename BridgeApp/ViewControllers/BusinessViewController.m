@@ -229,7 +229,8 @@
         cell.profileImage.hidden  = NO;
         cell.name.hidden = NO;
         cell.assignedLabel.hidden = NO;
-        
+        cell.name.text = job.assignedToUser.username;
+  
     } else if(indexPath.section == 1){
         cell.profileImage.hidden  = YES;
         cell.statusView.backgroundColor = [UIColor flatYellowColorDark];
