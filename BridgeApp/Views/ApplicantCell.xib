@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -26,27 +26,27 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DevGuy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dt-kz-GBd">
-                        <rect key="frame" x="93" y="8" width="61.5" height="23.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" text="DevGuy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dt-kz-GBd">
+                        <rect key="frame" x="93" y="8" width="62" height="20"/>
                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="DevGuy" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgz-jn-Ehk">
-                        <rect key="frame" x="93" y="29" width="226" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="DevGuy" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgz-jn-Ehk">
+                        <rect key="frame" x="93" y="28" width="217" height="21"/>
                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GjQ-0b-4ds" customClass="RateView">
-                        <rect key="frame" x="93" y="56" width="160" height="20"/>
+                        <rect key="frame" x="93" y="55" width="160" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="160" id="Het-bd-uNm"/>
                             <constraint firstAttribute="height" constant="20" id="eQ7-MB-gDW"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-AJ-2EI">
-                        <rect key="frame" x="0.0" y="0.0" width="10" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="10" height="79"/>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.90196078430000004" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="10" id="oFL-lQ-7Ph"/>
@@ -54,14 +54,14 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Dt-kz-GBd" secondAttribute="trailing" constant="165.5" id="44x-zt-ylh"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Dt-kz-GBd" secondAttribute="trailing" constant="10" id="44x-zt-ylh"/>
                     <constraint firstAttribute="bottom" secondItem="SX3-9g-IfZ" secondAttribute="bottom" priority="750" constant="4" id="75q-n7-kMq"/>
-                    <constraint firstAttribute="trailing" secondItem="fgz-jn-Ehk" secondAttribute="trailing" constant="1" id="7g0-z9-QBG"/>
+                    <constraint firstAttribute="trailing" secondItem="fgz-jn-Ehk" secondAttribute="trailing" constant="10" id="7g0-z9-QBG"/>
                     <constraint firstItem="7Dt-kz-GBd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="8g5-hl-a5M"/>
                     <constraint firstItem="SX3-9g-IfZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="CC4-ih-9s8"/>
                     <constraint firstAttribute="bottom" secondItem="SX3-9g-IfZ" secondAttribute="bottom" constant="4.5" id="E8u-fz-wrR"/>
                     <constraint firstItem="GjQ-0b-4ds" firstAttribute="top" secondItem="fgz-jn-Ehk" secondAttribute="bottom" constant="6" id="G7O-sl-2Go"/>
-                    <constraint firstItem="fgz-jn-Ehk" firstAttribute="top" secondItem="7Dt-kz-GBd" secondAttribute="bottom" constant="-2.5" id="NAP-Hb-Fw0"/>
+                    <constraint firstItem="fgz-jn-Ehk" firstAttribute="top" secondItem="7Dt-kz-GBd" secondAttribute="bottom" id="NAP-Hb-Fw0"/>
                     <constraint firstItem="A8d-AJ-2EI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SbC-fN-PDx"/>
                     <constraint firstItem="fgz-jn-Ehk" firstAttribute="leading" secondItem="SX3-9g-IfZ" secondAttribute="trailing" constant="8" id="U0E-Sx-jZk"/>
                     <constraint firstItem="SX3-9g-IfZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="VT4-BF-qdy"/>
