@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "User.h"
+#import "BusinessCell.h"
 @interface BusinessProfileViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
-
-
+@property (nonatomic, strong) User *user;
+@property (assign, nonatomic) BOOL fromTabbar;
 @end

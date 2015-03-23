@@ -51,6 +51,7 @@ typedef enum JobStatus : NSUInteger {
 +(void)getJobWithOptions: (JobStatus) status completion: (void (^)(NSArray *foundObjects, NSError *error))completion ;
 +(void)getAllOpenJobs:(void (^)(NSArray *foundObjects, NSError *error))completion;
 +(void)getJobAssignedToUserWithStatus:(User*) user status:(JobStatus) status completion: (void (^)(NSArray *foundObjects, NSError *error))completion ;
++(void)getJobsOwnedByUserWithStatus:(User*) user status:(JobStatus) status completion: (void (^)(NSArray *foundObjects, NSError *error))completion;
 -(bool)hasUserApplied:(User*)user;
 -(bool)isAssignedTo:(User*)user;
 @end

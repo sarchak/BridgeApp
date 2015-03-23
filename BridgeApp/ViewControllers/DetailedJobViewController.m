@@ -14,6 +14,7 @@
 #import "BusinessOwnerCell.h"
 #import "ChameleonFramework/Chameleon.h"
 #import "FreelancerProfileViewController.h"
+#import "BusinessProfileViewController.h"
 
 @interface DetailedJobViewController ()
 
@@ -68,10 +69,12 @@
     }
     [self.threadsTableView registerNib:[UINib nibWithNibName:@"BusinessOwnerCell" bundle:nil] forCellReuseIdentifier:@"BusinessOwnerCell"];
 
-//    self.applyButton.layer.cornerRadius = 5.0;
-//    self.editButton.layer.cornerRadius = 5.0;
-//    self.deliverButton.layer.cornerRadius = 5.0;
+    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     
+}
+
+-(void) back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,6 +96,7 @@
     cell.ratingView.starFillColor = [UIColor orangeColor];
     cell.backgroundColor = TABLEVIEWCELLCOLOR;
     cell.profileImageView.image = [UIImage imageNamed:self.job.owner.profileImageURL];
+    cell.delegate = self;
     return cell;
 }
 
@@ -221,5 +225,14 @@
     
 }
 
+-(void) businessOwnerCell:(BusinessOwnerCell *)businessOwnerCell{
+
+    User *user = self.job.owner;
+    BusinessProfileViewController *bpvc = [[BusinessProfileViewController alloc] init];
+    bpvc.user = user;
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:bpvc];    
+    [self presentViewController:nvc animated:YES completion:nil];
+
+}
 
 @end

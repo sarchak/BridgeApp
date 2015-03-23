@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Job.h"
+#import "BusinessOwnerCell.h"
 
-@interface DetailedJobViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface DetailedJobViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, BusinessOwnerCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *jobTitleLabel;
 

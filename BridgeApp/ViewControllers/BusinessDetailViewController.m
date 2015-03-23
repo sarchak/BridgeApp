@@ -191,12 +191,6 @@
     }];
 }
 
-//-(void)onProfileTap:(User *)user {
-//    FreelancerProfileViewController * fpvc = [[FreelancerProfileViewController alloc] initWithUser:user];
-//    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fpvc];
-//    
-//    [self presentViewController:nvc animated:YES completion:nil];
-//}
 
 -(void) applicantCell:(ApplicantCell *)applicantCell{
     NSIndexPath *indexPath = [self.tableView indexPathForCell:applicantCell];

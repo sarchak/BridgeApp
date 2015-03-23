@@ -58,7 +58,7 @@
     }
     self.numOfReviewsLabel.text = reviewCount;
 
-    NSString *filename = @"profile1.jpg";
+    NSString *filename = self.user.profileImageURL;
     self.profileImageView.image = [UIImage imageNamed:filename];
     self.profileImageView.contentMode = UIViewContentModeScaleToFill;
     self.profileImageView.layer.cornerRadius = 30;

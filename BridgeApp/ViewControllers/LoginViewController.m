@@ -114,6 +114,8 @@
         NSLog(@"User logged in %@", [User currentUser].username);
 
         BusinessProfileViewController *bpvc = [[BusinessProfileViewController alloc] init];
+        bpvc.user = [User currentUser];
+        bpvc.fromTabbar = YES;
         BusinessViewController *bvc = [[BusinessViewController alloc] init];
         
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:bvc];

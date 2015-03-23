@@ -233,5 +233,27 @@ static dispatch_once_t _attachmentsArrayOnceToken;
     }];
 }
 
++(void)getJobsOwnedByUserWithStatus:(User*) user status:(JobStatus) status completion: (void (^)(NSArray *foundObjects, NSError *error))completion {
+    
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"objectId" equalTo:user.objectId];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        PFUser *pfuser = objects.firstObject;
+        
+        QueryFilter *filter = [[QueryFilter alloc] init];
+        filter.operator = QueryFilterOperatorEquals;
+        filter.fieldName = @"status";
+        filter.value = [NSNumber numberWithInt:status];
+        QueryFilter *userfilter = [[QueryFilter alloc] init];
+        userfilter.operator = QueryFilterOperatorEquals;
+        userfilter.fieldName = @"owner";
+        userfilter.value = pfuser;
+        
+        Job* job = [[Job alloc] init];
+        [job findWithCompletionFromTable:@"Jobs" filters:@[userfilter,filter] sortOptions:nil completion:completion];
+    }];
+}
+
 
 @end

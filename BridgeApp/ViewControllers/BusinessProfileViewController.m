@@ -36,14 +36,19 @@
     [self fetchData];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchData) name:JOBSTATUSCHANGED object:nil];
     self.tableView.backgroundColor = HEADERBARCOLOR;
-    
-}
+    if(!self.fromTabbar){
+        self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    }
 
+}
+-(void) back{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 -(void) fetchData {
     [SVProgressHUD show];
     
     /* Fetch assigned jobs */
-    [Job getJobWithOptions:JobStatusAccepted completion:^(NSArray *foundObjects, NSError *error) {
+    [Job getJobsOwnedByUserWithStatus:self.user  status:JobStatusPendingAssignment completion:^(NSArray *foundObjects, NSError *error) {
         self.completedJobs = foundObjects;
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];

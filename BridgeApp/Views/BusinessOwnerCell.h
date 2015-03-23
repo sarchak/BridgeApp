@@ -12,9 +12,7 @@
 @class BusinessOwnerCell;
 
 @protocol BusinessOwnerCellDelegate <NSObject>
-
--(void) onProfileTap: (User*) user;
-
+-(void) businessOwnerCell:(BusinessOwnerCell*) businessOwnerCell;
 @end
 
 @interface BusinessOwnerCell : UITableViewCell
