@@ -61,7 +61,7 @@ typedef enum UserType : NSUInteger {
 +(NSMutableArray*) usersWithDictionaries:(NSArray*)dictionaries;
 -(void)signUpWithCompletion:(void (^)(NSError *error))completion;
 -(void)saveWithCompletion:(void (^)(NSError *error))completion;
-
++(void) getUserMap: (NSArray*) objectIds completion: (void (^)(NSMutableDictionary *dict, NSError *error))completion ;
 +(NSString*)tableName;
 +(NSArray*) includeKeys;
 

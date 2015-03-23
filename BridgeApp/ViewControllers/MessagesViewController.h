@@ -12,4 +12,5 @@
 @interface MessagesViewController : JSQMessagesViewController
 @property (nonatomic, strong) User* fromUser;
 @property (nonatomic, strong) NSString* threadId;
+@property (strong, nonatomic) NSDictionary *avatars;
 @end

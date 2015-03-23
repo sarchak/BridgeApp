@@ -16,7 +16,7 @@
 
 @interface MessagesViewController ()
 @property (nonatomic, strong) NSMutableArray *messages;
-@property (strong, nonatomic) NSDictionary *avatars;
+
 
 @property (strong, nonatomic) JSQMessagesBubbleImage *outgoingBubbleImageData;
 
@@ -76,16 +76,18 @@
     
     self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor colorWithWhite:0.8 alpha:0.5]];
     self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor flatGreenColor]];
- 
+    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self fetchData];
+}
+
+-(void) fetchData {
     [ChatMessage getAllMessages:self.threadId completion:^(NSArray *messages, NSError *error) {
         self.messages = [NSMutableArray arrayWithArray:messages];
         [self.collectionView reloadData];
     }];
-    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    
-    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
-
 -(void) back {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -260,7 +262,8 @@
     }
     
     //TODO customize this one to return actual avatar
-    JSQMessagesAvatarImage *profile1 = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"profile1.jpg"] diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
+    NSString *fileName = self.avatars[message.senderId];
+    JSQMessagesAvatarImage *profile1 = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:fileName] diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
     return profile1;
     
 }

@@ -177,5 +177,18 @@ static User *_user = nil;
     [p readById:@"_User" objectId:id completion:completion];
 }
 
++(void) getUserMap: (NSArray*) objectIds completion: (void (^)(NSMutableDictionary *dict, NSError *error))completion {
+    NSMutableDictionary *cdict = [NSMutableDictionary dictionary];
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"objectId" containedIn:objectIds];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        for(PFObject *obj in objects){
+            cdict[obj.objectId] = obj[@"profileImageURL"];
+        }
+        completion(cdict,error);
+    }];
+    
+}
+
 
 @end
