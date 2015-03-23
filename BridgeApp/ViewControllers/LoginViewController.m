@@ -48,7 +48,7 @@
     
     _valueLabel = [[UILabel alloc] initWithFrame:valueFrame];
     _valueLabel.font = [UIFont fontWithName:@"Avenir-Light" size:32.0];
-    _valueLabel.textColor = [UIColor whiteColor];
+    _valueLabel.textColor = HEADERBARCOLOR;
     _valueLabel.textAlignment = NSTextAlignmentCenter;
     _valueLabel.numberOfLines = 0;
     _valueLabel.alpha = 0.0;
@@ -57,14 +57,14 @@
     
     _shimmeringView = [[FBShimmeringView alloc] init];
     _shimmeringView.shimmering = YES;
-    _shimmeringView.shimmeringBeginFadeDuration = 0.2;
-    _shimmeringView.shimmeringOpacity = 0.3;
+    _shimmeringView.shimmeringBeginFadeDuration = 0.1;
+    _shimmeringView.shimmeringOpacity = 0.1;
     [self.view addSubview:_shimmeringView];
     
     _logoLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
     _logoLabel.text = @"Bridge";
     _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:65.0];
-    _logoLabel.textColor = [UIColor whiteColor];
+    _logoLabel.textColor = HEADERBARCOLOR;
     _logoLabel.textAlignment = NSTextAlignmentCenter;
     _logoLabel.backgroundColor = [UIColor clearColor];
     _shimmeringView.contentView = _logoLabel;

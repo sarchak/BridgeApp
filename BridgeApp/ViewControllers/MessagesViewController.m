@@ -83,6 +83,7 @@
     }];
     self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 -(void) back {
@@ -106,6 +107,7 @@
      *  Note: this feature is mostly stable, but still experimental
      */
     self.collectionView.collectionViewLayout.springinessEnabled = [NSUserDefaults springinessSetting];
+    [self.inputToolbar.contentView.textView becomeFirstResponder];
 }
 
 
