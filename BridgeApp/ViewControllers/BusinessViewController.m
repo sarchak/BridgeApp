@@ -216,7 +216,6 @@
     Job *job = [self getJob:indexPath];
     cell.titleLabel.text = job.title;
     cell.summary.text = job.jobDescription;
-    NSInteger num = (indexPath.row % 3) + 1;
     
     
     // @TODO assign actual user object to cell.user!!
@@ -303,12 +302,20 @@
 
 -(void)onProfileTap:(User *)user {
     FreelancerProfileViewController * fpvc = [[FreelancerProfileViewController alloc] initWithUser:user];
+
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fpvc];
     [self presentViewController:nvc animated:YES completion:nil];
 
 }
 
 -(void)businessCell:(BusinessCell *)businessCell apply:(BOOL)value {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:businessCell];
+    Job *job = self.assignedJobs[indexPath.row];
+    FreelancerProfileViewController * fpvc = [[FreelancerProfileViewController alloc] initWithUser:job.assignedToUser];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fpvc];
+    
+    [self presentViewController:nvc animated:YES completion:nil];
+    
 }
 
 

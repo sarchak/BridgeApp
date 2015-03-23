@@ -39,8 +39,7 @@
 
 
 - (IBAction)onProfileTap:(UITapGestureRecognizer *)sender {
-    //@TODO use actual user!!!!!!
-    [self.delegate onProfileTap:[User currentUser]];
+    [self.delegate businessCell:self apply:YES];
 }
 
 - (UIEdgeInsets)layoutMargins

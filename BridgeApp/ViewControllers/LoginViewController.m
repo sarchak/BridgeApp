@@ -63,7 +63,7 @@
     
     _logoLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
     _logoLabel.text = @"Bridge";
-    _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:60.0];
+    _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:65.0];
     _logoLabel.textColor = [UIColor whiteColor];
     _logoLabel.textAlignment = NSTextAlignmentCenter;
     _logoLabel.backgroundColor = [UIColor clearColor];
