@@ -138,7 +138,9 @@
         
         UITabBarItem *tmp = [home initWithTitle:@"Jobs" image:[UIImage imageNamed:@"jobs"] selectedImage: [UIImage imageNamed:@"jobs"]];
         
-        tmp = [profile initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile"] selectedImage: [UIImage imageNamed:@"profile"]];
+        UIImage *profileImage = [[UIImage imageNamed:@"profile"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        tmp = [profile initWithTitle:@"Profile" image:profileImage selectedImage: [UIImage imageNamed:@"profile"]];
         
 
 

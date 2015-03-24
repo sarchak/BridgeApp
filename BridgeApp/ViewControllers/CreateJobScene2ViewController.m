@@ -215,25 +215,37 @@
 }
 
 
+-(BOOL) validateJob{
+    if(self.job.title != nil && self.job.jobDescription != nil && self.job.price != nil && self.job.dueDate != nil){
+        return true;
+    }
+    return false;
+}
 - (IBAction)createJob:(id)sender {
-    self.job.owner = [User currentUser];
-    [self.job saveWithCompletion:^(NSError *error) {
-        NSLog(@"Save with completion : %@", error);
-        self.job.category = self.category;
+    
+    if([self validateJob]){
         self.job.owner = [User currentUser];
-        self.job.status = JobStatusPendingAssignment;
-        [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
-
-        PFInstallation *installation = [PFInstallation currentInstallation];
-        installation[@"ownerid"] = [PFUser currentUser].objectId;
-        [installation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            UIViewController* viewcontroller = [self.navigationController.viewControllers objectAtIndex:1];
-            [self.navigationController popToViewController:viewcontroller animated:YES];
-            [RKDropdownAlert title:@"Job Created!" message:self.job.title backgroundColor:NAVBARCOLOR textColor:[UIColor whiteColor] time:3];
-            self.job = [[Job alloc] init];
+        [self.job saveWithCompletion:^(NSError *error) {
+            NSLog(@"Save with completion : %@", error);
+            self.job.category = self.category;
+            self.job.owner = [User currentUser];
+            self.job.status = JobStatusPendingAssignment;
+            [[NSNotificationCenter defaultCenter] postNotificationName:JOBSTATUSCHANGED object:nil userInfo:nil];
+            
+            PFInstallation *installation = [PFInstallation currentInstallation];
+            installation[@"ownerid"] = [PFUser currentUser].objectId;
+            [installation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                UIViewController* viewcontroller = [self.navigationController.viewControllers objectAtIndex:1];
+                [self.navigationController popToViewController:viewcontroller animated:YES];
+                [RKDropdownAlert title:@"Job Created!" message:self.job.title backgroundColor:[UIColor flatGreenColor] textColor:[UIColor whiteColor] time:3];
+                self.job = [[Job alloc] init];
+            }];
+            
         }];
         
-    }];
+    } else {
+        [RKDropdownAlert title:@"Cannot create Job." message:@"Please provide title,summary, price and due date" backgroundColor:[UIColor flatRedColor] textColor:[UIColor whiteColor] time:1];
+    }
     
 }
 
