@@ -1,48 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Medium.ttf">
+            <string>Lato-Medium</string>
+        </mutableArray>
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackViewController">
             <connections>
-                <outlet property="containerView" destination="OvP-N6-CKc" id="yHS-Tu-32k"/>
+                <outlet property="containerView" destination="OvP-N6-CKc" id="feK-uw-GFv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How would you rate the job?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MQ-MW-lRu">
-                    <rect key="frame" x="8" y="30" width="221" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How would you rate the job?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MQ-MW-lRu">
+                    <rect key="frame" x="36" y="148" width="248" height="24"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvP-N6-CKc">
-                    <rect key="frame" x="10" y="61" width="590" height="200"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvP-N6-CKc" customClass="RateView">
+                    <rect key="frame" x="85" y="207" width="150" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="Cze-Q1-PL2"/>
+                        <constraint firstAttribute="height" constant="40" id="b9g-Bs-jVy"/>
+                        <constraint firstAttribute="width" constant="150" id="mZs-p7-6Fd"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9H-u4-azD">
+                    <rect key="frame" x="110" y="308" width="100" height="30"/>
+                    <color key="backgroundColor" red="0.31372549020000001" green="0.82352941180000006" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5OL-OQ-AO9"/>
+                        <constraint firstAttribute="width" constant="100" id="9rQ-xD-f2a"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
+                    <state key="normal" title="Rate Now">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rateNow:" destination="-1" eventType="touchUpInside" id="YF7-ZV-V1Y"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="OvP-N6-CKc" secondAttribute="trailing" id="0Vi-0C-a7F"/>
-                <constraint firstItem="0MQ-MW-lRu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="3zn-ZN-aiu"/>
-                <constraint firstAttribute="bottom" secondItem="OvP-N6-CKc" secondAttribute="bottom" constant="-90" id="JfR-5f-rnn"/>
-                <constraint firstItem="OvP-N6-CKc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="V6a-6q-jNd"/>
-                <constraint firstItem="OvP-N6-CKc" firstAttribute="top" secondItem="0MQ-MW-lRu" secondAttribute="bottom" constant="10" id="moL-1y-A9W"/>
-                <constraint firstItem="0MQ-MW-lRu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="uFk-Ge-uGE"/>
+                <constraint firstItem="OvP-N6-CKc" firstAttribute="top" secondItem="0MQ-MW-lRu" secondAttribute="bottom" constant="35" id="24h-bZ-LlQ"/>
+                <constraint firstAttribute="centerX" secondItem="h9H-u4-azD" secondAttribute="centerX" id="Dsj-Mi-xWR"/>
+                <constraint firstAttribute="centerY" secondItem="OvP-N6-CKc" secondAttribute="centerY" constant="57" id="K65-K3-tbt"/>
+                <constraint firstItem="h9H-u4-azD" firstAttribute="top" secondItem="OvP-N6-CKc" secondAttribute="bottom" constant="61" id="d2V-6B-yZT"/>
+                <constraint firstAttribute="centerX" secondItem="OvP-N6-CKc" secondAttribute="centerX" id="fQY-MA-b55"/>
+                <constraint firstAttribute="centerX" secondItem="0MQ-MW-lRu" secondAttribute="centerX" id="gWQ-df-hr5"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="JfR-5f-rnn"/>
-                </mask>
-            </variation>
+            <point key="canvasLocation" x="650" y="351"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

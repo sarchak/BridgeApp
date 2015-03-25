@@ -15,6 +15,7 @@
 #import "SWTableViewCell.h"
 #import "FeedbackViewController.h"
 #import "FreelancerProfileViewController.h"
+#import "POP/POP.h"
 
 @interface BusinessDetailViewController () <SWTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -174,6 +175,27 @@
 
 - (IBAction)acceptJob:(id)sender {
     self.job.status = JobStatusAccepted;
+
+    POPSpringAnimation *scale =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scale.toValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.2)];
+    scale.springBounciness = 5;
+    scale.springSpeed = 2.0f;
+    scale.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    POPSpringAnimation *scaledown =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scaledown.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
+    scaledown.springBounciness = 5;
+    scaledown.springSpeed = 3.0f;
+    scaledown.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    
+    [self.acceptButton pop_addAnimation:scale forKey:@"scale"];
+    [self.acceptButton pop_addAnimation:scaledown forKey:@"scaledown"];
+    
+    [scaledown setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
+        [self.acceptButton pop_removeAnimationForKey:@"scale"];
+        [self.acceptButton pop_removeAnimationForKey:@"scaledown"];
+    }];
 
     [self.job saveWithCompletion:^(NSError *error) {
         NSLog(@"accept job");

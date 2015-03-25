@@ -27,6 +27,7 @@
 @property (nonatomic, retain) NSDateFormatter * formatter;
 @property (nonatomic, assign) BOOL isPresenting;
 @property (nonatomic, assign) double animationDuration;
+@property (weak, nonatomic) IBOutlet UIButton *createButton;
 @end
 
 @implementation CreateJobScene2ViewController
@@ -222,6 +223,27 @@
     return false;
 }
 - (IBAction)createJob:(id)sender {
+    
+    POPSpringAnimation *scale =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scale.toValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.2)];
+    scale.springBounciness = 5;
+    scale.springSpeed = 2.0f;
+    scale.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    POPSpringAnimation *scaledown =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scaledown.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
+    scaledown.springBounciness = 5;
+    scaledown.springSpeed = 3.0f;
+    scaledown.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    
+    [self.createButton pop_addAnimation:scale forKey:@"scale"];
+    [self.createButton pop_addAnimation:scaledown forKey:@"scaledown"];
+    
+    [scaledown setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
+        [self.createButton pop_removeAnimationForKey:@"scale"];
+        [self.createButton pop_removeAnimationForKey:@"scaledown"];
+    }];
     
     if([self validateJob]){
         self.job.owner = [User currentUser];

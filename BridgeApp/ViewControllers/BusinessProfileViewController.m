@@ -73,7 +73,7 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0) {
-        return @"Available Jobs";
+        return @"Current Jobs";
     }
     return @"";
 }

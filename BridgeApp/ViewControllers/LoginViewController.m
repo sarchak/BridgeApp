@@ -18,9 +18,10 @@
 #import "BusinessProfileViewController.h"
 #import "FreelancerProfileViewController.h"
 #import "ChameleonFramework/Chameleon.h"
-
+#import "POP/POP.h"
 @interface LoginViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *businessOwner;
 
 @end
 
@@ -110,9 +111,28 @@
 
 - (void)goToBusinessView {
     /* Setup the business owner */
+    POPSpringAnimation *scale =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scale.toValue = [NSValue valueWithCGPoint:CGPointMake(1.5, 1.5)];
+    scale.springBounciness = 15;
+    scale.springSpeed = 5.0f;
+    scale.velocity= [NSValue valueWithCGSize:CGSizeMake(10.f, 10.f)];
+    POPSpringAnimation *scaledown =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scaledown.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
+    scaledown.springBounciness = 15;
+    scaledown.springSpeed = 5.0f;
+    scaledown.velocity= [NSValue valueWithCGSize:CGSizeMake(10.f, 10.f)];;
+    
+    [self.businessOwner pop_addAnimation:scale forKey:@"scale"];
+    [scale setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
+        [self.businessOwner pop_removeAnimationForKey:@"scale"];
+    }];
+    [self.businessOwner pop_addAnimation:scaledown forKey:@"scaledown"];
+    
     [User login:@"philz" password:@"bridgeapp" completion:^(NSError *error) {
         NSLog(@"User logged in %@", [User currentUser].username);
-
+        
         BusinessProfileViewController *bpvc = [[BusinessProfileViewController alloc] init];
         bpvc.user = [User currentUser];
         bpvc.fromTabbar = YES;
@@ -126,7 +146,7 @@
         
         UITabBarItem *home = [items objectAtIndex:0];
         UITabBarItem *profile = [items objectAtIndex:1];
-
+        
         UITabBar *tabBar = [UITabBar appearance];
         [tabBar setBarTintColor:NAVBARCOLOR];
         
@@ -142,14 +162,13 @@
         
         tmp = [profile initWithTitle:@"Profile" image:profileImage selectedImage: [UIImage imageNamed:@"profile"]];
         
-
-
-//        [self.navigationController pushViewController:tbc animated:YES];
+        
+        
+        //        [self.navigationController pushViewController:tbc animated:YES];
         [self presentViewController:tbc animated:NO completion:nil];
         
     }];
 
-    
     
     
 }

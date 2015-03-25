@@ -10,10 +10,11 @@
 #import <RateView/RateView.h>
 
 @interface FeedbackViewController ()
-@property (weak, nonatomic) IBOutlet UIView *containerView;
+
 @property (strong, nonatomic) RateView* starView;
 @property (strong, nonatomic) Job *job;
-
+@property (weak, nonatomic) IBOutlet RateView *containerView;
+@property (assign, nonatomic) long rating;
 @end
 
 @implementation FeedbackViewController
@@ -26,20 +27,24 @@
     
     if (self.job.rating && self.job.rating != (NSNumber *)[NSNull null]) {
         self.starView = [RateView rateViewWithRating:[self.job.rating floatValue]];
+        self.containerView.rating = [self.job.rating floatValue];
     } else {
         self.starView = [RateView rateViewWithRating:0.0f];
+        self.containerView.rating = 0.0f;
     }
-    self.starView.canRate = YES;
-    self.starView.starNormalColor = [UIColor grayColor];
-    self.starView.starBorderColor = [UIColor blackColor];
-    self.starView.starFillColor = [UIColor yellowColor];
-
-    [self.containerView addSubview:self.starView];
+    
+    self.containerView.starSize = 30;
+    self.containerView.starFillColor = [UIColor orangeColor];
+    self.containerView.backgroundColor  = TABLEVIEWCELLCOLOR;
+    self.containerView.canRate = YES;
+    self.containerView.starNormalColor = [UIColor lightGrayColor];
+    
+//    [self.containerView addSubview:self.starView];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
     tap.numberOfTapsRequired = 1;
-    self.starView.userInteractionEnabled = YES; //if you want touch on your image you'll need this
-    [self.starView addGestureRecognizer:tap];
+    self.containerView.userInteractionEnabled = YES; //if you want touch on your image you'll need this
+    [self.containerView addGestureRecognizer:tap];
 }
 
 -(FeedbackViewController *)initWithJob:(Job*)job {
@@ -59,13 +64,15 @@
 
 -(void) onTap {
     self.job.reviewed = true;
-    long roundedVal = lroundf(self.starView.rating);
-    
-    self.job.rating = [NSNumber numberWithLong:roundedVal];
-    
+    long roundedVal = lroundf(self.containerView.rating);
+    self.rating = roundedVal;
+}
+- (IBAction)rateNow:(id)sender {
+    self.job.rating = [NSNumber numberWithLong:self.rating];
     [self.job saveWithCompletion:^(NSError *error) {
         [self backPressed];
     }];
+    
 }
 
 /*

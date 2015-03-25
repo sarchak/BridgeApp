@@ -15,6 +15,7 @@
 #import "ChameleonFramework/Chameleon.h"
 #import "FreelancerProfileViewController.h"
 #import "BusinessProfileViewController.h"
+#import "POP/POP.h"
 
 @interface DetailedJobViewController ()
 
@@ -152,6 +153,29 @@
 
 - (IBAction)onApply:(id)sender {
     self.job.status = JobStatusHasApplicants;
+
+    POPSpringAnimation *scale =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scale.toValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.2)];
+    scale.springBounciness = 5;
+    scale.springSpeed = 2.0f;
+    scale.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    POPSpringAnimation *scaledown =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scaledown.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
+    scaledown.springBounciness = 5;
+    scaledown.springSpeed = 3.0f;
+    scaledown.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    
+    [self.applyButton pop_addAnimation:scale forKey:@"scale"];
+    [self.applyButton pop_addAnimation:scaledown forKey:@"scaledown"];
+    
+    [scaledown setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
+        [self.applyButton pop_removeAnimationForKey:@"scale"];
+        [self.applyButton pop_removeAnimationForKey:@"scaledown"];
+    }];
+
+    
     [self.job addApplicant:[User currentUser]];
     [self.job saveWithCompletion:^(NSError *error) {
         if (error == nil) {
@@ -186,6 +210,28 @@
 
 - (IBAction)onDeliver:(id)sender {
     self.job.status = JobStatusDelivered;
+    POPSpringAnimation *scale =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scale.toValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.2)];
+    scale.springBounciness = 5;
+    scale.springSpeed = 2.0f;
+    scale.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    POPSpringAnimation *scaledown =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scaledown.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
+    scaledown.springBounciness = 5;
+    scaledown.springSpeed = 3.0f;
+    scaledown.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    
+    [self.deliverButton pop_addAnimation:scale forKey:@"scale"];
+    [self.deliverButton pop_addAnimation:scaledown forKey:@"scaledown"];
+    
+    [scaledown setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
+        [self.deliverButton pop_removeAnimationForKey:@"scale"];
+        [self.deliverButton pop_removeAnimationForKey:@"scaledown"];
+    }];
+
+    
     [self.job saveWithCompletion:^(NSError *error) {
         if (error == nil) {
             NSLog(@"job delivered successfully");
