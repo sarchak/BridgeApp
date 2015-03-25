@@ -39,17 +39,23 @@
     }];
 }
 
-+(void) getAllMessages:(NSString*) threadId completion:(void(^)(NSArray *messages, NSError *error)) completion{
++(void) getAllMessages:(NSString*) threadId laterThan:(NSDate*) date  completion:(void(^)(NSArray *messages, NSError *error)) completion{
     if(threadId != nil){
         PFQuery *query = [PFQuery queryWithClassName:@"ChatMessages"];
         [query whereKey:@"threadId" equalTo:threadId];
+        if(date != nil){
+            [query whereKey:@"createdAt" greaterThan:date];
+        }
+        [query orderByAscending:@"createdAt"];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             NSMutableArray *array = [NSMutableArray array];
             for(PFObject *obj in objects){
                 NSDictionary *dict = [[ParseClient sharedInstance] convertPFObjectToNSDictionary:obj];
                 ChatMessage *message = [ChatMessage initWithDictionary:dict];
                 [array addObject:message];
+                NSLog(@"Date : %@ number of messaged :%ld", message.date, objects.count);
             }
+
             completion(array, error);
         }];
     }

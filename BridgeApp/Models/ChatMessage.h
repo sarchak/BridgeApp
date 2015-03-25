@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString* threadId;
 
 +(ChatMessage*) initWithDictionary: (NSDictionary*) dictionary;
-+(void) getAllMessages:(NSString*) threadId completion:(void(^)(NSArray *messages, NSError *error)) completion;
++(void) getAllMessages:(NSString*) threadId laterThan:(NSDate*) date completion:(void(^)(NSArray *messages, NSError *error)) completion;
 -(PFObject*) convertToPFObject;
 -(void) saveWithCompletion: (void (^)(ChatMessage *message, NSError *error))completion;
 @end

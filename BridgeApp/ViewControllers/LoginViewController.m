@@ -22,6 +22,7 @@
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *businessOwner;
+@property (weak, nonatomic) IBOutlet UIButton *freelancerButton;
 
 @end
 
@@ -111,24 +112,28 @@
 
 - (void)goToBusinessView {
     /* Setup the business owner */
+
     POPSpringAnimation *scale =
     [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
-    scale.toValue = [NSValue valueWithCGPoint:CGPointMake(1.5, 1.5)];
-    scale.springBounciness = 15;
-    scale.springSpeed = 5.0f;
-    scale.velocity= [NSValue valueWithCGSize:CGSizeMake(10.f, 10.f)];
+    scale.toValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.2)];
+    scale.springBounciness = 5;
+    scale.springSpeed = 2.0f;
+    scale.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
     POPSpringAnimation *scaledown =
     [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
     scaledown.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
-    scaledown.springBounciness = 15;
-    scaledown.springSpeed = 5.0f;
-    scaledown.velocity= [NSValue valueWithCGSize:CGSizeMake(10.f, 10.f)];;
+    scaledown.springBounciness = 5;
+    scaledown.springSpeed = 3.0f;
+    scaledown.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
     
     [self.businessOwner pop_addAnimation:scale forKey:@"scale"];
-    [scale setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
-        [self.businessOwner pop_removeAnimationForKey:@"scale"];
-    }];
     [self.businessOwner pop_addAnimation:scaledown forKey:@"scaledown"];
+    
+    [scaledown setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
+        [self.businessOwner pop_removeAnimationForKey:@"scale"];
+        [self.businessOwner pop_removeAnimationForKey:@"scaledown"];
+    }];
+
     
     [User login:@"philz" password:@"bridgeapp" completion:^(NSError *error) {
         NSLog(@"User logged in %@", [User currentUser].username);
@@ -174,6 +179,29 @@
 }
 
 - (void)goToFreelancerView {
+
+    POPSpringAnimation *scale =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scale.toValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.2)];
+    scale.springBounciness = 5;
+    scale.springSpeed = 2.0f;
+    scale.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    POPSpringAnimation *scaledown =
+    [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scaledown.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
+    scaledown.springBounciness = 5;
+    scaledown.springSpeed = 3.0f;
+    scaledown.velocity= [NSValue valueWithCGSize:CGSizeMake(5.f, 5.f)];
+    
+    [self.freelancerButton pop_addAnimation:scale forKey:@"scale"];
+    [self.freelancerButton pop_addAnimation:scaledown forKey:@"scaledown"];
+    
+    [scaledown setCompletionBlock:^(POPAnimation *anim, BOOL completed) {
+        [self.freelancerButton pop_removeAnimationForKey:@"scale"];
+        [self.freelancerButton pop_removeAnimationForKey:@"scaledown"];
+    }];
+
+    
     [User login:@"shrikar" password:@"bridgeapp" completion:^(NSError *error) {
         FreelancerProfileViewController *fpvc = [[FreelancerProfileViewController alloc] initWithUser:[User currentUser]];
         fpvc.fromTabBar = YES;

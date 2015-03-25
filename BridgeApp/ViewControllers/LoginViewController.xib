@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="businessOwner" destination="4Qi-Cg-gQV" id="5CG-S0-Fqs"/>
+                <outlet property="freelancerButton" destination="3RI-a5-Qun" id="HAK-yV-E3Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

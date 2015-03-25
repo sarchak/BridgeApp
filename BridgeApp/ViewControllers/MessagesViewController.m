@@ -21,7 +21,9 @@
 @property (strong, nonatomic) JSQMessagesBubbleImage *outgoingBubbleImageData;
 
 @property (strong, nonatomic) JSQMessagesBubbleImage *incomingBubbleImageData;
-
+@property (strong, nonatomic) NSTimer *fetchTimer;
+@property (strong, nonatomic) NSDate *lastDate;
+@property (strong, nonatomic) ChatMessage *lastMessage;
 @end
 
 @implementation MessagesViewController
@@ -83,9 +85,24 @@
 }
 
 -(void) fetchData {
-    [ChatMessage getAllMessages:self.threadId completion:^(NSArray *messages, NSError *error) {
-        self.messages = [NSMutableArray arrayWithArray:messages];
-        [self.collectionView reloadData];
+    NSDate *latest = self.lastDate;
+
+
+    [ChatMessage getAllMessages:self.threadId laterThan: latest completion:^(NSArray *messages, NSError *error) {
+        if(messages.count > 0){
+            ChatMessage *tmp = (ChatMessage*)messages.lastObject;
+            if(![self.lastMessage.text isEqual: tmp.text]){
+                [self.messages addObjectsFromArray:messages];
+                self.lastMessage = tmp;
+            }
+            self.lastDate = [tmp.date dateByAddingTimeInterval:1];
+            [self.collectionView reloadData];            
+            [self finishReceivingMessage];
+            [self scrollToBottomAnimated:NO];
+            self.automaticallyScrollsToMostRecentMessage = YES;
+        }
+
+
     }];
 }
 -(void) back {
@@ -97,6 +114,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.fetchTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(fetchData) userInfo:nil repeats:YES];
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if([self.fetchTimer isValid]){
+        [self.fetchTimer invalidate];
+        self.fetchTimer = nil;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -153,6 +179,8 @@
     
     [message saveWithCompletion:^(ChatMessage *message, NSError *error) {
         NSLog(@"Chat sent");
+        self.lastDate = message.date;
+        self.lastMessage = message;
     }];
     [self finishSendingMessageAnimated:YES];
 }
